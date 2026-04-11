@@ -1,11 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import { OFFRES } from '@/app/[locale]/data';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
-export default function DetailPage({ params }: { params: { id: string } }) {
-  // Kan-qalbu 3la l-offre f l-fichie data
-  const offre = OFFRES.find((o) => o.id === params.id);
+export default async function DetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const offre = OFFRES.find((o) => o.id === id);
 
   // Ila mal9inahch (id ghalat), n-tl3u 404
   if (!offre) return notFound();
