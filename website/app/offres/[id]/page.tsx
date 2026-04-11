@@ -1,4 +1,4 @@
-import { OFFRES } from '@/app/[locale]/data';
+import { OFFRES } from '@/app/data';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 

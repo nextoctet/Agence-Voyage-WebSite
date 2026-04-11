@@ -10,15 +10,15 @@ export default function Navbar() {
 
       {/* Menu Links */}
       <div className="hidden md:flex space-x-8 font-semibold text-[#003366] uppercase text-sm tracking-wide">
-        <Link href="/" className="relative group transition-colors hover:text-orange-500">
+        <Link href="/ " className="relative group transition-colors hover:text-orange-500">
           Accueil
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all group-hover:w-full"></span>
         </Link>
-        <Link href="/destinations" className="relative group transition-colors hover:text-orange-500">
+        <Link href="destinations" className="relative group transition-colors hover:text-orange-500">
           Destinations
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all group-hover:w-full"></span>
         </Link>
-        <Link href="/contact" className="relative group transition-colors hover:text-orange-500">
+        <Link href="contact" className="relative group transition-colors hover:text-orange-500">
           Contact
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all group-hover:w-full"></span>
         </Link>
