@@ -7,7 +7,7 @@ export default function ContactPage() {
         
         {/* Header Section */}
         <div className="text-center mb-20">
-          <span className="text-orange-500 font-black text-xs uppercase tracking-[0.3em] italic mb-4 block">Almas Voyages</span>
+          <span className="text-orange-500 font-black text-xs uppercase tracking-[0.3em] italic mb-4 block">Expert Voyages</span>
           <h1 className="text-5xl md:text-7xl font-black text-[#003366] uppercase italic tracking-tighter">
             Contactez-nous
           </h1>
