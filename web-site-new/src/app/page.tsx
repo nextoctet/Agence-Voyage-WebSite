@@ -4,24 +4,22 @@ import Image from 'next/image';
 
 
 export default function Home() {
-  // Hadu huma l-offres kamlin dyal Expert Voyages
   const allOffres = [
     { id: "andalousie-2026", title: "Andalousie & Séville", price: "7.200 Dhs", img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?q=80" },
     { id: "costa-del-sol", title: "Costa Del Sol / Malaga", price: "3.990 Dhs", img: "https://images.unsplash.com/photo-1504019347908-b45f9b0b8dd5?q=80" },
     { id: "dubai-premium", title: "Dubaï Expérience", price: "9.990 Dhs", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80" },
     { id: "istanbul-city", title: "Istanbul Magic", price: "6.500 Dhs", img: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80" },
     { id: "marrakech-riad", title: "Marrakech Prestige", price: "2.500 Dhs", img: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?q=80" },
-    { id: "omra-2026", title: "Omra Ramadan", price: "14.500 Dhs", img: "https://images.unsplash.com/photo-1565037604118-28564a2753a8?q=80" }
+    { id: "omra-2026", title: "Omra Ramadan", price: "14.500 Dhs", img: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80" }
   ];
 
   return (
     <main className="bg-white min-h-screen font-sans text-[#003366]">
 
-      
       {/* 1. Hero Section */}
       <section className="relative h-[85vh] flex items-center overflow-hidden">
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center" 
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021')" }}>
           <div className="absolute inset-0 bg-gradient-to-t from-[#003366] via-[#003366]/40 to-transparent"></div>
         </div>
@@ -103,17 +101,114 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Mini Footer Links */}
-      <footer className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-gray-100 pt-10">
-          <div className="flex gap-8">
-             <a href="https://facebook.com" className="text-xs font-black text-[#003366] hover:text-orange-500 tracking-widest transition-colors">FACEBOOK</a>
-             <a href="https://instagram.com" className="text-xs font-black text-[#003366] hover:text-orange-500 tracking-widest transition-colors">INSTAGRAM</a>
-             <a href="https://wa.me/212632382403" className="text-xs font-black text-orange-500 hover:underline tracking-widest uppercase">WhatsApp Direct</a>
+      {/* 4. Partenaires + Paiement + Support */}
+      <section className="bg-gray-50 py-16 px-8 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto">
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            {/* Nos Partenaires */}
+            <div>
+              <h3 className="text-[#003366] text-xs font-black uppercase tracking-[0.3em] mb-8 flex items-center gap-4">
+                <span className="w-8 h-[2px] bg-orange-500"></span>
+                Nos Partenaires
+              </h3>
+              <div className="">
+                <img src="https://almasvoyages.com/wp-content/uploads/2023/05/part.png" alt="Partenaires" className="h-12 object-contain" />
+              </div>
+            </div>
+
+            {/* Paiement sécurisé */}
+            <div>
+              <h3 className="text-[#003366] text-xs font-black uppercase tracking-[0.3em] mb-8 flex items-center gap-4">
+                <span className="w-8 h-[2px] bg-orange-500"></span>
+                Paiement sécurisé
+              </h3>
+              <div className="flex flex-wrap gap-6 items-center">
+                <img src="https://almasvoyages.com/wp-content/uploads/2023/05/mp_logos.png" alt="Paiement sécurisé" className="h-12 object-contain" />
+              </div>
+            </div>
+
+          </div>{/* fin grid */}
+
+          {/* Support card — en dehors du grid, en dessous */}
+          <div className="mt-16 p-8 bg-[#003366] rounded-[2rem] flex flex-col md:flex-row justify-between items-center gap-6 shadow-2xl">
+            <div className="text-white">
+              <h4 className="text-2xl font-black italic uppercase">Besoin d&apos;aide pour planifier ?</h4>
+              <p className="text-gray-300 text-sm italic">Nos experts sont à votre disposition pour créer votre voyage sur mesure.</p>
+            </div>
+            <a
+              href="https://wa.me/212682838530"
+              className="bg-orange-500 hover:bg-white hover:text-[#003366] text-white px-10 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest transition-all shadow-lg active:scale-95"
+            >
+              Contactez-nous
+            </a>
           </div>
-          <p className="text-gray-400 text-[10px] font-bold tracking-[0.3em] uppercase">EXPERT VOYAGES © 2026</p>
+
+        </div>
+      </section>
+
+      {/* 5. Footer */}
+      <footer className="bg-[#003366] text-white pt-16 pb-8 px-8 font-sans">
+        <div className="max-w-7xl mx-auto">
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+
+            {/* Logo + Tél */}
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col">
+                <h2 className="text-3xl font-black uppercase italic tracking-tighter">
+                  EXPERT<span className="text-orange-500 underline decoration-2 underline-offset-4">VOYAGES</span>
+                </h2>
+              </div>
+              <div className="mt-4 flex flex-col gap-2 border-l-2 border-orange-500 pl-4">
+                <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Tél</p>
+                <p className="text-xl font-black italic tracking-tight">06 82 83 85 30</p>
+              </div>
+            </div>
+
+            {/* À propos */}
+            <div>
+              <h3 className="text-sm font-black uppercase italic tracking-widest mb-6 pb-2 border-b border-white/10 w-fit">À propos</h3>
+              <ul className="flex flex-col gap-3 text-sm font-medium italic text-gray-300">
+                <li className="hover:text-orange-500 transition-colors cursor-pointer">• EXPERT VOYAGES</li>
+                <li className="hover:text-orange-500 transition-colors cursor-pointer">• Règles de confidentialité</li>
+                <li className="hover:text-orange-500 transition-colors cursor-pointer">• Conditions de ventes et d&apos;utilisation</li>
+              </ul>
+            </div>
+
+            {/* Nos offres */}
+            <div>
+              <h3 className="text-sm font-black uppercase italic tracking-widest mb-6 pb-2 border-b border-white/10 w-fit">Nos offres</h3>
+              <ul className="flex flex-col gap-3 text-sm font-medium italic text-gray-300">
+                <li className="hover:text-orange-500 transition-colors cursor-pointer">• Voyages à l&apos;étranger</li>
+                <li className="hover:text-orange-500 transition-colors cursor-pointer">• Voyages au Maroc</li>
+                <li className="hover:text-orange-500 transition-colors cursor-pointer">• Circuits Privé au Maroc</li>
+                <li className="hover:text-orange-500 transition-colors cursor-pointer">• Omra</li>
+                <li className="hover:text-orange-500 transition-colors cursor-pointer">• Croisière</li>
+              </ul>
+            </div>
+
+            {/* À la carte */}
+            <div>
+              <h3 className="text-sm font-black uppercase italic tracking-widest mb-6 pb-2 border-b border-white/10 w-fit">À la carte</h3>
+              <ul className="flex flex-col gap-3 text-sm font-medium italic text-gray-300">
+                <li className="hover:text-orange-500 transition-colors cursor-pointer">• Séjour à la carte au Maroc</li>
+                <li className="hover:text-orange-500 transition-colors cursor-pointer">• Séjour à la carte à l&apos;étranger</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+            <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-500">
+              EXPERT VOYAGES © 2026
+            </p>
+          </div>
+
         </div>
       </footer>
+
     </main>
   );
 }
