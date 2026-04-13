@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
-import Navbar from './components/navbar';
+import Image from 'next/image';
+
 
 export default function Home() {
   // Hadu huma l-offres kamlin dyal Expert Voyages
@@ -15,7 +16,7 @@ export default function Home() {
 
   return (
     <main className="bg-white min-h-screen font-sans text-[#003366]">
-      <Navbar /> {/* Navbar li drna f components/navbar.tsx */}
+
       
       {/* 1. Hero Section */}
       <section className="relative h-[85vh] flex items-center overflow-hidden">
@@ -35,7 +36,7 @@ export default function Home() {
               <span className="text-orange-500 italic">VOYAGES</span>
             </h1>
             <p className="text-xl text-blue-50/80 mb-10 max-w-xl leading-relaxed">
-              Vivez des expériences uniques à travers nos circuits organisés et voyages sur mesure au meilleur prix au Maroc et à l'étranger.
+              Vivez des expériences uniques à travers nos circuits organisés et voyages sur mesure au meilleur prix au Maroc et à l&apos;étranger.
             </p>
             <div className="flex flex-wrap gap-5">
               <Link href="/destinations" className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-2xl font-black transition-all shadow-xl shadow-orange-500/30 hover:scale-105 active:scale-95">
@@ -77,9 +78,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allOffres.map((dest, i) => (
-              <div key={i} className="group bg-white rounded-[2.5rem] overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100">
+              <div key={i} className="group bg-white overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100">
                 <div className="relative h-72 overflow-hidden">
-                  <img src={dest.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={dest.title} />
+                  <Image src={dest.img} width={400} height={300} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={dest.title} />
                   <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-4 py-1 rounded-full shadow-sm">
                     <span className="text-[#003366] font-bold text-[10px] tracking-widest">OFFRE SPÉCIALE</span>
                   </div>
