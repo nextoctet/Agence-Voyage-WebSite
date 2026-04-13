@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { OFFRES } from '../data'; 
+import { OFFRES } from '../../data'; 
 import { useTranslations } from 'next-intl';
 
 export default function Home() {
