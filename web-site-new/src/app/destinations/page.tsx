@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const MARRAKECH_DATA = {
   title: "L'Expérience Marrakech",
@@ -27,7 +28,7 @@ const MARRAKECH_DATA = {
       title: "Haut Atlas: Sommets Berbères", 
       stay: "Kasbah Tamadot", 
       desc: "Randonnées privées, rencontres locales et détente face aux sommets enneigés. Explorez les horizons infinis des montagnes de l'Atlas.",
-      hotelImg: "https://images.unsplash.com/photo-1590073844006-33379778ae09?q=80&w=1600"
+      hotelImg: "https://images.unsplash.com/photo-1580674239581-39bd1b7b0dc0?q=80&w=800"
     }
   ],
   prices: [
@@ -72,7 +73,7 @@ export default function MarrakechDetailPage() {
         </div>
 
         <div className="w-full lg:w-[55%] relative group bg-gray-200 min-h-[400px]">
-          <img src={mainImage} alt="Marrakech" className="w-full h-full object-cover transition-all duration-1000" />
+          <Image src={mainImage} alt="Marrakech" width={400} height={300} className="w-full h-full object-cover transition-all duration-1000" />
           <div className="absolute bottom-10 left-10 flex gap-4 z-20">
             {MARRAKECH_DATA.gallery.map((img, idx) => (
               <button 
@@ -80,7 +81,7 @@ export default function MarrakechDetailPage() {
                 onClick={() => setMainImage(img)}
                 className={`w-20 h-20 rounded-2xl border-4 overflow-hidden transition-all ${mainImage === img ? 'border-orange-500 scale-110 shadow-xl' : 'border-white/50 hover:border-white'}`}
               >
-                <img src={img} className="w-full h-full object-cover" alt="miniature" />
+                <Image src={img} width={80} height={80} className="w-full h-full object-cover" alt="miniature" />
               </button>
             ))}
           </div>
@@ -116,7 +117,7 @@ export default function MarrakechDetailPage() {
                     <h4 className="font-black text-[#003366] uppercase text-sm mb-6 tracking-widest">Where to stay</h4>
                     <div className="max-w-md group cursor-pointer">
                       <div className="relative h-64 rounded-3xl overflow-hidden mb-5">
-                        <img src={item.hotelImg} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Hotel" />
+                        <Image src={item.hotelImg} width={400} height={300} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Hotel" />
                       </div>
                       <h5 className="font-black text-[#003366] text-xl mb-1">{item.stay}</h5>
                       <p className="text-gray-400 text-xs font-bold uppercase tracking-widest">Expérience Exclusive</p>
@@ -163,8 +164,9 @@ export default function MarrakechDetailPage() {
             <div className="sticky top-10 space-y-10">
               {/* Interactive Map Placeholder */}
               <div className="rounded-[3rem] overflow-hidden h-[500px] shadow-2xl relative border-8 border-white group">
-                <img 
+                <Image 
                   src="https://www.mapsofworld.com/morocco/maps/morocco-map.jpg" 
+                  width={400} height={500}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[20s]" 
                   alt="Marrakech Map" 
                 />
@@ -182,7 +184,7 @@ export default function MarrakechDetailPage() {
                 <h3 className="text-3xl font-black italic uppercase mb-6 leading-tight">Parlez à un expert</h3>
                 <p className="text-gray-400 text-base italic mb-10">Notre équipe attend de vous aider.</p>
                 <Link 
-                  href="https://wa.me/212682828530" 
+                  href="https://wa.me/212682838530" 
                   className="bg-orange-500 text-white font-black italic uppercase py-6 w-full rounded-2xl transition-all shadow-xl block hover:bg-white hover:text-[#003366]"
                 >
                   CONTACTER SUR WHATSAPP
@@ -197,16 +199,16 @@ export default function MarrakechDetailPage() {
       {/* --- 4. GALLERY (GRID) --- */}
       <section className="py-24 px-6 max-w-7xl mx-auto border-t border-gray-100">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-[600px]">
-           <div className="md:col-span-8  overflow-hidden relative group">
-              <img src={MARRAKECH_DATA.gallery[1]} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Gall" />
+           <div className="md:col-span-8 rounded-[3.5rem] overflow-hidden relative group">
+              <Image src={MARRAKECH_DATA.gallery[1]} width={800} height={600} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Gall" />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-all"></div>
            </div>
            <div className="md:col-span-4 grid grid-rows-2 gap-6">
-              <div className=" overflow-hidden">
-                 <img src={MARRAKECH_DATA.gallery[2]} className="w-full h-full object-cover" alt="Gall" />
+              <div className="rounded-[2.5rem] overflow-hidden">
+                 <Image src={MARRAKECH_DATA.gallery[2]} width={400} height={300} className="w-full h-full object-cover" alt="Gall" />
               </div>
-              <div className=" overflow-hidden bg-orange-500 flex items-center justify-center p-8 text-center shadow-inner">
-                 <h3 className="text-white text-3xl font-black italic uppercase leading-none">Vivez l'Authenticité <br/> Absolue</h3>
+              <div className="rounded-[2.5rem] overflow-hidden bg-orange-500 flex items-center justify-center p-8 text-center shadow-inner">
+                 <h3 className="text-white text-3xl font-black italic uppercase leading-none">Vivez l&apos;Authenticité <br/> Absolue</h3>
               </div>
            </div>
         </div>

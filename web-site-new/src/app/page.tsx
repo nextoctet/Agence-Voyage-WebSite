@@ -10,7 +10,7 @@ export default function Home() {
     { id: "dubai-premium", title: "Dubaï Expérience", price: "9.990 Dhs", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80" },
     { id: "istanbul-city", title: "Istanbul Magic", price: "6.500 Dhs", img: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80" },
     { id: "marrakech-riad", title: "Marrakech Prestige", price: "2.500 Dhs", img: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?q=80" },
-    { id: "omra-2026", title: "Omra Ramadan", price: "14.500 Dhs", img: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80" }
+    { id: "omra-2026", title: "Omra Ramadan", price: "14.500 Dhs", img: "https://images.unsplash.com/photo-1565037604118-28564a2753a8?q=80" }
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function Home() {
               Vivez des expériences uniques à travers nos circuits organisés et voyages sur mesure au meilleur prix au Maroc et à l&apos;étranger.
             </p>
             <div className="flex flex-wrap gap-5">
-              <Link href="/destinations" className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-2xl font-black transition-all shadow-xl shadow-orange-500/30 hover:scale-105 active:scale-95">
+              <Link href="/offres" className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-2xl font-black transition-all shadow-xl shadow-orange-500/30 hover:scale-105 active:scale-95">
                 VOIR LES OFFRES
               </Link>
             </div>
@@ -114,7 +114,7 @@ export default function Home() {
                 Nos Partenaires
               </h3>
               <div className="">
-                <img src="https://almasvoyages.com/wp-content/uploads/2023/05/part.png" alt="Partenaires" className="h-12 object-contain" />
+                <Image src="https://almasvoyages.com/wp-content/uploads/2023/05/part.png" alt="Partenaires" width={200} height={50} className="h-12 object-contain" />
               </div>
             </div>
 
@@ -125,7 +125,7 @@ export default function Home() {
                 Paiement sécurisé
               </h3>
               <div className="flex flex-wrap gap-6 items-center">
-                <img src="https://almasvoyages.com/wp-content/uploads/2023/05/mp_logos.png" alt="Paiement sécurisé" className="h-12 object-contain" />
+                <Image src="https://almasvoyages.com/wp-content/uploads/2023/05/mp_logos.png" alt="Paiement sécurisé" width={200} height={50} className="h-12 object-contain" />
               </div>
             </div>
 
@@ -148,7 +148,7 @@ export default function Home() {
         </div>
       </section>
 
-     
+      
 
     </main>
   );
