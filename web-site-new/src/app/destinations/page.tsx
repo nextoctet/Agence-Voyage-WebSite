@@ -21,7 +21,7 @@ const TOUTES_DESTINATIONS = [
     country: "Arabie Saoudite",
     price: "14 500 DH",
     duration: "10 Nuits",
-    img: "https://images.unsplash.com/photo-1565037604118-28564a2753a8?q=80",
+    img: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=1600",
     tag: "Spirituel"
   },
   {

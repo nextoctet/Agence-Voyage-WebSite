@@ -6,7 +6,7 @@ export default function Home() {
   const destinationsHome = [
     { id: "andalousie", title: "Andalousie & Séville", price: "7.200 Dhs", img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?q=80" },
     { id: "dubai", title: "Dubaï Expérience", price: "9.990 Dhs", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80" },
-    { id: "omra", title: "Omra Ramadan", price: "14.500 Dhs", img: "https://images.unsplash.com/photo-1565037604118-28564a2753a8?q=80" },
+    { id: "omra", title: "Omra Ramadan", price: "14.500 Dhs", img: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=1600" },
     { id: "istanbul", title: "Istanbul Magic", price: "6.500 Dhs", img: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80" },
     { id: "marrakech", title: "Marrakech Prestige", price: "2.500 Dhs", img: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?q=80" }
   ];
