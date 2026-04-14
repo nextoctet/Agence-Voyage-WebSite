@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-
-
+import hotelLegacy from '@/public/XXXL.webp';
+import tamaImg from '@/public/TAMA.jpg';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -75,7 +75,7 @@ const DATA_MAP: any = {
     price: "6 500 DH",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192697.793276237!2d28.872096!3d41.005237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab1d02468da1f%3A0x403164a273934e0!2sIstanbul%2C%20Turquie!5e0!3m2!1sfr!2sma!4v1713100000004",
     gallery: ["https://images.unsplash.com/photo-1596422846543-75c6fc18a5cf?auto=format&fit=crop&q=80&w=1600"],
-    itinerary: [{ day: "1 - 6", location: "Sultanahmet", title: "Byzance & Constantinople", stay: "Legacy Ottoman Hotel", desc: "Sainte-Sophie et croisière privée sur le Bosphore.", hotelImg: "https://images.unsplash.com/photo-1554994485-0-84e00be4203b?q=80" }],
+    itinerary: [{ day: "1 - 6", location: "Sultanahmet", title: "Byzance & Constantinople", stay: "Legacy Ottoman Hotel", desc: "Sainte-Sophie et croisière privée sur le Bosphore.", hotelImg: "/XXXL.webp"}],
     prices: [{ month: "Juin 2026", price: "6 500 DH" }]
   },
   "le-caire": {
