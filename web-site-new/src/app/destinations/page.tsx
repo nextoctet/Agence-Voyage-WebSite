@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const MARRAKECH_DATA = {
   title: "L'Expérience Marrakech",
@@ -39,6 +40,7 @@ const MARRAKECH_DATA = {
 };
 
 export default function MarrakechDetailPage() {
+  const router = useRouter();
   const [mainImage, setMainImage] = useState(MARRAKECH_DATA.gallery[0]);
 
   return (
@@ -147,7 +149,7 @@ export default function MarrakechDetailPage() {
                         <td className="p-8 font-black text-orange-500 text-2xl">{p.price}</td>
                         <td className="p-8 text-gray-400 font-bold">{p.deposit}</td>
                         <td className="p-8 text-center">
-                          <button className="bg-[#003366] text-white px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-orange-500 transition-all active:scale-95 shadow-lg">
+                          <button onClick={()=>router.push("/reservation")} className="bg-[#003366] text-white px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-orange-500 transition-all active:scale-95 shadow-lg">
                             Réserver
                           </button>
                         </td>
