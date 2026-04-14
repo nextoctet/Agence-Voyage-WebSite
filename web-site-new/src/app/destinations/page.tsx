@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// --- 1. DONNÉES DE TOUTES TES DESTINATIONS (9 Cartes maintenant) ---
+// --- 1. DONNÉES DE TOUTES TES DESTINATIONS  ---
 const TOUTES_DESTINATIONS = [
   {
     id: "marrakech",

@@ -1,9 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import hotelLegacy from '@/public/XXXL.webp';
-import tamaImg from '@/public/TAMA.jpg';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
