@@ -8,6 +8,19 @@ export interface Offre {
     inclus: string[];
     duree: string;
   };
+  // --- NOUVEAUX CHAMPS AJOUTÉS ---
+  itinerary: {
+    day: string;
+    title: string;
+    desc: string;
+    stay: string;
+    hotelImg: string;
+  }[];
+  priceGuide: {
+    month: string;
+    price: string;
+    deposit: string;
+  }[];
 }
 
 export const OFFRES: Offre[] = [
@@ -22,15 +35,17 @@ export const OFFRES: Offre[] = [
       "https://images.unsplash.com/photo-1562883676-8c6e5d9e4b7a?q=80"
     ],
     details: {
-      inclus: [
-        "Vols aller-retour",
-        "Hôtel 4 étoiles",
-        "Petit-déjeuner inclus",
-        "Visites guidées",
-        "Transport local"
-      ],
+      inclus: ["Vols aller-retour", "Hôtel 4 étoiles", "Petit-déjeuner inclus", "Visites guidées", "Transport local"],
       duree: "7 jours / 6 nuits"
-    }
+    },
+    itinerary: [
+      { day: "1-3", title: "Séville: Coeur de l'Andalousie", desc: "Visite de la Cathédrale et de l'Alcazar.", stay: "Melia Sevilla", hotelImg: "https://images.unsplash.com/photo-1559139225-421006f27b35?q=80" },
+      { day: "4-7", title: "Grenade: La Magie de l'Alhambra", desc: "Exploration des jardins du Generalife.", stay: "Barceló Granada Congress", hotelImg: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80" }
+    ],
+    priceGuide: [
+      { month: "Avril 2026", price: "7.200 Dhs", deposit: "1.500 Dhs" },
+      { month: "Mai 2026", price: "7.500 Dhs", deposit: "1.500 Dhs" }
+    ]
   },
   {
     id: "costa-del-sol",
@@ -43,15 +58,16 @@ export const OFFRES: Offre[] = [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80"
     ],
     details: {
-      inclus: [
-        "Vols aller-retour",
-        "Hôtel 4 étoiles vue mer",
-        "Formule all-inclusive",
-        "Accès plage",
-        "Activités nautiques"
-      ],
+      inclus: ["Vols aller-retour", "Hôtel 4 étoiles vue mer", "Formule all-inclusive", "Accès plage", "Activités nautiques"],
       duree: "5 jours / 4 nuits"
-    }
+    },
+    itinerary: [
+      { day: "1-5", title: "Détente à Torremolinos", desc: "Journées libres en bord de mer et soirées animées.", stay: "Sol Torremolinos Resort", hotelImg: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80" }
+    ],
+    priceGuide: [
+      { month: "Juin 2026", price: "3.990 Dhs", deposit: "1.000 Dhs" },
+      { month: "Juillet 2026", price: "4.500 Dhs", deposit: "1.000 Dhs" }
+    ]
   },
   {
     id: "dubai-premium",
@@ -64,15 +80,17 @@ export const OFFRES: Offre[] = [
       "https://images.unsplash.com/photo-1512885981623-e7e7a1f39b1e?q=80"
     ],
     details: {
-      inclus: [
-        "Vols premium",
-        "Hôtel 5 étoiles",
-        "Tour Burj Khalifa",
-        "Dubai Mall",
-        "Safari dans le désert"
-      ],
+      inclus: ["Vols premium", "Hôtel 5 étoiles", "Tour Burj Khalifa", "Dubai Mall", "Safari dans le désert"],
       duree: "8 jours / 7 nuits"
-    }
+    },
+    itinerary: [
+      { day: "1-4", title: "Downtown Dubai", desc: "Shopping et visite de la plus haute tour du monde.", stay: "Address Downtown", hotelImg: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80" },
+      { day: "5-8", title: "Jumeirah Beach", desc: "Détente sur les plages de sable blanc.", stay: "Jumeirah Al Naseem", hotelImg: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80" }
+    ],
+    priceGuide: [
+      { month: "Octobre 2026", price: "9.990 Dhs", deposit: "2.500 Dhs" },
+      { month: "Novembre 2026", price: "10.500 Dhs", deposit: "2.500 Dhs" }
+    ]
   },
   {
     id: "istanbul-city",
@@ -81,20 +99,20 @@ export const OFFRES: Offre[] = [
     prix: "6.500 Dhs",
     images: [
       "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80",
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8aXN0YW5idWx8fHx8fHwxNjc5NTkwMDA5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
-      "https://images.unsplash.com/photo-1516110582095-3e8e00f5f3be?q=80"
+      "https://images.unsplash.com/photo-1516110582095-3e8e00f5f3be?q=80",
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80"
     ],
     details: {
-      inclus: [
-        "Vols aller-retour",
-        "Hôtel 4 étoiles",
-        "Croisière sur le Bosphore",
-        "Mosquée Bleue",
-        "Bazar du Grand",
-        "Petit-déjeuner buffet"
-      ],
+      inclus: ["Vols aller-retour", "Hôtel 4 étoiles", "Croisière sur le Bosphore", "Mosquée Bleue", "Bazar du Grand", "Petit-déjeuner buffet"],
       duree: "6 jours / 5 nuits"
-    }
+    },
+    itinerary: [
+      { day: "1-6", title: "Sultanahmet & Beyoğlu", desc: "Découverte de Sainte-Sophie et traversée du Bosphore.", stay: "Legacy Ottoman Hotel", hotelImg: "https://images.unsplash.com/photo-1554994485-0-84e00be4203b?q=80" }
+    ],
+    priceGuide: [
+      { month: "Mai 2026", price: "6.500 Dhs", deposit: "1.500 Dhs" },
+      { month: "Septembre 2026", price: "6.800 Dhs", deposit: "1.500 Dhs" }
+    ]
   },
   {
     id: "marrakech-riad",
@@ -107,15 +125,15 @@ export const OFFRES: Offre[] = [
       "https://images.unsplash.com/photo-1599599810494-ff3a547e05c6?q=80"
     ],
     details: {
-      inclus: [
-        "Riad traditionnel",
-        "Petit-déjeuner marocain",
-        "Visite médina",
-        "Excursion désert",
-        "Guide francophone"
-      ],
+      inclus: ["Riad traditionnel", "Petit-déjeuner marocain", "Visite médina", "Excursion désert", "Guide francophone"],
       duree: "3 jours / 2 nuits"
-    }
+    },
+    itinerary: [
+      { day: "1-3", title: "Vie de Riad", desc: "Détente au spa et visites privées de la Médina.", stay: "La Mamounia (Expérience)", hotelImg: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80" }
+    ],
+    priceGuide: [
+      { month: "Tout l'année", price: "2.500 Dhs", deposit: "500 Dhs" }
+    ]
   },
   {
     id: "omra-2026",
@@ -128,15 +146,15 @@ export const OFFRES: Offre[] = [
       "https://images.unsplash.com/photo-1565037611428-af19b76c1798?q=80"
     ],
     details: {
-      inclus: [
-        "Vols directs",
-        "Hôtel près de la Kaaba",
-        "Visa Omra",
-        "Transferts VIP",
-        "Accompagnateur religieux",
-        "Petit-déjeuner et dîner"
-      ],
+      inclus: ["Vols directs", "Hôtel près de la Kaaba", "Visa Omra", "Transferts VIP", "Accompagnateur religieux", "Petit-déjeuner et dîner"],
       duree: "10 jours / 9 nuits"
-    }
+    },
+    itinerary: [
+      { day: "1-4", title: "Médine la Lumineuse", desc: "Visite de la Mosquée du Prophète (PBUH).", stay: "Pullman Zamzam Madina", hotelImg: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80" },
+      { day: "5-10", title: "Makkah la Bénie", desc: "Accomplissement de la Omra et prières au Haram.", stay: "Fairmont Makkah", hotelImg: "https://images.unsplash.com/photo-1542661906-039c09939634?q=80" }
+    ],
+    priceGuide: [
+      { month: "Ramadan 2026", price: "14.500 Dhs", deposit: "4.000 Dhs" }
+    ]
   }
 ];
