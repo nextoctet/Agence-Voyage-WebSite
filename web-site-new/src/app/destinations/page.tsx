@@ -119,7 +119,7 @@ export default function MarrakechDetailPage() {
                     <h4 className="font-black text-[#003366] uppercase text-sm mb-6 tracking-widest">Where to stay</h4>
                     <div className="max-w-md group cursor-pointer">
                       <div className="relative h-64 rounded-3xl overflow-hidden mb-5">
-                        <Image src={item.hotelImg} width={400} height={300} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Hotel" />
+                        <Image src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1600&auto=format&fit=crop" width={800} height={600} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Hôtel de Luxe Almas Voyages" priority/>
                       </div>
                       <h5 className="font-black text-[#003366] text-xl mb-1">{item.stay}</h5>
                       <p className="text-gray-400 text-xs font-bold uppercase tracking-widest">Expérience Exclusive</p>
