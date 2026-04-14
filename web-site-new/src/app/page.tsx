@@ -36,11 +36,7 @@ export default function Home() {
             <p className="text-xl text-blue-50/80 mb-10 max-w-xl leading-relaxed">
               Vivez des expériences uniques à travers nos circuits organisés et voyages sur mesure au meilleur prix au Maroc et à l&apos;étranger.
             </p>
-            <div className="flex flex-wrap gap-5">
-              <Link href="/offres" className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-2xl font-black transition-all shadow-xl shadow-orange-500/30 hover:scale-105 active:scale-95">
-                VOIR LES OFFRES
-              </Link>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -90,7 +86,7 @@ export default function Home() {
                       <p className="text-gray-400 text-[10px] uppercase font-bold tracking-[0.2em]">À partir de</p>
                       <p className="text-[#003366] font-black text-2xl">{dest.price}</p>
                     </div>
-                    <Link href={`/offres/${dest.id}`} className="bg-[#003366] group-hover:bg-orange-500 text-white w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg shadow-blue-900/10">
+                    <Link href={`/destinations`} className="bg-[#003366] group-hover:bg-orange-500 text-white w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg shadow-blue-900/10">
                       →
                     </Link>
                   </div>
