@@ -118,11 +118,29 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
 
   useEffect(() => { setMainImage(info.heroImg); }, [id, info.heroImg]);
 
+  useEffect(() => {
+    const updateNavOffset = () => {
+      const pageNav = document.querySelector('nav[data-page-nav]') as HTMLElement | null;
+      const siteNav = document.querySelector('nav.sticky:not([data-page-nav])') as HTMLElement | null;
+      const siteNavHeight = siteNav?.offsetHeight || 0;
+      if (pageNav) pageNav.style.top = `${siteNavHeight}px`;
+      // set CSS variable used as fallback for scroll-margin
+      document.documentElement.style.setProperty('--site-nav-offset', `${siteNavHeight}px`);
+    };
+    updateNavOffset();
+    window.addEventListener('resize', updateNavOffset);
+    return () => window.removeEventListener('resize', updateNavOffset);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      window.scrollTo({ top: element.offsetTop - 100, behavior: 'smooth' });
-    }
+    if (!element) return;
+    // compute total height of sticky navbars (site nav + this page nav)
+    const stickyNavs = Array.from(document.querySelectorAll('nav.sticky')) as HTMLElement[];
+    const totalStickyHeight = stickyNavs.reduce((sum, el) => sum + (el?.offsetHeight || 0), 0);
+    const elementTop = element.getBoundingClientRect().top + window.scrollY;
+    const scrollTo = Math.max(0, elementTop - totalStickyHeight - 8);
+    window.scrollTo({ top: scrollTo, behavior: 'smooth' });
   };
 
   return (
