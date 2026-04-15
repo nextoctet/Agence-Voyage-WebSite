@@ -1,50 +1,62 @@
 "use client"; 
+import { useState } from "react";
 import Link from "next/link"; 
 
 export default function Navbar() {
+  const [isDestOpen, setIsDestOpen] = useState(false);
+
   return (
-    <nav className="flex justify-between items-center py-4 px-8 md:px-12 bg-white/95 backdrop-blur-md border-b-2 border-gray-200 sticky top-0 z-50">
+    <nav className="flex justify-between items-center py-4 px-8 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
       
-      {/* Logo Section */}
-      <Link href="/" className="text-2xl font-black italic tracking-tighter text-[#003366] hover:opacity-90 transition">
-        EXPERT <span className="text-orange-500">VOYAGES</span>
+      {/* Section Logo */}
+      <Link href="/" className="text-2xl font-black tracking-tighter text-[#003366] hover:opacity-90 transition">
+        WELIVE<span className="text-orange-500 underline decoration-2">MOROCCO</span>
       </Link>
 
-      <div className="hidden md:flex space-x-8 font-semibold text-[#003366] uppercase text-sm tracking-wide">
-        <Link href="/" className="relative group transition-colors hover:text-orange-500">
-          Accueil
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all group-hover:w-full"></span>
-        </Link>
+      {/* Liens de Navigation */}
+      <div className="hidden md:flex items-center space-x-8 font-semibold text-[#003366] uppercase text-[10px] tracking-widest">
+        <Link href="/" className="hover:text-orange-500 transition-colors">Accueil</Link>
+        <Link href="/a-propos" className="hover:text-orange-500 transition-colors">À Propos</Link>
         
-        <Link href="/destinations" className="relative group transition-colors hover:text-orange-500">
-          Destinations
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all group-hover:w-full"></span>
-        </Link>
-        
-        <Link href="/contact" className="relative group transition-colors hover:text-orange-500">
-          Contact
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all group-hover:w-full"></span>
-        </Link>
-      </div>
-
-      {/* Action Button Section */}
-      <div className="flex items-center gap-6">
-        
-        {/* Bouton Traduction */}
-        <div className="hidden sm:flex items-center gap-2 text-xs font-bold text-[#003366]">
-           <button className="hover:text-orange-500 transition">FR</button>
-           <span className="text-gray-300">|</span>
-           <button className="hover:text-orange-500 transition">AR</button>
+        {/* Dropdown Destinations */}
+        <div 
+          className="relative group cursor-pointer h-full py-2"
+          onMouseEnter={() => setIsDestOpen(true)}
+          onMouseLeave={() => setIsDestOpen(false)}
+        >
+          <div className="flex items-center gap-1 hover:text-orange-500 transition-colors">
+            Destinations <span className="text-[8px]">▼</span>
+          </div>
+          
+          {isDestOpen && (
+            <div className="absolute top-[100%] left-0 w-56 bg-white shadow-xl border border-gray-100 py-3 rounded-lg mt-0">
+              <Link href="/destinations/casablanca" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">Au départ de Casablanca</Link>
+              <Link href="/destinations/marrakech" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">Au départ de Marrakech</Link>
+              <Link href="/destinations/tanger" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">Au départ de Tanger</Link>
+              <Link href="/destinations/fes" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">Au départ de Fès</Link>
+            </div>
+          )}
         </div>
 
-        {/* Bouton Réservation */}
+        <Link href="/guide-voyage" className="hover:text-orange-500 transition-colors">Guide Voyage</Link>
+        <Link href="/contact" className="hover:text-orange-500 transition-colors">Contactez-nous</Link>
+      </div>
+
+      {/* Boutons d'Action */}
+      <div className="flex items-center gap-4">
+        <Link
+          href="/personnaliser-experience"
+          className="hidden lg:block px-4 py-2 border-2 border-[#003366] text-[#003366] text-[9px] font-black rounded-full hover:bg-[#003366] hover:text-white transition-all duration-300"
+        >
+          PERSONNALISEZ VOTRE EXPÉRIENCE
+        </Link>
+
         <Link
           href="/reservation"
-          className="px-6 py-2.5 bg-orange-500 text-white text-sm font-bold rounded-full shadow-lg shadow-orange-500/30 hover:bg-[#003366] hover:shadow-blue-900/20 transition-all duration-300 transform hover:-translate-y-0.5 text-center"
+          className="px-5 py-2.5 bg-orange-500 text-white text-[10px] font-black rounded-full shadow-lg shadow-orange-500/20 hover:scale-105 transition-all duration-300"
         >
           RÉSERVER MAINTENANT
         </Link>
-
       </div>
     </nav>
   );
