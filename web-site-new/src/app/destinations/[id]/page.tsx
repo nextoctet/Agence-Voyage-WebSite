@@ -21,9 +21,9 @@ const DATA_MAP: any = {
     duration: "7 NUITS", price: "4 400 MAD", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.1234!2d28.9744!3d41.0082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAwJzI5LjUiTiAyOMKwNTgnMjcuOCJF!5e0!3m2!1sen!2sma!4v123456789",
     itinerary: [
       { day: "1 - 4", location: "Marrakech", title: "Médina & Palais", stay: "The Oberoi Marrakech", desc: "Visite privée des palais historiques et dîners sous les étoiles.", 
-        hotelImgs: ["https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80", "https://images.unsplash.com/photo-1590073235997-86dbae1746f3?q=80", "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80"] },
+        hotelImgs: ["https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80", "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80", "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80"] },
       { day: "4 - 8", location: "Atlas", title: "Sommets", stay: "Kasbah Tamadot", desc: "Détente face aux montagnes de l'Atlas.", 
-        hotelImgs: ["https://images.unsplash.com/photo-1580674239581-39bd1b7b0dc0?q=80", "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80", "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80"] }
+        hotelImgs: ["https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80", "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80", "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80"] }
     ],
     prices: [
       { month: "Avril 2026", price: 7500 }, { month: "Mai 2026", price: 6000 }, { month: "Juin 2026", price: 5500 },
@@ -38,7 +38,7 @@ const DATA_MAP: any = {
     duration: "10 NUITS", price: "14 500 MAD", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108704.1481132626!2d-8.0778939!3d31.6346761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d9611f67b%3A0x2cb2e2033a207e85!2sMarrakesh!5e0!3m2!1sen!2sma!4v1700000000000",
     itinerary: [
       { day: "1 - 5", location: "Médine", title: "Sérénité", stay: "Pullman ZamZam", desc: "Prière à Al-Masjid an-Nabawi.", 
-        hotelImgs: ["https://images.unsplash.com/photo-1551041777-ed371f690898?q=80", "https://images.unsplash.com/photo-1564767609342-620cb19b2357?q=80"] }
+        hotelImgs: ["https://images.unsplash.com/photo-1581553680321-4fffae59fccd?q=80", "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80"] }
     ],
     prices: [{ month: "Mars 2026", price: 14500 }, { month: "Avril 2026", price: 15500 }]
   },
@@ -48,7 +48,7 @@ const DATA_MAP: any = {
     highlights: ["Montée au Burj Khalifa.", "Safari privé dans le désert.", "Dîner sur la marina."],
     heroImg: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80",
     duration: "8 NUITS", price: "9 990 MAD", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192635.03378904797!2d28.8174488!3d41.0055005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab1d024067341%3A0x82105e60166d4ca!2sIstanbul!5e0!3m2!1sen!2sma!4v1700000000000",
-    itinerary: [{ day: "1 - 8", location: "Dubaï", title: "Modernité", stay: "Address Downtown", desc: "Burj Khalifa.", hotelImgs: ["https://images.unsplash.com/photo-1549918838-3c677db44f90?q=80"] }],
+    itinerary: [{ day: "1 - 8", location: "Dubaï", title: "Modernité", stay: "Address Downtown", desc: "Burj Khalifa.", hotelImgs: ["https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80"] }],
     prices: [{ month: "Mai 2026", price: 9990 }, { month: "Juin 2026", price: 8500 }]
   },
   "istanbul": {
@@ -93,7 +93,7 @@ const DATA_MAP: any = {
     highlights: ["Retraite spirituelle à Ubud.", "Coucher de soleil à Uluwatu.", "Rizières sacrées."],
     heroImg: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80",
     duration: "12 NUITS", price: "12 200 MAD", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108704.10232431612!2d-8.077893963471016!3d31.634676461944885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d961415e5%3A0xad51090c2ebc3251!2sMarrakech!5e0!3m2!1sfr!2sma!4v1711545000000",
-    itinerary: [{ day: "1 - 12", location: "Ubud", title: "Zen", stay: "Four Seasons Sayan", desc: "Nature.", hotelImgs: ["https://images.unsplash.com/photo-1536704689284-4648797f1f0e?q=80"] }],
+    itinerary: [{ day: "1 - 12", location: "Ubud", title: "Zen", stay: "Four Seasons Sayan", desc: "Nature.", hotelImgs: ["https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80"] }],
     prices: [{ month: "Mars 2026", price: 12200 }]
   },
   "maldives": {
@@ -102,7 +102,7 @@ const DATA_MAP: any = {
     highlights: ["Villa sur pilotis privée.", "Plongée privée.", "Dîner sur un banc de sable."],
     heroImg: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80",
     duration: "6 NUITS", price: "19 500 MAD", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237684.7507304561!2d39.70701049581907!3d21.436034105263157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15cbb01ce331d107%3A0x6290291f09564a2!2sMecque%20Arabie%20saoudite!5e0!3m2!1sfr!2sma!4v1711545000001",
-    itinerary: [{ day: "1 - 6", location: "Malé", title: "Pilotis", stay: "Soneva Jani", desc: "Lagon.", hotelImgs: ["https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80"] }],
+    itinerary: [{ day: "1 - 6", location: "Malé", title: "Pilotis", stay: "Soneva Jani", desc: "Lagon.", hotelImgs: ["https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80"] }],
     prices: [{ month: "Décembre 2025", price: 19500 }]
   }
 };
