@@ -50,13 +50,28 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
     setMainImage(info.heroImg);
   }, [id, info.heroImg]);
 
+  useEffect(() => {
+    const setPageNavTop = () => {
+      const pageNav = document.querySelector('nav[data-page-nav]') as HTMLElement | null;
+      const siteNav = document.querySelector('nav:not([data-page-nav])') as HTMLElement | null;
+      if (pageNav) {
+        const top = siteNav?.offsetHeight || 0;
+        pageNav.style.top = `${top}px`;
+      }
+    };
+    setPageNavTop();
+    window.addEventListener('resize', setPageNavTop);
+    return () => window.removeEventListener('resize', setPageNavTop);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 100,
-        behavior: 'smooth'
-      });
+      const stickyNavs = Array.from(document.querySelectorAll('nav.sticky')) as HTMLElement[];
+      const totalStickyHeight = stickyNavs.reduce((sum, el) => sum + (el?.offsetHeight || 0), 0);
+      const elementTop = element.getBoundingClientRect().top + window.scrollY;
+      const scrollTo = Math.max(0, elementTop - totalStickyHeight - 12);
+      window.scrollTo({ top: scrollTo, behavior: 'smooth' });
     }
   };
 
@@ -88,7 +103,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
       </div>
 
       {/* --- 2. STICKY NAV BAR --- */}
-      <nav className="sticky top-0 bg-white border-b border-gray-200 z-50 shadow-sm">
+      <nav data-page-nav className="sticky top-0 bg-white border-b border-gray-200 z-40 shadow-sm">
         <div className="max-w-[1440px] mx-auto flex gap-10 px-8 py-5 overflow-x-auto no-scrollbar">
           {['Overview', 'Itinerary', 'When to visit', 'Prices'].map((tab) => (
             <button key={tab} onClick={() => scrollToSection(tab.toLowerCase().replace(/ /g, '-'))} className="text-[#003366] text-xs font-black uppercase tracking-widest hover:text-orange-500 transition-colors whitespace-nowrap italic">{tab}</button>
