@@ -3,8 +3,11 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from "react-i18next";
 
 export default function AProposPage() {
+  const { t } = useTranslation();
+
   return (
     <main className="bg-white min-h-screen font-sans text-[#003366]">
       
@@ -14,9 +17,9 @@ export default function AProposPage() {
           <Image src="/images/hero-morocco.jpg" fill className="object-cover" alt="Morocco" />
         </div>
         <div className="relative z-10 px-6">
-          <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-xs italic mb-4 block">Manifeste</span>
+          <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-xs italic mb-4 block">{t("Manifeste")}</span>
           <h1 className="text-6xl md:text-8xl font-black text-white uppercase italic tracking-tighter leading-none">
-            WE LIVE <br /> <span className="text-orange-500">MOROCCO</span>
+            {t("WE LIVE MOROCCO")}
           </h1>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-4 bg-orange-500"></div>

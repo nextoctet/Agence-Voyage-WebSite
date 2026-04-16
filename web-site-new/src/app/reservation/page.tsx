@@ -1,10 +1,13 @@
 'use client';
 
+import { useTranslation } from "react-i18next";
+
 export default function ReservationPage() {
+  const { t } = useTranslation();
   return (
     <main className="bg-gray-50 min-h-screen py-20 px-6">
       <div className="max-w-3xl mx-auto bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl border border-gray-100">
-        <h1 className="text-4xl font-black text-[#003366] mb-2 uppercase italic text-center">Réserver Votre Voyage</h1>
+        <h1 className="text-4xl font-black text-[#003366] mb-2 uppercase italic text-center">{t("Réserver Votre Voyage")}</h1>
         <p className="text-gray-400 text-center mb-10 font-medium">Remplissez le formulaire et un conseiller vous contactera.</p>
 
         <form className="space-y-6">

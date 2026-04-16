@@ -1,0 +1,6 @@
+{
+  "nav": { "home": "Inicio", "about": "Sobre Nosotros", "contact": "Contacto", "destinations": "Destinos", "guide": "Guía de Viaje" },
+  "home": { "hero": { "title": "WELIVE MOROCCO", "intro": "Explora Marruecos Diferente" } },
+  "destinations": { "title": "Nuestras Destinos" },
+  "cta": { "customize": "PERSONALIZA TU EXPERIENCIA", "reserve": "RESERVAR AHORA" }
+}
