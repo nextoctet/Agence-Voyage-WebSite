@@ -24,7 +24,7 @@ export default function Footer() {
 
           {/* Colonne 1 */}
           <div>
-            <h3 className="text-[11px] font-black uppercase tracking-[0.4em] mb-8 text-orange-500">L'Agence</h3>
+            <h3 className="text-[11px] font-black uppercase tracking-[0.4em] mb-8 text-orange-500">L&apos;Agence</h3>
             <ul className="flex flex-col gap-4 text-sm font-bold italic tracking-tight text-gray-300">
               <li className="hover:translate-x-2 hover:text-white transition-all cursor-pointer">WELIVE MOROCCO</li>
               <li className="hover:translate-x-2 hover:text-white transition-all cursor-pointer">Notre Vision</li>

@@ -9,21 +9,21 @@ const CULTURE_SECTIONS = [
     sub: "Gastronomie",
     desc: "Plus qu'un repas, c'est une cérémonie. Du Couscous du vendredi au Tajine mijoté sur le charbon (Majmar), la cuisine marocaine est classée parmi les meilleures au monde.",
     items: ["Le Thé à la menthe (Le Whisky Berbère)", "La Pastilla (Sucré-Salé)", "Tanjia Marrakchia", "Le Pain traditionnel (Tafarnout)"],
-    img: "/images/culture/food.jpg" 
+    img: "/table.webp" 
   },
   {
     title: "Savoir-faire Ancestral",
     sub: "Artisanat",
     desc: "Chaque ville a son secret. Le cuir à Fès, le tapis à Rabat, la poterie à Safi et le bois de thuya à Essaouira. Nos artisans sont les gardiens d'une histoire millénaire.",
     items: ["Zellige & Mosaïque", "Tissage de Tapis", "Travail du Cuir", "Ferronnerie d'art"],
-    img: "/images/culture/craft.jpg"
+    img: "/cuir.jpg"
   },
   {
     title: "L'Art de Vivre",
     sub: "Traditions",
     desc: "L'hospitalité (Diyafa) est le pilier de notre culture. Le rituel du Hammam, les moussems colorés et la musique Gnaoua créent une atmosphère mystique unique.",
     items: ["Le Rituel du Hammam", "L'Hospitalité Légendaire", "Musique Gnaoua & Andalouse", "Fantasia (Tbourida)"],
-    img: "/images/culture/lifestyle.jpg"
+    img: "/vivre.jpg"
   }
 ];
 
@@ -39,7 +39,7 @@ export default function CultureMarocaine() {
         <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
           <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-xs italic mb-4 block">Héritage Millénaire</span>
           <h1 className="text-6xl md:text-8xl font-black text-white uppercase italic tracking-tighter leading-none">
-            L'ÂME DU <br /> <span className="text-orange-500">MAROC</span>
+            {"L'ÂME DU"} <br /> <span className="text-orange-500">MAROC</span>
           </h1>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-4 bg-orange-500"></div>

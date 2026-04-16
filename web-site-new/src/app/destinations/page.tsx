@@ -78,7 +78,7 @@ export default function DestinationsCataloguePage() {
             Nos <span className="text-orange-500">Destinations</span>
           </h1>
           <p className="text-blue-100/60 max-w-2xl mx-auto italic text-lg">
-            Découvrez le Maroc comme vous ne l'avez jamais vu. Des circuits authentiques pour une immersion totale.
+            Découvrez le Maroc comme vous ne l&apos;avez jamais vu. Des circuits authentiques pour une immersion totale.
           </p>
         </div>
       </section>

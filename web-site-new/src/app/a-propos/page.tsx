@@ -27,7 +27,7 @@ export default function AProposPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <h2 className="text-5xl font-black uppercase italic leading-none border-l-[10px] border-orange-500 pl-8">
-              L'Âme de <br/><span className="text-orange-500">Voyageurs</span>
+              L&apos;Âme de <br/><span className="text-orange-500">Voyageurs</span>
             </h2>
             <div className="space-y-6 text-xl text-gray-600 italic leading-relaxed">
               <p>
