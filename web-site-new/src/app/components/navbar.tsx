@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isDestOpen, setIsDestOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center py-4 px-8 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <nav id="site-navbar" className="flex justify-between items-center py-4 px-8 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
       
       {/* Section Logo */}
       <Link href="/" className="text-2xl font-black tracking-tighter text-[#003366] hover:opacity-90 transition">

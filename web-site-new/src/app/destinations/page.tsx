@@ -1,92 +1,64 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// --- 1. DONNÉES DE TOUTES TES DESTINATIONS  ---
+// --- 1. DONNÉES DE TES VILLES AU MAROC ---
 const TOUTES_DESTINATIONS = [
   {
+    id: "casablanca",
+    title: "Casablanca",
+    subtitle: "La Ville Blanche",
+    price: "1 200 DH",
+    duration: "Week-end",
+    img: "/images/destinations/casablanca.jpg", // T-ked beli had les images 3ndek f public
+    tag: "Business & Culture"
+  },
+  {
     id: "marrakech",
-    title: "Marrakech Prestige",
-    country: "Maroc",
-    price: "4 400 DH",
-    duration: "7 Nuits",
-    img: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?q=80",
-    tag: "Culture & Luxe"
+    title: "Marrakech",
+    subtitle: "La Ville Ocre",
+    price: "2 500 DH",
+    duration: "3 Nuits",
+    img: "/images/destinations/marrakech.jpg",
+    tag: "Luxe & Tradition"
   },
   {
-    id: "omra",
-    title: "Omra Ramadan",
-    country: "Arabie Saoudite",
-    price: "14 500 DH",
-    duration: "10 Nuits",
-    img: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=1600",
-    tag: "Spirituel"
+    id: "tanger",
+    title: "Tanger",
+    subtitle: "La Perle du Nord",
+    price: "1 800 DH",
+    duration: "2 Nuits",
+    img: "/images/destinations/tanger.jpg",
+    tag: "Bord de Mer"
   },
   {
-    id: "dubai",
-    title: "Dubaï Expérience",
-    country: "Émirats Arabes Unis",
-    price: "9 990 DH",
-    duration: "8 Nuits",
-    img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80",
-    tag: "Modernité"
-  },
-  {
-    id: "istanbul",
-    title: "Istanbul Magic",
-    country: "Turquie",
-    price: "6 500 DH",
-    duration: "6 Nuits",
-    img: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80",
+    id: "fes",
+    title: "Fès",
+    subtitle: "Capitale Spirituelle",
+    price: "1 500 DH",
+    duration: "2 Nuits",
+    img: "/images/destinations/fes.jpg",
     tag: "Histoire"
   },
   {
-    id: "andalousie",
-    title: "Andalousie & Séville",
-    country: "Espagne",
-    price: "7 200 DH",
-    duration: "7 Nuits",
-    img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?q=80",
-    tag: "Culture"
+    id: "chefchaouen",
+    title: "Chefchaouen",
+    subtitle: "La Perle Bleue",
+    price: "1 400 DH",
+    duration: "2 Nuits",
+    img: "/images/destinations/chefchaouen.jpg",
+    tag: "Photogénique"
   },
   {
-    id: "malaga",
-    title: "Costa Del Sol",
-    country: "Espagne",
-    price: "3 990 DH",
-    duration: "5 Nuits",
-    img: "https://images.unsplash.com/photo-1504019347908-b45f9b0b8dd5?q=80",
-    tag: "Plage"
-  },
-  // --- NOUVELLES CARTES AJOUTÉES ICI ---
-  {
-    id: "le-caire",
-    title: "Mystères d'Égypte",
-    country: "Égypte",
-    price: "8 800 DH",
-    duration: "7 Nuits",
-    img: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?q=80",
-    tag: "Aventure"
-  },
-  {
-    id: "bali",
-    title: "Bali Zen",
-    country: "Indonésie",
-    price: "12 200 DH",
-    duration: "12 Nuits",
-    img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80",
+    id: "agadir",
+    title: "Agadir",
+    subtitle: "Le Soleil du Souss",
+    price: "2 200 DH",
+    duration: "4 Nuits",
+    img: "/images/destinations/agadir.jpg",
     tag: "Détente"
-  },
-  {
-    id: "maldives",
-    title: "Évasion Maldives",
-    country: "Maldives",
-    price: "19 500 DH",
-    duration: "6 Nuits",
-    img: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80",
-    tag: "Luxe Absolu"
   }
 ];
 
@@ -99,12 +71,14 @@ export default function DestinationsCataloguePage() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
         
         <div className="relative z-10">
-          <span className="text-orange-500 font-black uppercase tracking-[0.4em] text-xs italic mb-4 block">Expert Voyages</span>
+          <span className="text-orange-500 font-black uppercase tracking-[0.4em] text-xs italic mb-4 block">
+            WELIVE MOROCCO
+          </span>
           <h1 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter mb-6 leading-none">
             Nos <span className="text-orange-500">Destinations</span>
           </h1>
           <p className="text-blue-100/60 max-w-2xl mx-auto italic text-lg">
-            Explorez le monde avec nos circuits organisés et séjours de luxe sur mesure.
+            Découvrez le Maroc comme vous ne l'avez jamais vu. Des circuits authentiques pour une immersion totale.
           </p>
         </div>
       </section>
@@ -136,11 +110,12 @@ export default function DestinationsCataloguePage() {
               <div className="p-10 flex flex-col flex-grow">
                 <div className="mb-6">
                   <p className="text-orange-500 font-black text-[10px] uppercase tracking-widest mb-2 italic">
-                    {dest.country} — {dest.duration}
+                    Maroc — {dest.duration}
                   </p>
                   <h3 className="text-3xl font-black text-[#003366] uppercase italic tracking-tighter leading-none mb-4 group-hover:text-orange-500 transition-colors">
                     {dest.title}
                   </h3>
+                  <p className="text-gray-400 text-sm italic">{dest.subtitle}</p>
                 </div>
 
                 <div className="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
@@ -153,7 +128,10 @@ export default function DestinationsCataloguePage() {
                     href={`/destinations/${dest.id}`}
                     className="bg-[#003366] text-white w-14 h-14 rounded-2xl flex items-center justify-center hover:bg-orange-500 transition-all shadow-lg active:scale-90"
                   >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                   </Link>
                 </div>
               </div>
@@ -165,13 +143,13 @@ export default function DestinationsCataloguePage() {
 
       {/* --- BANNER CONTACT --- */}
       <section className="bg-gray-50 py-20 px-6 mx-6 mb-12 rounded-[3rem] text-center border border-gray-100">
-        <h2 className="text-3xl font-black text-[#003366] uppercase italic mb-6">Vous ne trouvez pas votre bonheur ?</h2>
-        <p className="text-gray-500 mb-10 italic">Nos conseillers à Rabat & Témara créent votre voyage 100% sur mesure.</p>
+        <h2 className="text-3xl font-black text-[#003366] uppercase italic mb-6">Un voyage sur mesure ?</h2>
+        <p className="text-gray-500 mb-10 italic">Nos experts basés au Maroc créent votre itinéraire idéal.</p>
         <a 
           href="https://wa.me/212682838530" 
           className="bg-orange-500 text-white px-12 py-5 rounded-2xl font-black uppercase text-xs tracking-[0.2em] shadow-xl hover:bg-[#003366] transition-all inline-block"
         >
-          Demander un devis personnalisé
+          Contactez-nous sur WhatsApp
         </a>
       </section>
 

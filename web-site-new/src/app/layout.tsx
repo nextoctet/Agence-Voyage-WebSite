@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Expert Voyages",
+  title: "welive morocco",
   description: "Agence de voyage premium",
 };
 
