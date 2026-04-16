@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-
+import { useTranslation } from 'react-i18next';
 const CULTURE_SECTIONS = [
   {
     title: "L'Art de la Table",
@@ -28,6 +28,7 @@ const CULTURE_SECTIONS = [
 ];
 
 export default function CultureMarocaine() {
+  const { t } = useTranslation();
   return (
     <main className="bg-white min-h-screen font-sans text-[#003366]">
       
@@ -37,9 +38,9 @@ export default function CultureMarocaine() {
           <Image src="/images/destinations/marrakech.jpg" fill className="object-cover" alt="Culture Maroc" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
-          <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-xs italic mb-4 block">Héritage Millénaire</span>
+          <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-xs italic mb-4 block">{t("Héritage Millénaire")}</span>
           <h1 className="text-6xl md:text-8xl font-black text-white uppercase italic tracking-tighter leading-none">
-            {"L'ÂME DU"} <br /> <span className="text-orange-500">MAROC</span>
+            {t("L'ÂME DU")} <br /> <span className="text-orange-500">{t("MAROC")}</span>
           </h1>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-4 bg-orange-500"></div>
@@ -83,7 +84,7 @@ export default function CultureMarocaine() {
       <section className="bg-[#003366] py-24 px-8 text-center relative">
         <div className="max-w-4xl mx-auto">
            <h3 className="text-3xl md:text-5xl font-black text-white italic uppercase leading-tight">
-             &quot;Au Maroc, chaque porte fermée cache un <span className="text-orange-500">trésor</span>, et chaque invité est un <span className="text-orange-500">roi</span>.&quot;
+            {t("Au Maroc, chaque porte fermée cache un")} <span className="text-orange-500">{t("trésor")}</span>{t(",et chaque invité est un")} <span className="text-orange-500">{t("roi.")}</span>
            </h3>
         </div>
       </section>

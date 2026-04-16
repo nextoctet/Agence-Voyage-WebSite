@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 // --- 1. DONNÉES DE TES VILLES AU MAROC ---
 const TOUTES_DESTINATIONS = [
@@ -12,7 +13,7 @@ const TOUTES_DESTINATIONS = [
     subtitle: "La Ville Blanche",
     price: "1 200 DH",
     duration: "Week-end",
-    img: "/images/destinations/casablanca.jpg", // T-ked beli had les images 3ndek f public
+    img: "/images/destinations/casablanca.jpg",
     tag: "Business & Culture"
   },
   {
@@ -63,6 +64,7 @@ const TOUTES_DESTINATIONS = [
 ];
 
 export default function DestinationsCataloguePage() {
+  const { t } = useTranslation();
   return (
     <main className="bg-white min-h-screen font-sans text-[#003366]">
       
@@ -72,13 +74,13 @@ export default function DestinationsCataloguePage() {
         
         <div className="relative z-10">
           <span className="text-orange-500 font-black uppercase tracking-[0.4em] text-xs italic mb-4 block">
-            WELIVE MOROCCO
+            {t("WELIVE MOROCCO")}
           </span>
           <h1 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter mb-6 leading-none">
-            Nos <span className="text-orange-500">Destinations</span>
+            {t("Nos Destinations")}
           </h1>
           <p className="text-blue-100/60 max-w-2xl mx-auto italic text-lg">
-            Découvrez le Maroc comme vous ne l&apos;avez jamais vu. Des circuits authentiques pour une immersion totale.
+            {t("Découvrez le Maroc comme vous ne l&apos;avez jamais vu. Des circuits authentiques pour une immersion totale.")}
           </p>
         </div>
       </section>
@@ -110,7 +112,7 @@ export default function DestinationsCataloguePage() {
               <div className="p-10 flex flex-col flex-grow">
                 <div className="mb-6">
                   <p className="text-orange-500 font-black text-[10px] uppercase tracking-widest mb-2 italic">
-                    Maroc — {dest.duration}
+                    {t("Maroc")} — {dest.duration}
                   </p>
                   <h3 className="text-3xl font-black text-[#003366] uppercase italic tracking-tighter leading-none mb-4 group-hover:text-orange-500 transition-colors">
                     {dest.title}
@@ -120,7 +122,7 @@ export default function DestinationsCataloguePage() {
 
                 <div className="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
                   <div>
-                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">À partir de</p>
+                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">{t("À partir de")}</p>
                     <p className="text-[#003366] font-black text-2xl tracking-tight">{dest.price}</p>
                   </div>
                   
@@ -143,13 +145,13 @@ export default function DestinationsCataloguePage() {
 
       {/* --- BANNER CONTACT --- */}
       <section className="bg-gray-50 py-20 px-6 mx-6 mb-12 rounded-[3rem] text-center border border-gray-100">
-        <h2 className="text-3xl font-black text-[#003366] uppercase italic mb-6">Un voyage sur mesure ?</h2>
-        <p className="text-gray-500 mb-10 italic">Nos experts basés au Maroc créent votre itinéraire idéal.</p>
+        <h2 className="text-3xl font-black text-[#003366] uppercase italic mb-6">{t("Un voyage sur mesure ?")}</h2>
+        <p className="text-gray-500 mb-10 italic">{t("Nos experts basés au Maroc créent votre itinéraire idéal.")}</p>
         <a 
           href="https://wa.me/212682838530" 
           className="bg-orange-500 text-white px-12 py-5 rounded-2xl font-black uppercase text-xs tracking-[0.2em] shadow-xl hover:bg-[#003366] transition-all inline-block"
         >
-          Contactez-nous sur WhatsApp
+          {t("Contactez-nous sur WhatsApp")}
         </a>
       </section>
 

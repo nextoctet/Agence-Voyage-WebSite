@@ -13,13 +13,13 @@ export default function Navbar() {
       
       {/* Section Logo */}
       <Link href="/" className="text-2xl font-black tracking-tighter text-[#003366] hover:opacity-90 transition">
-        WELIVE<span className="text-orange-500 underline decoration-2">MOROCCO</span>
+        {t('WELIVE MOROCCO')}
       </Link>
 
       {/* Liens de Navigation */}
       <div className="hidden md:flex items-center space-x-8 font-semibold text-[#003366] uppercase text-[10px] tracking-widest">
-        <Link href="/" className="hover:text-orange-500 transition-colors">{t('nav.home')}</Link>
-        <Link href="/a-propos" className="hover:text-orange-500 transition-colors">{t('nav.about')}</Link>
+        <Link href="/" className="hover:text-orange-500 transition-colors">{t('Accueil')}</Link>
+        <Link href="/a-propos" className="hover:text-orange-500 transition-colors">{t('À Propos')}</Link>
         
         {/* Dropdown Destinations */}
         <div 
@@ -28,21 +28,21 @@ export default function Navbar() {
           onMouseLeave={() => setIsDestOpen(false)}
         >
           <div className="flex items-center gap-1 hover:text-orange-500 transition-colors">
-            {t('nav.destinations')} <span className="text-[8px]">▼</span>
+            {t('destinations')} <span className="text-[8px]">▼</span>
           </div>
           
           {isDestOpen && (
             <div className="absolute top-[100%] left-0 w-56 bg-white shadow-xl border border-gray-100 py-3 rounded-lg mt-0">
-              <Link href="/destinations/casablanca" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">Au départ de Casablanca</Link>
-              <Link href="/destinations/marrakech" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">Au départ de Marrakech</Link>
-              <Link href="/destinations/tanger" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">Au départ de Tanger</Link>
-              <Link href="/destinations/fes" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">Au départ de Fès</Link>
+              <Link href="/destinations/casablanca" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">{t('de casablanca')}</Link>
+              <Link href="/destinations/marrakech" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">{t('de marrakech')}</Link>
+              <Link href="/destinations/tanger" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">{t('de tanger')}</Link>
+              <Link href="/destinations/fes" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">{t('de fes')}</Link>
             </div>
           )}
         </div>
 
-        <Link href="/guide-voyage" className="hover:text-orange-500 transition-colors">{t('nav.guide')}</Link>
-        <Link href="/contact" className="hover:text-orange-500 transition-colors">{t('nav.contact')}</Link>
+        <Link href="/guide-voyage" className="hover:text-orange-500 transition-colors">{t('Guide de voyage')}</Link>
+        <Link href="/contact" className="hover:text-orange-500 transition-colors">{t('CONTACTEZ-NOUS')}</Link>
       </div>
 
       {/* Boutons d'Action */}
@@ -52,14 +52,14 @@ export default function Navbar() {
           href="/personnaliser-experience"
           className="hidden lg:block px-4 py-2 border-2 border-[#003366] text-[#003366] text-[9px] font-black rounded-full hover:bg-[#003366] hover:text-white transition-all duration-300"
         >
-          {t('cta.customize')}
+          {t('PERSONALISER VOTRE EXPERIENCE')}
         </Link>
 
         <Link
           href="/reservation"
           className="px-5 py-2.5 bg-orange-500 text-white text-[10px] font-black rounded-full shadow-lg shadow-orange-500/20 hover:scale-105 transition-all duration-300"
         >
-          {t('cta.reserve')}
+          {t('RÉSERVER MAINTENANT')}
         </Link>
       </div>
     </nav>

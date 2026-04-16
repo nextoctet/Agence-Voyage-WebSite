@@ -1,18 +1,19 @@
 'use client';
-
+import { useTranslation } from "react-i18next";
 export default function ContactPage() {
+  const { t } = useTranslation();
   return (
     <main className="bg-white min-h-screen py-20 px-6">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
         <div className="text-center mb-20">
-          <span className="text-orange-500 font-black text-xs uppercase tracking-[0.3em] italic mb-4 block">Expert Voyages</span>
+          <span className="text-orange-500 font-black text-xs uppercase tracking-[0.3em] italic mb-4 block">{t("Expert Voyages")}</span>
           <h1 className="text-5xl md:text-7xl font-black text-[#003366] uppercase italic tracking-tighter">
-            Contactez-nous
+            {t("Contactez-nous")}
           </h1>
           <p className="text-gray-500 text-xl mt-4 max-w-2xl mx-auto">
-            Notre équipe {"d'experts"} à Témara est à votre disposition pour organiser votre prochain voyage.
+            {t("Notre équipe d'experts à Témara est à votre disposition pour organiser votre prochain voyage.")}
           </p>
         </div>
 
@@ -21,7 +22,7 @@ export default function ContactPage() {
           {/* 1. Informations de Contact */}
           <div className="space-y-12">
             <div>
-              <h2 className="text-3xl font-black text-[#003366] uppercase italic mb-8">Informations</h2>
+              <h2 className="text-3xl font-black text-[#003366] uppercase italic mb-8">{t("Informations")}</h2>
               
               <div className="space-y-8">
                 {/* Localisation - Témara */}
@@ -30,8 +31,8 @@ export default function ContactPage() {
                     📍
                   </div>
                   <div>
-                    <h4 className="font-black text-[#003366] uppercase text-sm italic">Notre Agence</h4>
-                    <p className="text-gray-500 font-medium leading-tight">Centre Ville, Témara, Maroc</p>
+                    <h4 className="font-black text-[#003366] uppercase text-sm italic">{t("Notre Agence")}</h4>
+                    <p className="text-gray-500 font-medium leading-tight">{t("Centre Ville, Témara, Maroc")}</p>
                   </div>
                 </div>
 
@@ -41,8 +42,8 @@ export default function ContactPage() {
                     💬
                   </div>
                   <div>
-                    <h4 className="font-black text-[#003366] uppercase text-sm italic">WhatsApp & Tel</h4>
-                    <p className="text-gray-500 font-medium">+212 6 82 83 85 30</p>
+                    <h4 className="font-black text-[#003366] uppercase text-sm italic">{t("WhatsApp & Tel")}</h4>
+                    <p className="text-gray-500 font-medium">{t("+212 6 82 83 85 30")}</p>
                   </div>
                 </a>
 
@@ -52,8 +53,8 @@ export default function ContactPage() {
                     📧
                   </div>
                   <div>
-                    <h4 className="font-black text-[#003366] uppercase text-sm italic">Email</h4>
-                    <p className="text-gray-500 font-medium">contact@expertvoyages.com</p>
+                    <h4 className="font-black text-[#003366] uppercase text-sm italic">{t("Email")}</h4>
+                    <p className="text-gray-500 font-medium">{t("contact@expertvoyages.com")}</p>
                   </div>
                 </div>
               </div>
@@ -61,13 +62,13 @@ export default function ContactPage() {
 
             {/* Horaire Section */}
             <div className="bg-[#003366] p-8 rounded-[2.5rem] text-white shadow-xl">
-              <h4 className="font-black uppercase italic mb-4 text-orange-500">Heures {"d'ouverture"}</h4>
+              <h4 className="font-black uppercase italic mb-4 text-orange-500">{t("Heures d'ouverture")}</h4>
               <div className="flex justify-between border-b border-white/10 py-2">
-                <span>Lundi - Vendredi</span>
+                <span>{t("Lundi - Vendredi")}</span>
                 <span className="font-bold">09:00 - 18:30</span>
               </div>
               <div className="flex justify-between py-2">
-                <span>Samedi</span>
+                <span>{t("Samedi")}</span>
                 <span className="font-bold">09:00 - 13:00</span>
               </div>
             </div>

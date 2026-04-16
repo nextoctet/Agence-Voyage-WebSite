@@ -14,7 +14,7 @@ export default function AProposPage() {
       {/* --- 1. HERO - L'ESSENCE DE LA MARQUE --- */}
       <section className="relative h-[60vh] flex items-center justify-center text-center bg-[#003366]">
         <div className="absolute inset-0 z-0 opacity-20">
-          <Image src="/images/hero-morocco.jpg" fill className="object-cover" alt="Morocco" />
+          <Image src="/images/hero-morocco.jpg" fill className="object-cover" alt={t("Morocco")} />
         </div>
         <div className="relative z-10 px-6">
           <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-xs italic mb-4 block">{t("Manifeste")}</span>
@@ -30,26 +30,26 @@ export default function AProposPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <h2 className="text-5xl font-black uppercase italic leading-none border-l-[10px] border-orange-500 pl-8">
-              L&apos;Âme de <br/><span className="text-orange-500">Voyageurs</span>
+              {t("L'ÂME DU")} <br/><span className="text-orange-500">{t("Voyageurs")}</span>
             </h2>
             <div className="space-y-6 text-xl text-gray-600 italic leading-relaxed">
               <p>
-                <strong className="text-[#003366]">WELIVE MOROCCO</strong> n&apos;est pas une simple agence de voyage. C&apos;est le fruit d&apos;une ambition : transformer chaque séjour en une immersion totale.
+                <strong className="text-[#003366]">{t("WELIVE MOROCCO")}</strong> {t("n'est pas une simple agence de voyage. C'est le fruit d'une ambition : transformer chaque séjour en une immersion totale.")}
               </p>
               <p>
-                Anciennement connue sous le nom de <span className="underline decoration-orange-500">Expert Voyages</span>, notre structure a évolué pour devenir une marque lifestyle dédiée à l&apos;exploration authentique du Royaume.
+                {t("WELIVE MOROCCO est l'évolution naturelle d'Expert Voyages. Plus qu'une agence, nous sommes aujourd'hui un créateur d'expériences dédié à ceux qui veulent vivre le Maroc, pas juste le visiter.")} 
               </p>
               <p className="text-base text-gray-400">
-                Basés sur l&apos;axe stratégique Rabat-Témara, nous opérons avec une connaissance millimétrée du terrain pour offrir ce que le Maroc a de plus précieux : sa vérité.
+                {t("Basés sur l'axe stratégique Rabat-Témara, nous opérons avec une connaissance millimétrée du terrain pour offrir ce que le Maroc a de plus précieux : sa vérité.")}
               </p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="relative h-80 rounded-br-[5rem] overflow-hidden shadow-2xl">
-              <Image src="/marrrr.jfif" fill className="object-cover" alt="Artisanat" />
+              <Image src="/marrrr.jfif" fill className="object-cover" alt={t("Artisanat")} />
             </div>
             <div className="relative h-80 rounded-tl-[5rem] overflow-hidden shadow-2xl mt-12">
-              <Image src="/images/destinations/tanger.jpg" fill className="object-cover" alt="Culture" />
+              <Image src="/images/destinations/tanger.jpg" fill className="object-cover" alt={t("Culture")} />
             </div>
           </div>
         </div>
@@ -61,18 +61,18 @@ export default function AProposPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               { 
-                title: "Expertise Locale", 
-                desc: "Notre équipe vit ici. De Tamesna à Tanger, nous maîtrisons les routes, les secrets et les meilleures tables.",
+                title: t("Expertise Locale"), 
+                desc: t("Notre équipe vit ici. De Tamesna à Tanger, nous maîtrisons les routes, les secrets et les meilleures tables."),
                 color: "border-[#003366]"
               },
               { 
-                title: "Zéro Compromis", 
-                desc: "Le luxe pour nous, c'est la qualité. Chaque Riad, chaque chauffeur et chaque guide est testé et validé par nos soins.",
+                title: t("Zéro Compromis"), 
+                desc: t("Le luxe pour nous, c'est la qualité. Chaque Riad, chaque chauffeur et chaque guide est testé et validé par nos soins."),
                 color: "border-orange-500"
               },
               { 
-                title: "Disponibilité", 
-                desc: "Parce qu'un voyage ne s'arrête jamais, notre assistance à Rabat est disponible 24h/24 pour nos voyageurs.",
+                title: t("Disponibilité"), 
+                desc: t("Parce qu'un voyage ne s'arrête jamais, notre assistance à Rabat est disponible 24h/24 pour nos voyageurs."),
                 color: "border-[#003366]" 
               }
             ].map((val, i) => (
@@ -88,13 +88,13 @@ export default function AProposPage() {
       {/* --- 4. LE MOT DE L'ÉQUIPE --- */}
       <section className="py-32 px-8 text-center max-w-4xl mx-auto">
         <div className="inline-block p-4 bg-orange-500 text-white font-black text-xs uppercase tracking-widest mb-8">
-          Notre Engagement
+          {t("Notre Engagement")}
         </div>
         <blockquote className="text-3xl md:text-5xl font-black italic text-[#003366] leading-tight tracking-tighter uppercase">
-          &quot;Nous ne vendons pas des billets, nous créons des <span className="text-orange-500">souvenirs</span> qui ne s&apos;effacent jamais.&quot;
+         {t("Nous ne vendons pas des billets, nous créons des")} <span className="text-orange-500">{t("souvenirs")}</span> {t("qui ne s'effacent jamais.")}
         </blockquote>
         <p className="mt-12 text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">
-          L&apos;équipe WELIVE MOROCCO — Rabat, Maroc
+          {t("L'équipe WELIVE MOROCCO — Rabat, Maroc")}
         </p>
       </section>
 
@@ -102,18 +102,18 @@ export default function AProposPage() {
       <section className="py-24 bg-[#003366] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           <h2 className="text-4xl font-black text-white uppercase italic text-center md:text-left">
-            Envie de faire connaissance ? <br/>
-            <span className="text-orange-500">Passons au bureau ou sur WhatsApp.</span>
+            {t("Envie de faire connaissance ?")} <br/>
+            <span className="text-orange-500">{t("Passons au bureau ou sur WhatsApp.")}</span>
           </h2>
           <div className="flex gap-4">
             <Link href="https://wa.me/212682838530" className="bg-orange-500 text-white px-10 py-5 font-black uppercase text-xs tracking-widest hover:bg-white hover:text-[#003366] transition-all">
-              WhatsApp
+              {t("WhatsApp")}
             </Link>
           </div>
         </div>
         {/* Background Text */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/5 pointer-events-none uppercase">
-          Morocco
+          {t("Morocco")}
         </div>
       </section>
 
