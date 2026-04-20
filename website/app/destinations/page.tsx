@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { OFFRES } from '@/app/[locale]/data'; // T-akdi anaki derti export l OFFRES f data.ts
+import { OFFRES } from '../data';
 
 export default function DestinationsPage() {
   return (
