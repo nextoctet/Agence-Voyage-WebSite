@@ -12,7 +12,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
   const id = resolvedParams.id;
   const router = useRouter();
 
-  // --- BASE DE DONNÉES (Traduite via t()) ---
+  // --- BASE DE DONNÉES  ---
   const DATA_MAP: any = {
     "casablanca": {
       title: t("Casablanca"), sub: t("La Ville Blanche"),
@@ -240,7 +240,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
 
             <div id="quand-partir" className="scroll-mt-24 pt-10 border-t border-gray-100">
               <h2 className="text-[#003366] text-3xl font-black uppercase italic mb-6">{t("Quand Partir")}</h2>
-              <p className="text-gray-600 italic leading-relaxed mb-6">{t("Périodes conseillées :")} {info.prices.map((p:any)=>p.month).join(', ')}</p>
+              <p className="text-gray-600 italic leading-relaxed mb-6">{t("Périodes conseillées ")} : {info.prices.map((p:any)=>p.month).join(', ')}</p>
             </div>
 
             <div id="tarifs" className="scroll-mt-24 pt-10 border-t border-gray-100">

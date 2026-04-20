@@ -26,9 +26,10 @@ export default function ReservationPage() {
             <label className="block text-[#003366] font-bold mb-2 ml-2 text-sm uppercase">{t("Destination Souhaitée")}</label>
             <select className="w-full p-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-orange-500 outline-none transition-all appearance-none">
               <option>{t("Sélectionnez une destination")}</option>
-              <option>{t("Andalousie & Séville")}</option>
-              <option>{t("Costa Del Sol / Malaga")}</option>
-              <option>{t("Dubaï Premium")}</option>
+              <option>{t("Casablanca")}</option>
+              <option>{t("Marrakech")}</option>
+              <option>{t("Tangier")}</option>
+              <option>{t("Fes")}</option>
             </select>
           </div>
 

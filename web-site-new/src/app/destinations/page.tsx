@@ -13,7 +13,7 @@ const TOUTES_DESTINATIONS = [
     subtitle: "La Ville Blanche",
     price: "1 200 DH",
     duration: "Week-end",
-    img: "/images/destinations/casablanca.jpg",
+    img: "/casablanca.jpg",
     tag: "Business & Culture"
   },
   {
@@ -22,7 +22,7 @@ const TOUTES_DESTINATIONS = [
     subtitle: "La Ville Ocre",
     price: "2 500 DH",
     duration: "3 Nuits",
-    img: "/images/destinations/marrakech.jpg",
+    img: "/marrakech.jpg",
     tag: "Luxe & Tradition"
   },
   {
@@ -31,7 +31,7 @@ const TOUTES_DESTINATIONS = [
     subtitle: "La Perle du Nord",
     price: "1 800 DH",
     duration: "2 Nuits",
-    img: "/images/destinations/tanger.jpg",
+    img: "/tanger.jpg",
     tag: "Bord de Mer"
   },
   {
@@ -40,7 +40,7 @@ const TOUTES_DESTINATIONS = [
     subtitle: "Capitale Spirituelle",
     price: "1 500 DH",
     duration: "2 Nuits",
-    img: "/images/destinations/fes.jpg",
+    img: "/fes.jpg",
     tag: "Histoire"
   },
   {
@@ -49,7 +49,7 @@ const TOUTES_DESTINATIONS = [
     subtitle: "La Perle Bleue",
     price: "1 400 DH",
     duration: "2 Nuits",
-    img: "/images/destinations/chefchaouen.jpg",
+    img: "/chefchaouen.jpg",
     tag: "Photogénique"
   },
   {
@@ -58,7 +58,7 @@ const TOUTES_DESTINATIONS = [
     subtitle: "Le Soleil du Souss",
     price: "2 200 DH",
     duration: "4 Nuits",
-    img: "/images/destinations/agadir.jpg",
+    img: "/agadir.jpg",
     tag: "Détente"
   }
 ];
