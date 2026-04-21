@@ -194,7 +194,7 @@ export default function Home() {
       <section className="py-24 bg-white text-center px-8 border-t-8 border-[#FF8C00]">
         <h2 className="text-5xl md:text-7xl font-black italic mb-8 uppercase text-[#003366] text-center tracking-tighter leading-none">{t("COMMENÇONS")}</h2>
         <p className="text-xl text-gray-500 mb-12 leading-relaxed italic font-light max-w-3xl mx-auto text-center">
-          {t("Dites-nous ce que vous imaginez. Nous nous occupons du reste. ")} <span className="font-bold text-[#003366]">{t("Vous n'avez qu'à être présent.")}</span>
+          {t("Dites-nous ce que vous imaginez. Nous nous occupons du reste")}. <span className="font-bold text-[#003366]">{t("Vous n'avez qu'à être présent.")}</span>
         </p>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8">
           <Link href="/contact" className="bg-[#FF8C00] text-white px-12 py-5 font-black uppercase text-xs tracking-widest hover:bg-[#003366] transition-all shadow-xl">
