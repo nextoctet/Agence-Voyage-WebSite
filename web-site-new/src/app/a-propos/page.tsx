@@ -260,7 +260,7 @@ export default function AboutPage() {
             {t("Que vous ayez un itinéraire complet ou juste une date de voyage et une idée vague, contactez-nous.")}
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center gap-10">
-            <Link href="/start" className="bg-orange-500 text-white px-16 py-8 font-black uppercase text-xs tracking-[0.5em] hover:bg-white hover:text-[#003366] transition-all shadow-3xl w-full md:w-auto">
+            <Link href="/reservation" className="bg-orange-500 text-white px-16 py-8 font-black uppercase text-xs tracking-[0.5em] hover:bg-white hover:text-[#003366] transition-all shadow-3xl w-full md:w-auto">
               {t("Planifier mon voyage")}
             </Link>
             <Link href="mailto:hello@welivemorocco.com" className="border-4 border-white text-white px-16 py-8 font-black uppercase text-xs tracking-[0.5em] hover:bg-orange-500 transition-all w-full md:w-auto">

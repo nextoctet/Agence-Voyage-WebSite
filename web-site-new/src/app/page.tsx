@@ -22,7 +22,7 @@ export default function Home() {
             <span className="text-[#FF8C00] italic uppercase font-black">{t("UN VOYAGE CONÇU POUR VOUS.")}</span>
           </h1>
           <div className="flex flex-col md:flex-row justify-center gap-6 mt-12">
-            <Link href="/start" className="bg-[#FF8C00] text-white px-12 py-5 uppercase font-black text-xs tracking-widest hover:bg-white hover:text-[#003366] transition-all shadow-xl">
+            <Link href="/reservation" className="bg-[#FF8C00] text-white px-12 py-5 uppercase font-black text-xs tracking-widest hover:bg-white hover:text-[#003366] transition-all shadow-xl">
               {t("Commencer mon voyage sur mesure")}
             </Link>
           </div>
