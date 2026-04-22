@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from 'next/image';
 import { useTranslation } from "react-i18next";
 import LanguageMenu from '../../components/NavBarAndSideBar/LanguageMenu';
 
@@ -20,7 +21,7 @@ export default function Navbar() {
     <nav id="site-navbar" className="flex justify-between items-center py-2 px-6 md:px-10 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50">
       
       <Link href="/" className="transition transform hover:opacity-80 flex items-center h-20">
-        <img src="/pictures/logo-welivee.png" alt="WeLiveMorocco" className="h-16 md:h-24 w-auto object-contain mix-blend-multiply" />
+        <Image src="/pictures/logo-welivee.png" alt="WeLiveMorocco" width={200} height={96} className="h-16 md:h-24 w-auto object-contain mix-blend-multiply" />
       </Link>
 
       <div className="hidden md:flex items-center space-x-8 font-bold text-[#2D2926] uppercase text-[10px] tracking-[0.15em]">

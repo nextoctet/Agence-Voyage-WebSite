@@ -1,6 +1,5 @@
 'use client';
 import { useTranslation } from "react-i18next";
-import Link from 'next/link';
 
 export default function ContactPage() {
   const { t } = useTranslation();
