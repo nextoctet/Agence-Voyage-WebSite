@@ -86,9 +86,7 @@ export default function Navbar() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <div className="mb-8 pt-6">
-              <img src="/pictures/logo-welivee.png" alt="Logo" className="h-14 w-auto mix-blend-multiply" />
-          </div>
+
     
         </aside>
       </div>

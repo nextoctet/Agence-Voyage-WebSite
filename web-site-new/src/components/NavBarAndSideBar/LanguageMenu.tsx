@@ -4,7 +4,6 @@ import React from "react";
 import i18n from "../../utils/i18n";
 
 const LANGS = [
-  { code: 'fr', label: 'FR' },
   { code: 'en', label: 'EN' },
   { code: 'es', label: 'ES' },
 ];
