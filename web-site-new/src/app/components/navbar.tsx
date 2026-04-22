@@ -17,109 +17,79 @@ export default function Navbar() {
 
   return (
     <>
-    <nav id="site-navbar" className="flex justify-between items-center py-4 px-8 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <nav id="site-navbar" className="flex justify-between items-center py-2 px-6 md:px-10 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50">
       
-      {/* Section Logo */}
-      <Link href="/" className="text-2xl font-black tracking-tighter text-[#003366] hover:opacity-90 transition">
-        {t('WELIVE MOROCCO')}
+      <Link href="/" className="transition transform hover:opacity-80 flex items-center h-20">
+        <img src="/pictures/logo-welivee.png" alt="WeLiveMorocco" className="h-16 md:h-24 w-auto object-contain mix-blend-multiply" />
       </Link>
 
-      {/* Liens de Navigation */}
-      <div className="hidden md:flex items-center space-x-8 font-semibold text-[#003366] uppercase text-[10px] tracking-widest">
-        <Link href="/" className="hover:text-orange-500 transition-colors">{t('Accueil')}</Link>
-        <Link href="/a-propos" className="hover:text-orange-500 transition-colors">{t('À Propos')}</Link>
+      <div className="hidden md:flex items-center space-x-8 font-bold text-[#2D2926] uppercase text-[10px] tracking-[0.15em]">
+        <Link href="/" className="hover:text-[#C07652] transition-colors">{t('Accueil')}</Link>
+        <Link href="/a-propos" className="hover:text-[#C07652] transition-colors">{t('À Propos')}</Link>
         
         {/* Dropdown Destinations */}
         <div 
-          className="relative group cursor-pointer h-full py-2"
+          className="relative group cursor-pointer h-full py-5"
           onMouseEnter={() => setIsDestOpen(true)}
           onMouseLeave={() => setIsDestOpen(false)}
         >
-          <div className="flex items-center gap-1 hover:text-orange-500 transition-colors">
-            {t('destinations')} <span className="text-[8px]">▼</span>
+          <div className="flex items-center gap-1 hover:text-[#C07652] transition-colors uppercase text-[10px] tracking-[0.15em]">
+            {t('destinations')} <span className="text-[8px] text-[#C07652]">▼</span>
           </div>
           
           {isDestOpen && (
-            <div className="absolute top-[100%] left-0 w-56 bg-white shadow-xl border border-gray-100 py-3 rounded-lg mt-0">
-              <Link href="/destinations/casablanca" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">{t('de casablanca')}</Link>
-              <Link href="/destinations/marrakech" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">{t('de marrakech')}</Link>
-              <Link href="/destinations/tanger" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">{t('de tanger')}</Link>
-              <Link href="/destinations/fes" className="block px-6 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors">{t('de fes')}</Link>
+            <div className="absolute top-[100%] left-0 w-60 bg-white shadow-2xl border border-[#F9F7F2] py-4 rounded-sm mt-0 overflow-hidden">
+              <Link href="/destinations/casablanca" className="block px-6 py-2.5 text-[9px] text-[#2D2926] hover:bg-[#F9F7F2] hover:text-[#C07652] transition-colors font-bold uppercase tracking-widest">{t('de casablanca')}</Link>
+              <Link href="/destinations/marrakech" className="block px-6 py-2.5 text-[9px] text-[#2D2926] hover:bg-[#F9F7F2] hover:text-[#C07652] transition-colors font-bold uppercase tracking-widest">{t('de marrakech')}</Link>
+              <Link href="/destinations/tanger" className="block px-6 py-2.5 text-[9px] text-[#2D2926] hover:bg-[#F9F7F2] hover:text-[#C07652] transition-colors font-bold uppercase tracking-widest">{t('de tanger')}</Link>
+              <Link href="/destinations/fes" className="block px-6 py-2.5 text-[9px] text-[#2D2926] hover:bg-[#F9F7F2] hover:text-[#C07652] transition-colors font-bold uppercase tracking-widest">{t('de fes')}</Link>
             </div>
           )}
         </div>
 
-        <Link href="/guide-voyage" className="hover:text-orange-500 transition-colors">{t('Guide de voyage')}</Link>
-        <Link href="/contact" className="hover:text-orange-500 transition-colors">{t('CONTACTEZ-NOUS')}</Link>
+        <Link href="/guide-voyage" className="hover:text-[#C07652] transition-colors">{t('Guide de voyage')}</Link>
+        <Link href="/contact" className="hover:text-[#C07652] transition-colors">{t('CONTACTEZ-NOUS')}</Link>
       </div>
 
-      {/* Boutons d'Action */}
-      <div className="flex items-center gap-4">
-        {/* Hamburger for small screens */}
+      <div className="flex items-center gap-6">
         <button
           aria-label="Open menu"
-          className="md:hidden p-2 rounded-md hover:bg-gray-100"
+          className="md:hidden p-2 rounded-md text-[#C07652]"
           onClick={() => setIsDrawerOpen(true)}
         >
-          <svg className="w-5 h-5 text-[#003366]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
 
-        <LanguageMenu />
+        <div className="language-selector-wrapper text-[#C07652] font-bold text-[10px] uppercase tracking-widest">
+           <LanguageMenu />
+        </div>
+        
         <Link
           href="/personnaliser-experience"
-          className="hidden lg:block px-4 py-2 border-2 border-[#003366] text-[#003366] text-[9px] font-black rounded-full hover:bg-[#003366] hover:text-white transition-all duration-300"
+          className="hidden lg:block px-5 py-2.5 border-2 border-[#C07652] text-[#C07652] text-[9px] font-black tracking-[0.1em] rounded-sm hover:bg-[#C07652] hover:text-white transition-all duration-300"
         >
           {t('PERSONALISER VOTRE EXPERIENCE')}
         </Link>
 
-        <Link
-          href="/reservation"
-          className="px-5 py-2.5 bg-orange-500 text-white text-[10px] font-black rounded-full shadow-lg shadow-orange-500/20 hover:scale-105 transition-all duration-300"
-        >
-          {t('RÉSERVER MAINTENANT')}
-        </Link>
+        
       </div>
     </nav>
 
     {isDrawerOpen && (
       <div className="fixed inset-0 z-50 flex">
-        {/* Backdrop */}
-        <div className="absolute inset-0 bg-black/40" onClick={() => setIsDrawerOpen(false)} />
-
-        {/* Drawer panel */}
-        <aside className="relative ml-auto w-72 max-w-full bg-white shadow-2xl p-6">
-          <button aria-label="Close menu" className="absolute top-4 right-4 p-2" onClick={() => setIsDrawerOpen(false)}>
-            <svg className="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+        <div className="absolute inset-0 bg-[#2D2926]/60 backdrop-blur-sm" onClick={() => setIsDrawerOpen(false)} />
+        <aside className="relative ml-auto w-80 max-w-full bg-[#F9F7F2] shadow-2xl p-10 flex flex-col h-full overflow-y-auto font-bold uppercase text-[11px] tracking-[0.2em]">
+          <button aria-label="Close menu" className="absolute top-8 right-8 p-2 text-[#C07652]" onClick={() => setIsDrawerOpen(false)}>
+            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-
-          <nav className="flex flex-col gap-4 pt-6">
-            <Link href="/" onClick={() => setIsDrawerOpen(false)} className="font-bold text-[#003366]">{t('Accueil')}</Link>
-            <Link href="/a-propos" onClick={() => setIsDrawerOpen(false)} className="font-bold text-[#003366]">{t('À Propos')}</Link>
-
-            <div className="border-t border-gray-100 mt-2 pt-3">
-              <div className="font-semibold text-sm text-gray-700 mb-2">{t('destinations')}</div>
-              <Link href="/destinations/casablanca" onClick={() => setIsDrawerOpen(false)} className="block py-1">{t('de casablanca')}</Link>
-              <Link href="/destinations/marrakech" onClick={() => setIsDrawerOpen(false)} className="block py-1">{t('de marrakech')}</Link>
-              <Link href="/destinations/tanger" onClick={() => setIsDrawerOpen(false)} className="block py-1">{t('de tanger')}</Link>
-              <Link href="/destinations/fes" onClick={() => setIsDrawerOpen(false)} className="block py-1">{t('de fes')}</Link>
-            </div>
-
-            <Link href="/guide-voyage" onClick={() => setIsDrawerOpen(false)} className="pt-2">{t('Guide de voyage')}</Link>
-            <Link href="/contact" onClick={() => setIsDrawerOpen(false)} className="pt-2">{t('CONTACTEZ-NOUS')}</Link>
-
-            <div className="mt-4">
-              <LanguageMenu />
-            </div>
-
-            <div className="mt-6">
-              <Link href="/personnaliser-experience" onClick={() => setIsDrawerOpen(false)} className="block px-4 py-2 border-2 border-[#003366] text-[#003366] text-[12px] font-black rounded-full text-center mb-3">{t('PERSONALISER VOTRE EXPERIENCE')}</Link>
-              <Link href="/reservation" onClick={() => setIsDrawerOpen(false)} className="block px-4 py-2 bg-orange-500 text-white text-center font-black rounded-full">{t('RÉSERVER MAINTENANT')}</Link>
-            </div>
-          </nav>
+          <div className="mb-8 pt-6">
+              <img src="/pictures/logo-welivee.png" alt="Logo" className="h-14 w-auto mix-blend-multiply" />
+          </div>
+    
         </aside>
       </div>
     )}

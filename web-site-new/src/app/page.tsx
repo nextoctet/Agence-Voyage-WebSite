@@ -7,150 +7,167 @@ export default function Home() {
   const { t } = useTranslation();
 
   return (
-    <main className="bg-white min-h-screen font-sans text-[#003366] overflow-x-hidden">
+    <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden">
       
       {/* SECTION 1: HERO */}
-      <section className="relative h-screen flex items-center justify-center text-center px-6 border-b-8 border-[#FF8C00]">
-        <Image src="/monde-du-voyage.webp" fill className="object-cover" alt={t("Héros")} priority />
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10 text-white max-w-6xl">
-          <p className="uppercase tracking-[0.6em] text-sm font-black mb-6">
+      <section className="relative h-[70vh] flex items-center justify-center text-center px-6 overflow-hidden">
+        <Image 
+          src="/monde-du-voyage.webp" 
+          fill 
+          className="object-cover scale-105 animate-slow-zoom" 
+          alt={t("hero_alt")} 
+          priority 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
+        
+        <div className="relative z-10 text-white max-w-5xl space-y-8">
+          <p className="uppercase tracking-[0.8em] text-[10px] md:text-xs font-bold mb-6 drop-shadow-md">
             {t("Votre Maroc. Conçu autour de vous.")}
           </p>
-          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-10">
-            {t("PAS UN FORFAIT.")} <br/> 
-            <span className="text-[#FF8C00] italic uppercase font-black">{t("UN VOYAGE CONÇU POUR VOUS.")}</span>
+          <h1 className="text-5xl md:text-8xl font-serif leading-[1.1] mb-10 tracking-tight">
+            <span className="font-light italic uppercase">{t("Pas un forfait.")}</span> <br/> 
+            <span className="text-[#C07652] uppercase font-bold text-4xl md:text-7xl block mt-4">
+              {t("Un voyage conçu pour vous.")}
+            </span>
           </h1>
-          <div className="flex flex-col md:flex-row justify-center gap-6 mt-12">
-            <Link href="/reservation" className="bg-[#FF8C00] text-white px-12 py-5 uppercase font-black text-xs tracking-widest hover:bg-white hover:text-[#003366] transition-all shadow-xl">
-              {t("Commencer mon voyage sur mesure")}
-            </Link>
-          </div>
+        
         </div>
       </section>
 
       {/* SECTION 2: POURQUOI LE SUR MESURE */}
-      <section className="py-24 px-8 max-w-7xl mx-auto border-b border-gray-100">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-          <div className="space-y-8">
-            <h2 className="text-[#FF8C00] font-black uppercase text-sm tracking-widest text-left">{t("POURQUOI LE SUR MESURE")}</h2>
-            <p className="text-4xl md:text-5xl font-black uppercase italic leading-tight text-[#003366] text-left">
-              {t("Les circuits organisés emmènent les gens au Maroc.")} <br/>
-              <span className="text-[#FF8C00]">{t("Le sur-mesure les emmène au cœur du pays.")}</span>
+      <section className="py-32 px-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
+          <div className="space-y-10">
+            <div className="inline-block border-l-4 border-[#C07652] pl-6">
+               <h2 className="text-[#C07652] font-bold uppercase text-[10px] tracking-[0.3em]">{t("Pourquoi le sur mesure")}</h2>
+            </div>
+            <p className="text-4xl md:text-5xl font-serif italic leading-tight text-[#2D2926]">
+              {t("Les voyages organisés amènent les gens au Maroc. Les voyages sur mesure leur permettent de s'y plonger.")} <br/>
+              <span className="text-[#C07652] not-italic font-sans font-black uppercase text-3xl md:text-4xl block mt-4 tracking-tighter">
+                {t("Le sur-mesure les emmène au cœur du pays.")}
+              </span>
             </p>
-            <p className="text-gray-600 text-lg italic leading-relaxed text-left">
+            <p className="text-gray-500 text-lg leading-relaxed font-light max-w-lg">
               {t("La différence est le point de départ : que le voyage commence par un catalogue ou qu'il commence par vous. Chez WeLiveMorocco, il commence toujours par vous.")}
             </p>
           </div>
-          <div className="bg-[#003366] text-white p-12 border-l-[12px] border-[#FF8C00] shadow-2xl text-left">
-            <p className="text-xl md:text-2xl font-light italic mb-8 leading-relaxed">
-              {t("Notre équipe de professionnels du voyage nés au Maroc a passé plus d'une décennie à bâtir une connaissance réelle du pays, non pas à partir de recherches, mais en y vivant et en y guidant.")}
+          <div className="bg-[#2D2926] text-[#F9F7F2] p-12 md:p-20 relative shadow-2xl overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#C07652]/10 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-700"></div>
+            
+            <p className="text-xl md:text-2xl font-light italic mb-8 leading-relaxed relative z-10 border-b border-[#C07652]/20 pb-8">
+              {t("Notre équipe de professionnels du voyage nés au Maroc a passé plus d'une décennie à bâtir une connaissance réelle du pays.")}
             </p>
-            <p className="text-xl md:text-2xl font-light italic mb-8 leading-relaxed">
-              {t("Nous utilisons ce savoir pour concevoir des voyages personnels. Votre rythme, vos intérêts, votre budget — chaque élément est pensé avec soin.")}
+            <p className="text-xl md:text-2xl font-light italic leading-relaxed relative z-10">
+              {t("Votre rythme, vos intérêts, votre budget, votre groupe — chaque élément est pensé avec soin.")}
             </p>
           </div>
         </div>
-        <p className="mt-12 text-lg italic max-w-4xl border-l-2 border-gray-200 pl-6 font-black text-[#FF8C00] uppercase tracking-widest text-left">
-          {t("Équipe native du Maroc. 10+ ans d'expérience. Chaque voyage est écrit de zéro.")}
-        </p>
+        <div className="mt-20 flex items-center gap-6">
+           <div className="h-[1px] bg-[#C07652]/30 flex-1"></div>
+           <p className="text-[10px] md:text-xs font-bold text-[#C07652] uppercase tracking-[0.4em] whitespace-nowrap">
+            {t("Équipe native du Maroc. 10+ ans d'expérience. Chaque voyage est écrit de zéro.")}
+           </p>
+           <div className="h-[1px] bg-[#C07652]/30 flex-1"></div>
+        </div>
       </section>
 
       {/* SECTION 3: LES CARACTÉRISTIQUES */}
-      <section className="py-20 bg-gray-50 px-8 text-left">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="space-y-4">
-            <span className="text-4xl text-[#FF8C00]">✦</span>
-            <h3 className="text-xl font-black uppercase text-[#003366]">{t("100% Privé")}</h3>
-            <p className="text-sm text-gray-500 italic">{t("Votre voyage, votre groupe, votre rythme. Jamais partagé avec des inconnus.")}</p>
-          </div>
-          <div className="space-y-4">
-            <span className="text-4xl text-[#FF8C00]">◎</span>
-            <h3 className="text-xl font-black uppercase text-[#003366]">{t("Partir de zéro")}</h3>
-            <p className="text-sm text-gray-500 italic">{t("Nous commençons par une page blanche et construisons selon vos souhaits.")}</p>
-          </div>
-          <div className="space-y-4">
-            <span className="text-4xl text-[#FF8C00]">▲</span>
-            <h3 className="text-xl font-black uppercase text-[#003366]">{t("Experts sur place")}</h3>
-            <p className="text-sm text-gray-500 italic">{t("Des guides locaux qui vivent et respirent chaque destination.")}</p>
-          </div>
-          <div className="space-y-4">
-            <span className="text-4xl text-[#FF8C00]">◈</span>
-            <h3 className="text-xl font-black uppercase text-[#003366]">{t("Flexibilité totale")}</h3>
-            <p className="text-sm text-gray-500 italic">{t("Changez d'avis en cours de route. Nous nous adaptons en temps réel.")}</p>
-          </div>
+      <section className="py-24 bg-white/50 border-y border-[#C07652]/10 px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+          {[
+            { icon: "✦", title: t("100% Privé"), desc: t("Votre voyage, votre groupe, votre rythme. Jamais partagé avec des inconnus.") },
+            { icon: "◎", title: t("Partir de zéro"), desc: t("Nous commençons par une page blanche et construisons selon vos souhaits.") },
+            { icon: "▲", title: t("Experts sur place"), desc: t("Des guides locaux qui vivent et respirent chaque destination.") },
+            { icon: "◈", title: t("Flexibilité totale"), desc: t("Changez d'avis en cours de route. Nous nous adaptons en temps réel.") }
+          ].map((item, i) => (
+            <div key={i} className="text-center md:text-left space-y-4 group">
+              <span className="text-4xl text-[#C07652] block transition-transform group-hover:scale-125 duration-300">{item.icon}</span>
+              <h3 className="text-sm font-bold uppercase text-[#2D2926] tracking-widest leading-none">{item.title}</h3>
+              <p className="text-xs text-gray-400 italic leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* SECTION 4: LE PROCESSUS */}
-      <section className="py-24 bg-[#003366] text-white px-8 text-left">
-        <div className="max-w-7xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-black uppercase italic mb-4">{t("LE PROCESSUS")}</h2>
-          <p className="text-[#FF8C00] font-bold uppercase tracking-widest text-xs italic text-left">{t("De votre premier message à votre dernier souvenir.")}</p>
+      <section className="py-32 bg-[#2D2926] text-[#F9F7F2] px-8 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto mb-20">
+          <h2 className="text-5xl md:text-7xl font-serif italic mb-4 opacity-90 uppercase">{t("Le Processus")}</h2>
+          <p className="text-[#C07652] font-bold uppercase tracking-[0.5em] text-[9px] italic border-l-2 border-[#C07652] pl-4">
+            {t("De votre premier message à votre dernier souvenir.")}
+          </p>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
           {[
-            { id: t("01"), t: t("Parlez-nous de vos rêves"), d: t("Remplissez notre formulaire. Dites-nous qui vous êtes et ce qui vous passionne.") },
-            { id: t("02"), t: t("Rencontrez votre designer"), d: t("Un designer dédié vous contacte sous 24h pour approfondir votre vision.") },
-            { id: t("03"), t: t("Recevez votre proposition"), d: t("En 3 à 5 jours, recevez un itinéraire complet : hôtels, logistique et prix.") },
-            { id: t("04"), t: t("Affinez et confirmez"), d: t("Nous ajustons jusqu'à ce que ce soit parfait. Ensuite, vous n'avez plus qu'à arriver.") }
+            { id: "01", t: t("Parlez-nous de vos rêves"), d: t("Remplissez notre formulaire. Dites-nous qui vous êtes et ce qui vous passionne.") },
+            { id: "02", t: t("Rencontrez votre designer"), d: t("Un designer dédié vous contacte sous 24h pour approfondir votre vision.") },
+            { id: "03", t: t("Recevez votre proposition"), d: t("En 3 à 5 jours, recevez un itinéraire complet : hôtels, logistique et prix.") },
+            { id: "04", t: t("Affinez et confirmez"), d: t("Nous ajustons jusqu'à ce que ce soit parfait. Ensuite, vous n'avez plus qu'à arriver.") }
           ].map((step) => (
-            <div key={step.id} className="bg-white/5 p-10 relative border-t-4 border-[#FF8C00]">
-              <span className="text-6xl font-black text-white/10 absolute top-4 right-4">{step.id}</span>
-              <h3 className="text-xl font-black uppercase mb-6 relative z-10 leading-tight italic">{step.t}</h3>
-              <p className="text-sm font-light italic opacity-80 leading-relaxed">{step.d}</p>
+            <div key={step.id} className="group bg-white/5 p-12 relative border border-white/10 hover:border-[#C07652]/50 transition-all duration-500">
+              <span className="text-8xl font-black text-white/[0.03] absolute top-2 right-4 pointer-events-none group-hover:text-[#C07652]/10 transition-colors">{step.id}</span>
+              <h3 className="text-lg font-bold uppercase mb-6 relative z-10 leading-tight tracking-widest">{step.t}</h3>
+              <p className="text-[11px] font-light italic opacity-60 leading-[1.8]">{step.d}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* SECTION 5: CE QUE NOUS PERSONNALISONS */}
-      <section className="py-24 px-8 max-w-7xl mx-auto text-left">
-        <h2 className="text-4xl md:text-6xl font-black uppercase italic text-center mb-16 text-[#003366] underline decoration-[#FF8C00] decoration-8 underline-offset-8">
-          {t("CE QUE NOUS PERSONNALISONS")}
+      <section className="py-32 px-8 max-w-7xl mx-auto text-left">
+        <h2 className="text-4xl md:text-6xl font-serif italic text-center mb-24 text-[#2D2926] uppercase">
+          {t("Ce que nous personnalisons")}
+          <div className="w-24 h-1 bg-[#C07652] mx-auto mt-6"></div>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
           {[
-            { l: t("A"), t: t("Itinéraire & Routes"), d: t("Quelles villes, dans quel ordre — nous savons quelles routes valent votre temps.") },
-            { l: t("B"), t: t("Style d'hébergement"), d: t("Riads, camps de désert ou hôtels design adaptés à vos goûts.") },
-            { l: t("C"), t: t("Rythme & Flexibilité"), d: t("Voyage rapide ou lent — nous construisons le rythme qui vous convient.") },
-            { l: t("D"), t: t("Besoins de groupe"), d: t("Enfants, adolescents, parents âgés — nous adaptons le voyage pour chaque personne.") },
-            { l: t("E"), t: t("Langue & Guides"), d: t("Nous vous jumelons avec un guide dont la langue et le style correspondent au groupe.") },
-            { l: t("F"), t: t("Budget & Valeur"), d: t("Chaque devis est détaillé pour que vous sachiez exactement ce que vous payez.") }
+            { l: "A", t: t("Itinéraire & Routes"), d: t("Quelles villes, dans quel ordre, pour combien de temps : nous en décidons avec vous.") },
+            { l: "B", t: t("Style d'hébergement"), d: t("Des riads à Médina, des camps dans le désert, des gîtes de montagne ou des hôtels design.") },
+            { l: "C", t: t("Rythme & Flexibilité"), d: t("À un rythme effréné ou tranquille, nous organisons le voyage selon le rythme qui vous convient.") },
+            { l: "D", t: t("Besoins de groupe"), d: t("Jeunes enfants, adolescents ou parents âgés, nous adaptons tout pour chaque membre.") },
+            { l: "E", t: t("Langue & Guides"), d: t("Anglais, français, espagnol, arabe, tamazight : un guide dont le style correspond à votre groupe.") },
+            { l: "F", t: t("Budget & Valeur"), d: t("Du confort au luxe absolu : vous fixez le budget, nous en tirons le meilleur parti.") }
           ].map((item) => (
-            <div key={item.l} className="flex gap-6 border-b border-gray-100 pb-8">
-              <span className="text-4xl font-black text-[#FF8C00] italic">{item.l}</span>
-              <div>
-                <h4 className="font-black uppercase text-sm mb-3 tracking-widest text-[#003366]">{item.t}</h4>
-                <p className="text-xs text-gray-500 italic leading-relaxed">{item.d}</p>
+            <div key={item.l} className="group">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-3xl font-serif italic text-[#C07652]">{item.l}</span>
+                <div className="h-[1px] bg-gray-200 flex-1 group-hover:bg-[#C07652]/50 transition-colors"></div>
               </div>
+              <h4 className="font-bold uppercase text-xs mb-4 tracking-[0.2em] text-[#2D2926]">{item.t}</h4>
+              <p className="text-[11px] text-gray-500 italic leading-[1.8]">{item.d}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* SECTION 6: STYLES DE VOYAGE */}
-      <section className="py-24 bg-gray-50 px-8 text-left">
+      <section className="py-32 bg-white px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black uppercase italic text-center mb-16 text-[#003366]">{t("STYLES DE VOYAGE")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <h2 className="text-4xl md:text-5xl font-serif italic text-center mb-24 text-[#2D2926] uppercase">{t("Styles de Voyage")}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
             {[
-              { n: t("01"), t: t("Immersion Culturelle"), s: t("Médinas et histoire vivante"), d: t("Marches privées, visites d'ateliers et dîners chez l'habitant.") },
-              { n: t("02"), t: t("Désert & Paysages"), s: t("Le Sahara et son immensité"), d: t("Dunes de Merzouga, bivouacs de luxe et levers de soleil.") },
-              { n: t("03"), t: t("Aventure & Actif"), s: t("Montagnes et routes ouvertes"), d: t("Treks dans le Haut Atlas et expéditions en 4x4.") },
-              { n: t("04"), t: t("Luxe & Privé"), s: t("La plus belle version du Maroc"), d: t("Les plus beaux riads et un service fluide sans friction.") },
-              { n: t("05"), t: t("Voyage en Famille"), s: t("Le Maroc au bon rythme"), d: t("Expériences variées pour enfants et adolescents.") },
-              { n: t("06"), t: t("Gastronomie"), s: t("Le Maroc à table"), d: t("Découverte des marchés aux épices et dîners privés.") }
+              { n: "01", t: t("Immersion Culturelle"), s: t("Médinas et histoire vivante"), d: t("Marches privées, visites d'ateliers et dîners chez l'habitant.") },
+              { n: "02", t: t("Désert & Paysages"), s: t("Le Sahara et son immensité"), d: t("Dunes de Merzouga, bivouacs de luxe et levers de soleil.") },
+              { n: "03", t: t("Aventure & Actif"), s: t("Montagnes et routes ouvertes"), d: t("Treks dans le Haut Atlas et expéditions en 4x4.") },
+              { n: "04", t: t("Luxe & Privé"), s: t("La plus belle version du Maroc"), d: t("Les plus beaux riads et un service fluide sans friction.") },
+              { n: "05", t: t("Voyage en Famille"), s: t("Le Maroc au bon rythme"), d: t("Expériences variées pour enfants et adolescents.") },
+              { n: "06", t: t("Gastronomie"), s: t("Le Maroc à table"), d: t("Découverte des marchés aux épices et dîners privés.") }
             ].map((style) => (
-              <div key={style.n} className="bg-white shadow-xl group overflow-hidden border-b-8 border-[#FF8C00] flex flex-col text-left">
-                <div className="h-60 relative bg-gray-200">
-                  <Image src={`/style-${style.n}.jpg`} fill className="object-cover group-hover:scale-110 transition-all duration-700" alt={style.t} />
+              <div key={style.n} className="bg-[#F9F7F2] group cursor-pointer border border-transparent hover:border-[#C07652]/20 transition-all duration-500">
+                <div className="h-80 relative overflow-hidden">
+                  <Image 
+                    src={`/style-${style.n}.jpg`} 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-all duration-1000 grayscale-[30%] group-hover:grayscale-0" 
+                    alt={style.t} 
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all"></div>
                 </div>
-                <div className="p-8 flex-1">
-                  <span className="text-[#FF8C00] font-black text-lg mb-2 block">{style.n}</span>
-                  <h3 className="text-xl font-black uppercase mb-2 italic text-[#003366] leading-none">{style.t}</h3>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase mb-4 tracking-widest">{style.s}</p>
-                  <p className="text-sm text-gray-500 italic leading-relaxed mb-6">{style.d}</p>
+                <div className="p-10">
+                  <span className="text-[#C07652] font-serif italic text-xl mb-4 block">{style.n}</span>
+                  <h3 className="text-xl font-bold uppercase mb-2 tracking-tighter text-[#2D2926]">{style.t}</h3>
+                  <p className="text-[9px] font-bold text-gray-400 uppercase mb-6 tracking-widest">{style.s}</p>
+                  <p className="text-xs text-gray-500 italic leading-relaxed">{style.d}</p>
                 </div>
               </div>
             ))}
@@ -159,52 +176,75 @@ export default function Home() {
       </section>
 
       {/* SECTION 7: NOTRE ENGAGEMENT */}
-      <section className="py-24 px-8 max-w-7xl mx-auto text-left">
-        <h2 className="text-4xl md:text-5xl font-black uppercase italic mb-8 text-[#003366]">{t("NOTRE ENGAGEMENT")}</h2>
-        <p className="text-gray-500 italic mb-12 max-w-2xl text-lg font-light">{t("Le standard minimum que nous nous imposons pour chaque voyage.")}</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <section className="py-32 px-8 max-w-7xl mx-auto text-left">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+           <div className="max-w-2xl">
+              <h2 className="text-5xl font-serif italic mb-8 text-[#2D2926] uppercase">{t("Notre Engagement")}</h2>
+              <p className="text-gray-400 italic text-lg font-light border-l-2 border-[#C07652] pl-6">
+                {t("Le standard minimum que nous nous imposons pour chaque voyage.")}
+              </p>
+           </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {[
-            { n: t("01"), t: t("Réponse sous 24h"), d: t("Chaque demande reçoit une réponse personnelle qui reflète vos besoins.") },
-            { n: t("02"), t: t("Proposition sur mesure"), d: t("Votre itinéraire est construit de zéro spécifiquement pour vous.") },
-            { n: t("03"), t: t("Transparence totale"), d: t("Devis clairs. Pas de frais cachés ni de surprises à l'arrivée.") },
-            { n: t("04"), t: t("Support permanent"), d: t("Notre équipe est joignable 24h/24 par WhatsApp sur place.") },
-            { n: t("05"), t: t("Conseils honnêtes"), d: t("Nous recommandons des lieux car ils sont excellents.") }
+            { n: "01", t: t("Réponse sous 24h"), d: t("Chaque demande reçoit une response personnelle qui reflète vos besoins.") },
+            { n: "02", t: t("Proposition sur mesure"), d: t("Votre itinéraire est construit de zéro spécifiquement pour vous.") },
+            { n: "03", t: t("Transparence totale"), d: t("Devis clairs. Pas de frais cachés ni de surprises à l'arrivée.") },
+            { n: "04", t: t("Support permanent"), d: t("Notre équipe est joignable 24h/24 par WhatsApp sur place.") },
+            { n: "05", t: t("Conseils honnêtes"), d: t("Nous recommandons des lieux car ils sont excellents.") }
           ].map((c) => (
-            <div key={c.n} className="border-t border-gray-100 pt-8">
-              <span className="text-[#FF8C00] font-black mb-4 block text-2xl">{c.n}</span>
-              <h4 className="font-black uppercase mb-4 text-[#003366] tracking-tighter text-lg">{c.t}</h4>
-              <p className="text-sm text-gray-500 italic leading-relaxed">{c.d}</p>
+            <div key={c.n} className="bg-white p-8 border-b border-gray-100 hover:bg-[#F9F7F2] transition-colors group">
+              <span className="text-[#C07652] font-bold mb-6 block text-sm tracking-widest">{c.n}</span>
+              <h4 className="font-bold uppercase mb-4 text-[#2D2926] tracking-tighter text-sm leading-tight group-hover:text-[#C07652] transition-colors">{c.t}</h4>
+              <p className="text-[10px] text-gray-400 italic leading-relaxed">{c.d}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* SECTION 8: EN CHIFFRES */}
-      <section className="py-20 bg-[#003366] text-white px-8 text-center">
-        <h2 className="text-3xl font-black uppercase italic mb-16 tracking-widest text-center">{t("EN CHIFFRES")}</h2>
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
-          <div><p className="text-5xl md:text-6xl font-black text-[#FF8C00] mb-4 text-center italic">{t("10+")}</p><p className="text-[10px] uppercase font-bold tracking-widest opacity-80 leading-relaxed text-center">{t("Années d'expérience")}</p></div>
-          <div><p className="text-5xl md:text-6xl font-black text-[#FF8C00] mb-4 text-center italic">{t("3 200+")}</p><p className="text-[10px] uppercase font-bold tracking-widest opacity-80 leading-relaxed text-center">{t("Voyageurs accueillis")}</p></div>
-          <div><p className="text-5xl md:text-6xl font-black text-[#FF8C00] mb-4 text-center italic">{t("40+")}</p><p className="text-[10px] uppercase font-bold tracking-widest opacity-80 leading-relaxed text-center">{t("Régions couvertes")}</p></div>
-          <div><p className="text-5xl md:text-6xl font-black text-[#FF8C00] mb-4 text-center italic">{t("98%")}</p><p className="text-[10px] uppercase font-bold tracking-widest opacity-80 leading-relaxed text-center">{t("Satisfaction")}</p></div>
+      <section className="py-32 bg-[#2D2926] text-white px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-16">
+          <div className="text-center space-y-4">
+            <p className="text-5xl md:text-7xl font-serif italic text-[#C07652]">10+</p>
+            <p className="text-[9px] uppercase font-bold tracking-[0.3em] opacity-40">{t("Années d'expérience")}</p>
+          </div>
+          <div className="text-center space-y-4">
+            <p className="text-5xl md:text-7xl font-serif italic text-[#C07652]">3 200+</p>
+            <p className="text-[9px] uppercase font-bold tracking-[0.3em] opacity-40">{t("Voyageurs accueillis")}</p>
+          </div>
+          <div className="text-center space-y-4">
+            <p className="text-5xl md:text-7xl font-serif italic text-[#C07652]">40+</p>
+            <p className="text-[9px] uppercase font-bold tracking-[0.3em] opacity-40">{t("Régions couvertes")}</p>
+          </div>
+          <div className="text-center space-y-4">
+            <p className="text-5xl md:text-7xl font-serif italic text-[#C07652]">98%</p>
+            <p className="text-[9px] uppercase font-bold tracking-[0.3em] opacity-40">{t("Satisfaction")}</p>
+          </div>
         </div>
       </section>
 
-      {/* SECTION 9: COMMENCEZ */}
-      <section className="py-24 bg-white text-center px-8 border-t-8 border-[#FF8C00]">
-        <h2 className="text-5xl md:text-7xl font-black italic mb-8 uppercase text-[#003366] text-center tracking-tighter leading-none">{t("COMMENÇONS")}</h2>
-        <p className="text-xl text-gray-500 mb-12 leading-relaxed italic font-light max-w-3xl mx-auto text-center">
-          {t("Dites-nous ce que vous imaginez. Nous nous occupons du reste")}. <span className="font-bold text-[#003366]">{t("Vous n'avez qu'à être présent.")}</span>
-        </p>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-          <Link href="/contact" className="bg-[#FF8C00] text-white px-12 py-5 font-black uppercase text-xs tracking-widest hover:bg-[#003366] transition-all shadow-xl">
-            {t("Concevoir mon voyage")}
-          </Link>
-          <Link href="mailto:hello@welivemorocco.com" className="border-2 border-[#003366] text-[#003366] px-12 py-5 font-black uppercase text-xs tracking-widest hover:bg-[#003366] hover:text-white transition-all">
-            {t("Parler à l'équipe")}
-          </Link>
+      {/* SECTION 9: QUESTIONS FRÉQUENTES (FAQ) */}
+      <section className="py-32 px-8 max-w-5xl mx-auto text-left border-t border-[#C07652]/10">
+        <h2 className="text-4xl font-serif italic text-center mb-16 text-[#2D2926] uppercase">{t("Questions Fréquentes")}</h2>
+        <div className="space-y-10">
+          <div className="border-b border-[#C07652]/10 pb-8">
+            <h4 className="text-lg font-bold text-[#2D2926] mb-4 font-serif italic">{t("Combien de temps à l'avance dois-je vous contacter ?")}</h4>
+            <p className="text-sm text-gray-500 leading-relaxed italic">{t("4 à 6 semaines minimum, plus tôt pour la haute saison (Mars-Mai et Septembre-Novembre).")}</p>
+          </div>
+          <div className="border-b border-[#C07652]/10 pb-8">
+            <h4 className="text-lg font-bold text-[#2D2926] mb-4 font-serif italic">{t("Y a-t-il un nombre minimum de jours ou de personnes ?")}</h4>
+            <p className="text-sm text-gray-500 leading-relaxed italic">{t("Aucun minimum. Des voyageurs en solo aux groupes de 20. De 3 nuits à 3 semaines.")}</p>
+          </div>
+          <div className="border-b border-[#C07652]/10 pb-8">
+            <h4 className="text-lg font-bold text-[#2D2926] mb-4 font-serif italic">{t("Quel est le coût d'un voyage sur mesure ?")}</h4>
+            <p className="text-sm text-gray-500 leading-relaxed italic">{t("Il n'y a pas de prix fixe. Dites-nous votre budget et nous le maximiserons avec transparence.")}</p>
+          </div>
+          <div className="border-b border-[#C07652]/10 pb-8">
+            <h4 className="text-lg font-bold text-[#2D2926] mb-4 font-serif italic">{t("Et si quelque chose ne va pas pendant le voyage ?")}</h4>
+            <p className="text-sm text-gray-500 leading-relaxed italic">{t("Notre équipe est au Maroc et joignable sur WhatsApp 24h/24. Nous réglons tout immédiatement.")}</p>
+          </div>
         </div>
-        <p className="mt-16 text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 text-center">{t("hello@welivemorocco.com | Marrakech, Maroc")}</p>
       </section>
 
     </main>
