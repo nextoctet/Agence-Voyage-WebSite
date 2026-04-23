@@ -49,7 +49,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#C07652] uppercase text-[10px] tracking-widest mb-1">{t("WhatsApp & Tel")}</h4>
-                    <p className="text-[#2D2926] font-serif italic text-lg">{t("+212 6 82 83 85 30")}</p>
+                    <p className="text-[#2D2926] font-serif italic text-lg">{t("+212 6 XX XX XX XX")}</p>
                   </div>
                 </a>
 

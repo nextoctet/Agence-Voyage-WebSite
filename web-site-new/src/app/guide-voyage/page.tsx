@@ -49,11 +49,11 @@ export default function CultureMarocaine() {
   return (
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden">
       
-      {/* --- HERO CULTURE --- */}
+      {/*  HERO */}
       <section className="relative h-[70vh] flex items-center justify-center text-center px-6 overflow-hidden mx-4 mt-4 rounded-3xl shadow-2xl bg-[#2D2926]">
         <div className="absolute inset-0 opacity-40">
           <Image 
-            src="/images/destinations/marrakech.jpg" 
+            src="/pictures/travel_guide.jpg" 
             fill 
             className="object-cover scale-105 animate-slow-zoom" 
             alt={t("Culture Maroc")} 
@@ -74,7 +74,7 @@ export default function CultureMarocaine() {
         </div>
       </section>
 
-      {/* --- CONTENT --- */}
+      {/* CONTENT */}
       <section className="py-32 max-w-7xl mx-auto px-8">
         <div className="space-y-48">
           {CULTURE_SECTIONS.map((sec, idx) => (
@@ -115,7 +115,7 @@ export default function CultureMarocaine() {
         </div>
       </section>
 
-      {/* --- SECTION CITATION --- */}
+      {/* SECTION CITATION */}
       <section className="bg-[#2D2926] py-32 px-8 text-center relative mx-4 mb-4 rounded-3xl overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-serif italic text-[#C07652]/5 pointer-events-none uppercase">
            Héritage
@@ -123,7 +123,7 @@ export default function CultureMarocaine() {
         
         <div className="max-w-4xl mx-auto relative z-10">
            <h3 className="text-3xl md:text-5xl font-serif italic text-white leading-snug">
-            "{t("Au Maroc, chaque porte fermée cache un")} <span className="text-[#C07652] not-italic font-sans font-black uppercase tracking-tighter">{t("trésor")}</span>{t(", et chaque invité est un")} <span className="text-[#C07652] not-italic font-sans font-black uppercase tracking-tighter">{t("roi.")}</span>"
+            {t("Au Maroc, chaque porte fermée cache un")} <span className="text-[#C07652] not-italic font-sans font-black uppercase tracking-tighter">{t("trésor")}</span>{t(", et chaque invité est un")} <span className="text-[#C07652] not-italic font-sans font-black uppercase tracking-tighter">{t("roi.")}</span>
            </h3>
            <div className="w-16 h-1 bg-[#C07652] mx-auto mt-12"></div>
         </div>

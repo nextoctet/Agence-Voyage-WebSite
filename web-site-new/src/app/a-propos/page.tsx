@@ -33,7 +33,7 @@ export default function AboutPage() {
       {/* --- SECTION 1: HERO (Style Accueil) --- */}
       <section className="relative h-[80vh] flex items-center justify-center text-center px-6 overflow-hidden mx-4 mt-4 rounded-3xl shadow-2xl">
         <Image 
-          src="/images/about-hero.jpg" 
+          src="/pictures/about_us.jpg" 
           fill 
           className="object-cover scale-105 animate-slow-zoom" 
           alt="About WeLiveMorocco" 
@@ -57,7 +57,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* --- SECTION 2: NOTRE HISTOIRE (Style Accueil) --- */}
+      {/* SECTION 2: NOTRE HISTOIRE (Style Accueil) */}
       <section className="py-32 px-8 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <div className="space-y-10">
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* --- SECTION 3: EN CHIFFRES (Style Accueil) --- */}
+      {/* SECTION 3: EN CHIFFRES (Style Accueil) */}
       <section className="py-24 bg-[#2D2926] text-white px-8 mx-4 rounded-3xl">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-16">
           <div className="text-center space-y-4">
@@ -104,7 +104,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* --- SECTION 4: NOTRE MÉTHODE (Style Processus Accueil) --- */}
+      {/* SECTION 4: NOTRE MÉTHODE (Style Processus Accueil) */}
       <section className="py-32 px-8 max-w-7xl mx-auto">
         <div className="mb-20">
           <h2 className="text-5xl md:text-7xl font-serif italic mb-4 text-[#2D2926]">{t("NOTRE MÉTHODE")}</h2>
@@ -123,7 +123,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* --- SECTION 5: DESTINATIONS (Style Styles de Voyage Accueil) --- */}
+      {/* SECTION 5: DESTINATIONS */}
       <section className="py-32 bg-white px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif italic text-center mb-24 text-[#2D2926] uppercase">{t("Où nous vous emmenons")}</h2>

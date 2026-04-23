@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
-// --- 1. DONNÉES DE TES VILLES AU MAROC ---
+//  1. DONNÉES DES VILLES AU MAROC 
 const TOUTES_DESTINATIONS = [
   {
     id: "casablanca",
@@ -68,7 +68,7 @@ export default function DestinationsCataloguePage() {
   return (
     <main className="bg-white min-h-screen font-sans text-[#003366]">
       
-      {/* --- HEADER SECTION --- */}
+      {/*  HEADER SECTION */}
       <section className="bg-[#003366] pt-32 pb-20 px-6 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
         
@@ -85,7 +85,7 @@ export default function DestinationsCataloguePage() {
         </div>
       </section>
 
-      {/* --- GRID DES CARDS --- */}
+      {/*  GRID DES CARDS  */}
       <section className="max-w-7xl mx-auto py-24 px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           
@@ -143,7 +143,7 @@ export default function DestinationsCataloguePage() {
         </div>
       </section>
 
-      {/* --- BANNER CONTACT --- */}
+      {/* BANNER CONTACT */}
       <section className="bg-gray-50 py-20 px-6 mx-6 mb-12 rounded-[3rem] text-center border border-gray-100">
         <h2 className="text-3xl font-black text-[#003366] uppercase italic mb-6">{t("Un voyage sur mesure ?")}</h2>
         <p className="text-gray-500 mb-10 italic">{t("Nos experts basés au Maroc créent votre itinéraire idéal.")}</p>

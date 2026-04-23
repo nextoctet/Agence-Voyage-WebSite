@@ -12,7 +12,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
   const id = resolvedParams.id;
   const router = useRouter();
 
-  // --- BASE DE DONNÉES ---
+  // BASE DE DONNÉES 
   const DATA_MAP: any = {
     "casablanca": {
       title: t("Casablanca"), sub: t("La Ville Blanche"),
@@ -129,7 +129,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
   return (
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926]">
       
-      {/* --- HERO SECTION --- */}
+      {/* HERO SECTION */}
       <div className="flex flex-col lg:flex-row min-h-[600px]">
         <div className="w-full lg:w-[45%] bg-[#2D2926] text-white p-12 md:p-20 flex flex-col justify-center border-b-[10px] lg:border-b-0 lg:border-r-[10px] border-[#C07652]">
           <nav className="text-[10px] uppercase tracking-[0.3em] text-[#C07652] mb-10 flex gap-2 font-bold">
@@ -152,7 +152,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
         </div>
       </div>
 
-      {/* --- STICKY NAV --- */}
+      {/* STICKY NAV */}
       <nav className="sticky bg-white/90 backdrop-blur-md border-b border-gray-100 z-40 shadow-sm" style={{ top: navbarHeight ? `${navbarHeight}px` : 0 }}>
         <div className="max-w-[1440px] mx-auto flex gap-12 px-8 py-5 overflow-x-auto no-scrollbar">
           {[{ label: t('Aperçu'), id: 'apercu' }, { label: t('Itinéraire'), id: 'itineraire' }, { label: t('Quand Partir'), id: 'quand-partir' }, { label: t('Tarifs'), id: 'tarifs' }].map((tab) => (
@@ -161,7 +161,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
         </div>
       </nav>
 
-      {/* --- MAIN CONTENT --- */}
+      {/* MAIN CONTENT */}
       <section className="max-w-[1440px] mx-auto py-32 px-8">
         <div className="flex flex-col lg:flex-row gap-24">
           <div className="w-full lg:w-2/3 space-y-32">
@@ -218,7 +218,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
               </div>
             </div>
 
-            {/* QUAND PARTIR (PRO) */}
+            {/* QUAND PARTIR */}
             <div id="quand-partir" className="scroll-mt-32 pt-20 border-t border-gray-100">
               <div className="flex items-center gap-6 mb-12">
                 <h2 className="text-[#2D2926] text-3xl font-serif italic uppercase tracking-tighter">{t("Quand Partir")}</h2>
@@ -242,7 +242,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
               </div>
             </div>
 
-            {/* TARIFS (PRO) */}
+            {/* TARIFS */}
             <div id="tarifs" className="scroll-mt-32 pt-20 border-t border-gray-100">
               <div className="flex items-center gap-6 mb-12">
                 <h2 className="text-[#2D2926] text-3xl font-serif italic uppercase tracking-tighter">{t("Tarifs & Disponibilités")}</h2>
