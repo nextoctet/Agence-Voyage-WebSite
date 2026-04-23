@@ -23,7 +23,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
         t("Dîner exclusif sur la Corniche avec vue panoramique sur l'Atlantique."),
         t("Exploration de l'architecture Art Déco du centre-ville avec un expert en patrimoine.")
       ],
-      heroImg: "/casaa.jpg",
+      heroImg: "/pictures/casablancaa.jpg",
       duration: t("2 NUITS"), price: "1 200 MAD", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106362.45034638363!2d-7.669394!3d33.572268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sCasablanca!5e0!3m2!1sfr!2sma!4v1625000000000",
       itinerary: [
         { day: "1", location: t("Casablanca"), title: t("Arrivée & Corniche"), stay: t("Four Seasons Casablanca"), desc: t("Accueil VIP et installation à l'hôtel face à la mer."), 
@@ -269,7 +269,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
                           <p className="text-[9px] uppercase font-bold text-gray-400 tracking-widest">{t("Taxes incluses")}</p>
                         </td>
                         <td className="p-8 text-right">
-                          <button onClick={() => router.push("https://wa.me/212682838530")} className="bg-[#2D2926] text-white px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-[#C07652] transition-all duration-500 shadow-xl">{t("Réserver")}</button>
+                          <button onClick={() => router.push("https://wa.me/2126XXXXXXXX")} className="bg-[#2D2926] text-white px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-[#C07652] transition-all duration-500 shadow-xl">{t("Réserver")}</button>
                         </td>
                       </tr>
                     ))}
@@ -287,9 +287,9 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
                   <h3 className="text-xl font-serif italic mb-1 tracking-tight text-[#C07652]">{t("WELIVE")}</h3>
                   <h3 className="text-3xl font-bold uppercase tracking-widest mb-6">{t("MOROCCO")}</h3>
                   <p className="text-white/50 text-sm italic mb-10 leading-relaxed font-light">{t("Agence locale experte basée à Rabat & Témara.")}</p>
-                  <a href="https://wa.me/212682838530" className="block bg-[#C07652] text-white text-center py-5 font-bold uppercase tracking-[0.2em] hover:bg-[#A65F3D] transition-all text-[10px] mb-8 shadow-xl">{t("Réserver par WhatsApp")}</a>
+                  <a href="https://wa.me/2126XXXXXXXX" className="block bg-[#C07652] text-white text-center py-5 font-bold uppercase tracking-[0.2em] hover:bg-[#A65F3D] transition-all text-[10px] mb-8 shadow-xl">{t("Réserver par WhatsApp")}</a>
                   <div className="pt-8 border-t border-white/5 text-center">
-                    <p className="text-lg font-bold italic tracking-tighter text-white/80">{t("+212 6 82 83 85 30")}</p>
+                    <p className="text-lg font-bold italic tracking-tighter text-white/80">{t("+212 X XX XX XX XX")}</p>
                   </div>
               </div>
               <div className="h-[400px] border border-gray-100 p-2 bg-white shadow-lg overflow-hidden grayscale-[50%] hover:grayscale-0 transition-all duration-1000 rounded-sm">
