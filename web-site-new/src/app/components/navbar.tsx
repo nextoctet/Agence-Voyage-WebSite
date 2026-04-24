@@ -88,7 +88,30 @@ export default function Navbar() {
             </svg>
           </button>
 
-    
+          <nav className="mt-12 flex flex-col gap-6 text-[#2D2926]">
+            <Link href="/" onClick={() => setIsDrawerOpen(false)} className="text-[14px]">{t('Accueil')}</Link>
+            <Link href="/a-propos" onClick={() => setIsDrawerOpen(false)} className="text-[14px]">{t('À Propos')}</Link>
+
+            <div className="flex flex-col gap-2">
+              <span className="text-[12px] opacity-90">{t('Destinations')}</span>
+              <Link href="/destinations/casablanca" onClick={() => setIsDrawerOpen(false)} className="pl-2 text-[13px]">{t('de casablanca')}</Link>
+              <Link href="/destinations/marrakech" onClick={() => setIsDrawerOpen(false)} className="pl-2 text-[13px]">{t('de marrakech')}</Link>
+              <Link href="/destinations/tanger" onClick={() => setIsDrawerOpen(false)} className="pl-2 text-[13px]">{t('de tanger')}</Link>
+              <Link href="/destinations/fes" onClick={() => setIsDrawerOpen(false)} className="pl-2 text-[13px]">{t('de fes')}</Link>
+            </div>
+
+            <Link href="/guide-voyage" onClick={() => setIsDrawerOpen(false)} className="text-[14px]">{t('Guide de voyage')}</Link>
+            <Link href="/contact" onClick={() => setIsDrawerOpen(false)} className="text-[14px]">{t('CONTACTEZ-NOUS')}</Link>
+
+            <Link href="/personnaliser-experience" onClick={() => setIsDrawerOpen(false)} className="mt-4 inline-block px-4 py-2 border-2 border-[#C07652] text-[#C07652] rounded-sm text-[12px] font-black tracking-[0.05em]">
+              {t('PERSONALISER VOTRE EXPERIENCE')}
+            </Link>
+
+            <div className="mt-auto">
+              <LanguageMenu />
+            </div>
+          </nav>
+
         </aside>
       </div>
     )}
