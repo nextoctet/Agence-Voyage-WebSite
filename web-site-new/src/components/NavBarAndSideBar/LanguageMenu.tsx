@@ -23,7 +23,7 @@ export default function LanguageMenu() {
 <button 
   key={l.code} 
   onClick={() => change(l.code)} 
-  className="px-2 py-1 text-[11px] font-bold uppercase text-[#C07652] hover:text-[#A65F3D] transition-colors tracking-widest">{l.label}</button>  
+  className="px-2 py-1 text-[13px] font-bold uppercase text-[#C07652] hover:text-[#A65F3D] transition-colors tracking-widest">{l.label}</button>  
 ))}
     </div>
   );

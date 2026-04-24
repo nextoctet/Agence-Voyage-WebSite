@@ -30,7 +30,6 @@ export default function Navbar() {
         className={`${montserrat.className} flex justify-between items-center py-4 px-6 md:px-12 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50`}
       >
         
-        {/* LOGO - Kabbarna chwiya l-hjam */}
         <Link href="/" className="transition transform hover:opacity-80 flex items-center h-20">
           <Image 
             src="/pictures/logo-welivee.png" 
@@ -41,7 +40,6 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* DESKTOP MENU - Kabbarna text l 12px o zedna f l-font weight */}
         <div className="hidden md:flex items-center space-x-10 font-bold text-[#2D2926] uppercase text-[12px] tracking-[0.2em]">
           <Link href="/" className="hover:text-[#C07652] transition-colors duration-300">
             {t('Accueil')}
