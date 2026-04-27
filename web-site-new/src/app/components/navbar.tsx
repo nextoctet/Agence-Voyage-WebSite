@@ -55,7 +55,7 @@ export default function Navbar() {
             onMouseLeave={() => setIsDestOpen(false)}
           >
             <div className="flex items-center gap-1 hover:text-[#C07652] transition-colors">
-              {t('destinations')} <span className="text-[10px] text-[#C07652] ml-1">▼</span>
+              {t("destinations")} <span className="text-[10px] text-[#C07652] ml-1">▼</span>
             </div>
             
             {isDestOpen && (
@@ -127,17 +127,19 @@ export default function Navbar() {
               <Link href="/a-propos" onClick={() => setIsDrawerOpen(false)} className="text-[18px] border-b border-[#C07652]/10 pb-2">{t('À Propos')}</Link>
 
               <div className="flex flex-col gap-4">
-                <span className="text-[13px] text-[#C07652] font-black tracking-[0.2em]">{t('Destinations')}</span>
+                <span className="text-[13px] text-[#C07652] font-black tracking-[0.2em]">{t("Destinations")}</span>
                 <div className="flex flex-col gap-5 pl-4 border-l border-[#C07652]/30">
-                  <Link href="/destinations/casablanca" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t('de casablanca')}</Link>
-                  <Link href="/destinations/marrakech" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t('de marrakech')}</Link>
-                  <Link href="/destinations/tanger" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t('de tanger')}</Link>
-                  <Link href="/destinations/fes" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t('de fes')}</Link>
+                  <Link href="/destinations/casablanca" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t("de casablanca")}</Link>
+                  <Link href="/destinations/marrakech" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t("de marrakech")}</Link>
+                  <Link href="/destinations/tanger" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t("de tanger")}</Link>
+                  <Link href="/destinations/fes" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t("de fes")}</Link>
                 </div>
               </div>
 
               <Link href="/guide-voyage" onClick={() => setIsDrawerOpen(false)} className="text-[18px]">{t('Guide de voyage')}</Link>
               <Link href="/contact" onClick={() => setIsDrawerOpen(false)} className="text-[18px]">{t('CONTACTEZ-NOUS')}</Link>
+              <Link href="/terms" onClick={() => setIsDrawerOpen(false)} className="text-[18px]">{t('Terms of Service')}</Link>
+              <Link href="/privacy" onClick={() => setIsDrawerOpen(false)} className="text-[18px]">{t('Privacy Policy')}</Link>
 
               <Link 
                 href="/personnaliser-experience" 
