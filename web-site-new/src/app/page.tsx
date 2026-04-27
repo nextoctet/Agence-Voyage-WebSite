@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 export default function Home() {
@@ -13,39 +14,48 @@ export default function Home() {
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#C07652]/20 blur-[120px] rounded-full animate-pulse"></div>
         <div className="absolute bottom-[-10%] right-[-20%] w-[40%] h-[40%] bg-[#2D2926]/10 blur-[100px] rounded-full"></div>
       </div>
+{/* SECTION 1: HERO */}
+<section className="relative h-[85vh] flex items-center justify-center text-center px-6 overflow-hidden">
+  <Image 
+    src="/pictures/rabat.jpg" 
+    fill 
+    className="object-cover scale-110 animate-[zoom_20s_infinite_alternate]" 
+    alt={t("hero_alt")} 
+    priority 
+  />
 
-      {/* SECTION 1: HERO*/}
-      <section className="relative h-[85vh] flex items-center justify-center text-center px-6 overflow-hidden">
-        <Image 
-          src="/pictures/rabat.jpg" 
-          fill 
-          className="object-cover scale-110 animate-[zoom_20s_infinite_alternate]" 
-          alt={t("hero_alt")} 
-          priority 
-        />
-        {/* Color Overlay Mix */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#C07652]/30 to-black/40 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-black/30"></div>
-        
-        <div className="relative z-10 text-white max-w-5xl space-y-8">
-          <p className="uppercase tracking-[1em] text-[10px] md:text-xs font-bold mb-6 animate-pulse">
-            {t("Votre Maroc. Conçu autour de vous.")}
-          </p>
-          <h1 className="text-6xl md:text-9xl font-serif leading-[1] mb-10 tracking-tighter">
-            <span className="font-light italic uppercase block opacity-90 transition-all hover:tracking-widest duration-700 select-none">
-              {t("Pas un forfait.")}
-            </span> 
-            <span className="text-[#C07652] uppercase font-black block drop-shadow-2xl mt-4">
-              {t("Une Émotion.")}
-            </span>
-          </h1>
-        </div>
+  <div className="absolute inset-0 bg-gradient-to-r from-[#C07652]/30 to-black/40 mix-blend-multiply"></div>
+  <div className="absolute inset-0 bg-black/30"></div>
+  
+  <div className="relative z-10 text-white max-w-5xl flex flex-col items-center space-y-12">
+    
+    <div className="space-y-8">
+      <p className="uppercase tracking-[1em] text-[10px] md:text-xs font-bold mb-6 animate-pulse">
+        {t("Votre Maroc. Conçu autour de vous.")}
+      </p>
+      <h1 className="text-6xl md:text-9xl font-serif leading-[1] mb-10 tracking-tighter">
+        <span className="font-light italic uppercase block opacity-90 transition-all hover:tracking-widest duration-700 select-none">
+          {t("Pas un forfait.")}
+        </span> 
+        <span className="text-[#C07652] uppercase font-black block drop-shadow-2xl mt-4">
+          {t("Une Émotion.")}
+        </span>
+      </h1>
+    </div>
 
-        {/* Decorative Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-          <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 via-white to-white/0 animate-bounce"></div>
-        </div>
-      </section>
+    <Link 
+      href="/contact" 
+      className="bg-white text-[#C07652] px-12 py-5 uppercase font-bold text-[11px] tracking-[0.3em] shadow-2xl hover:bg-[#F9F7F2] transition-all transform hover:scale-105 active:scale-95"
+    >
+      {t("Nous Contacter")}
+    </Link>
+  </div>
+
+  {/* Decorative Scroll Indicator */}
+  <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+    <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 via-white to-white/0 animate-bounce"></div>
+  </div>
+</section>
 
       {/* SECTION 2:*/}
       <section className="py-32 px-8 max-w-7xl mx-auto relative z-10">

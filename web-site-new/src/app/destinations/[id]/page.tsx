@@ -248,8 +248,8 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
                 <h2 className="text-[#2D2926] text-3xl font-serif italic uppercase tracking-tighter">{t("Tarifs & Disponibilités")}</h2>
                 <div className="h-[1px] bg-[#C07652]/20 flex-1"></div>
               </div>
-              <div className="overflow-hidden border border-gray-100 bg-white shadow-xl">
-                <table className="w-full text-left border-collapse">
+              <div className="overflow-x-auto border border-gray-100 bg-white shadow-xl pb-4">
+                <table className="w-full min-w-[700px] text-left border-collapse">
                   <thead>
                     <tr className="border-b border-gray-100">
                       <th className="p-8 text-[10px] font-bold uppercase tracking-[0.2em] text-[#2D2926]/40">{t("Période")}</th>
@@ -269,7 +269,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
                           <p className="text-[9px] uppercase font-bold text-gray-400 tracking-widest">{t("Taxes incluses")}</p>
                         </td>
                         <td className="p-8 text-right">
-                          <button onClick={() => router.push("https://wa.me/2126XXXXXXXX")} className="bg-[#2D2926] text-white px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-[#C07652] transition-all duration-500 shadow-xl">{t("Réserver")}</button>
+                          <button onClick={() => router.push('/personnaliser-experience')} className="bg-[#2D2926] text-white px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-[#C07652] transition-all duration-500 shadow-xl">{t("Réserver")}</button>
                         </td>
                       </tr>
                     ))}
