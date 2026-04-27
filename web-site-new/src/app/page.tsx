@@ -17,7 +17,7 @@ export default function Home() {
       {/* SECTION 1: HERO*/}
       <section className="relative h-[85vh] flex items-center justify-center text-center px-6 overflow-hidden">
         <Image 
-          src="/monde-du-voyage.webp" 
+          src="/pictures/rabat.jpg" 
           fill 
           className="object-cover scale-110 animate-[zoom_20s_infinite_alternate]" 
           alt={t("hero_alt")} 
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 6*/}
+      {/* SECTION 6: STYLES DE VOYAGE - Lively Cards with Links */}
       <section className="py-32 bg-white/30 backdrop-blur-sm px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-7xl font-serif italic text-center mb-24 text-[#2D2926] uppercase">
@@ -88,7 +88,7 @@ export default function Home() {
               { n: "05", img: "/pictures/Family Travel.webp", t: t("Voyage en Famille"), d: t("Experiences for all ages.") },
               { n: "06", img: "/pictures/table.webp", t: t("Gastronomie"), d: t("Spice markets and private chefs.") }
             ].map((style) => (
-              <div key={style.n} className="group cursor-pointer">
+              <a href="/contact" key={style.n} className="group cursor-pointer">
                 <div className="relative bg-[#F9F7F2] transition-all duration-500 transform group-hover:-translate-y-4 group-hover:shadow-[0_40px_80px_-15px_rgba(192,118,82,0.3)] rounded-2xl overflow-hidden border border-transparent hover:border-[#C07652]/20">
                   <div className="h-[28rem] relative overflow-hidden">
                     <Image 
@@ -102,12 +102,19 @@ export default function Home() {
                     <div className="absolute bottom-0 left-0 w-0 h-1.5 bg-[#C07652] transition-all duration-700 group-hover:w-full"></div>
                   </div>
                   <div className="p-10">
-                    <span className="text-[#C07652] font-serif italic text-3xl mb-4 block">{style.n}</span>
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="text-[#C07652] font-serif italic text-3xl block">{style.n}</span>
+                      <span className="text-[#C07652] opacity-0 group-hover:opacity-100 transition-all transform translate-x-4 group-hover:translate-x-0">
+                        →
+                      </span>
+                    </div>
                     <h3 className="text-2xl font-black uppercase mb-4 tracking-tighter text-[#2D2926]">{style.t}</h3>
-                    <p className="text-sm text-gray-500 italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">{style.d}</p>
+                    <p className="text-sm text-gray-500 italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      {style.d}
+                    </p>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -128,7 +135,7 @@ export default function Home() {
               { src: "/pictures/phtos.webp", col: "md:col-span-1", row: "md:row-span-1" },
               { src: "/pictures/Etranger.jpg", col: "md:col-span-1", row: "md:row-span-2" },
               { src: "/pictures/maroc.jpg", col: "md:col-span-1", row: "md:row-span-1" },
-              { src: "/pictures/marr.jpg", col: "md:col-span-1", row: "md:row-span-1" }, // الصورة الجديدة هنا
+              { src: "/pictures/marr.jpg", col: "md:col-span-1", row: "md:row-span-1" },  
               { src: "/pictures/marocc.png", col: "md:col-span-2", row: "md:row-span-1" },
               { src: "/pictures/j.jpg", col: "md:col-span-1", row: "md:row-span-1" },
             ].map((photo, index) => (

@@ -13,7 +13,7 @@ export default function DesignExperience() {
       {/* SECTION 1: HERO */}
       <section className="relative h-[85vh] flex items-center justify-start px-8 md:px-24 mx-4 mt-4 rounded-3xl overflow-hidden shadow-2xl bg-[#2D2926]">
         <Image 
-          src="/monde-du-voyage.webp" 
+          src="/pictures/tangerr.jpg" 
           fill 
           className="object-cover scale-105 animate-slow-zoom opacity-60" 
           alt={t("Concevez votre voyage")} 
