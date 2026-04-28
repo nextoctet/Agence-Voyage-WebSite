@@ -204,7 +204,7 @@ export default function Home() {
               {t("There's no fixed price because there's no fixed trip. Tell us your budget range and we'll maximise it. All quotes are fully itemised so you know exactly what you're paying for.")}
             </p>
           </div>
-
+        
           {/* Question 4 */}
           <div className="border-b border-[#C07652]/10 pb-10 group">
             <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
@@ -224,7 +224,7 @@ export default function Home() {
               {t("Our team is in Morocco and reachable on WhatsApp around the clock. If anything changes or goes wrong — you contact us and we fix it. That's what a real ground team means.")}
             </p>
           </div>
-
+            
           {/* Question 6 */}
           <div className="border-b border-[#C07652]/10 pb-10 group">
             <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
