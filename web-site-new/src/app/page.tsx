@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden relative">
       
-      {/* BACKGROUND DECORATION */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-30 z-0">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#C07652]/20 blur-[120px] rounded-full animate-pulse"></div>
         <div className="absolute bottom-[-10%] right-[-20%] w-[40%] h-[40%] bg-[#2D2926]/10 blur-[100px] rounded-full"></div>
@@ -51,7 +50,6 @@ export default function Home() {
     </Link>
   </div>
 
-  {/* Decorative Scroll Indicator */}
   <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
     <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 via-white to-white/0 animate-bounce"></div>
   </div>
@@ -83,7 +81,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 6: STYLES DE VOYAGE - Lively Cards with Links */}
+      {/* SECTION 3 */}
       <section className="py-32 bg-white/30 backdrop-blur-sm px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-7xl font-serif italic text-center mb-24 text-[#2D2926] uppercase">
@@ -130,7 +128,7 @@ export default function Home() {
         </div>
       </section>
 
-     {/* SECTION 10: IMMERSION GALLERY - Enhanced Grid */}
+     {/* SECTION 4 */}
       <section className="py-32 px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">

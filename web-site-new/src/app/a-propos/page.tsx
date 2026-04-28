@@ -30,7 +30,7 @@ export default function AboutPage() {
   return (
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden text-left">
       
-      {/* SECTION 1: HERO - Full Width Version */}
+      {/* SECTION 1: HERO  */}
       <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
         <Image 
           src="/pictures/chaf.webp" 
@@ -57,7 +57,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 2: OUR STORY */}
+      {/* SECTION 2*/}
       <section className="py-32 px-8 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <div className="space-y-10">
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 3: IN NUMBERS */}
+      {/* SECTION 3 */}
       <section className="py-24 bg-[#2D2926] text-white px-8 mx-4 rounded-3xl">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-16">
           <div className="text-center space-y-4">
@@ -104,7 +104,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 4: OUR METHOD */}
+      {/* SECTION 4 */}
       <section className="py-32 px-8 max-w-7xl mx-auto">
         <div className="mb-20">
           <h2 className="text-5xl md:text-7xl font-serif italic mb-4 text-[#2D2926]">{t("OUR METHOD")}</h2>
@@ -123,7 +123,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 5: DESTINATIONS WITH PHOTOS */}
+      {/* SECTION 5 */}
       <section className="py-32 bg-white px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif italic text-center mb-24 text-[#2D2926] uppercase">{t("Where we take you")}</h2>

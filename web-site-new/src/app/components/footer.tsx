@@ -17,14 +17,13 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#C07652] text-white pt-24 pb-12 px-8 font-sans relative overflow-hidden">
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#F9F7F2 1px, transparent 0)', backgroundSize: '40px 40px' }}>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* SECTION CTA */}
+        {/* SECTION */}
         <div className="text-center mb-32">
           <p className="uppercase tracking-[0.6em] text-[10px] md:text-xs font-bold mb-8 opacity-90">
             {t("COMMENÇONS L'AVENTURE")}
@@ -42,7 +41,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* THE FULLY TRANSLATED NEWSLETTER (Design b7al l-photo) */}
+        {/* NEWSLETTER */}
         <div className="border-y border-white/20 py-24 mb-24 relative">
           {!subscribed ? (
             <div className="max-w-3xl mx-auto flex flex-col items-start text-left">
@@ -89,7 +88,6 @@ export default function Footer() {
           )}
         </div>
 
-        {/* SECTION NAVIGATION (GRID FIX) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-left">
           
           {/* 1. Identity */}

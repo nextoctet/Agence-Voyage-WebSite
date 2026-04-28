@@ -8,7 +8,7 @@ export default function ContactPage() {
     <main className="bg-[#F9F7F2] min-h-screen py-24 px-8 font-sans text-[#2D2926]">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section d'en-tête */}
+        {/* hero Section */}
         <div className="text-center mb-24">
           <span className="text-[#C07652] font-bold text-[10px] uppercase tracking-[0.5em] italic mb-6 block">
             {t("WeLiveMorocco")}
@@ -24,7 +24,7 @@ export default function ContactPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           
-          {/* 1. Informations de Contact */}
+          {/* Informations de Contact */}
           <div className="space-y-16">
             <div>
               <h2 className="text-3xl font-serif italic text-[#2D2926] uppercase mb-12 tracking-tight">
@@ -76,7 +76,7 @@ export default function ContactPage() {
               <div className="space-y-4 text-white/80 font-light italic">
                 <div className="flex justify-between items-center border-b border-white/5 py-3">
                   <span>{t("Lundi - Vendredi")}</span>
-                  <span className="font-bold text-white">09:00 - 18:30</span>
+                  <span className="font-bold text-white">09:00 - 18:00</span>
                 </div>
                 <div className="flex justify-between items-center py-3">
                   <span>{t("Samedi")}</span>

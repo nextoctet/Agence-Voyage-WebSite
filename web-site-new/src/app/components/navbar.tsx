@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import LanguageMenu from '../../components/NavBarAndSideBar/LanguageMenu';
 import { Montserrat } from 'next/font/google';
 
-// Configuration dial l-font
+
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['400', '600', '700', '900'],
@@ -27,17 +27,15 @@ export default function Navbar() {
     <>
       <nav 
         id="site-navbar" 
-        className={`${montserrat.className} flex justify-between items-center py-4 px-6 md:px-12 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50`}
-      >
+        className={`${montserrat.className} flex justify-between items-center py-3 md:py-4 px-4 md:px-12 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50`}>
         
-        <Link href="/" className="transition transform hover:opacity-80 flex items-center h-20">
+        <Link href="/" className="transition transform hover:opacity-80 flex items-center h-14 md:h-20">
           <Image 
             src="/pictures/logo-welivee.png" 
             alt="WeLiveMorocco" 
             width={240} 
             height={110} 
-            className="h-16 md:h-24 w-auto object-contain mix-blend-multiply" 
-          />
+            className="h-12 md:h-24 w-auto object-contain mix-blend-multiply" />
         </Link>
 
         <div className="hidden md:flex items-center space-x-10 font-bold text-[#2D2926] uppercase text-[12px] tracking-[0.2em]">
@@ -47,13 +45,13 @@ export default function Navbar() {
           <Link href="/a-propos" className="hover:text-[#C07652] transition-colors duration-300">
             {t('À Propos')}
           </Link>
+
           
-          {/* Dropdown Destinations */}
           <div 
             className="relative group cursor-pointer h-full py-5"
             onMouseEnter={() => setIsDestOpen(true)}
             onMouseLeave={() => setIsDestOpen(false)}
-          >
+            >
             <div className="flex items-center gap-1 hover:text-[#C07652] transition-colors">
               {t("destinations")} <span className="text-[10px] text-[#C07652] ml-1">▼</span>
             </div>
@@ -89,13 +87,12 @@ export default function Navbar() {
             {t('PERSONALISER VOTRE EXPERIENCE')}
           </Link>
 
-          {/* Hamburger Icon Mobile */}
           <button
             aria-label="Open menu"
             className="md:hidden p-2 text-[#C07652] transition-transform active:scale-90"
             onClick={() => setIsDrawerOpen(true)}
           >
-            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
@@ -105,47 +102,45 @@ export default function Navbar() {
       {/* MOBILE DRAWER */}
       {isDrawerOpen && (
         <div className={`fixed inset-0 z-[100] flex ${montserrat.className}`}>
-          {/* Overlay avec Blur */}
+          
           <div 
             className="absolute inset-0 bg-[#2D2926]/70 backdrop-blur-md transition-opacity" 
             onClick={() => setIsDrawerOpen(false)} 
           />
           
-          <aside className="relative ml-auto w-80 max-w-[85%] bg-[#F9F7F2] shadow-2xl p-10 flex flex-col h-full overflow-y-auto">
+          <aside className="relative ml-auto w-64 max-w-[85%] bg-[#F9F7F2] shadow-2xl p-8 flex flex-col h-full overflow-y-auto">
             {/* Close Button */}
             <button 
-              className="absolute top-8 right-8 p-2 text-[#C07652]" 
+              className="absolute top-6 right-6 p-2 text-[#C07652]" 
               onClick={() => setIsDrawerOpen(false)}
             >
-              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            <nav className="mt-16 flex flex-col gap-8 uppercase font-bold text-[#2D2926] tracking-[0.1em]">
-              <Link href="/" onClick={() => setIsDrawerOpen(false)} className="text-[18px] border-b border-[#C07652]/10 pb-2">{t('Accueil')}</Link>
-              <Link href="/a-propos" onClick={() => setIsDrawerOpen(false)} className="text-[18px] border-b border-[#C07652]/10 pb-2">{t('À Propos')}</Link>
+            <nav className="mt-14 flex flex-col gap-6 uppercase font-bold text-[#2D2926] tracking-[0.1em]">
+              <Link href="/" onClick={() => setIsDrawerOpen(false)} className="text-[16px] border-b border-[#C07652]/10 pb-2">{t('Accueil')}</Link>
+              <Link href="/a-propos" onClick={() => setIsDrawerOpen(false)} className="text-[16px] border-b border-[#C07652]/10 pb-2">{t('À Propos')}</Link>
 
               <div className="flex flex-col gap-4">
                 <span className="text-[13px] text-[#C07652] font-black tracking-[0.2em]">{t("Destinations")}</span>
-                <div className="flex flex-col gap-5 pl-4 border-l border-[#C07652]/30">
-                  <Link href="/destinations/casablanca" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t("de casablanca")}</Link>
-                  <Link href="/destinations/marrakech" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t("de marrakech")}</Link>
-                  <Link href="/destinations/tanger" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t("de tanger")}</Link>
-                  <Link href="/destinations/fes" onClick={() => setIsDrawerOpen(false)} className="text-[15px]">{t("de fes")}</Link>
+                <div className="flex flex-col gap-4 pl-4 border-l border-[#C07652]/30">
+                  <Link href="/destinations/casablanca" onClick={() => setIsDrawerOpen(false)} className="text-[14px]">{t("de casablanca")}</Link>
+                  <Link href="/destinations/marrakech" onClick={() => setIsDrawerOpen(false)} className="text-[14px]">{t("de marrakech")}</Link>
+                  <Link href="/destinations/tanger" onClick={() => setIsDrawerOpen(false)} className="text-[14px]">{t("de tanger")}</Link>
+                  <Link href="/destinations/fes" onClick={() => setIsDrawerOpen(false)} className="text-[14px]">{t("de fes")}</Link>
                 </div>
               </div>
-
-              <Link href="/guide-voyage" onClick={() => setIsDrawerOpen(false)} className="text-[18px]">{t('Guide de voyage')}</Link>
-              <Link href="/contact" onClick={() => setIsDrawerOpen(false)} className="text-[18px]">{t('CONTACTEZ-NOUS')}</Link>
-              <Link href="/terms" onClick={() => setIsDrawerOpen(false)} className="text-[18px]">{t('Terms of Service')}</Link>
-              <Link href="/privacy" onClick={() => setIsDrawerOpen(false)} className="text-[18px]">{t('Privacy Policy')}</Link>
+          
+              <Link href="/guide-voyage" onClick={() => setIsDrawerOpen(false)} className="text-[16px]">{t('Guide de voyage')}</Link>
+              <Link href="/contact" onClick={() => setIsDrawerOpen(false)} className="text-[16px]">{t('CONTACTEZ-NOUS')}</Link>
+              <Link href="/privacy" onClick={() => setIsDrawerOpen(false)} className="text-[16px]">{t('Privacy Policy')}</Link>
 
               <Link 
                 href="/personnaliser-experience" 
                 onClick={() => setIsDrawerOpen(false)} 
-                className="mt-6 inline-block px-4 py-4 bg-[#C07652] text-white text-center rounded-sm text-[12px] font-black tracking-[0.1em] shadow-lg active:scale-95 transition-transform"
-              >
+                className="mt-6 inline-block px-4 py-4 bg-[#C07652] text-white text-center rounded-sm text-[12px] font-black tracking-[0.1em] shadow-lg active:scale-95 transition-transform">
                 {t('PERSONALISER VOTRE EXPERIENCE')}
               </Link>
 

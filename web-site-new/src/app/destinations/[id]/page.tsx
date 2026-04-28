@@ -12,7 +12,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
   const id = resolvedParams.id;
   const router = useRouter();
 
-  // BASE DE DONNÉES 
+ 
   const DATA_MAP: any = {
     "casablanca": {
       title: t("Casablanca"), sub: t("La Ville Blanche"),
