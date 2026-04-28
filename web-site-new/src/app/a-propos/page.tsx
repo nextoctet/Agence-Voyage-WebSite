@@ -24,7 +24,7 @@ export default function AboutPage() {
     { nameKey: t("High Atlas Mountains"), img: "/pictures/atlas.jpg", descKey: t("Berber villages, cedar forests, striking landscapes. Hikes of all levels, cultural homestays, and 4x4 expeditions.") },
     { nameKey: t("The Sahara — Merzouga & Zagora"), img: "/pictures/agfay.jpg", descKey: t("Well beyond the standard bivouac. Real desert experiences built around calm, immensity, and a unique sunrise.") },
     { nameKey: t("Essaouira & Atlantic Coast"), img: "/pictures/essaouira.jpeg", descKey: t("The wind, the sea, and a creative energy completely different from the interior. Ideal for surfers, families, and those seeking another Morocco.") },
-    { nameKey: t("The Imperial Cities Circuit"), img: "/pictures/saa.jpg", descKey: t("Casablanca, Rabat, Meknes, Fez, and Marrakech linked by a route that tells the whole story of Moroccan royalty.") }
+    { nameKey: t("The Imperial Cities Circuit"), img: "/pictures/hasan2.jpg", descKey: t("Casablanca, Rabat, Meknes, Fez, and Marrakech linked by a route that tells the whole story of Moroccan royalty.") }
   ];
 
   return (

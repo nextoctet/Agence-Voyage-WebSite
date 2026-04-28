@@ -1,8 +1,42 @@
 'use client';
+import { useState } from 'react';
 import { useTranslation } from "react-i18next";
 
 export default function ContactPage() {
   const { t } = useTranslation();
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<null | { ok: boolean; message?: string }>(null);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setLoading(true);
+    setStatus(null);
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fullName, email, subject, message }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setStatus({ ok: true, message: 'Message envoyé avec succès.' });
+        setFullName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
+      } else {
+        setStatus({ ok: false, message: data?.error || "Erreur lors de l'envoi." });
+      }
+    } catch (err: any) {
+      setStatus({ ok: false, message: err?.message || String(err) });
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <main className="bg-[#F9F7F2] min-h-screen py-24 px-8 font-sans text-[#2D2926]">
@@ -89,28 +123,31 @@ export default function ContactPage() {
           {/* 2. Formulaire de Contact */}
           <div className="bg-white p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
             <h3 className="text-3xl font-serif italic text-[#2D2926] mb-8">{t("Envoyez-nous un message")}</h3>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Nom Complet")}</label>
-                  <input type="text" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder="e.g. Sarah Mansouri" />
+                  <input value={fullName} onChange={(e) => setFullName(e.target.value)} type="text" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder="e.g. Sarah Mansouri" required />
                 </div>
                 <div>
                   <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Email")}</label>
-                  <input type="email" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder="sarah@email.com" />
+                  <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder="sarah@email.com" required />
                 </div>
               </div>
               <div>
                 <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Sujet")}</label>
-                <input type="text" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder={t("Planification de voyage, Questions...")} />
+                <input name="subject" value={subject} onChange={(e) => setSubject(e.target.value)} type="text" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder={t("Planification de voyage, Questions...")} required aria-required="true" />
               </div>
               <div>
                 <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Votre Message")}</label>
-                <textarea rows={5} className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic resize-none" placeholder={t("Dites-nous en plus sur vos envies...")}></textarea>
+                <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={5} className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic resize-none" placeholder={t("Dites-nous en plus sur vos envies...")} required></textarea>
               </div>
-              <button type="submit" className="w-full bg-[#2D2926] text-white py-5 uppercase font-bold text-[10px] tracking-[0.3em] hover:bg-[#C07652] transition-all duration-500 shadow-xl">
-                {t("Envoyer le message")}
+              <button disabled={loading} type="submit" className="w-full bg-[#2D2926] text-white py-5 uppercase font-bold text-[10px] tracking-[0.3em] hover:bg-[#C07652] transition-all duration-500 shadow-xl disabled:opacity-50">
+                {loading ? 'Envoi...' : t("Envoyer le message")}
               </button>
+              {status && (
+                <p className={`mt-4 text-sm ${status.ok ? 'text-green-600' : 'text-red-600'}`}>{status.message}</p>
+              )}
             </form>
           </div>
 
