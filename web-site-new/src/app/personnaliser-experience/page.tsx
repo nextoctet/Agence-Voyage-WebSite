@@ -8,144 +8,153 @@ export default function DesignExperience() {
   const { t } = useTranslation();
 
   return (
-    <main className="bg-white min-h-screen font-sans text-[#003366]">
+    <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden text-left">
       
-      {/* --- HERO SECTION --- */}
-      <section className="relative h-[50vh] flex items-center bg-[#003366] overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <Image 
-            src="/monde-du-voyage.webp" 
-            fill 
-            className="object-cover" 
-            alt={t("Design Experience")} 
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
-          <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-xs italic mb-4 block">
-            {t("Sur Mesure")}
-          </span>
-          <h1 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter leading-none">
-            {t("PERSONNALISEZ")} <br /> <span className="text-orange-500">{t("VOTRE EXPÉRIENCE")}</span>
+      {/* SECTION 1: HERO */}
+      <section className="relative h-[85vh] flex items-center justify-start px-8 md:px-24 mx-4 mt-4 rounded-3xl overflow-hidden shadow-2xl bg-[#2D2926]">
+        <Image 
+          src="/pictures/tangerr.jpg" 
+          fill 
+          className="object-cover scale-105 animate-slow-zoom opacity-60" 
+          alt={t("Concevez votre voyage")} 
+          priority 
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent"></div>
+        <div className="relative z-10 text-white max-w-4xl">
+          <p className="uppercase tracking-[0.8em] text-[10px] md:text-xs font-bold mb-8 text-[#C07652]">
+            {t("PAS UN FORFAIT.")}
+          </p>
+          <h1 className="text-6xl md:text-[8rem] font-serif italic leading-[0.9] mb-12 tracking-tighter uppercase">
+            {t("Un voyage")} <br /> 
+            <span className="text-[#C07652] not-italic font-sans font-black uppercase text-4xl md:text-7xl block mt-2">{t("conçu")}</span>
+            {t("pour vous.")}
           </h1>
+          <p className="text-xl md:text-2xl font-light italic mb-12 opacity-90 border-l-2 border-[#C07652] pl-8 max-w-2xl leading-relaxed">
+            {t("Chaque détail de votre voyage au Maroc est conçu à partir de zéro - selon vos dates, vos intérêts, votre budget et votre style de voyage. Pas de groupes partagés. Pas de programmes fixes.")}
+          </p>
         </div>
-        <div className="absolute bottom-0 left-0 w-full h-4 bg-orange-500"></div>
       </section>
 
-      {/* --- FORMULAIRE SECTION --- */}
-      <section className="py-24 max-w-4xl mx-auto px-8">
-        <div className="bg-gray-50 p-8 md:p-16 border-t-[12px] border-[#003366] shadow-2xl">
-          
-          <div className="mb-12">
-            <h2 className="text-3xl font-black uppercase italic mb-4">
-              {t("Dites-nous tout")}
-            </h2>
-            <p className="text-gray-500 italic">
-              {t("Nos experts à Rabat créent votre itinéraire idéal en moins de 24h.")}
-            </p>
+      {/* SECTION 2: CARACTÉRISTIQUES */}
+      <section className="py-32 px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+          {[
+            { icon: "✦", title: t("100% Privé"), desc: t("Votre voyage, votre groupe, votre rythme. Jamais partagé avec des inconnus.") },
+            { icon: "◎", title: t("Sur mesure"), desc: t("Nous partons d'une page blanche et construisons selon vos souhaits.") },
+            { icon: "▲", title: t("Experts locaux"), desc: t("Des guides natifs qui vivent et respirent chaque destination.") },
+            { icon: "◈", title: t("Flexibilité"), desc: t("Changez d'avis en cours de route. Nous nous adaptons en temps réel.") }
+          ].map((item, i) => (
+            <div key={i} className="space-y-6 group">
+              <span className="text-4xl text-[#C07652] block transition-transform group-hover:scale-125 duration-300">{item.icon}</span>
+              <h3 className="text-sm font-bold uppercase tracking-widest text-[#2D2926]">{item.title}</h3>
+              <p className="text-xs text-gray-500 italic leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 3: LE PROCESSUS */}
+      <section className="py-32 bg-[#2D2926] text-white px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-24">
+            <h2 className="text-5xl md:text-7xl font-serif italic tracking-tighter mb-4 opacity-90 uppercase">{t("Le Processus")}</h2>
+            <p className="text-[#C07652] font-bold uppercase tracking-[0.5em] text-[9px] italic border-l-2 border-[#C07652] pl-4">{t("De votre premier message à votre dernier souvenir")}</p>
           </div>
-
-          <form className="space-y-10">
-            
-            {/* 1. DESTINATION & STYLE */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex flex-col gap-3">
-                <label className="text-[10px] font-black uppercase tracking-widest text-orange-500 italic">
-                  {t("Destination souhaitée")}
-                </label>
-                <select className="bg-white border-2 border-gray-100 p-4 font-bold italic outline-none focus:border-orange-500 transition-all text-[#003366]">
-                  <option>{t("Marrakech")}</option>
-                  <option>{t("Tanger")}</option>
-                  <option>{t("Fès")}</option>
-                  <option>{t("Casablanca")}</option>
-                </select>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+            {[
+              { id: "01", t: t("Dites-nous votre rêve"), d: t("Remplissez notre formulaire. Dites-nous qui vous êtes et ce qui vous passionne.") },
+              { id: "02", t: t("Rencontre Designer"), d: t("Un designer de voyage dédié au Maroc vous appelle sous 24h pour approfondir votre vision.") },
+              { id: "03", t: t("Votre proposition"), d: t("En 3 à 5 jours, recevez un itinéraire complet : hôtels, logistique et prix.") },
+              { id: "04", t: t("Affinage final"), d: t("Nous ajustons jusqu'à ce que ce soit parfait. Vous n'avez plus qu'à arriver.") }
+            ].map((step) => (
+              <div key={step.id} className="group bg-white/5 p-12 relative border border-white/10 hover:border-[#C07652]/50 transition-all duration-500">
+                <span className="text-7xl font-serif italic text-white/[0.03] absolute top-2 right-4 pointer-events-none group-hover:text-[#C07652]/10 transition-colors">{step.id}</span>
+                <h3 className="text-lg font-bold uppercase mb-6 relative z-10 leading-tight tracking-widest">{step.t}</h3>
+                <p className="text-[11px] font-light italic opacity-60 leading-[1.8]">{step.d}</p>
               </div>
-              <div className="flex flex-col gap-3">
-                <label className="text-[10px] font-black uppercase tracking-widest text-orange-500 italic">
-                  {t("Style de voyage")}
-                </label>
-                <select className="bg-white border-2 border-gray-100 p-4 font-bold italic outline-none focus:border-orange-500 transition-all text-[#003366]">
-                  <option>{t("Luxe & Palais")}</option>
-                  <option>{t("Aventure & Nature")}</option>
-                  <option>{t("Culture & Histoire")}</option>
-                </select>
-              </div>
-            </div>
-
-            {/* 2. DÉTAILS VOYAGEURS */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="flex flex-col gap-3">
-                <label className="text-[10px] font-black uppercase tracking-widest text-orange-500 italic">
-                  {t("Nombre de personnes")}
-                </label>
-                <input type="number" min="1" className="bg-white border-2 border-gray-100 p-4 font-bold outline-none focus:border-orange-500" placeholder="2" />
-              </div>
-              <div className="flex flex-col gap-3">
-                <label className="text-[10px] font-black uppercase tracking-widest text-orange-500 italic">
-                  {t("Date de départ")}
-                </label>
-                <input type="date" className="bg-white border-2 border-gray-100 p-4 font-bold outline-none focus:border-orange-500" />
-              </div>
-              <div className="flex flex-col gap-3">
-                <label className="text-[10px] font-black uppercase tracking-widest text-orange-500 italic">
-                  {t("Budget estimé")}
-                </label>
-                <input type="text" className="bg-white border-2 border-gray-100 p-4 font-bold outline-none focus:border-orange-500" placeholder="Ex: 15 000 MAD" />
-              </div>
-            </div>
-
-            {/* 3. MESSAGE LIBRE */}
-            <div className="flex flex-col gap-3">
-              <label className="text-[10px] font-black uppercase tracking-widest text-orange-500 italic">
-                {t("Vos envies particulières")}
-              </label>
-              <textarea 
-                rows={4} 
-                className="bg-white border-2 border-gray-100 p-4 font-bold italic outline-none focus:border-orange-500"
-                placeholder={t("Ex: Dîner privé dans le désert, Guide parlant Espagnol...")}
-              ></textarea>
-            </div>
-
-            {/* 4. CONTACT INFOS */}
-            <div className="pt-8 border-t border-gray-200">
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="flex flex-col gap-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-[#003366] italic font-bold">
-                      {t("Votre Nom Complet")}
-                    </label>
-                    <input type="text" className="bg-white border-2 border-gray-100 p-4 font-bold outline-none focus:border-[#003366]" />
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-[#003366] italic font-bold">
-                      {t("WhatsApp / Téléphone")}
-                    </label>
-                    <input type="tel" className="bg-white border-2 border-gray-100 p-4 font-bold outline-none focus:border-[#003366]" />
-                  </div>
-               </div>
-            </div>
-
-            {/* BOUTON ENVOYER */}
-            <button className="w-full bg-orange-500 text-white py-6 font-black uppercase tracking-[0.3em] text-sm hover:bg-[#003366] transition-all shadow-xl active:scale-95">
-              {t("Envoyer ma demande")}
-            </button>
-
-            <p className="text-center text-[10px] text-gray-400 font-bold uppercase tracking-widest">
-              {"Aucun paiement requis pour le devis"}
-            </p>
-
-          </form>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* --- INFO CONTACT DIRECT --- */}
-      <section className="pb-24 px-8 text-center">
-        <p className="text-[#003366] font-black italic mb-4">
-          {t("Besoin d'aide immédiate ?")}
-        </p>
-        <a href="https://wa.me/212682838530" className="text-2xl font-black text-orange-500 hover:underline">
-          +212 6 82 83 85 30
-        </a>
+      {/* SECTION 4: FORMULAIRE */}
+      <section className="py-32 px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24">
+        <div className="lg:col-span-5 space-y-12">
+          <h2 className="text-5xl md:text-7xl font-serif italic tracking-tighter leading-[1] text-[#2D2926] uppercase">
+            {t("Concevez votre")} <br /> <span className="text-[#C07652] not-italic font-sans font-black uppercase text-3xl md:text-5xl block mt-4">{t("voyage au Maroc.")}</span>
+          </h2>
+          <p className="text-xl font-light italic text-gray-400 leading-relaxed">{t("Un seul formulaire. Votre designer personnel vous appelle sous 24 heures.")}</p>
+          
+          <div className="bg-white p-10 border-l-2 border-[#C07652] shadow-sm mt-12">
+            <h4 className="text-sm font-bold uppercase tracking-widest mb-8 text-[#2D2926]">{t("Prochaines étapes")}</h4>
+            <ul className="space-y-6 text-xs italic text-gray-500 font-medium">
+              <li className="flex gap-4"><span className="text-[#C07652]">01</span> {t("Appel de conception gratuit sous 24h.")}</li>
+              <li className="flex gap-4"><span className="text-[#C07652]">02</span> {t("Proposition personnalisée sous 3 à 5 jours.")}</li>
+              <li className="flex gap-4"><span className="text-[#C07652]">03</span> {t("Affinement ensemble jusqu'à satisfaction.")}</li>
+              <li className="flex gap-4"><span className="text-[#C07652]">04</span> {t("Confirmation et voyage. Nous gérons tout.")}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="lg:col-span-7">
+          <div className="bg-white p-10 md:p-16 shadow-2xl rounded-sm border border-gray-100">
+            <form className="space-y-12">
+              <div className="space-y-4">
+                <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("NOM COMPLET *")}</label>
+                <input type="text" placeholder={t("Entrer votre nome")} className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all text-xl bg-transparent placeholder:text-gray-200" />
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="space-y-4">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("ADRESSE E-MAIL *")}</label>
+                  <input type="email" placeholder={t("sofia@example.com")} className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200" />
+                </div>
+                <div className="space-y-4">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("NATIONALITÉ")}</label>
+                  <input type="text" placeholder={t("ex. Marocaine")} className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="space-y-4">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("TÉLÉPHONE (WhatsApp)")}</label>
+                  <input type="tel" placeholder={t("06XXXXXXXX")} className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200" />
+                </div>
+                <div className="space-y-4">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("VOYAGE EN TANT QUE")}</label>
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    {["Couple", "Famille", "Solo", "Groupe"].map(type => (
+                      <label key={type} className="flex items-center gap-2 text-[10px] font-bold uppercase cursor-pointer hover:text-[#C07652] transition-colors">
+                        <input type="radio" name="travellerType" className="accent-[#C07652]" /> {t(type)}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("FOURCHETTE BUDGÉTAIRE *")}</label>
+                <select className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent text-lg">
+                  <option className="bg-[#F9F7F2]">{t("3 000 DHs – 6 000 DHs par personne")}</option>
+                  <option className="bg-[#F9F7F2]">{t("6 000 DHs – 10 000 DHs par personne")}</option>
+                  <option className="bg-[#F9F7F2]">{t("Plus de 10 000 DHs par personne")}</option>
+                </select>
+              </div>
+
+              <div className="pt-8 text-center">
+                <button className="w-full bg-[#C07652] text-white py-8 font-bold uppercase tracking-[0.4em] text-[10px] hover:bg-[#2D2926] transition-all shadow-xl">
+                  {t("DEMANDER MON APPEL DE CONCEPTION")}
+                </button>
+                <p className="mt-8 text-[9px] text-gray-400 font-bold uppercase tracking-widest italic opacity-60">
+                  {t("Sans engagement · Réponse sous 24h")}
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
       </section>
 
+   
     </main>
   );
 }
