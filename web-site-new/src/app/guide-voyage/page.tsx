@@ -99,7 +99,6 @@ export default function CultureMarocaine() {
                 </ul>
               </div>
 
-              {/* Côté Image */}
               <div className="lg:w-1/2 relative h-[550px] w-full rounded-sm overflow-hidden shadow-2xl group">
                  <div className="absolute inset-0 bg-[#C07652]/5 group-hover:bg-transparent transition-all z-10"></div>
                  <Image 
