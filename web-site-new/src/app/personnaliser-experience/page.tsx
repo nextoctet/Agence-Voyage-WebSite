@@ -10,55 +10,34 @@ export default function DesignExperience() {
   const [email, setEmail] = useState('');
   const [nationality, setNationality] = useState('');
   const [phone, setPhone] = useState('');
-  const [travellingAs, setTravellingAs] = useState('Couple');
+  const [travellerType, setTravellerType] = useState('Couple');
   const [budget, setBudget] = useState('3 000 DHs – 6 000 DHs par personne');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState<null | { ok: boolean; message: string }>(null);
-  const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setLoading(true);
-    setStatus(null);
+  const buildMailtoLink = () => {
+    const subject = 'New Experience Customization';
+    const bodyLines = [
+      `Nom complet: ${fullName || '-'}`,
+      `Email: ${email || '-'}`,
+      `Nationalité: ${nationality || '-'}`,
+      `Téléphone: ${phone || '-'}`,
+      `Voyage en tant que: ${travellerType || '-'}`,
+      `Fourchette budgétaire: ${budget || '-'}`,
+      `Destinations souhaitées: -`,
+      `Nombre de voyageurs: -`,
+      `Préférences de voyage: -`,
+      '',
+      `Merci de me contacter pour finaliser mon projet.`,
+    ];
 
-    if (!fullName || !email || !message) {
-      setStatus({ ok: false, message: t('Veuillez remplir au moins votre nom, votre email et votre message.') });
-      setLoading(false);
-      return;
-    }
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    return `https://mail.google.com/mail/?view=cm&fs=1&to=contact@welivemorocco.com&su=${encodeURIComponent(subject)}&body=${body}`;
+  };
 
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          fullName,
-          email,
-          subject: `Demande voyage personnalisé - ${fullName}`,
-          message: `Nom complet: ${fullName}\nEmail: ${email}\nNationalité: ${nationality || '-'}\nTéléphone: ${phone || '-'}\nVoyage en tant que: ${travellingAs}\nBudget: ${budget}\n\nMessage:\n${message}`,
-        }),
-      });
-
-      const data = await response.json();
-      if (response.ok) {
-        setStatus({ ok: true, message: t('Votre demande a été envoyée. Nous revenons vers vous sous 24h.') });
-        setFullName('');
-        setEmail('');
-        setNationality('');
-        setPhone('');
-        setTravellingAs('Couple');
-        setBudget('3 000 DHs – 6 000 DHs par personne');
-        setMessage('');
-      } else {
-        setStatus({ ok: false, message: data?.error || t('Impossible d’envoyer le message. Réessayez plus tard.') });
-      }
-    } catch (error) {
-      const message = error instanceof Error ? error.message : t('Impossible d’envoyer le message. Réessayez plus tard.');
-      setStatus({ ok: false, message });
-    } finally {
-      setLoading(false);
-    }
-  }
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const gmailLink = buildMailtoLink();
+    window.open(gmailLink, '_blank');
+  };
 
   return (
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden text-left">
@@ -151,34 +130,66 @@ export default function DesignExperience() {
 
         <div className="lg:col-span-7">
           <div className="bg-white p-10 md:p-16 shadow-2xl rounded-sm border border-gray-100">
-            <form className="space-y-12" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="space-y-12">
               <div className="space-y-4">
-                <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t('NOM COMPLET *')}</label>
-                <input value={fullName} onChange={(e) => setFullName(e.target.value)} type="text" placeholder={t('Entrer votre nome')} className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all text-xl bg-transparent placeholder:text-gray-200" required />
+                <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("NOM COMPLET *")}</label>
+                <input
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  type="text"
+                  placeholder={t("Entrer votre nome")}
+                  className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all text-xl bg-transparent placeholder:text-gray-200"
+                />
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-4">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t('ADRESSE E-MAIL *')}</label>
-                  <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder={t('sofia@example.com')} className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200" required />
+                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("ADRESSE E-MAIL *")}</label>
+                  <input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="email"
+                    placeholder={t("sofia@example.com")}
+                    className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200"
+                  />
                 </div>
                 <div className="space-y-4">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t('NATIONALITÉ')}</label>
-                  <input value={nationality} onChange={(e) => setNationality(e.target.value)} type="text" placeholder={t('ex. Marocaine')} className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200" />
+                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("NATIONALITÉ")}</label>
+                  <input
+                    value={nationality}
+                    onChange={(e) => setNationality(e.target.value)}
+                    type="text"
+                    placeholder={t("ex. Marocaine")}
+                    className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200"
+                  />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-4">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t('TÉLÉPHONE (WhatsApp)')}</label>
-                  <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder={t('06XXXXXXXX')} className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200" />
+                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("TÉLÉPHONE (WhatsApp)")}</label>
+                  <input
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    type="tel"
+                    placeholder={t("06XXXXXXXX")}
+                    className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200"
+                  />
                 </div>
                 <div className="space-y-4">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t('VOYAGE EN TANT QUE')}</label>
+                  <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("VOYAGE EN TANT QUE")}</label>
                   <div className="flex flex-wrap gap-4 pt-4">
-                    {['Couple', 'Famille', 'Solo', 'Groupe'].map(type => (
+                    {["Couple", "Famille", "Solo", "Groupe"].map(type => (
                       <label key={type} className="flex items-center gap-2 text-[10px] font-bold uppercase cursor-pointer hover:text-[#C07652] transition-colors">
-                        <input type="radio" name="travellerType" value={type} checked={travellingAs === type} onChange={() => setTravellingAs(type)} className="accent-[#C07652]" /> {t(type)}
+                        <input
+                          type="radio"
+                          name="travellerType"
+                          value={type}
+                          checked={travellerType === type}
+                          onChange={() => setTravellerType(type)}
+                          className="accent-[#C07652]"
+                        />
+                        {t(type)}
                       </label>
                     ))}
                   </div>
@@ -186,29 +197,24 @@ export default function DesignExperience() {
               </div>
 
               <div className="space-y-4">
-                <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t('FOURCHETTE BUDGÉTAIRE *')}</label>
-                <select value={budget} onChange={(e) => setBudget(e.target.value)} className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent text-lg">
-                  <option className="bg-[#F9F7F2]">{t('3 000 DHs – 6 000 DHs par personne')}</option>
-                  <option className="bg-[#F9F7F2]">{t('6 000 DHs – 10 000 DHs par personne')}</option>
-                  <option className="bg-[#F9F7F2]">{t('Plus de 10 000 DHs par personne')}</option>
+                <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("FOURCHETTE BUDGÉTAIRE *")}</label>
+                <select
+                  value={budget}
+                  onChange={(e) => setBudget(e.target.value)}
+                  className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent text-lg"
+                >
+                  <option className="bg-[#F9F7F2]">{t("3 000 DHs – 6 000 DHs par personne")}</option>
+                  <option className="bg-[#F9F7F2]">{t("6 000 DHs – 10 000 DHs par personne")}</option>
+                  <option className="bg-[#F9F7F2]">{t("Plus de 10 000 DHs par personne")}</option>
                 </select>
               </div>
 
-              <div className="space-y-4">
-                <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C07652]">{t('VOTRE MESSAGE *')}</label>
-                <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={6} placeholder={t('Dites-nous en plus sur vos envies...')} className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200 resize-none" required />
-              </div>
-
-              {status && (
-                <p className={`text-sm ${status.ok ? 'text-green-600' : 'text-red-600'}`}>{status.message}</p>
-              )}
-
               <div className="pt-8 text-center">
-                <button type="submit" disabled={loading} className="w-full bg-[#C07652] text-white py-8 font-bold uppercase tracking-[0.4em] text-[10px] hover:bg-[#2D2926] transition-all shadow-xl disabled:opacity-50">
-                  {loading ? t('ENVOI EN COURS...') : t('DEMANDER MON APPEL DE CONCEPTION')}
+                <button className="w-full bg-[#C07652] text-white py-8 font-bold uppercase tracking-[0.4em] text-[10px] hover:bg-[#2D2926] transition-all shadow-xl">
+                  {t("DEMANDER MON APPEL DE CONCEPTION")}
                 </button>
                 <p className="mt-8 text-[9px] text-gray-400 font-bold uppercase tracking-widest italic opacity-60">
-                  {t('Sans engagement · Réponse sous 24h')}
+                  {t("Sans engagement · Réponse sous 24h")}
                 </p>
               </div>
             </form>

@@ -26,7 +26,7 @@ export default function Navbar() {
     <>
       <nav 
         id="site-navbar" 
-        className={`${montserrat.className} flex flex-wrap md:flex-nowrap justify-between items-center gap-4 py-3 md:py-4 px-4 md:px-12 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50`}>
+        className={`${montserrat.className} flex flex-wrap justify-between items-center gap-4 py-3 md:py-4 px-4 md:px-12 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50`}>
         
         <Link href="/" className="transition transform hover:scale-105 active:scale-95 flex items-center h-12 md:h-20">
           <Image 
@@ -37,7 +37,7 @@ export default function Navbar() {
             className="h-10 md:h-16 lg:h-20 w-auto object-contain mix-blend-multiply" />
         </Link>
 
-        <div className="hidden lg:flex items-center space-x-10 font-bold text-[#2D2926] uppercase text-[12px] tracking-[0.2em]">
+        <div className="hidden md:flex items-center space-x-10 font-bold text-[#2D2926] uppercase text-[12px] tracking-[0.2em]">
           <Link href="/" className="relative group overflow-hidden">
             {t('Accueil')}
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C07652] transition-all duration-300 group-hover:w-full"></span>
@@ -76,21 +76,21 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-4 flex-shrink-0">
+        <div className="flex items-center gap-4">
           <div className="language-selector-wrapper hover:scale-110 transition-transform duration-300 ease-out">
               <LanguageMenu />
           </div>
           
           <Link
             href="/personnaliser-experience"
-            className="hidden lg:inline-flex px-6 py-3.5 border-2 border-[#C07652] text-[#C07652] text-[11px] font-black tracking-[0.15em] rounded-sm hover:bg-[#C07652] hover:text-white transition-all duration-500 shadow-sm hover:shadow-[#C07652]/40 active:scale-95"
+            className="hidden lg:block px-6 py-3.5 border-2 border-[#C07652] text-[#C07652] text-[11px] font-black tracking-[0.15em] rounded-sm hover:bg-[#C07652] hover:text-white transition-all duration-500 shadow-sm hover:shadow-[#C07652]/40 active:scale-95"
           >
             {t('PERSONALISER VOTRE EXPERIENCE')}
           </Link>
 
           <button
             aria-label="Open menu"
-            className="md:block lg:hidden p-2 text-[#C07652] transition-transform active:scale-90"
+            className="md:hidden p-2 text-[#C07652] transition-transform active:scale-90"
             onClick={() => setIsDrawerOpen(true)}
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>

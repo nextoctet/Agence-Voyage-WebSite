@@ -7,11 +7,30 @@ export default function ContactPage() {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
+  const [nationality, setNationality] = useState('');
+  const [phone, setPhone] = useState('');
+  const [budget, setBudget] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<null | { ok: boolean; message?: string }>(null);
+  const contactEmail = 'contact@welivemorocco.com';
 
-  async function handleSubmit(e: React.FormEvent) {
+  const buildMailtoLink = () => {
+    const body = [
+      `Nom complet: ${fullName}`,
+      `Email: ${email}`,
+      `Nationalité: ${nationality || '-'}`,
+      `Téléphone: ${phone || '-'}`,
+      `Budget: ${budget || '-'}`,
+      `Sujet: ${subject}`,
+      '',
+      message,
+    ].join('\n');
+    const subjectText = subject || 'Contact via site web';
+    return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(body)}`;
+  };
+
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
     setStatus(null);
@@ -22,28 +41,12 @@ export default function ContactPage() {
       return;
     }
 
-    try {
-      const res = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fullName, email, subject, message }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setStatus({ ok: true, message: 'Message envoyé avec succès.' });
-        setFullName('');
-        setEmail('');
-        setSubject('');
-        setMessage('');
-      } else {
-        setStatus({ ok: false, message: data?.error || 'Erreur lors de l’envoi du message.' });
-      }
-    } catch (err) {
-      const message = err instanceof Error ? err.message : String(err);
-      setStatus({ ok: false, message });
-    } finally {
-      setLoading(false);
+    if (typeof window !== 'undefined') {
+      const gmailLink = buildMailtoLink();
+      window.open(gmailLink, '_blank');
     }
+
+    setLoading(false);
   }
 
   return (
@@ -145,6 +148,20 @@ export default function ContactPage() {
               <div>
                 <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Sujet")}</label>
                 <input name="subject" value={subject} onChange={(e) => setSubject(e.target.value)} type="text" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder={t("Planification de voyage, Questions...")} required aria-required="true" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Nationalité")}</label>
+                  <input value={nationality} onChange={(e) => setNationality(e.target.value)} type="text" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder={t("ex. Marocaine")} />
+                </div>
+                <div>
+                  <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Téléphone")}</label>
+                  <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder={t("06XXXXXXXX")} />
+                </div>
+              </div>
+              <div>
+                <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Budget")}</label>
+                <input value={budget} onChange={(e) => setBudget(e.target.value)} type="text" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder={t("Ex. 6000 DH - 12000 DH")} />
               </div>
               <div>
                 <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Votre Message")}</label>
