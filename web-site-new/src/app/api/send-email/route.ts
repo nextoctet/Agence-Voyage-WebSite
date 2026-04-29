@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
@@ -41,8 +42,6 @@ export async function POST(req: Request) {
     if (!host || !user || !pass) {
       return NextResponse.json({ error: 'SMTP configuration not set on server' }, { status: 500 });
     }
-    
-    /* eslint-disable @typescript-eslint/no-explicit-any */
     const nodemailerModule: any = await import('nodemailer');
     const createTransport = nodemailerModule.createTransport ?? nodemailerModule.default?.createTransport;
 
@@ -57,7 +56,8 @@ export async function POST(req: Request) {
     });
 
     const to = process.env.EMAIL_TO || 'contact@welivemorocco.com';
-
+    const from = `${fullName} <${user}>`;
+    const replyTo = email;
     const subjectLine = subject ? `Website: ${subject}` : 'Nouveau message depuis le site Web';
 
     const html = `
@@ -73,22 +73,17 @@ export async function POST(req: Request) {
     `;
 
     await transporter.sendMail({
-      from: `${fullName} <${user}>`,
+      from,
+      replyTo,
       to,
       subject: subjectLine,
-      text: `${fullName} (${email})
-Nationality: ${nationality || '-'}
-Phone: ${phone || '-'}
-Traveling as: ${travelingAs || '-'}
-Budget: ${budget || '-'}
-
-${message}`,
+      text: `${fullName} (${email})\nNationalité: ${nationality || '-'}\nTéléphone: ${phone || '-'}\nVoyage en tant que: ${travelingAs || '-'}\nBudget: ${budget || '-'}\n\n${message}`,
       html,
     });
-
     return NextResponse.json({ ok: true });
-  } catch (err) {
+    } catch (err) {
+    
     const message = (err as any)?.message || String(err);
     return NextResponse.json({ error: message }, { status: 500 });
-  }
+    }
 }

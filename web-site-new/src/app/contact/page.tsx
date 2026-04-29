@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
@@ -10,32 +11,47 @@ export default function ContactPage() {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<null | { ok: boolean; message?: string }>(null);
+  const contactEmail = 'contact@welivemorocco.com';
 
-  async function handleSubmit(e: React.FormEvent) {
+  const buildGmailLink = () => {
+    const body = [`Nom complet: ${fullName}`, `Email: ${email}`, '', message].join('\n');
+    const subjectText = subject || 'Contact via site web';
+    return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const buildMailtoLink = () => {
+    const body = [`Nom complet: ${fullName}`, `Email: ${email}`, '', message].join('\n');
+    const subjectText = subject || 'Contact via site web';
+    return `mailto:${contactEmail}?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const isMobile = () => {
+    if (typeof navigator === 'undefined') return false;
+    return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  };
+
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
     setStatus(null);
-    try {
-      const res = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fullName, email, subject, message }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setStatus({ ok: true, message: 'Message envoyé avec succès.' });
-        setFullName('');
-        setEmail('');
-        setSubject('');
-        setMessage('');
-      } else {
-        setStatus({ ok: false, message: data?.error || "Erreur lors de l'envoi." });
-      }
-    } catch (err: any) {
-      setStatus({ ok: false, message: err?.message || String(err) });
-    } finally {
+
+    if (!fullName || !email || !subject || !message) {
+      setStatus({ ok: false, message: 'Veuillez remplir tous les champs requis.' });
       setLoading(false);
+      return;
     }
+
+    if (typeof window !== 'undefined') {
+      const link = isMobile() ? buildMailtoLink() : buildGmailLink();
+      if (isMobile()) {
+        window.location.href = link;
+      } else {
+        window.open(link, '_blank', 'noopener,noreferrer');
+      }
+    }
+
+    setStatus({ ok: true, message: 'La fenêtre de composition est ouverte. Vérifiez les informations et envoyez le message.' });
+    setLoading(false);
   }
 
   return (

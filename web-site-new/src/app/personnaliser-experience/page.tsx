@@ -81,7 +81,7 @@ export default function DesignExperience() {
       <section className="py-32 px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24">
         <div className="lg:col-span-5 space-y-12">
           <h2 className="text-5xl md:text-7xl font-serif italic tracking-tighter leading-[1] text-[#2D2926] uppercase">
-            {t("Concevez votre")} <br /> <span className="text-[#C07652] not-italic font-sans font-black uppercase text-3xl md:text-5xl block mt-4">{t("voyage au Maroc.")}</span>
+            {t("Concevez votre")} <br/><span className="text-[#C07652] not-italic font-sans font-black uppercase text-3xl md:text-5xl block mt-4">{t("voyage au Maroc.")}</span>
           </h2>
           <p className="text-xl font-light italic text-gray-400 leading-relaxed">{t("Un seul formulaire. Votre designer personnel vous appelle sous 24 heures.")}</p>
           
