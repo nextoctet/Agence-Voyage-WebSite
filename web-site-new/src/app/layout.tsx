@@ -6,6 +6,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer"; 
 import ClientLayout from "../components/ClientLayout";
 import ClientRoot from "../components/ClientRoot";
+import CookieConsentBanner from "../components/CookieConsentBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
             {children}
 
             <Footer />
+            <CookieConsentBanner />
           </ClientRoot>
         </ClientLayout>
       </body>

@@ -26,7 +26,7 @@ export default function Navbar() {
     <>
       <nav 
         id="site-navbar" 
-        className={`${montserrat.className} flex flex-wrap justify-between items-center gap-4 py-3 md:py-4 px-4 md:px-12 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50`}>
+        className={`${montserrat.className} w-full max-w-full flex flex-wrap justify-between items-center gap-4 py-3 md:py-4 px-4 md:px-12 lg:px-24 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50`}>
         
         <Link href="/" className="transition transform hover:scale-105 active:scale-95 flex items-center h-12 md:h-20">
           <Image 
@@ -37,7 +37,7 @@ export default function Navbar() {
             className="h-10 md:h-16 lg:h-20 w-auto object-contain mix-blend-multiply" />
         </Link>
 
-        <div className="hidden md:flex items-center space-x-10 font-bold text-[#2D2926] uppercase text-[12px] tracking-[0.2em]">
+        <div className="hidden lg:flex items-center space-x-8 font-bold text-[#2D2926] uppercase text-[12px] tracking-[0.2em]">
           <Link href="/" className="relative group overflow-hidden">
             {t('Accueil')}
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C07652] transition-all duration-300 group-hover:w-full"></span>
@@ -90,7 +90,7 @@ export default function Navbar() {
 
           <button
             aria-label="Open menu"
-            className="md:hidden p-2 text-[#C07652] transition-transform active:scale-90"
+            className="lg:hidden p-2 text-[#C07652] transition-transform active:scale-90"
             onClick={() => setIsDrawerOpen(true)}
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>

@@ -50,35 +50,35 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="bg-[#F9F7F2] min-h-screen py-24 px-8 font-sans text-[#2D2926]">
+    <main className="bg-[#F9F7F2] min-h-screen py-24 px-4 md:px-12 lg:px-24 font-sans text-[#2D2926] max-w-full overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* hero Section */}
-        <div className="text-center mb-24">
-          <span className="text-[#C07652] font-bold text-[10px] uppercase tracking-[0.5em] italic mb-6 block">
+        <div className="text-center mb-24 px-2 md:px-0">
+          <span className="text-[#C07652] font-bold text-[10px] md:text-[11px] uppercase tracking-[0.5em] italic mb-6 block">
             {t("WeLiveMorocco")}
           </span>
-          <h1 className="text-5xl md:text-8xl font-serif italic leading-none tracking-tighter mb-8">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-serif italic leading-none tracking-tighter mb-8">
             {t("Contactez-nous")}
           </h1>
           <div className="w-24 h-1 bg-[#C07652] mx-auto mb-8"></div>
-          <p className="text-gray-500 text-xl font-light italic max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl font-light italic max-w-3xl mx-auto leading-relaxed">
             {t("Notre équipe d'experts à Témara est à votre disposition pour organiser votre prochain voyage sur mesure.")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-12 md:gap-14 lg:gap-20 items-start">
           
           {/* Informations de Contact */}
-          <div className="space-y-16">
+          <div className="space-y-12 md:space-y-14">
             <div>
-              <h2 className="text-3xl font-serif italic text-[#2D2926] uppercase mb-12 tracking-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-[#2D2926] uppercase mb-10 md:mb-12 tracking-tight">
                 {t("Informations")}
               </h2>
               
-              <div className="space-y-10">
+              <div className="space-y-8 md:space-y-10">
                 {/* Localisation */}
-                <div className="flex items-center gap-8 group">
+                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 group">
                   <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center text-xl shadow-sm border border-gray-100 group-hover:bg-[#2D2926] group-hover:text-white transition-all duration-500">
                     📍
                   </div>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* WhatsApp & Téléphone */}
-                <a href="https://wa.me/2126XXXXXXXX" className="flex items-center gap-8 group cursor-pointer text-left">
+                <a href="https://wa.me/2126XXXXXXXX" className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 group cursor-pointer text-left">
                   <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center text-xl shadow-sm border border-gray-100 group-hover:bg-[#C07652] group-hover:text-white transition-all duration-500">
                     💬
                   </div>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                 </a>
 
                 {/* Email */}
-                <div className="flex items-center gap-8 group">
+                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 group">
                   <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center text-xl shadow-sm border border-gray-100 group-hover:bg-[#2D2926] group-hover:text-white transition-all duration-500">
                     📧
                   </div>
@@ -113,17 +113,17 @@ export default function ContactPage() {
             </div>
 
             {/* Section Horaires */}
-            <div className="bg-[#2D2926] p-12 relative overflow-hidden shadow-2xl">
+            <div className="bg-[#2D2926] p-10 md:p-12 relative overflow-hidden shadow-2xl">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#C07652]/10 rounded-full -mr-16 -mt-16"></div>
-              <h4 className="font-bold uppercase tracking-[0.3em] text-[10px] mb-8 text-[#C07652] border-b border-[#C07652]/20 pb-4">
+              <h4 className="font-bold uppercase tracking-[0.3em] text-[10px] mb-6 md:mb-8 text-[#C07652] border-b border-[#C07652]/20 pb-4">
                 {t("Heures d'ouverture")}
               </h4>
               <div className="space-y-4 text-white/80 font-light italic">
-                <div className="flex justify-between items-center border-b border-white/5 py-3">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/5 py-3 gap-2 md:gap-0">
                   <span>{t("Lundi - Vendredi")}</span>
                   <span className="font-bold text-white">09:00 - 18:00</span>
                 </div>
-                <div className="flex justify-between items-center py-3">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center py-3 gap-2 md:gap-0">
                   <span>{t("Samedi")}</span>
                   <span className="font-bold text-white">09:00 - 13:00</span>
                 </div>
@@ -132,12 +132,14 @@ export default function ContactPage() {
           </div>
 
           {/* 2. Formulaire de Contact */}
-          <div className="bg-white p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
-            <h3 className="text-3xl font-serif italic text-[#2D2926] mb-8">{t("Envoyez-nous un message")}</h3>
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white p-6 md:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-[#2D2926] mb-8">
+              {t("Envoyez-nous un message")}
+            </h3>
+            <form className="space-y-5 md:space-y-6" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
                 <div>
-                  <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Nom Complet")}</label>
+                  <label className="block text-[10px] md:text-xs uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Nom Complet")}</label>
                   <input value={fullName} onChange={(e) => setFullName(e.target.value)} type="text" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder="e.g. Sarah Mansouri" required />
                 </div>
                 <div>
@@ -149,7 +151,7 @@ export default function ContactPage() {
                 <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Sujet")}</label>
                 <input name="subject" value={subject} onChange={(e) => setSubject(e.target.value)} type="text" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder={t("Planification de voyage, Questions...")} required aria-required="true" />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
                 <div>
                   <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Nationalité")}</label>
                   <input value={nationality} onChange={(e) => setNationality(e.target.value)} type="text" className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic" placeholder={t("ex. Marocaine")} />
@@ -167,7 +169,7 @@ export default function ContactPage() {
                 <label className="block text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">{t("Votre Message")}</label>
                 <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={5} className="w-full bg-[#F9F7F2] border-none p-4 focus:ring-1 focus:ring-[#C07652] transition-all outline-none italic resize-none" placeholder={t("Dites-nous en plus sur vos envies...")} required></textarea>
               </div>
-              <button disabled={loading} type="submit" className="w-full bg-[#2D2926] text-white py-5 uppercase font-bold text-[10px] tracking-[0.3em] hover:bg-[#C07652] transition-all duration-500 shadow-xl disabled:opacity-50">
+              <button disabled={loading} type="submit" className="w-full bg-[#2D2926] text-white py-5 uppercase font-bold text-[11px] md:text-[12px] tracking-[0.3em] hover:bg-[#C07652] transition-all duration-500 shadow-xl disabled:opacity-50">
                 {loading ? 'Envoi...' : t("Envoyer le message")}
               </button>
               {status && (
@@ -179,7 +181,7 @@ export default function ContactPage() {
         </div>
 
         {/* 3. Section Google Maps*/}
-        <div className="mt-32 h-[500px] overflow-hidden relative border border-gray-200 bg-white p-2 shadow-xl">
+        <div className="mt-24 md:mt-28 h-[320px] md:h-[420px] lg:h-[500px] overflow-hidden relative border border-gray-200 bg-white p-2 shadow-xl">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13238.411651871216!2d-6.9272!3d33.9189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7134371707963%3A0x6e9f9024f9958e98!2sT%C3%A9mara!5e0!3m2!1sfr!2sma!4v1713880000000!5m2!1sfr!2sma" 
               className="w-full h-full grayscale-[50%] hover:grayscale-0 transition-all duration-1000"
