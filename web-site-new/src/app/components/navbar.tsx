@@ -1,4 +1,5 @@
-"use client";
+﻿"use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from 'next/image';
@@ -26,18 +27,20 @@ export default function Navbar() {
     <>
       <nav 
         id="site-navbar" 
-        className={`${montserrat.className} w-full max-w-full flex flex-wrap justify-between items-center gap-4 py-3 md:py-4 px-4 md:px-12 lg:px-24 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50`}>
+        className={`${montserrat.className} flex flex-nowrap justify-between items-center py-3 md:py-4 px-4 md:px-8 lg:px-10 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50 w-full`}>
         
-        <Link href="/" className="transition transform hover:scale-105 active:scale-95 flex items-center h-12 md:h-20">
+        {/* 1. Logo - Shrink-0 bach may-t-9rssch ga3 */}
+        <Link href="/" className="transition transform hover:scale-105 active:scale-95 flex items-center h-12 md:h-16 lg:h-20 shrink-0">
           <Image 
             src="/pictures/logo-welivee.png" 
             alt="WeLiveMorocco" 
             width={240} 
             height={110} 
-            className="h-10 md:h-16 lg:h-20 w-auto object-contain mix-blend-multiply" />
+            className="h-10 md:h-14 lg:h-18 w-auto object-contain mix-blend-multiply" />
         </Link>
 
-        <div className="hidden lg:flex items-center space-x-8 font-bold text-[#2D2926] uppercase text-[12px] tracking-[0.2em]">
+        {/* 2. Links - Hadu homa li kiy-tzahmou, dert lihom justify-center o gap-x adaptive */}
+        <div className="hidden lg:flex items-center justify-center flex-1 gap-x-3 xl:gap-x-8 font-bold text-[#2D2926] uppercase text-[10px] xl:text-[12px] tracking-[0.1em] xl:tracking-[0.2em] whitespace-nowrap px-2">
           <Link href="/" className="relative group overflow-hidden">
             {t('Accueil')}
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C07652] transition-all duration-300 group-hover:w-full"></span>
@@ -47,6 +50,7 @@ export default function Navbar() {
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C07652] transition-all duration-300 group-hover:w-full"></span>
           </Link>
 
+          {/* Destinations Dropdown */}
           <div 
             className="relative group cursor-pointer h-full py-5"
             onMouseEnter={() => setIsDestOpen(true)}
@@ -76,18 +80,20 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="language-selector-wrapper hover:scale-110 transition-transform duration-300 ease-out">
+        {/* 3. Right Section - Language o CTA - ml-auto bach i-bqa dima l-imin ga3 */}
+        <div className="flex items-center gap-x-2 xl:gap-x-5 shrink-0 ml-auto whitespace-nowrap">
+          <div className="language-selector-wrapper flex items-center">
               <LanguageMenu />
           </div>
           
           <Link
             href="/personnaliser-experience"
-            className="hidden lg:block px-6 py-3.5 border-2 border-[#C07652] text-[#C07652] text-[11px] font-black tracking-[0.15em] rounded-sm hover:bg-[#C07652] hover:text-white transition-all duration-500 shadow-sm hover:shadow-[#C07652]/40 active:scale-95"
+            className="hidden lg:block px-3 xl:px-6 py-3 border-2 border-[#C07652] text-[#C07652] text-[9px] xl:text-[11px] font-black tracking-[0.1em] xl:tracking-[0.15em] rounded-sm hover:bg-[#C07652] hover:text-white transition-all duration-500 shadow-sm active:scale-95"
           >
             {t('PERSONALISER VOTRE EXPERIENCE')}
           </Link>
 
+          {/* Hamburger (Mobile/Tablet) */}
           <button
             aria-label="Open menu"
             className="lg:hidden p-2 text-[#C07652] transition-transform active:scale-90"
@@ -100,14 +106,14 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE DRAWER (B9a kif howa) */}
+      {/* MOBILE DRAWER (Ma-beddeltouch bach i-bqa khdam) */}
       {isDrawerOpen && (
         <div className={`fixed inset-0 z-[100] flex justify-end ${montserrat.className}`}>
           <div 
             className="absolute inset-0 bg-[#2D2926]/70 backdrop-blur-md transition-opacity" 
             onClick={() => setIsDrawerOpen(false)} 
           />
-          <aside className="relative w-[85vw] max-w-sm bg-[#F9F7F2] shadow-2xl p-6 flex flex-col h-full overflow-y-auto">
+          <aside className="relative w-[85vw] max-w-sm bg-[#F9F7F2] shadow-2xl p-6 flex flex-col h-full overflow-y-auto font-sans">
             <button className="absolute top-5 right-5 p-2 text-[#C07652]" onClick={() => setIsDrawerOpen(false)}>
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -127,7 +133,7 @@ export default function Navbar() {
               </div>
               <Link href="/guide-voyage" onClick={() => setIsDrawerOpen(false)} className="text-[16px]">{t('Guide de voyage')}</Link>
               <Link href="/contact" onClick={() => setIsDrawerOpen(false)} className="text-[16px]">{t('CONTACTEZ-NOUS')}</Link>
-              <Link href="/privacy" onClick={() => setIsDrawerOpen(false)} className="text-[16px]">{t('Privacy Policy')}</Link>
+              <Link href="/cookies-policy" onClick={() => setIsDrawerOpen(false)} className="text-[16px]">{t('Privacy Policy')}</Link>
               <Link 
                 href="/personnaliser-experience" 
                 onClick={() => setIsDrawerOpen(false)} 
