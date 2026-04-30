@@ -46,7 +46,7 @@ export default function Home() {
       href="/contact" 
       className="bg-white text-[#C07652] px-12 py-5 uppercase font-bold text-[11px] tracking-[0.3em] shadow-2xl hover:bg-[#F9F7F2] transition-all transform hover:scale-105 active:scale-95"
     >
-      {t("Nous Contacter")}
+      {t("Begin Your Journey")}
     </Link>
   </div>
 
