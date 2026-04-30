@@ -99,27 +99,37 @@ export default function Footer() {
             </h2>
           </div>
 
-          
-          <div>
-            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-8 opacity-80">{t("L'Agence")}</h3>
-            <ul className="flex flex-col gap-4 text-xs font-medium italic">
-              <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">{t("Notre Vision")}</li>
-              <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">{t("L'Équipe")}</li>
-              <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">{t("Contact")}</li>
-            </ul>
-          </div>
+                
+                <div>
+        <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-8 opacity-80">{t("L'Agence")}</h3>
+        <ul className="flex flex-col gap-4 text-xs font-medium italic">
+          <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">
+            <Link href="/a-propos" className="block w-full">{t("Notre Vision")}</Link>
+          </li>
+          <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">
+            <Link href="/a-propos" className="block w-full">{t("L'Équipe")}</Link>
+          </li>
+          <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">
+            <Link href="/contact" className="block w-full">{t("Contact")}</Link>
+          </li>
+        </ul>
+      </div>
 
-         
-          <div>
-            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-8 opacity-80">{t("Destinations")}</h3>
-            <ul className="flex flex-col gap-4 text-xs font-medium italic">
-              <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">{t("Désert Safari")}</li>
-              <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">{t("Côte Atlantique")}</li>
-              <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">{t("Villes Impériales")}</li>
-            </ul>
-          </div>
-
-          
+      <div>
+        <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-8 opacity-80">{t("Destinations")}</h3>
+        <ul className="flex flex-col gap-4 text-xs font-medium italic">
+          <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">
+            <Link href="/destinations/casablanca" className="block w-full">{t("Casablanca")}</Link>
+          </li>
+          <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">
+            <Link href="/destinations/marrakech" className="block w-full">{t("Marrakech")}</Link>
+          </li>
+          <li className="hover:translate-x-2 transition-all cursor-pointer opacity-90">
+            <Link href="/destinations/tanger" className="block w-full">{t("Tanger")}</Link>
+          </li>
+        </ul>
+      </div>
+                
           <div className="flex flex-col gap-12">
             <div>
               <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-6 opacity-80">{t("Connect")}</h3>
@@ -138,7 +148,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-2 text-[9px] uppercase tracking-[0.2em] opacity-60 italic mt-6">
               <Link href="/cookies-policy" className="hover:text-white cursor-pointer transition-colors">{t("Privacy Policy")}</Link>
-              <span className="hover:text-white cursor-pointer transition-colors">{t("Terms of Service")}</span>
+              <Link href="/cookies-policy" className="hover:text-white cursor-pointer transition-colors">{t("Terms of Service")}</Link>
             </div>
           </div>
         </div>
