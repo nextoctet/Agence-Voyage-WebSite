@@ -32,10 +32,10 @@ export default function Footer() {
             {t("La seule chose qu'il reste à faire est de nous parler de vous.")}
           </h2>
           <div className="flex flex-col md:flex-row justify-center items-center gap-6">
-            <Link href="/personnaliser-experience" className="bg-white text-[#C07652] px-10 py-5 uppercase font-bold text-[10px] tracking-[0.2em] shadow-2xl hover:bg-[#F9F7F2] transition-all">
+            <Link href="/personnaliser-experience" className="bg-white text-[#C07652] rounded-2xl px-10 py-5 uppercase font-bold text-[10px] tracking-[0.2em] shadow-2xl hover:bg-[#F9F7F2] transition-all">
               {t("Commencer mon voyage sur mesure")}
             </Link>
-            <Link href="/contact" className="border-2 border-white text-white px-10 py-5 uppercase font-bold text-[10px] tracking-[0.2em] hover:bg-white hover:text-[#C07652] transition-all">
+            <Link href="/contact" className="border-2 border-white text-white px-10 py-5 rounded-2xl uppercase font-bold text-[10px] tracking-[0.2em] hover:bg-white hover:text-[#C07652] transition-all">
               {t("Parler à l'équipe")}
             </Link>
           </div>

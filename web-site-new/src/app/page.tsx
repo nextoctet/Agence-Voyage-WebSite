@@ -13,8 +13,7 @@ export default function Home() {
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#C07652]/20 blur-[120px] rounded-full animate-pulse"></div>
         <div className="absolute bottom-[-10%] right-[-20%] w-[40%] h-[40%] bg-[#2D2926]/10 blur-[100px] rounded-full"></div>
       </div>
-   
-   {/* SECTION 1: HERO */}
+    
 
    {/* SECTION 1: HERO */}
 <section className="relative h-[85vh] flex items-center justify-start px-10 md:px-24 overflow-hidden">
