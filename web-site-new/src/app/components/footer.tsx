@@ -88,10 +88,10 @@ export default function Footer() {
           )}
         </div>
 
-        {/* BOTTOM GRID */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-left">
           
-          {/* 1. Identity */}
+          
           <div className="flex flex-col gap-6">
             <h2 className="text-3xl font-serif italic tracking-tighter leading-tight">
               WELIVE <br />
@@ -99,7 +99,7 @@ export default function Footer() {
             </h2>
           </div>
 
-          {/* 2. Agence */}
+          
           <div>
             <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-8 opacity-80">{t("L'Agence")}</h3>
             <ul className="flex flex-col gap-4 text-xs font-medium italic">
@@ -109,7 +109,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 3. Destinations */}
+         
           <div>
             <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-8 opacity-80">{t("Destinations")}</h3>
             <ul className="flex flex-col gap-4 text-xs font-medium italic">
@@ -119,7 +119,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 4. Social & Legal */}
+          
           <div className="flex flex-col gap-12">
             <div>
               <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-6 opacity-80">{t("Connect")}</h3>
@@ -143,7 +143,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* BARRE INFÉRIEURE */}
+        
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-bold uppercase tracking-[0.5em]">
           <p className="opacity-80">Marrakech, Morocco</p>
           <a href={`mailto:${email}`} className="hover:underline opacity-90 lowercase tracking-normal font-sans">

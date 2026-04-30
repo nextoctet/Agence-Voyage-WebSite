@@ -1040,6 +1040,7 @@
   "Maintains booking cart and active session": "Maintains booking cart and active session",
   "Duration": "Duration",
   "Session": "Session",
+  "GDPR (European Union)": "GDPR (European Union)",
   "Protects forms from cross-site request forgery": "Protects forms from cross-site request forgery",
   "Remembers preferred currency (MAD, EUR, USD)": "Remembers preferred currency (MAD, EUR, USD)",
   "1 year": "1 year",
@@ -1051,6 +1052,14 @@
   "Facebook Pixel — ad effectiveness measurement": "Facebook Pixel — ad effectiveness measurement",
   "90 days": "90 days",
   "Stores your cookie consent preferences": "Stores your cookie consent preferences",
+  "Legal Compliance": "Legal Compliance",
+  "Third-Party Partners": "Third-Party Partners",
+  "Morocco's primary data protection law. We are registered with the CNDP.": "Morocco's primary data protection law. We are registered with the CNDP.",
+  "Applies to all visitors from the European Union or EEA.": "Applies to all visitors from the European Union or EEA.",
+  "Google Maps": "Google Maps",
+  "We work with the following trusted third-party providers:": "We work with the following trusted third-party providers:",
+  "Managing Your Cookies": "Managing Your Cookies",
+  "You can control or delete cookies directly through your browser settings. Note that disabling them may affect website functionality.": "You can control or delete cookies directly through your browser settings. Note that disabling them may affect website functionality.",
   "Certain features on the WeLiveMorocco website are provided by trusted third parties, who may set their own cookies.": "Certain features on the WeLiveMorocco website are provided by trusted third parties, who may set their own cookies.",
   "Provides anonymised traffic and audience reporting.": "Provides anonymised traffic and audience reporting.",
   "Embedded interactive maps for itinerary visualisation.": "Embedded interactive maps for itinerary visualisation.",
@@ -1065,13 +1074,15 @@
   "GDPR (EU) 2016/679": "GDPR (EU) 2016/679",
   "Applies to visitors from the European Union or EEA.": "Applies to visitors from the European Union or EEA.",
   "Contact Us": "Contact Us",
+  "If you have questions about this cookies policy, please contact our Data Privacy Officer.": "If you have questions about this cookies policy, please contact our Data Privacy Officer.",
   "If you have questions about this cookies policy or how WeLiveMorocco handles your data.": "If you have questions about this cookies policy or how WeLiveMorocco handles your data.",
   "Last Reviewed": "Last Reviewed",
   "Privacy Preference": "Privacy Preference",
   "Cookies & Confidentialité": "Cookies & Privacy",
   "Nous utilisons des cookies pour votre confort. Conformément à la loi 09-08 et au RGPD, vous pouvez accepter ou refuser les cookies non-essentiels.": "We use cookies for your comfort. In accordance with Law 09-08 and GDPR, you can accept or reject non-essential cookies. ",
   "Tout Accepter": "Accept All ",
-  "Refuser": "Reject "
+  "Refuser": "Reject ",
+  "They allow our website to recognise your device, remember your preferences, and deliver a more personalised experience.": "They allow our website to recognise your device, remember your preferences, and deliver a more personalised experience."
   
 
 

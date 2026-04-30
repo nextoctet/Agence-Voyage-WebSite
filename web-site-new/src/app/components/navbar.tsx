@@ -29,7 +29,6 @@ export default function Navbar() {
         id="site-navbar" 
         className={`${montserrat.className} flex flex-nowrap justify-between items-center py-3 md:py-4 px-4 md:px-8 lg:px-10 bg-[#F9F7F2] border-b border-[#C07652]/10 sticky top-0 z-50 w-full`}>
         
-        {/* 1. Logo - Shrink-0 bach may-t-9rssch ga3 */}
         <Link href="/" className="transition transform hover:scale-105 active:scale-95 flex items-center h-12 md:h-16 lg:h-20 shrink-0">
           <Image 
             src="/pictures/logo-welivee.png" 
@@ -39,7 +38,6 @@ export default function Navbar() {
             className="h-10 md:h-14 lg:h-18 w-auto object-contain mix-blend-multiply" />
         </Link>
 
-        {/* 2. Links - Hadu homa li kiy-tzahmou, dert lihom justify-center o gap-x adaptive */}
         <div className="hidden lg:flex items-center justify-center flex-1 gap-x-3 xl:gap-x-8 font-bold text-[#2D2926] uppercase text-[10px] xl:text-[12px] tracking-[0.1em] xl:tracking-[0.2em] whitespace-nowrap px-2">
           <Link href="/" className="relative group overflow-hidden">
             {t('Accueil')}
@@ -50,7 +48,7 @@ export default function Navbar() {
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C07652] transition-all duration-300 group-hover:w-full"></span>
           </Link>
 
-          {/* Destinations Dropdown */}
+                                                                                                                                                                                                                                                                    
           <div 
             className="relative group cursor-pointer h-full py-5"
             onMouseEnter={() => setIsDestOpen(true)}
@@ -77,11 +75,10 @@ export default function Navbar() {
           <Link href="/contact" className="relative group overflow-hidden">
             {t('CONTACTEZ-NOUS')}
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C07652] transition-all duration-300 group-hover:w-full"></span>
-          </Link>
+          </Link>                              
         </div>
 
-        {/* 3. Right Section - Language o CTA - ml-auto bach i-bqa dima l-imin ga3 */}
-        <div className="flex items-center gap-x-2 xl:gap-x-5 shrink-0 ml-auto whitespace-nowrap">
+                                      <div className="flex items-center gap-x-2 xl:gap-x-5 shrink-0 ml-auto whitespace-nowrap">
           <div className="language-selector-wrapper flex items-center">
               <LanguageMenu />
           </div>
@@ -93,9 +90,9 @@ export default function Navbar() {
             {t('PERSONALISER VOTRE EXPERIENCE')}
           </Link>
 
-          {/* Hamburger (Mobile/Tablet) */}
+          
           <button
-            aria-label="Open menu"
+            aria-label="Open menu"                      
             className="lg:hidden p-2 text-[#C07652] transition-transform active:scale-90"
             onClick={() => setIsDrawerOpen(true)}
           >
@@ -106,7 +103,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE DRAWER (Ma-beddeltouch bach i-bqa khdam) */}
+    
       {isDrawerOpen && (
         <div className={`fixed inset-0 z-[100] flex justify-end ${montserrat.className}`}>
           <div 
