@@ -34,7 +34,7 @@ export default function Home() {
         {t("Perfect Gateway")}
       </h1><br></br>
       <p className="text-lg md:text-xl font-light leading-relaxed opacity-90 max-w-2xl font-serif">
-        {t("Find your perfect getaway, where relaxation and adventure come together in the ideal balance. Whether you're dreaming of serene beaches, cozy mountain retreats, or vibrant city escapes, we offer destinations that suit your every mood.")}
+        {t("Discover your perfect balance of relaxation and adventure. Whether you dream of serene beaches or vibrant city escapes, we tailor every journey to suit your mood.")}
       </p>
     </div><br></br>
 

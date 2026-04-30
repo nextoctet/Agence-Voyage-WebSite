@@ -33,7 +33,7 @@ export default function AboutPage() {
       {/* SECTION 1: HERO  */}
       <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
         <Image 
-          src="/pictures/chaf.webp" 
+          src="/pictures/desert.webp" 
           fill 
           className="object-cover scale-105" 
           alt="About WeLiveMorocco" 
@@ -41,7 +41,7 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
         
-        <div className="relative z-10 text-white max-w-5xl space-y-6 px-6">
+        <div className="relative z-10 text-[#ffffff] max-w-5xl space-y-6 px-6">
           <p className="uppercase tracking-[0.8em] text-[10px] md:text-xs font-bold mb-4 text-[#C07652] drop-shadow-md">
             {t("Your Morocco. Designed around you.")}
           </p>
