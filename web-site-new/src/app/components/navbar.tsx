@@ -78,14 +78,15 @@ export default function Navbar() {
           </Link>                              
         </div>
 
-                                      <div className="flex items-center gap-x-2 xl:gap-x-5 shrink-0 ml-auto whitespace-nowrap">
+                                      
+        <div className="flex items-center gap-x-2 xl:gap-x-5 shrink-0 ml-auto whitespace-nowrap">
           <div className="language-selector-wrapper flex items-center">
               <LanguageMenu />
           </div>
           
           <Link
             href="/personnaliser-experience"
-            className="hidden lg:block px-3 xl:px-6 py-3 border-2 border-[#C07652] text-[#C07652] text-[9px] xl:text-[11px] font-black tracking-[0.1em] xl:tracking-[0.15em] rounded-sm hover:bg-[#C07652] hover:text-white transition-all duration-500 shadow-sm active:scale-95"
+            className="hidden lg:block px-3 xl:px-6 py-3 border-2 border-[#C07652] text-[#C07652] text-[9px] xl:text-[11px] font-black tracking-[0.1em] xl:tracking-[0.15em] rounded-2xl hover:bg-[#C07652] hover:text-white transition-all duration-500 shadow-sm active:scale-95"
           >
             {t('PERSONALISER VOTRE EXPERIENCE')}
           </Link>

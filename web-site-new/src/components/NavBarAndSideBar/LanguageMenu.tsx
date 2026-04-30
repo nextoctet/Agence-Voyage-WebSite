@@ -6,7 +6,7 @@ import { Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['900'],
+  weight: ['600'], 
 });
 
 const LANGS = [
@@ -26,30 +26,26 @@ export default function LanguageMenu() {
   };
 
   return (
-    <div className={`${montserrat.className} flex items-center gap-5`}>
+    <div className={`${montserrat.className} flex items-center gap-3`}>
       {LANGS.map((l, index) => (
         <React.Fragment key={l.code}>
           <button 
             onClick={() => change(l.code)} 
-            className="group relative py-1"
+            className={`
+              relative w-10 h-10 rounded-2xl flex items-center justify-center
+              transition-all duration-500 border
+              ${currentLang === l.code 
+                ? 'bg-[#C07652] border-[#C07652] text-white' 
+                : 'bg-transparent border-[#2D2926]/20 text-[#2D2926]/40 hover:border-[#C07652] hover:text-[#C07652]'}
+            `}
           >
-           
-            <span className={`
-              text-[13px] tracking-[0.3em] transition-all duration-500
-              ${currentLang === l.code ? 'text-[#C07652]' : 'text-[#2D2926]/40 group-hover:text-[#C07652]'}
-            `}>
+            <span className="text-[11px] tracking-[0.1em] font-bold">
               {l.label}
             </span>
-
-            
-            <span className={`
-              absolute -bottom-1 left-1/2 -translate-x-1/2 h-[2px] bg-[#C07652] transition-all duration-500 ease-in-out
-              ${currentLang === l.code ? 'w-full' : 'w-0 group-hover:w-full'}
-            `}></span>
           </button>
 
           {index < LANGS.length - 1 && (
-            <div className="w-[1px] h-4 bg-[#C07652]/20 rotate-[20deg]"></div>
+            <div className="w-[1px] h-4 bg-[#2D2926]/10 rotate-[20deg]"></div>
           )}
         </React.Fragment>
       ))}

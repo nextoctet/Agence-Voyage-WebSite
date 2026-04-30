@@ -13,47 +13,43 @@ export default function Home() {
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#C07652]/20 blur-[120px] rounded-full animate-pulse"></div>
         <div className="absolute bottom-[-10%] right-[-20%] w-[40%] h-[40%] bg-[#2D2926]/10 blur-[100px] rounded-full"></div>
       </div>
-{/* SECTION 1: HERO */}
-<section className="relative h-[85vh] flex items-center justify-center text-center px-6 overflow-hidden">
-  <Image 
-    src="/pictures/rabat.jpg" 
-    fill 
-    className="object-cover scale-110 animate-[zoom_20s_infinite_alternate]" 
-    alt={t("hero_alt")} 
-    priority 
+   
+   {/* SECTION 1: HERO */}
+
+   {/* SECTION 1: HERO */}
+<section className="relative h-[85vh] flex items-center justify-start px-10 md:px-24 overflow-hidden">
+  <Image
+    src="/pictures/rabat.jpg"
+    fill
+    className="object-cover scale-110 animate-[zoom_20s_infinite_alternate]"
+    alt={t("hero_alt")}
+    priority
   />
 
-  <div className="absolute inset-0 bg-gradient-to-r from-[#C07652]/30 to-black/40 mix-blend-multiply"></div>
-  <div className="absolute inset-0 bg-black/30"></div>
-  
-  <div className="relative z-10 text-white max-w-5xl flex flex-col items-center space-y-12">
-    
-    <div className="space-y-8">
-      <p className="uppercase tracking-[1em] text-[10px] md:text-xs font-bold mb-6 animate-pulse">
-        {t("Votre Maroc. Conçu autour de vous.")}
-      </p>
-      <h1 className="text-6xl md:text-9xl font-serif leading-[1] mb-10 tracking-tighter">
-        <span className="font-light italic uppercase block opacity-90 transition-all hover:tracking-widest duration-700 select-none">
-          {t("Pas un forfait.")}
-        </span> 
-        <span className="text-[#C07652] uppercase font-black block drop-shadow-2xl mt-4">
-          {t("Une Émotion.")}
-        </span>
-      </h1>
-    </div>
+  <div className="absolute inset-0 bg-black/40" />
 
-    <Link 
-      href="/contact" 
-      className="bg-white text-[#C07652] px-12 py-5 uppercase font-bold text-[11px] tracking-[0.3em] shadow-2xl hover:bg-[#F9F7F2] transition-all transform hover:scale-105 active:scale-95"
-    >
-      {t("Begin Your Journey")}
+  <div className="relative z-10 text-white max-w-4xl flex flex-col items-start space-y-8">
+    <div className="space-y-6 text-left">
+      <h1 className="text-5xl md:text-6xl font-serif uppercase tracking-widest leading-tight opacity-95">
+        {t("Perfect Gateway")}
+      </h1><br></br>
+      <p className="text-lg md:text-xl font-light leading-relaxed opacity-90 max-w-2xl font-serif">
+        {t("Find your perfect getaway, where relaxation and adventure come together in the ideal balance. Whether you're dreaming of serene beaches, cozy mountain retreats, or vibrant city escapes, we offer destinations that suit your every mood.")}
+      </p>
+    </div><br></br>
+
+    <Link
+      href="/contact"
+      className="bg-[#C07652] text-white px-10 py-4 rounded-2xl uppercase font-bold text-[12px] tracking-[0.2em] shadow-xl hover:bg-[#A35F3F] transition-all transform hover:scale-105 active:scale-95">
+      {t("Lets Explore")}
     </Link>
   </div>
 
   <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-    <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 via-white to-white/0 animate-bounce"></div>
+    <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 via-white to-white/0 animate-bounce" />
   </div>
-</section>
+ </section>
+   
 
       {/* SECTION 2:*/}
       <section className="py-32 px-8 max-w-7xl mx-auto relative z-10">
@@ -106,7 +102,7 @@ export default function Home() {
                       alt={style.t} 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                    {/* Animated Line */}
+                   
                     <div className="absolute bottom-0 left-0 w-0 h-1.5 bg-[#C07652] transition-all duration-700 group-hover:w-full"></div>
                   </div>
                   <div className="p-10">

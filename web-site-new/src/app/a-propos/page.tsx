@@ -46,10 +46,7 @@ export default function AboutPage() {
             {t("Your Morocco. Designed around you.")}
           </p>
           <h1 className="text-5xl md:text-8xl font-serif leading-[1.1] mb-8 tracking-tight">
-            <span className="font-light italic">{t("WE DON'T PLAN")}</span> <br/> 
-            <span className="text-[#C07652] uppercase font-bold text-4xl md:text-7xl block mt-2">
-              {t("JUST TRIPS.")}
-            </span>
+            <span className="font-light italic">{t("Expertly planned journeys")}</span> <br/> 
           </h1>
           <p className="text-xl md:text-2xl font-light italic opacity-90">
             {t("We are from here. We know the country by heart.")}
