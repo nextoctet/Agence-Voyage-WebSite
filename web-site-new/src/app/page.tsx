@@ -14,43 +14,39 @@ export default function Home() {
         <div className="absolute bottom-[-10%] right-[-20%] w-[40%] h-[40%] bg-[#2D2926]/10 blur-[100px] rounded-full"></div>
       </div>
     
+      <section className="relative h-[85vh] flex items-center justify-start px-10 md:px-24 overflow-hidden">
+        <Image
+          src="/pictures/rabat.jpg"
+          fill
+          className="object-cover scale-110 animate-[zoom_20s_infinite_alternate]"
+          alt={t("hero_alt")}
+          priority
+        />
 
-   {/* SECTION 1: HERO */}
-<section className="relative h-[85vh] flex items-center justify-start px-10 md:px-24 overflow-hidden">
-  <Image
-    src="/pictures/rabat.jpg"
-    fill
-    className="object-cover scale-110 animate-[zoom_20s_infinite_alternate]"
-    alt={t("hero_alt")}
-    priority
-  />
+        <div className="absolute inset-0 bg-black/40" />
 
-  <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 text-white max-w-4xl flex flex-col items-start space-y-8">
+          <div className="space-y-6 text-left">
+            <h1 className="text-5xl md:text-6xl font-serif uppercase tracking-widest leading-tight opacity-95">
+              {t("Perfect Gateway")}
+            </h1><br></br>
+            <p className="text-lg md:text-xl font-light leading-relaxed opacity-90 max-w-2xl font-serif">
+              {t("Discover your perfect balance of relaxation and adventure. Whether you dream of serene beaches or vibrant city escapes, we tailor every journey to suit your mood.")}
+            </p>
+          </div><br></br>
 
-  <div className="relative z-10 text-white max-w-4xl flex flex-col items-start space-y-8">
-    <div className="space-y-6 text-left">
-      <h1 className="text-5xl md:text-6xl font-serif uppercase tracking-widest leading-tight opacity-95">
-        {t("Perfect Gateway")}
-      </h1><br></br>
-      <p className="text-lg md:text-xl font-light leading-relaxed opacity-90 max-w-2xl font-serif">
-        {t("Discover your perfect balance of relaxation and adventure. Whether you dream of serene beaches or vibrant city escapes, we tailor every journey to suit your mood.")}
-      </p>
-    </div><br></br>
+          <Link
+            href="/contact"
+            className="bg-[#C07652] text-white px-10 py-4 rounded-2xl uppercase font-bold text-[12px] tracking-[0.2em] shadow-xl hover:bg-[#A35F3F] transition-all transform hover:scale-105 active:scale-95">
+            {t("Lets Explore")}
+          </Link>
+        </div>
 
-    <Link
-      href="/contact"
-      className="bg-[#C07652] text-white px-10 py-4 rounded-2xl uppercase font-bold text-[12px] tracking-[0.2em] shadow-xl hover:bg-[#A35F3F] transition-all transform hover:scale-105 active:scale-95">
-      {t("Lets Explore")}
-    </Link>
-  </div>
-
-  <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-    <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 via-white to-white/0 animate-bounce" />
-  </div>
- </section>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+          <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 via-white to-white/0 animate-bounce" />
+        </div>
+      </section>
    
-
-      {/* SECTION 2:*/}
       <section className="py-32 px-8 max-w-7xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <div className="space-y-10">
@@ -76,7 +72,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 3 */}
       <section className="py-32 bg-white/30 backdrop-blur-sm px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-7xl font-serif italic text-center mb-24 text-[#2D2926] uppercase">
@@ -123,7 +118,7 @@ export default function Home() {
         </div>
       </section>
 
-     {/* SECTION 4 */}
+     
       <section className="py-32 px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -158,7 +153,7 @@ export default function Home() {
           </div>
         </div>
       </section>
- {/* SECTION 9*/}
+ 
       <section className="py-32 px-8 max-w-7xl mx-auto text-left relative z-10 border-t border-[#C07652]/10">
         <div className="mb-20">
           <p className="uppercase tracking-[0.5em] text-[#C07652] text-[10px] font-bold mb-4">
@@ -170,7 +165,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
-          {/* Question 1 */}
+          
           <div className="border-b border-[#C07652]/10 pb-10 group">
             <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
               {t("How far in advance should I reach out?")}
@@ -180,7 +175,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Question 2 */}
+       
           <div className="border-b border-[#C07652]/10 pb-10 group">
             <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
               {t("Is there a minimum number of days or people?")}
@@ -190,7 +185,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Question 3 */}
+          
           <div className="border-b border-[#C07652]/10 pb-10 group">
             <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
               {t("What does a tailor-made trip cost?")}
@@ -200,7 +195,7 @@ export default function Home() {
             </p>
           </div>
         
-          {/* Question 4 */}
+          
           <div className="border-b border-[#C07652]/10 pb-10 group">
             <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
               {t("Do I need a clear idea before contacting you?")}
@@ -210,7 +205,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Question 5 */}
+          
           <div className="border-b border-[#C07652]/10 pb-10 group">
             <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
               {t("What if something goes wrong during the trip?")}
@@ -220,7 +215,7 @@ export default function Home() {
             </p>
           </div>
             
-          {/* Question 6 */}
+          
           <div className="border-b border-[#C07652]/10 pb-10 group">
             <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
               {t("Can you handle dietary or accessibility needs?")}
@@ -232,7 +227,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CSS Keyframes  */}
       <style jsx global>{`
         @keyframes zoom {
           from { transform: scale(1); }

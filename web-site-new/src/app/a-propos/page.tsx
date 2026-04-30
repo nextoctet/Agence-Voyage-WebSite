@@ -32,41 +32,34 @@ export default function AboutPage() {
   return (
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden text-left">
       
-{/* SECTION 1: HERO */}
-<section className="relative h-[80vh] flex items-start justify-center text-center overflow-hidden pt-20">
-  <Image 
-    src="/pictures/desert.webp" 
-    fill 
-    className="object-cover scale-105" 
-    alt="About WeLiveMorocco" 
-    priority 
-  />
-  <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent"></div>
-  
-  <div className="relative z-10 text-[#ffffff] max-w-5xl space-y-6 px-6 mt-10">
-    <p className="uppercase tracking-[0.8em] text-[10px] md:text-xs font-bold mb-4 text-[#C07652] drop-shadow-md">
-      {t("Your Morocco. Designed around you.")}
-    </p>
-    
-    <h1 className="text-4xl md:text-7xl font-serif leading-[1.1] mb-6 tracking-tight">
-      <span className="font-light italic">{t("Expertly planned journeys")}</span>
-    </h1>
-
-    <p className="text-lg md:text-xl font-light italic opacity-90 max-w-2xl mx-auto ">
-      {t("We are from here. We know the country by heart.")}
-    </p>
-
-    
-    <div className="pt-20 md:pt-32">
-      <Link 
-        href="/contact" 
-        className="bg-[#C07652] text-white px-10 py-4 rounded-2xl uppercase font-bold text-[11px] tracking-[0.3em] transition-all hover:bg-[#A35F3F] hover:scale-105 active:scale-95 shadow-xl  "
-      >
-        {t("Begin Your Journey")}
-      </Link>
-    </div>
-  </div>
-</section>
+    {/* SECTION 1: HERO */}
+    <section className="relative h-[80vh] flex items-start justify-center text-center overflow-hidden pt-20">
+      <Image 
+        src="/pictures/desert.webp" 
+        fill 
+        className="object-cover scale-105" 
+        alt="About WeLiveMorocco" 
+        priority />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent"></div>
+      <div className="relative z-10 text-[#ffffff] max-w-5xl space-y-6 px-6 mt-10">
+        <p className="uppercase tracking-[0.8em] text-[10px] md:text-xs font-bold mb-4 text-[#C07652] drop-shadow-md">
+          {t("Your Morocco. Designed around you.")}
+        </p>
+        <h1 className="text-4xl md:text-7xl font-serif leading-[1.1] mb-6 tracking-tight">
+          <span className="font-light italic">{t("Expertly planned journeys")}</span>
+        </h1>
+        <p className="text-lg md:text-xl font-light italic opacity-90 max-w-2xl mx-auto ">
+          {t("We are from here. We know the country by heart.")}
+        </p>
+        <div className="pt-20 md:pt-32">
+          <Link 
+            href="/contact" 
+            className="bg-[#C07652] text-white px-10 py-4 rounded-2xl uppercase font-bold text-[11px] tracking-[0.3em] transition-all hover:bg-[#A35F3F] hover:scale-105 active:scale-95 shadow-xl  ">
+            {t("Begin Your Journey")}
+          </Link>
+        </div>
+      </div>
+    </section>
 
       {/* SECTION 2*/}
       <section className="py-32 px-8 max-w-7xl mx-auto">

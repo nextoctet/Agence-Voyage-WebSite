@@ -49,7 +49,7 @@ export default function CultureMarocaine() {
   return (
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden">
       
-      {/*  HERO */}
+
       <section className="relative h-[70vh] flex items-center justify-center text-center px-6 overflow-hidden mx-4 mt-4 rounded-3xl shadow-2xl bg-[#2D2926]">
         <div className="absolute inset-0 opacity-40">
           <Image 
@@ -74,13 +74,11 @@ export default function CultureMarocaine() {
         </div>
       </section>
 
-      {/* CONTENT */}
       <section className="py-32 max-w-7xl mx-auto px-8">
         <div className="space-y-48">
           {CULTURE_SECTIONS.map((sec, idx) => (
             <div key={idx} className={`flex flex-col lg:flex-row gap-24 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
               
-              {/* Côté Texte */}
               <div className="lg:w-1/2 space-y-10 text-left">
                 <div className="inline-block border-l-4 border-[#C07652] pl-6">
                   <span className="text-[#C07652] font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">{sec.sub}</span>
@@ -114,7 +112,6 @@ export default function CultureMarocaine() {
         </div>
       </section>
 
-      {/* SECTION CITATION */}
       <section className="bg-[#2D2926] py-32 px-8 text-center relative mx-4 mb-4 rounded-3xl overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-serif italic text-[#C07652]/5 pointer-events-none uppercase">
            Héritage

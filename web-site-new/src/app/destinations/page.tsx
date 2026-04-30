@@ -85,14 +85,13 @@ export default function DestinationsCataloguePage() {
         </div>
       </section>
 
-      {/*  GRID DES CARDS  */}
+      
       <section className="max-w-7xl mx-auto py-24 px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           
           {TOUTES_DESTINATIONS.map((dest) => (
             <div key={dest.id} className="group bg-white rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
               
-              {/* Image de la Card */}
               <div className="relative h-80 overflow-hidden">
                 <Image 
                   src={dest.img} 
@@ -107,8 +106,6 @@ export default function DestinationsCataloguePage() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-
-              {/* Contenu de la Card */}
               <div className="p-10 flex flex-col flex-grow">
                 <div className="mb-6">
                   <p className="text-orange-500 font-black text-[10px] uppercase tracking-widest mb-2 italic">
@@ -143,7 +140,6 @@ export default function DestinationsCataloguePage() {
         </div>
       </section>
 
-      {/* BANNER CONTACT */}
       <section className="bg-gray-50 py-20 px-6 mx-6 mb-12 rounded-[3rem] text-center border border-gray-100">
         <h2 className="text-3xl font-black text-[#003366] uppercase italic mb-6">{t("Un voyage sur mesure ?")}</h2>
         <p className="text-gray-500 mb-10 italic">{t("Nos experts basés au Maroc créent votre itinéraire idéal.")}</p>

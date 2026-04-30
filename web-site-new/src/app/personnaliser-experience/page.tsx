@@ -42,7 +42,6 @@ export default function DesignExperience() {
   return (
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden text-left">
       
-      {/* SECTION 1: HERO */}
       <section className="relative h-[85vh] flex items-center justify-start px-8 md:px-24 mx-4 mt-4 rounded-3xl overflow-hidden shadow-2xl bg-[#2D2926]">
         <Image 
           src="/pictures/tangerr.jpg" 
@@ -67,7 +66,6 @@ export default function DesignExperience() {
         </div>
       </section>
 
-      {/* SECTION 2 */}
       <section className="py-32 px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
           {[
@@ -85,7 +83,6 @@ export default function DesignExperience() {
         </div>
       </section>
 
-      {/* SECTION 3: LE PROCESSUS */}
       <section className="py-32 bg-[#2D2926] text-white px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-24">
@@ -109,7 +106,6 @@ export default function DesignExperience() {
         </div>
       </section>
 
-      {/* SECTION 4: FORMULAIRE */}
       <section className="py-32 px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24">
         <div className="lg:col-span-5 space-y-12">
           <h2 className="text-5xl md:text-7xl font-serif italic tracking-tighter leading-[1] text-[#2D2926] uppercase">

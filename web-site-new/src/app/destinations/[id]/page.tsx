@@ -152,7 +152,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
         </div>
       </div>
 
-      {/* STICKY NAV */}
+      
       <nav className="sticky bg-white/90 backdrop-blur-md border-b border-gray-100 z-40 shadow-sm" style={{ top: navbarHeight ? `${navbarHeight}px` : 0 }}>
         <div className="max-w-[1440px] mx-auto flex gap-12 px-8 py-5 overflow-x-auto no-scrollbar">
           {[{ label: t('Aperçu'), id: 'apercu' }, { label: t('Itinéraire'), id: 'itineraire' }, { label: t('Quand Partir'), id: 'quand-partir' }, { label: t('Tarifs'), id: 'tarifs' }].map((tab) => (
@@ -161,12 +161,11 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
         </div>
       </nav>
 
-      {/* MAIN CONTENT */}
+      
       <section className="max-w-[1440px] mx-auto py-32 px-8">
         <div className="flex flex-col lg:flex-row gap-24">
           <div className="w-full lg:w-2/3 space-y-32">
             
-            {/* APERÇU */}
             <div id="apercu" className="scroll-mt-32">
                <div className="flex items-center gap-6 mb-16">
                   <h2 className="text-[#2D2926] text-4xl font-serif italic">{t("Temps forts au Maroc")}</h2>
@@ -218,7 +217,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
               </div>
             </div>
 
-            {/* QUAND PARTIR */}
+          
             <div id="quand-partir" className="scroll-mt-32 pt-20 border-t border-gray-100">
               <div className="flex items-center gap-6 mb-12">
                 <h2 className="text-[#2D2926] text-3xl font-serif italic uppercase tracking-tighter">{t("Quand Partir")}</h2>
@@ -242,7 +241,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
               </div>
             </div>
 
-            {/* TARIFS */}
+            
             <div id="tarifs" className="scroll-mt-32 pt-20 border-t border-gray-100">
               <div className="flex items-center gap-6 mb-12">
                 <h2 className="text-[#2D2926] text-3xl font-serif italic uppercase tracking-tighter">{t("Tarifs & Disponibilités")}</h2>
@@ -279,7 +278,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
             </div>
           </div>
 
-          {/* SIDEBAR */}
+          
           <div className="w-full lg:w-1/3 relative">
             <div className="sticky top-32 space-y-10">
               <div className="bg-[#2D2926] p-12 text-white relative overflow-hidden shadow-2xl rounded-sm">
