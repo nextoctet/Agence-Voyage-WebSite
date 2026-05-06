@@ -18,7 +18,7 @@ export default function CultureMarocaine() {
         t("Tanjia Marrakchia"),
         t("Le Pain traditionnel (Tafarnout)")
       ],
-      img: "/table.webp" 
+      img: "/pictures/table.webp" 
     },
     {
       title: t("Savoir-faire Ancestral"),
@@ -30,7 +30,7 @@ export default function CultureMarocaine() {
         t("Travail du Cuir"),
         t("Ferronnerie d'art")
       ],
-      img: "/cuir.jpg"
+      img: "/pictures/cuir.jpg"
     },
     {
       title: t("L'Art de Vivre"),
@@ -42,7 +42,7 @@ export default function CultureMarocaine() {
         t("Musique Gnaoua & Andalouse"),
         t("Fantasia (Tbourida)")
       ],
-      img: "/vivre.jpg"
+      img: "/pictures/vivre.jpg"
     }
   ];
 
@@ -53,7 +53,7 @@ export default function CultureMarocaine() {
       <section className="relative h-[70vh] flex items-center justify-center text-center px-6 overflow-hidden mx-4 mt-4 rounded-3xl shadow-2xl bg-[#2D2926]">
         <div className="absolute inset-0 opacity-40">
           <Image 
-            src="/pictures/casablanca.jpg" 
+            src="/pictures/casablancaa.jpg" 
             fill 
             className="object-cover scale-105 animate-slow-zoom" 
             alt={t("Culture Maroc")} 

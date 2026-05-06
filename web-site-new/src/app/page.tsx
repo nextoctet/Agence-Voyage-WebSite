@@ -133,7 +133,7 @@ export default function Home() {
               { src: "/pictures/phtos.webp", col: "md:col-span-1", row: "md:row-span-1" },
               { src: "/pictures/Etranger.jpg", col: "md:col-span-1", row: "md:row-span-2" },
               { src: "/pictures/maroc.jpg", col: "md:col-span-1", row: "md:row-span-1" },
-              { src: "/pictures/marr.jpg", col: "md:col-span-1", row: "md:row-span-1" },  
+              { src: "/pictures/marrr.jpg", col: "md:col-span-1", row: "md:row-span-1" },  
               { src: "/pictures/marocc.png", col: "md:col-span-2", row: "md:row-span-1" },
               { src: "/pictures/j.jpg", col: "md:col-span-1", row: "md:row-span-1" },
             ].map((photo, index) => (

@@ -27,9 +27,9 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
       duration: t("2 NUITS"), price: "1 200 MAD", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106362.45034638363!2d-7.669394!3d33.572268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sCasablanca!5e0!3m2!1sfr!2sma!4v1625000000000",
       itinerary: [
         { day: "1", location: t("Casablanca"), title: t("Arrivée & Corniche"), stay: t("Four Seasons Casablanca"), desc: t("Accueil VIP et installation à l'hôtel face à la mer."), 
-          hotelImgs: ["/1hotelcasa.webp", "/2hotelcasa.jpg"] },
+          hotelImgs: ["/pictures/1hotelcasa.webp", "/pictures/2hotelcasa.jpg"] },
         { day: "2", location: t("Casablanca"), title: t("Patrimoine"), stay: t("Four Seasons Casablanca"), desc: t("Visite de la Mosquée Hassan II et du quartier Art Déco."), 
-          hotelImgs: ["/3hotelcasa.jpg"] }
+          hotelImgs: ["/pictures/3hotelcasa.jpg"] }
       ],
       prices: [
         { month: t("Avril 2026"), price: 1200 }, { month: t("Mai 2026"), price: 1300 }, { month: t("Juin 2026"), price: 1400 }
@@ -44,13 +44,13 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
         t("Dîner privé dans un palais de la Médina avec spectacle de musique traditionnelle."),
         t("Excursion exclusive dans le désert d'Agafay pour une nuit sous les étoiles.")
       ],
-      heroImg: "/marakechdes.webp",
+      heroImg: "/pictures/marakechdes.webp",
       duration: t("3 NUITS"), price: "2 500 MAD", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108704.14811904257!2d-8.0778931!3d31.6346023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee93db1edcf1%3A0x6b05860d93da2f63!2sMarrakech!5e0!3m2!1sfr!2sma!4v1625000000000",
       itinerary: [
         { day: "1-2", location: t("Médina"), title: t("Immersion Rouge"), stay: t("La Mamounia"), desc: t("Découverte des souks et des palais historiques."), 
-          hotelImgs: ["/hotel1marra.jpg", "/hotel2marra.jpg"] },
+          hotelImgs: ["/pictures/1hotelmarra.jpg", "/pictures/2hotelmarra.jpg"] },
         { day: "3", location: t("Agafay"), title: t("Désert de Pierre"), stay: t("Luxury Camp"), desc: t("Expérience nomade de luxe à 40min de la ville."), 
-          hotelImgs: ["/hotel3marra.webp"] }
+          hotelImgs: ["/pictures/3hotelmarra.webp"] }
       ],
       prices: [
         { month: t("Avril 2026"), price: 2500 }, { month: t("Mai 2026"), price: 2800 }, { month: t("Septembre 2026"), price: 3000 }
@@ -68,7 +68,7 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
       duration: t("2 NUITS"), price: "1 800 MAD", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103713.06584218804!2d-5.8614488!3d35.7642345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b43525f053967%3A0x2d192c7304192d!2sTanger!5e0!3m2!1sfr!2sma!4v1625000000000",
       itinerary: [
         { day: "1-2", location: t("Kasbah"), title: t("Mythe Tangérois"), stay: t("Hôtel Nord-Pinus"), desc: t("Balade dans la vieille ville et les cafés historiques."), 
-          hotelImgs: ["/hotel1tan.jpg"] }
+          hotelImgs: ["/pictures/hotel1tan.jpg"] }
       ],
       prices: [
         { month: t("Juin 2026"), price: 1800 }, { month: t("Juillet 2026"), price: 2200 }
@@ -83,13 +83,13 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
         t("Visite de la prestigieuse Université Al Quaraouiyine, la plus ancienne au monde."),
         t("Atelier de poterie et de mosaïque (Zellige) avec les maîtres artisans fassis.")
       ],
-      heroImg: "/fesdes.jpg", 
+      heroImg: "/pictures/fesdes.jpg", 
       duration: t("2 NUITS"), 
       price: "1 500 MAD", 
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52918.5262799517!2d-5.0401878!3d34.008988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd9f8b32e6c251bb%3A0x23f795679469248!2sF%C3%A8s!5e0!3m2!1sfr!2sma!4v1713250000000",
       itinerary: [
-        { day: "1", location: t("Fès El-Bali"), title: t("Cœur Historique"), stay: t("Palais Faraj Suites & Spa"), desc: t("Arrivée et installation. Première immersion dans la médina et dîner avec vue panoramique sur les toits de la ville."), hotelImgs: ["/hotel1fes.jpg"] },
-        { day: "2", location: t("Fès & Environs"), title: t("Artisanat & Palais"), stay: t("Palais Faraj Suites & Spa"), desc: t("Visite des tanneries, de la Medersa Bou Inania et des portes du Palais Royal."), hotelImgs: ["/hotel2fes.jpg"] }
+        { day: "1", location: t("Fès El-Bali"), title: t("Cœur Historique"), stay: t("Palais Faraj Suites & Spa"), desc: t("Arrivée et installation. Première immersion dans la médina et dîner avec vue panoramique sur les toits de la ville."), hotelImgs: ["/pictures/hotel1fes.jpg"] },
+        { day: "2", location: t("Fès & Environs"), title: t("Artisanat & Palais"), stay: t("Palais Faraj Suites & Spa"), desc: t("Visite des tanneries, de la Medersa Bou Inania et des portes du Palais Royal."), hotelImgs: ["/pictures/hotel2fes.jpg"] }
       ],
       prices: [
         { month: t("Mai 2026"), price: 1500 }, { month: t("Juin 2026"), price: 1400 }, { month: t("Septembre 2026"), price: 1650 }
