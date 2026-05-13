@@ -21,7 +21,6 @@ Use this same structure:
 ```text
 public/
   locales/
-    fr/common.json
     en/common.json
     es/common.json
 src/
@@ -40,8 +39,8 @@ Key behavior:
 
 - Loads translation files from `/public/locales/{{lng}}/common.json` (static frontend assets)
 - No backend or API required—everything is fetched from the frontend
-- Default fallback language: fr
-- Supports languages: fr, en, es (expandable)
+- Default fallback language: en
+- Supports languages: en, es (expandable)
 - Detects user language in this order:
   1. cookie
   2. localStorage
@@ -80,7 +79,7 @@ File: src/components/NavBarAndSideBar/LanguageMenu.tsx
 
 Current project behavior:
 
-- Read saved language from localStorage (default fr)
+- Read saved language from localStorage (default en)
 - Change i18n language
 - Save language to localStorage
 - Update UI flag
@@ -148,7 +147,7 @@ const features = Object.values(
 Use this exact process each time you translate a page.
 
 1. Scan target page and list every visible hardcoded string.
-2. Create structured keys under one section in common.json (fr first recommended).
+2. Create structured keys under one section in common.json (en first recommended).
 3. Replace ALL literals in the component with t("...") calls.
 4. Add the same keys to en/common.json and es/common.json.
 5. Verify key parity between all locale files.
@@ -159,7 +158,7 @@ Use this exact process each time you translate a page.
 
 Before finishing, verify:
 
-- Every new fr key exists in en and es
+- Every new en key exists in es
 - Nesting is identical across all languages
 - No missing key warnings in console
 - No remaining hardcoded UI text in the translated page
@@ -182,7 +181,7 @@ npm install i18next react-i18next i18next-http-backend i18next-browser-languaged
 
 ## 12) Recommended Conventions for New Projects
 
-- Keep one source language as base (fr in this project)
+- Keep one source language as base (en in this project)
 - Use feature prefixes for all keys
 - Avoid dynamic key names when possible
 - Keep validations and alerts inside translation files
