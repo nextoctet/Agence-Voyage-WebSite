@@ -28,6 +28,48 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto relative z-10">
 
+        {/* CTA */}
+        <div className="text-center mb-32 space-y-12 py-10">
+          <FadeIn>
+            <p className="uppercase tracking-[0.5em] text-[10px] md:text-xs font-montserrat font-bold opacity-90">
+              {t("LET'S BEGIN")}
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <h2 className="text-4xl md:text-7xl lg:text-8xl font-playfair leading-[1.1] max-w-6xl mx-auto">
+              {t("Now all that remains is to tell us how you wish to experience Morocco.")}
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <p className="text-lg md:text-xl font-playfair opacity-90 max-w-3xl mx-auto italic">
+              {t("Every journey begins with a personal conversation and is thoughtfully tailored around you.")}
+            </p>
+          </FadeIn>
+          
+          <FadeIn delay={0.6} className="flex flex-col md:flex-row justify-center items-center gap-6 pt-6">
+            <Link
+              href="/personnaliser-experience"
+              className="bg-[#1A1412] text-white px-12 py-6 uppercase font-montserrat font-bold text-[11px] tracking-[0.2em] hover:bg-black transition-all min-w-[320px] text-center"
+            >
+              {t("Begin My Tailored Journey")}
+            </Link>
+            <Link
+              href="/contact"
+              className="border border-white text-white px-12 py-6 uppercase font-montserrat font-bold text-[11px] tracking-[0.2em] hover:bg-white hover:text-[#BD856A] transition-all min-w-[320px] text-center"
+            >
+              {t("Speak With a Travel Designer")}
+            </Link>
+          </FadeIn>
+          
+          <FadeIn delay={0.8} className="pt-20 flex flex-wrap justify-center gap-x-8 gap-y-4 text-[10px] md:text-[11px] font-montserrat tracking-[0.2em] opacity-80 uppercase">
+            <span>contact@welivemorocco.com</span>
+            <span className="hidden md:inline">•</span>
+            <span>+212 617587695</span>
+            <span className="hidden md:inline">•</span>
+            <span>Marrakech, Morocco</span>
+          </FadeIn>
+        </div>
+
         {/* NEWSLETTER */}
         <FadeIn className="border-y border-white/20 py-24 mb-24">
           {!subscribed ? (

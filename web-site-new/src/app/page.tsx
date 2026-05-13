@@ -214,13 +214,12 @@ export default function Home() {
           
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-[300px]">
             {[
-              { src: "/pictures/tourisme.jpg", col: "md:col-span-2", row: "md:row-span-2" },
-              { src: "/pictures/phtos.webp", col: "md:col-span-1", row: "md:row-span-1" },
-              { src: "/pictures/Etranger.jpg", col: "md:col-span-1", row: "md:row-span-2" },
-              { src: "/pictures/maroc.jpg", col: "md:col-span-1", row: "md:row-span-1" },
-              { src: "/pictures/marrr.jpg", col: "md:col-span-1", row: "md:row-span-1" },  
-              { src: "/pictures/marocc.png", col: "md:col-span-2", row: "md:row-span-1" },
-              { src: "/pictures/j.jpg", col: "md:col-span-1", row: "md:row-span-1" },
+              { src: "/pictures/gallery-mohammed.jpg", col: "md:col-span-2", row: "md:row-span-2" },
+              { src: "/pictures/gallery-raul-2A8.jpg", col: "md:col-span-1", row: "md:row-span-1" },
+              { src: "/pictures/gallery-kyriacos.jpg", col: "md:col-span-1", row: "md:row-span-2" },
+              { src: "/pictures/gallery-sabrina.jpg", col: "md:col-span-1", row: "md:row-span-1" },
+              { src: "/pictures/gallery-raul-atw.jpg", col: "md:col-span-1", row: "md:row-span-1" },  
+              { src: "/pictures/gallery-raul-atw-2.jpg", col: "md:col-span-2", row: "md:row-span-1" },
             ].map((photo, index) => (
               <FadeInStagger 
                 key={index} 
