@@ -2,6 +2,7 @@
 import { useState, FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import Link from 'next/link';
+import { FadeIn, StaggerContainer, FadeInStagger } from '@/components/motion';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -16,7 +17,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#C07652] text-white pt-24 pb-12 px-8 font-sans relative overflow-hidden">
+    <footer className="bg-[#BD856A] text-white pt-24 pb-12 px-8 font-sans relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
@@ -27,32 +28,8 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* CTA */}
-        <div className="text-center mb-32">
-          <p className="uppercase tracking-[0.6em] text-[10px] md:text-xs font-bold mb-8 opacity-90">
-            {t("COMMENÇONS L'AVENTURE")}
-          </p>
-          <h2 className="text-4xl md:text-7xl font-serif italic leading-tight mb-10">
-            {t("La seule chose qu'il reste à faire est de nous parler de vous.")}
-          </h2>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-6">
-            <Link
-              href="/personnaliser-experience"
-              className="bg-white text-[#C07652] rounded-2xl px-10 py-5 uppercase font-bold text-[10px] tracking-[0.2em] shadow-2xl hover:bg-[#F9F7F2] transition-all"
-            >
-              {t("Commencer mon voyage sur mesure")}
-            </Link>
-            <Link
-              href="/contact"
-              className="border-2 border-white text-white px-10 py-5 rounded-2xl uppercase font-bold text-[10px] tracking-[0.2em] hover:bg-white hover:text-[#C07652] transition-all"
-            >
-              {t("Parler à l'équipe")}
-            </Link>
-          </div>
-        </div>
-
         {/* NEWSLETTER */}
-        <div className="border-y border-white/20 py-24 mb-24">
+        <FadeIn className="border-y border-white/20 py-24 mb-24">
           {!subscribed ? (
             <div className="max-w-3xl mx-auto flex flex-col items-start text-left">
               <h3 className="text-4xl md:text-5xl font-serif mb-4">
@@ -96,21 +73,21 @@ export default function Footer() {
               </p>
             </div>
           )}
-        </div>
+        </FadeIn>
 
         {/* LINKS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-left">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-left">
 
           {/* Brand */}
-          <div>
+          <FadeInStagger>
             <h2 className="text-3xl font-serif italic tracking-tighter leading-tight">
               WELIVE <br />
               <span className="not-italic font-bold tracking-widest text-2xl">MOROCCO</span>
             </h2>
-          </div>
+          </FadeInStagger>
 
           {/* L'Agence */}
-          <div>
+          <FadeInStagger>
             <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-8 opacity-80">
               {t("L'Agence")}
             </h3>
@@ -125,10 +102,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </FadeInStagger>
 
           {/* Destinations */}
-          <div>
+          <FadeInStagger>
             <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-8 opacity-80">
               {t("Destinations")}
             </h3>
@@ -143,10 +120,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </FadeInStagger>
 
           {/* Connect */}
-          <div className="flex flex-col gap-12">
+          <FadeInStagger className="flex flex-col gap-12">
             <div>
               <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-6 opacity-80">
                 {t("Connect")}
@@ -174,19 +151,20 @@ export default function Footer() {
                 <Link href="/cookies-policy" className="hover:text-white transition-colors">{t("Terms of Service")}</Link>
               </div>
             </div>
-          </div>
+          </FadeInStagger>
 
-        </div>
+        </StaggerContainer>
 
-        <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-bold uppercase tracking-[0.5em]">
+        <FadeIn className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[12px] font-bold uppercase tracking-[0.5em]">
           <p className="opacity-80">Marrakech, Morocco</p>
           <a href={`mailto:${email}`} className="hover:underline opacity-90 lowercase tracking-normal font-sans">
             {email}
           </a>
           <p className="opacity-60">© 2026 WELIVE MOROCCO</p>
-        </div>
+        </FadeIn>
 
       </div>
     </footer>
   );
 }
+

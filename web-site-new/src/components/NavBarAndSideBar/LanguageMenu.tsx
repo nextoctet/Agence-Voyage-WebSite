@@ -32,14 +32,14 @@ export default function LanguageMenu() {
           <button 
             onClick={() => change(l.code)} 
             className={`
-              relative w-10 h-10 rounded-2xl flex items-center justify-center
+              relative w-12 h-12 rounded-2xl flex items-center justify-center
               transition-all duration-500 border
               ${currentLang === l.code 
                 ? 'bg-[#C07652] border-[#C07652] text-white' 
                 : 'bg-transparent border-[#2D2926]/20 text-[#2D2926]/40 hover:border-[#C07652] hover:text-[#C07652]'}
             `}
           >
-            <span className="text-[11px] tracking-[0.1em] font-bold">
+            <span className="text-[13px] tracking-[0.1em] font-bold">
               {l.label}
             </span>
           </button>

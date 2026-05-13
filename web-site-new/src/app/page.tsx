@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { FadeIn, StaggerContainer, FadeInStagger } from '@/components/motion';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -14,6 +15,7 @@ export default function Home() {
         <div className="absolute bottom-[-10%] right-[-20%] w-[40%] h-[40%] bg-[#2D2926]/10 blur-[100px] rounded-full"></div>
       </div>
     
+      {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-start px-10 md:px-24 overflow-hidden">
         <Image
           src="/pictures/rabat.jpg"
@@ -25,21 +27,30 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 text-white max-w-4xl flex flex-col items-start space-y-8">
-          <div className="space-y-6 text-left">
-            <h1 className="text-5xl md:text-6xl font-serif uppercase tracking-widest leading-tight opacity-95">
-              {t("Perfect Gateway")}
-            </h1><br></br>
-            <p className="text-lg md:text-xl font-light leading-relaxed opacity-90 max-w-2xl font-serif">
-              {t("Discover your perfect balance of relaxation and adventure. Whether you dream of serene beaches or vibrant city escapes, we tailor every journey to suit your mood.")}
-            </p>
-          </div><br></br>
+        <div className="relative z-10 text-white max-w-4xl flex flex-col items-start space-y-6">
+          <div className="space-y-4 text-left">
+            <FadeIn direction="none" duration={1.2}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-playfair leading-tight opacity-95">
+                {t("hero_title")}
+              </h1>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.4}>
+              <p className="text-lg md:text-xl font-playfair lowercase leading-relaxed opacity-80 max-w-xl">
+                {t("hero_subtitle")}
+              </p>
+            </FadeIn>
+          </div>
 
-          <Link
-            href="/contact"
-            className="bg-[#C07652] text-white px-10 py-4 rounded-2xl uppercase font-bold text-[12px] tracking-[0.2em] shadow-xl hover:bg-[#A35F3F] transition-all transform hover:scale-105 active:scale-95">
-            {t("Lets Explore")}
-          </Link>
+          <FadeIn direction="up" delay={0.8}>
+            <div className="flex items-stretch">
+              <div className="w-[3px] bg-[#C07652] mr-0" />
+              <Link
+                href="/contact"
+                className="bg-[#C07652] text-white px-8 py-4 uppercase font-montserrat font-bold text-sm tracking-[0.2em] shadow-xl hover:bg-[#A35F3F] transition-all transform hover:translate-x-1 active:scale-95">
+                {t("hero_button")}
+              </Link>
+            </div>
+          </FadeIn>
         </div>
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
@@ -47,87 +58,161 @@ export default function Home() {
         </div>
       </section>
    
-      <section className="py-32 px-8 max-w-7xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-2 gap-20 items-center">
-          <div className="space-y-10">
-            <div className="inline-block border-l-4 border-[#C07652] pl-6 overflow-hidden">
-               <h2 className="text-[#C07652] font-bold uppercase text-[10px] tracking-[0.3em] animate-slide-in">{t("Pourquoi le sur mesure")}</h2>
+      {/* Why Bespoke Section */}
+      <section className="relative z-10 border-t border-[#C07652]/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[80vh]">
+          {/* Left Column: Light */}
+          <div className="bg-[#F9F7F2] p-10 md:p-24 lg:p-32 flex flex-col justify-center space-y-10">
+            <FadeIn direction="right">
+              <div className="flex items-center space-x-6">
+                <div className="w-[2px] h-6 bg-[#C07652]" />
+                <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#C07652] uppercase">
+                  {t("why_bespoke.label")}
+                </span>
+              </div>
+            </FadeIn>
+            
+            <div className="space-y-8">
+              <FadeIn direction="right" delay={0.2}>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair leading-[1.1] text-[#1A1814]">
+                  {t("why_bespoke.title")}
+                </h2>
+              </FadeIn>
+              <FadeIn direction="right" delay={0.4}>
+                <p className="text-base md:text-lg font-playfair leading-relaxed text-[#1A1814]/70 max-w-xl">
+                  {t("why_bespoke.body")}
+                </p>
+              </FadeIn>
+              
+              <FadeIn direction="up" delay={0.6} className="pt-6 border-t border-[#1A1814]/10">
+                <p className="text-2xl md:text-3xl font-playfair italic text-[#C07652] leading-tight">
+                  {t("why_bespoke.accent")}
+                </p>
+              </FadeIn>
             </div>
-            <p className="text-4xl md:text-5xl font-serif italic leading-tight text-[#2D2926]">
-              {t("Les voyages organisés amènent les gens au Maroc. Les voyages sur mesure leur permettent de s'y plonger.")} <br/>
-              <span className="text-[#C07652] not-italic font-sans font-black uppercase text-3xl md:text-4xl block mt-4 tracking-tighter decoration-[#C07652] underline-offset-8">
-                {t("Le sur-mesure les emmène au cœur du pays.")}
-              </span>
-            </p>
           </div>
-          <div className="bg-[#2D2926] text-[#F9F7F2] p-12 md:p-20 relative shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden group rounded-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#C07652]/10 rounded-full -mr-32 -mt-32 transition-transform group-hover:scale-150 duration-1000"></div>
-            <p className="text-xl md:text-2xl font-light italic mb-8 leading-relaxed relative z-10 border-b border-[#C07652]/20 pb-8">
-              {t("Notre équipe de professionnels du voyage nés au Maroc a passé plus d'une décennie à bâtir une connaissance réelle du pays.")}
-            </p>
-            <p className="text-xl md:text-2xl font-light italic leading-relaxed relative z-10">
-              {t("Votre rythme, vos intérêts, votre budget, votre groupe — chaque élément est pensé avec soin.")}
-            </p>
+
+          {/* Right Column: Dark */}
+          <div className="bg-[#1A1814] p-10 md:p-24 lg:p-32 text-white flex flex-col justify-center space-y-12">
+            <FadeIn className="space-y-6">
+              <h3 className="text-3xl md:text-4xl font-playfair leading-tight max-w-md">
+                {t("why_bespoke.dark_title")}
+              </h3>
+              <div className="w-full h-[1px] bg-[#C07652]/30" />
+            </FadeIn>
+
+            <FadeIn delay={0.2} className="space-y-6 font-playfair italic text-base md:text-lg opacity-80 leading-relaxed max-w-md">
+              <p>{t("why_bespoke.dark_body_1")}</p>
+              <p>{t("why_bespoke.dark_body_2")}</p>
+            </FadeIn>
+
+            <StaggerContainer className="grid grid-cols-3 gap-6 pt-8">
+              <FadeInStagger className="space-y-1">
+                <span className="text-3xl md:text-4xl font-playfair text-[#C07652] block">{t("why_bespoke.stat_1_num")}</span>
+                <span className="text-[12px] md:text-[13px] uppercase tracking-widest opacity-50 font-montserrat">{t("why_bespoke.stat_1_label")}</span>
+              </FadeInStagger>
+              <FadeInStagger className="space-y-1">
+                <span className="text-3xl md:text-4xl font-playfair text-[#C07652] block">{t("why_bespoke.stat_2_num")}</span>
+                <span className="text-[12px] md:text-[13px] uppercase tracking-widest opacity-50 font-montserrat">{t("why_bespoke.stat_2_label")}</span>
+              </FadeInStagger>
+              <FadeInStagger className="space-y-1">
+                <span className="text-3xl md:text-4xl font-playfair text-[#C07652] block">{t("why_bespoke.stat_3_num")}</span>
+                <span className="text-[12px] md:text-[13px] uppercase tracking-widest opacity-50 font-montserrat">{t("why_bespoke.stat_3_label")}</span>
+              </FadeInStagger>
+            </StaggerContainer>
           </div>
         </div>
       </section>
 
-      <section className="py-32 bg-white/30 backdrop-blur-sm px-8 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-7xl font-serif italic text-center mb-24 text-[#2D2926] uppercase">
-            {t("Styles de Voyage")}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
-            {[
-              { n: "01", img: "/pictures/marrakech-culture.jpeg", t: t("Immersion Culturelle"), d: t("Private walks and dinners.") },
-              { n: "02", img: "/pictures/Desert & Landscapes.jpg", t: t("Désert & Paysages"), d: t("Dunes and luxury bivouacs.") },
-              { n: "03", img: "/pictures/adventure.jpg", t: t("Aventure & Actif"), d: t("Treks and 4x4 expeditions.") },
-              { n: "04", img: "/pictures/hotel3marra.webp", t: t("Luxe & Privé"), d: t("Seamless high-end service.") },
-              { n: "05", img: "/pictures/Family Travel.webp", t: t("Voyage en Famille"), d: t("Experiences for all ages.") },
-              { n: "06", img: "/pictures/table.webp", t: t("Gastronomie"), d: t("Spice markets and private chefs.") }
-            ].map((style) => (
-              <a href="/contact" key={style.n} className="group cursor-pointer">
-                <div className="relative bg-[#F9F7F2] transition-all duration-500 transform group-hover:-translate-y-4 group-hover:shadow-[0_40px_80px_-15px_rgba(192,118,82,0.3)] rounded-2xl overflow-hidden border border-transparent hover:border-[#C07652]/20">
-                  <div className="h-[28rem] relative overflow-hidden">
-                    <Image 
-                      src={style.img} 
-                      fill 
-                      className="object-cover transition-transform duration-[3s] group-hover:scale-125" 
-                      alt={style.t} 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                   
-                    <div className="absolute bottom-0 left-0 w-0 h-1.5 bg-[#C07652] transition-all duration-700 group-hover:w-full"></div>
-                  </div>
-                  <div className="p-10">
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="text-[#C07652] font-serif italic text-3xl block">{style.n}</span>
-                      <span className="text-[#C07652] opacity-0 group-hover:opacity-100 transition-all transform translate-x-4 group-hover:translate-x-0">
-                        →
-                      </span>
-                    </div>
-                    <h3 className="text-2xl font-black uppercase mb-4 tracking-tighter text-[#2D2926]">{style.t}</h3>
-                    <p className="text-sm text-gray-500 italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      {style.d}
-                    </p>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
 
      
+      {/* Travel Styles Section */}
+      <section className="bg-[#F9F7F2] py-24 md:py-32 px-6 md:px-12 lg:px-24">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#1A1814]/10 pb-8">
+            <div className="space-y-3">
+              <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#C07652] uppercase">
+                {t("travel_styles.label")}
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair text-[#1A1814]">
+                {t("travel_styles.title")}
+              </h2>
+            </div>
+          </FadeIn>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+            {/* Style 1 */}
+            <FadeInStagger className="space-y-6 group">
+              <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">
+                <Image
+                  src="/pictures/marrakech-culture.jpeg"
+                  alt="Cultural Encounters"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute top-4 right-6 text-5xl font-playfair text-[#C07652] opacity-40">01</div>
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-2xl md:text-3xl font-playfair text-[#1A1814]">{t("travel_styles.style_1.title")}</h3>
+                <p className="text-[#1A1814]/70 font-playfair text-base leading-relaxed">{t("travel_styles.style_1.body")}</p>
+                <p className="text-[13px] font-montserrat font-bold tracking-widest text-[#C07652] uppercase pt-2">
+                  {t("travel_styles.style_1.footer")}
+                </p>
+              </div>
+            </FadeInStagger>
+
+            {/* Style 2 */}
+            <FadeInStagger className="space-y-6 group">
+              <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">
+                <Image
+                  src="/pictures/fesdes.jpg"
+                  alt="Desert & Atlas Escapes"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute top-4 right-6 text-5xl font-playfair text-[#C07652] opacity-40">02</div>
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-2xl md:text-3xl font-playfair text-[#1A1814]">{t("travel_styles.style_2.title")}</h3>
+                <p className="text-[#1A1814]/70 font-playfair text-base leading-relaxed">{t("travel_styles.style_2.body")}</p>
+                <p className="text-[13px] font-montserrat font-bold tracking-widest text-[#C07652] uppercase pt-2">
+                  {t("travel_styles.style_2.footer")}
+                </p>
+              </div>
+            </FadeInStagger>
+
+            {/* Style 3 */}
+            <FadeInStagger className="space-y-6 group">
+              <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">
+                <Image
+                  src="/pictures/adventure.jpg"
+                  alt="Adventure & Exploration"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute top-4 right-6 text-5xl font-playfair text-[#C07652] opacity-40">03</div>
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-2xl md:text-3xl font-playfair text-[#1A1814]">{t("travel_styles.style_3.title")}</h3>
+                <p className="text-[#1A1814]/70 font-playfair text-base leading-relaxed">{t("travel_styles.style_3.body")}</p>
+                <p className="text-[13px] font-montserrat font-bold tracking-widest text-[#C07652] uppercase pt-2">
+                  {t("travel_styles.style_3.footer")}
+                </p>
+              </div>
+            </FadeInStagger>
+          </StaggerContainer>
+        </div>
+      </section>
+
       <section className="py-32 px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <FadeIn className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-serif italic text-[#2D2926] uppercase select-none">{t("The Journey Album")}</h2>
-            <div className="w-24 h-1 bg-[#C07652] mx-auto mt-6 animate-pulse"></div>
-            <p className="mt-8 text-gray-400 italic tracking-[0.5em] text-[10px] uppercase">{t("Snapshots from our latest expeditions")}</p>
-          </div>
+            <div className="w-16 h-[2px] bg-[#C07652] mx-auto mt-4 animate-pulse"></div>
+            <p className="mt-6 text-gray-400 italic tracking-[0.5em] text-[12px] uppercase">{t("Snapshots from our latest expeditions")}</p>
+          </FadeIn>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-[300px]">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-[300px]">
             {[
               { src: "/pictures/tourisme.jpg", col: "md:col-span-2", row: "md:row-span-2" },
               { src: "/pictures/phtos.webp", col: "md:col-span-1", row: "md:row-span-1" },
@@ -137,7 +222,7 @@ export default function Home() {
               { src: "/pictures/marocc.png", col: "md:col-span-2", row: "md:row-span-1" },
               { src: "/pictures/j.jpg", col: "md:col-span-1", row: "md:row-span-1" },
             ].map((photo, index) => (
-              <div 
+              <FadeInStagger 
                 key={index} 
                 className={`relative overflow-hidden rounded-xl shadow-lg transition-all duration-700 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] ${photo.col || ""} ${photo.row || ""}`}
               >
@@ -148,81 +233,69 @@ export default function Home() {
                   alt={`Gallery Image ${index}`} 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-              </div>
+              </FadeInStagger>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
  
-      <section className="py-32 px-8 max-w-7xl mx-auto text-left relative z-10 border-t border-[#C07652]/10">
-        <div className="mb-20">
-          <p className="uppercase tracking-[0.5em] text-[#C07652] text-[10px] font-bold mb-4">
-            {t("Common Questions")}
-          </p>
-          <h2 className="text-5xl md:text-7xl font-serif italic text-[#2D2926] leading-tight">
-            {t("Answers before you even ask.")}
-          </h2>
-        </div>
+      <section className="relative z-10 border-t border-[#C07652]/10">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          {/* Left Column: Why Morocco */}
+          <div className="bg-[#C06030] p-10 md:p-24 lg:p-32 text-white flex flex-col justify-between min-h-[80vh]">
+            <FadeIn className="space-y-10">
+              <div className="space-y-4">
+                <h2 className="text-5xl md:text-6xl lg:text-7xl font-playfair italic leading-tight">
+                  {t("why_morocco.title")}
+                </h2>
+                <p className="text-lg md:text-xl font-playfair italic opacity-90 leading-relaxed max-w-md">
+                  {t("why_morocco.subtitle")}
+                </p>
+              </div>
+              
+              <div className="w-16 h-[1px] bg-white/40" />
+              
+              <div className="space-y-6 text-base md:text-lg font-playfair leading-relaxed max-w-lg opacity-90">
+                <p>{t("why_morocco.body_1")}</p>
+                <p>{t("why_morocco.body_2")}</p>
+              </div>
+            </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
-          
-          <div className="border-b border-[#C07652]/10 pb-10 group">
-            <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
-              {t("How far in advance should I reach out?")}
-            </h4>
-            <p className="text-[13px] text-gray-500 leading-relaxed font-light">
-              {t("4–6 weeks minimum, earlier in peak season (March–May and September–November). We handle last-minute well and always tell you honestly if we can deliver the quality you deserve.")}
-            </p>
-          </div>
-
-       
-          <div className="border-b border-[#C07652]/10 pb-10 group">
-            <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
-              {t("Is there a minimum number of days or people?")}
-            </h4>
-            <p className="text-[13px] text-gray-500 leading-relaxed font-light">
-              {t("No minimum. Solo travelers to groups of 20. 3-night trips to 3-week journeys. The shorter the trip, the more focused we make it — fewer things done properly beats too much done in a rush.")}
-            </p>
+            <FadeIn delay={0.4} className="mt-16 pt-6 border-t border-white/20">
+              <p className="font-montserrat text-[12px] md:text-[13px] tracking-[0.3em] uppercase opacity-80">
+                {t("why_morocco.footer")}
+              </p>
+            </FadeIn>
           </div>
 
-          
-          <div className="border-b border-[#C07652]/10 pb-10 group">
-            <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
-              {t("What does a tailor-made trip cost?")}
-            </h4>
-            <p className="text-[13px] text-gray-500 leading-relaxed font-light">
-              {t("There's no fixed price because there's no fixed trip. Tell us your budget range and we'll maximise it. All quotes are fully itemised so you know exactly what you're paying for.")}
-            </p>
-          </div>
-        
-          
-          <div className="border-b border-[#C07652]/10 pb-10 group">
-            <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
-              {t("Do I need a clear idea before contacting you?")}
-            </h4>
-            <p className="text-[13px] text-gray-500 leading-relaxed font-light">
-              {t("Not at all. '10 days, love food, want to avoid crowds' is enough. We ask the right questions. Working out the detail is our job — that's exactly what we're here for.")}
-            </p>
-          </div>
+          {/* Right Column: Our Commitment */}
+          <div className="bg-[#1A1412] p-10 md:p-24 lg:p-32 text-white flex flex-col space-y-16 min-h-[80vh]">
+            <FadeIn className="space-y-6">
+              <span className="font-montserrat text-[12px] md:text-[13px] tracking-[0.5em] uppercase text-[#C06030] font-bold">
+                {t("commitment.label")}
+              </span>
+              <p className="text-xl md:text-2xl font-playfair leading-relaxed opacity-80 max-w-md">
+                {t("commitment.subtitle")}
+              </p>
+            </FadeIn>
 
-          
-          <div className="border-b border-[#C07652]/10 pb-10 group">
-            <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
-              {t("What if something goes wrong during the trip?")}
-            </h4>
-            <p className="text-[13px] text-gray-500 leading-relaxed font-light">
-              {t("Our team is in Morocco and reachable on WhatsApp around the clock. If anything changes or goes wrong — you contact us and we fix it. That's what a real ground team means.")}
-            </p>
-          </div>
-            
-          
-          <div className="border-b border-[#C07652]/10 pb-10 group">
-            <h4 className="text-xl font-bold text-[#2D2926] mb-4 font-serif italic group-hover:text-[#C07652] transition-colors tracking-tight">
-              {t("Can you handle dietary or accessibility needs?")}
-            </h4>
-            <p className="text-[13px] text-gray-500 leading-relaxed font-light">
-              {t("Yes — from the start, not as an afterthought. Tell us when you first reach out and we build it into every meal, activity, and accommodation selection from day one.")}
-            </p>
+            <StaggerContainer className="space-y-10">
+              {[1, 2, 3, 4, 5].map((num) => (
+                <FadeInStagger key={num} className="flex gap-5 md:gap-8 items-start group">
+                  <span className="text-[#C06030] font-montserrat font-bold text-xl md:text-2xl pt-0.5">
+                    {num.toString().padStart(2, '0')}
+                  </span>
+                  <div className="space-y-2">
+                    <h4 className="text-xl md:text-2xl font-playfair font-bold leading-tight group-hover:text-[#C07652] transition-colors">
+                      {t(`commitment.item_${num}_title`)}
+                    </h4>
+                    <p className="text-[15px] md:text-[16px] text-gray-400 font-playfair leading-relaxed max-w-lg">
+                      {t(`commitment.item_${num}_body`)}
+                    </p>
+                  </div>
+                </FadeInStagger>
+              ))}
+            </StaggerContainer>
           </div>
         </div>
       </section>

@@ -62,12 +62,12 @@ export default function CultureMarocaine() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
         
         <div className="relative z-10 max-w-5xl mx-auto w-full">
-          <span className="text-[#C07652] font-bold uppercase tracking-[0.6em] text-[10px] md:text-xs mb-6 block">
+          <span className="text-[#C07652] font-bold uppercase tracking-[0.6em] text-[13px] md:text-sm mb-6 block">
             {t("Héritage Millénaire")}
           </span>
           <h1 className="text-5xl md:text-8xl font-serif italic text-white leading-none tracking-tight">
             {t("L'ÂME DU")} <br /> 
-            <span className="text-[#C07652] uppercase font-sans font-black not-italic text-4xl md:text-7xl block mt-4 tracking-tighter">
+            <span className="text-[#C07652] uppercase font-sans font-black not-italic text-5xl md:text-8xl block mt-4 tracking-tighter">
               {t("MAROC")}
             </span>
           </h1>
@@ -81,15 +81,15 @@ export default function CultureMarocaine() {
               
               <div className="lg:w-1/2 space-y-10 text-left">
                 <div className="inline-block border-l-4 border-[#C07652] pl-6">
-                  <span className="text-[#C07652] font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">{sec.sub}</span>
+                  <span className="text-[#C07652] font-bold uppercase tracking-[0.3em] text-[13px] md:text-sm">{sec.sub}</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-serif italic text-[#2D2926] leading-tight">{sec.title}</h2>
-                <p className="text-xl text-gray-500 italic font-light leading-relaxed max-w-xl">
+                <h2 className="text-5xl md:text-6xl font-serif italic text-[#2D2926] leading-tight">{sec.title}</h2>
+                <p className="text-2xl text-gray-500 italic font-light leading-relaxed max-w-xl">
                   {sec.desc}
                 </p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-12 pt-8 border-t border-gray-100">
                   {sec.items.map((item, i) => (
-                    <li key={i} className="flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-[#2D2926]/80 group">
+                    <li key={i} className="flex items-center gap-4 text-sm md:text-base font-bold uppercase tracking-widest text-[#2D2926]/80 group">
                       <span className="w-1.5 h-1.5 bg-[#C07652] rounded-full transition-transform group-hover:scale-150"></span>
                       {item}
                     </li>
@@ -118,7 +118,7 @@ export default function CultureMarocaine() {
         </div>
         
         <div className="max-w-4xl mx-auto relative z-10">
-           <h3 className="text-3xl md:text-5xl font-serif italic text-white leading-snug">
+           <h3 className="text-4xl md:text-6xl font-serif italic text-white leading-snug">
             {t("Au Maroc, chaque porte fermée cache un")} <span className="text-[#C07652] not-italic font-sans font-black uppercase tracking-tighter">{t("trésor")}</span>{t(", et chaque invité est un")} <span className="text-[#C07652] not-italic font-sans font-black uppercase tracking-tighter">{t("roi.")}</span>
            </h3>
            <div className="w-16 h-1 bg-[#C07652] mx-auto mt-12"></div>
