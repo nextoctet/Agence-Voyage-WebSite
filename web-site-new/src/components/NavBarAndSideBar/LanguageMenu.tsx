@@ -11,6 +11,7 @@ const montserrat = Montserrat({
 
 const LANGS = [
   { code: 'en', label: 'EN' },
+  { code: 'fr', label: 'FR' },
   { code: 'es', label: 'ES' },
 ];
 
