@@ -12,8 +12,8 @@ if (isBrowser) {
 }
 
 i18n.use(initReactI18next).init({
-  fallbackLng: "fr",
-  supportedLngs: ["fr", "en", "es"],
+  fallbackLng: "en",
+  supportedLngs: ["en", "es"],
   debug: process.env.NODE_ENV === "development",
   interpolation: { escapeValue: false },
   backend: { loadPath: "/locales/{{lng}}/common.json" },

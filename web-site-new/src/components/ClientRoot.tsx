@@ -5,7 +5,7 @@ import i18n from "../utils/i18n";
 
 export default function ClientRoot({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const lang = i18n.language || (typeof window !== 'undefined' ? localStorage.getItem('i18nextLng') || 'fr' : 'fr');
+    const lang = i18n.language || (typeof window !== 'undefined' ? localStorage.getItem('i18nextLng') || 'en' : 'en');
     document.documentElement.lang = lang;
     document.documentElement.dir = ['ar','he','fa','ur'].includes(lang) ? 'rtl' : 'ltr';
   }, []);
