@@ -7,8 +7,13 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const lang = typeof window !== 'undefined' ? (localStorage.getItem('i18nextLng') || 'fr') : 'fr';
-    i18n.changeLanguage(lang).finally(() => setReady(true));
+    if (i18n.isInitialized) {
+      setReady(true);
+    } else {
+      const handleInitialized = () => setReady(true);
+      i18n.on('initialized', handleInitialized);
+      return () => i18n.off('initialized', handleInitialized);
+    }
   }, []);
 
   if (!ready) return null;

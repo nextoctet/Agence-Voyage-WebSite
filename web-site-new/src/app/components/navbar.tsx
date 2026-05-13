@@ -27,12 +27,19 @@ const DRAWER_LINKS = [
   { href: "/cookies-policy", label: "Privacy Policy" },
 ];
 
+import { motion, AnimatePresence } from "framer-motion";
+
 function UnderlineLink({ href, label }: { href: string; label: string }) {
   const { t } = useTranslation();
   return (
     <Link href={href} className="relative group overflow-hidden">
       {t(label)}
-      <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C07652] transition-all duration-300 group-hover:w-full" />
+      <motion.span 
+        className="absolute bottom-0 left-0 h-[2px] bg-[#C07652]"
+        initial={{ width: 0 }}
+        whileHover={{ width: "100%" }}
+        transition={{ duration: 0.3 }}
+      />
     </Link>
   );
 }
@@ -83,22 +90,35 @@ export default function Navbar() {
           >
             <div className="flex items-center gap-1 hover:text-[#C07652] transition-colors">
               {t("destinations")}
-              <span className="text-[10px] text-[#C07652] ml-1 transition-transform group-hover:rotate-180">▼</span>
+              <motion.span 
+                className="text-[10px] text-[#C07652] ml-1"
+                animate={{ rotate: isDestOpen ? 180 : 0 }}
+              >
+                ▼
+              </motion.span>
             </div>
 
-            {isDestOpen && (
-              <div className="absolute top-[100%] left-0 w-64 bg-white shadow-2xl border-t-2 border-[#C07652] py-6 rounded-b-sm animate-in fade-in slide-in-from-top-2 duration-300">
-                {DESTINATIONS.map(({ href, label }) => (
-                  <Link
-                    key={href}
-                    href={href}
-                    className="block px-8 py-3 text-[11px] text-[#2D2926] hover:bg-[#F9F7F2] hover:text-[#C07652] transition-all font-bold uppercase tracking-[0.15em] hover:pl-10"
-                  >
-                    {t(label)}
-                  </Link>
-                ))}
-              </div>
-            )}
+            <AnimatePresence>
+              {isDestOpen && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute top-[100%] left-0 w-64 bg-white shadow-2xl border-t-2 border-[#C07652] py-6 rounded-b-sm z-50"
+                >
+                  {DESTINATIONS.map(({ href, label }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="block px-8 py-3 text-[11px] text-[#2D2926] hover:bg-[#F9F7F2] hover:text-[#C07652] transition-all font-bold uppercase tracking-[0.15em] hover:pl-10"
+                    >
+                      {t(label)}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <UnderlineLink href="/guide-voyage" label="Guide de voyage" />
@@ -129,69 +149,97 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile drawer */}
-      {isDrawerOpen && (
-        <div className={`fixed inset-0 z-[100] flex justify-end ${montserrat.className}`}>
-          <div
-            className="absolute inset-0 bg-[#2D2926]/70 backdrop-blur-md"
-            onClick={closeDrawer}
-          />
-          <aside className="relative w-[85vw] max-w-sm bg-[#F9F7F2] shadow-2xl p-6 flex flex-col h-full overflow-y-auto">
-            <button
-              aria-label="Close menu"
-              className="absolute top-5 right-5 p-2 text-[#C07652]"
+      <AnimatePresence>
+        {isDrawerOpen && (
+          <div className={`fixed inset-0 z-[100] flex justify-end ${montserrat.className}`}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-[#2D2926]/70 backdrop-blur-md"
               onClick={closeDrawer}
+            />
+            <motion.aside 
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="relative w-[85vw] max-w-sm bg-[#F9F7F2] shadow-2xl p-6 flex flex-col h-full overflow-y-auto"
             >
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+              <button
+                aria-label="Close menu"
+                className="absolute top-5 right-5 p-2 text-[#C07652]"
+                onClick={closeDrawer}
+              >
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
 
-            <nav className="mt-16 flex flex-col gap-5 uppercase font-bold text-[#2D2926] tracking-[0.1em]">
-              {DRAWER_LINKS.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  onClick={closeDrawer}
-                  className="text-[16px] border-b border-[#C07652]/10 pb-3"
-                >
-                  {t(label)}
-                </Link>
-              ))}
-
-              {/* Destinations */}
-              <div className="flex flex-col gap-3">
-                <span className="text-[13px] text-[#C07652] font-black tracking-[0.2em]">
-                  {t("Destinations")}
-                </span>
-                <div className="flex flex-col gap-3 pl-4 border-l border-[#C07652]/30">
-                  {DESTINATIONS.map(({ href, label }) => (
+              <nav className="mt-16 flex flex-col gap-5 uppercase font-bold text-[#2D2926] tracking-[0.1em]">
+                {DRAWER_LINKS.map(({ href, label }, idx) => (
+                  <motion.div
+                    key={href}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + idx * 0.05 }}
+                  >
                     <Link
-                      key={href}
                       href={href}
                       onClick={closeDrawer}
-                      className="text-[14px]"
+                      className="block text-[16px] border-b border-[#C07652]/10 pb-3"
                     >
                       {t(label)}
                     </Link>
-                  ))}
+                  </motion.div>
+                ))}
+
+                {/* Destinations */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + DRAWER_LINKS.length * 0.05 }}
+                  className="flex flex-col gap-3"
+                >
+                  <span className="text-[13px] text-[#C07652] font-black tracking-[0.2em]">
+                    {t("Destinations")}
+                  </span>
+                  <div className="flex flex-col gap-3 pl-4 border-l border-[#C07652]/30">
+                    {DESTINATIONS.map(({ href, label }) => (
+                      <Link
+                        key={href}
+                        href={href}
+                        onClick={closeDrawer}
+                        className="text-[14px]"
+                      >
+                        {t(label)}
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <Link
+                    href="/personnaliser-experience"
+                    onClick={closeDrawer}
+                    className="mt-6 inline-block w-full px-4 py-4 bg-[#C07652] text-white text-center rounded-sm text-[14px] font-black tracking-[0.1em] shadow-lg active:scale-95 transition-transform"
+                  >
+                    {t("PERSONALISER VOTRE EXPERIENCE")}
+                  </Link>
+                </motion.div>
+
+                <div className="mt-auto pt-10 flex justify-center">
+                  <LanguageMenu />
                 </div>
-              </div>
-
-              <Link
-                href="/personnaliser-experience"
-                onClick={closeDrawer}
-                className="mt-6 inline-block px-4 py-4 bg-[#C07652] text-white text-center rounded-sm text-[12px] font-black tracking-[0.1em] shadow-lg active:scale-95 transition-transform"
-              >
-                {t("PERSONALISER VOTRE EXPERIENCE")}
-              </Link>
-
-              <div className="mt-auto pt-10 flex justify-center">
-                <LanguageMenu />
-              </div>
-            </nav>
-          </aside>
-        </div>
-      )}
+              </nav>
+            </motion.aside>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

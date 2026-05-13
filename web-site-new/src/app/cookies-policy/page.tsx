@@ -42,7 +42,7 @@ export default function CookiesPolicyPage() {
             <h2 className="text-3xl font-serif text-white leading-tight">
               1. {t("What Are Cookies?")}
             </h2>
-            <div className="text-[#D8C4B0] leading-relaxed space-y-4">
+            <div className="text-[#D8C4B0] text-lg leading-relaxed space-y-4">
               <p>
                 {t("Cookies are small text files placed on your device when you visit a website.")}
               </p>
