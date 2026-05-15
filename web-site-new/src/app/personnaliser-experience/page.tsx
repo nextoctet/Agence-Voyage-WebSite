@@ -162,42 +162,42 @@ export default function DesignExperience() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f7f2ec] text-[#211712]">
-      <section className="relative overflow-hidden border-b border-[#f0642b]/10 bg-[radial-gradient(circle_at_20%_18%,rgba(217,84,31,0.12),transparent_18rem),radial-gradient(circle_at_82%_24%,rgba(240,100,43,0.10),transparent_22rem),linear-gradient(180deg,#fbf7f1_0%,#f7f2ec_100%)] px-4 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-8">
+    <main className="min-h-screen overflow-x-hidden bg-[#f7f2ec] text-[#211712]">
+      <section className="relative overflow-hidden border-b border-[#f0642b]/10 bg-[radial-gradient(circle_at_20%_18%,rgba(217,84,31,0.12),transparent_18rem),radial-gradient(circle_at_82%_24%,rgba(240,100,43,0.10),transparent_22rem),linear-gradient(180deg,#fbf7f1_0%,#f7f2ec_100%)] px-4 pb-10 pt-4 sm:px-6 sm:pb-14 sm:pt-8 md:pb-16">
         <div className="pointer-events-none absolute left-[-5rem] top-[18%] h-40 w-40 rounded-full bg-[#d9541f]/8 blur-3xl sm:h-56 sm:w-56" />
         <div className="pointer-events-none absolute right-[-4rem] top-[12%] h-44 w-44 rounded-full border-[20px] border-[#d9541f]/10 sm:h-64 sm:w-64 sm:border-[28px]" />
         <div className="pointer-events-none absolute bottom-0 left-1/2 h-24 w-[120%] -translate-x-1/2 rounded-t-[100%] border-t border-[#f0642b]/10" />
 
-        <div className="relative mx-auto flex min-h-[calc(100svh-88px)] w-full max-w-[1320px] flex-col justify-center">
+        <div className="relative mx-auto flex min-h-[calc(100svh-72px)] w-full max-w-[1320px] flex-col justify-center sm:min-h-[calc(100svh-88px)]">
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="mx-auto max-w-[980px] text-center"
           >
-            <p className="mb-5 text-[12px] font-extrabold uppercase tracking-[0.34em] text-[#d9541f] sm:text-[13px]">
+            <p className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.3em] text-[#d9541f] sm:mb-5 sm:text-[13px] sm:tracking-[0.34em]">
               {t('Private Travel Design')}
             </p>
 
-            <h1 className="mx-auto max-w-[860px] text-[clamp(56px,10vw,122px)] font-black leading-[0.86] tracking-[-0.065em] text-[#d9541f]">
+            <h1 className="mx-auto max-w-[860px] text-[clamp(2.95rem,14vw,7.4rem)] font-black leading-[0.88] tracking-[-0.065em] text-[#d9541f]">
               {t('Start Your Morocco Journey')}
             </h1>
 
-            <p className="mx-auto mt-7 max-w-[760px] font-serif text-[20px] leading-[1.55] text-[#5b4a40] sm:text-[24px]">
+            <p className="mx-auto mt-6 max-w-[760px] font-serif text-[17px] leading-[1.55] text-[#5b4a40] sm:mt-7 sm:text-[20px] md:text-[24px]">
               {t(
                 'Share a few details about the way you like to travel. WeLiveMorocco will shape a private journey around your rhythm, interests, dates, and expectations.'
               )}
             </p>
 
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <a
                 href="#journey-form"
-                className="inline-flex min-h-[58px] items-center justify-center rounded-full border border-[#d9541f] bg-[#d9541f] px-8 text-[12px] font-extrabold uppercase tracking-[0.18em] text-white transition hover:-translate-y-0.5 hover:bg-[#be4718] hover:shadow-[0_18px_36px_rgba(217,84,31,0.18)]"
+                className="inline-flex min-h-[54px] w-full max-w-[340px] items-center justify-center rounded-full border border-[#d9541f] bg-[#d9541f] px-7 text-[11px] font-extrabold uppercase tracking-[0.16em] text-white transition hover:-translate-y-0.5 hover:bg-[#be4718] hover:shadow-[0_18px_36px_rgba(217,84,31,0.18)] sm:min-h-[58px] sm:w-auto sm:max-w-none sm:px-8 sm:text-[12px] sm:tracking-[0.18em]"
               >
                 {t('Begin the Enquiry')}
               </a>
 
-              <div className="inline-flex min-h-[58px] items-center rounded-full border border-[#f0642b]/20 bg-white/70 px-6 text-[12px] font-bold uppercase tracking-[0.18em] text-[#6b564a] backdrop-blur-sm">
+              <div className="inline-flex min-h-[54px] w-full max-w-[340px] items-center justify-center rounded-full border border-[#f0642b]/20 bg-white/70 px-6 text-[11px] font-bold uppercase tracking-[0.16em] text-[#6b564a] backdrop-blur-sm sm:min-h-[58px] sm:w-auto sm:max-w-none sm:text-[12px] sm:tracking-[0.18em]">
                 {t('Reply within 24 hours')}
               </div>
             </div>
@@ -207,7 +207,7 @@ export default function DesignExperience() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mx-auto mt-14 w-full max-w-[1080px] border-y border-[#f0642b]/14"
+            className="mx-auto mt-10 w-full max-w-[1080px] border-y border-[#f0642b]/14 sm:mt-12 md:mt-14"
           >
             <div className="grid gap-0 md:grid-cols-3">
               {[
@@ -226,8 +226,10 @@ export default function DesignExperience() {
               ].map((item, index) => (
                 <div
                   key={item.title}
-                  className={`px-5 py-6 text-center md:px-8 md:py-8 ${
-                    index < 2 ? 'md:border-r md:border-[#f0642b]/14' : ''
+                  className={`px-5 py-5 text-center md:px-8 md:py-8 ${
+                    index < 2
+                      ? 'border-b border-[#f0642b]/14 md:border-b-0 md:border-r'
+                      : 'last:border-b-0'
                   }`}
                 >
                   <p className="text-[12px] font-extrabold uppercase tracking-[0.24em] text-[#d9541f]">
@@ -243,18 +245,18 @@ export default function DesignExperience() {
         </div>
       </section>
 
-      <section id="journey-form" className="scroll-mt-28 px-[14px] py-[34px] sm:px-[21px] sm:py-[42px]">
+      <section id="journey-form" className="scroll-mt-28 px-[14px] py-[28px] sm:px-[21px] sm:py-[36px] md:py-[42px]">
         <div className="mx-auto w-full max-w-[1180px]">
-        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(280px,0.78fr)] lg:gap-[72px]">
+        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.7fr)_minmax(280px,0.78fr)] lg:gap-[56px] xl:gap-[72px]">
           <div>
-            <div className="mb-8 border-b border-[#f0642b]/12 pb-6">
+            <div className="mb-7 border-b border-[#f0642b]/12 pb-5 sm:mb-8 sm:pb-6">
               <p className="text-[12px] font-extrabold uppercase tracking-[0.28em] text-[#d9541f]">
                 {t('Your enquiry')}
               </p>
-              <h2 className="mt-4 font-serif text-[clamp(34px,5vw,58px)] leading-[0.95] tracking-[-0.04em] text-[#211712]">
+              <h2 className="mt-4 font-serif text-[clamp(2.3rem,8vw,3.8rem)] leading-[0.95] tracking-[-0.04em] text-[#211712]">
                 {t('Tell us how you want to experience Morocco.')}
               </h2>
-              <p className="mt-4 max-w-[660px] text-[15px] leading-[1.7] text-[#6f5c51]">
+              <p className="mt-4 max-w-[660px] text-[14px] leading-[1.7] text-[#6f5c51] sm:text-[15px]">
                 {t('The more context you share, the more precise and personal your first itinerary proposal will be.')}
               </p>
             </div>
@@ -396,10 +398,10 @@ export default function DesignExperience() {
                 </div>
               </div>
 
-              <div className="mt-6 grid gap-4 md:grid-cols-[1fr_0.84fr] md:items-center">
+              <div className="mt-6 grid gap-3 sm:gap-4 md:grid-cols-[1fr_0.84fr] md:items-center">
                 <button
                   type="submit"
-                  className="min-h-[74px] rounded-[14px] border border-[#f0642b] bg-transparent px-5 text-[12px] font-bold uppercase tracking-[0.14em] text-[#3b2518] transition hover:-translate-y-0.5 hover:bg-[#d9541f] hover:text-white hover:shadow-[0_15px_30px_rgba(217,84,31,0.18)]"
+                  className="min-h-[66px] rounded-[14px] border border-[#f0642b] bg-transparent px-5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#3b2518] transition hover:-translate-y-0.5 hover:bg-[#d9541f] hover:text-white hover:shadow-[0_15px_30px_rgba(217,84,31,0.18)] sm:min-h-[74px] sm:text-[12px]"
                 >
                   {t('Send Request')}
                 </button>
@@ -407,7 +409,7 @@ export default function DesignExperience() {
                 <button
                   type="button"
                   onClick={handleWhatsApp}
-                  className="min-h-[74px] rounded-[14px] border border-[rgba(217,84,31,0.38)] bg-white px-5 text-[12px] font-extrabold uppercase tracking-[0.10em] text-[#d9541f] transition hover:-translate-y-0.5 hover:bg-[#fff3ed]"
+                  className="min-h-[66px] rounded-[14px] border border-[rgba(217,84,31,0.38)] bg-white px-5 text-[11px] font-extrabold uppercase tracking-[0.10em] text-[#d9541f] transition hover:-translate-y-0.5 hover:bg-[#fff3ed] sm:min-h-[74px] sm:text-[12px]"
                 >
                   {t('WhatsApp Us')}
                 </button>
@@ -415,7 +417,7 @@ export default function DesignExperience() {
             </form>
           </div>
 
-          <aside className="pt-[10px] lg:pt-[92px]">
+          <aside className="pt-0 lg:pt-[72px] xl:pt-[92px]">
             <div className="mb-7 grid grid-cols-[42px_1fr] items-start gap-[15px]">
               <div className="grid h-[34px] w-[34px] place-items-center rounded-full border border-[rgba(217,84,31,0.15)] bg-white text-[#d9541f] shadow-[0_8px_24px_rgba(217,84,31,0.10)]">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-[18px] w-[18px]">
@@ -456,7 +458,7 @@ export default function DesignExperience() {
               </div>
             </div>
 
-            <div className="mt-[34px] rounded-[20px] border border-[rgba(217,84,31,0.18)] bg-[rgba(255,255,255,0.42)] p-[22px] shadow-[0_22px_70px_rgba(69,34,16,0.08)]">
+            <div className="mt-[26px] rounded-[20px] border border-[rgba(217,84,31,0.18)] bg-[rgba(255,255,255,0.42)] p-[20px] shadow-[0_22px_70px_rgba(69,34,16,0.08)] sm:mt-[34px] sm:p-[22px]">
               <strong className="mb-2 block text-[13px] uppercase tracking-[0.12em] text-[#d9541f]">
                 {t('Based in Morocco')}
               </strong>

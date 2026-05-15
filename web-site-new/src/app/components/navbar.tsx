@@ -47,7 +47,7 @@ function DesktopNavLink({
   return (
     <Link
       href={href}
-      className={`relative inline-flex items-center justify-center overflow-hidden rounded-full px-4 py-3 transition-colors duration-300 ${
+      className={`relative inline-flex items-center justify-center overflow-hidden rounded-full px-3 py-3 transition-colors duration-300 ${
         isActive ? "text-[#C07652]" : "hover:text-[#C07652]"
       }`}
     >
@@ -64,14 +64,14 @@ function DesktopNavLink({
       {isActive ? (
         <motion.span
           layoutId="desktop-nav-active-line"
-          className="absolute bottom-[8px] left-4 right-4 h-[2px] rounded-full bg-[#C07652]"
+          className="absolute bottom-[8px] left-3 right-3 h-[2px] rounded-full bg-[#C07652]"
           transition={{ type: "spring", stiffness: 380, damping: 32 }}
         />
       ) : (
         <motion.span
-          className="absolute bottom-[8px] left-4 h-[2px] rounded-full bg-[#C07652]"
+          className="absolute bottom-[8px] left-3 h-[2px] rounded-full bg-[#C07652]"
           initial={{ width: 0 }}
-          whileHover={{ width: "calc(100% - 2rem)" }}
+          whileHover={{ width: "calc(100% - 1.5rem)" }}
           transition={{ duration: 0.25 }}
         />
       )}
@@ -102,7 +102,7 @@ export default function Navbar() {
     <>
       <nav
         id="site-navbar"
-        className={`${montserrat.className} sticky top-0 z-50 flex w-full flex-nowrap items-center justify-between border-b border-[#C07652]/10 bg-[#F9F7F2] px-4 py-3 md:px-8 md:py-4 lg:px-10`}
+        className={`${montserrat.className} sticky top-0 z-50 flex w-full flex-nowrap items-center justify-between border-b border-[#C07652]/10 bg-[#F9F7F2] px-4 py-3 md:px-8 md:py-4 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:px-10`}
       >
         <Link
           href="/"
@@ -117,7 +117,7 @@ export default function Navbar() {
           />
         </Link>
 
-        <div className="hidden flex-1 items-center justify-center gap-x-3 whitespace-nowrap px-2 text-[10px] font-bold uppercase tracking-[0.1em] text-[#2D2926] xl:gap-x-8 xl:text-[12px] xl:tracking-[0.2em] lg:flex">
+        <div className="hidden flex-1 items-center justify-center gap-x-1 whitespace-nowrap px-2 text-[10px] font-bold uppercase tracking-[0.1em] text-[#2D2926] lg:flex lg:justify-self-center xl:gap-x-2 xl:text-[12px] xl:tracking-[0.18em]">
           {NAV_LINKS.map(({ href, label }) => (
             <DesktopNavLink
               key={href}
@@ -126,14 +126,10 @@ export default function Navbar() {
               isActive={isActiveRoute(pathname, href)}
             />
           ))}
-        </div>
-
-        <div className="ml-auto flex shrink-0 items-center gap-x-2 whitespace-nowrap xl:gap-x-5">
-          <LanguageMenu />
 
           <Link
             href="/personnaliser-experience"
-            className={`hidden rounded-2xl border-2 px-3 py-3 text-[9px] font-black tracking-[0.1em] shadow-sm transition-all duration-500 active:scale-95 xl:px-6 xl:text-[11px] xl:tracking-[0.15em] lg:block ${
+            className={`ml-2 inline-flex rounded-2xl border-2 px-4 py-3 text-[10px] font-black tracking-[0.12em] shadow-sm transition-all duration-500 active:scale-95 xl:ml-3 xl:px-5 xl:text-[11px] xl:tracking-[0.14em] ${
               isExperienceActive
                 ? "border-[#C07652] bg-[#C07652] text-white shadow-[0_10px_24px_rgba(192,118,82,0.28)]"
                 : "border-[#C07652] text-[#C07652] hover:bg-[#C07652] hover:text-white"
@@ -141,6 +137,10 @@ export default function Navbar() {
           >
             {t("PERSONALISER VOTRE EXPERIENCE")}
           </Link>
+        </div>
+
+        <div className="ml-auto flex shrink-0 items-center gap-x-2 whitespace-nowrap lg:ml-0 lg:justify-self-end">
+          <LanguageMenu />
 
           <button
             aria-label="Open menu"

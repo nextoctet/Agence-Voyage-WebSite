@@ -127,55 +127,55 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
   };
 
   return (
-    <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926]">
+    <main className="min-h-screen overflow-x-hidden bg-[#F9F7F2] font-sans text-[#2D2926]">
       
       {/* HERO SECTION */}
-      <div className="flex flex-col lg:flex-row min-h-[600px]">
-        <div className="w-full lg:w-[45%] bg-[#2D2926] text-white p-12 md:p-20 flex flex-col justify-center border-b-[10px] lg:border-b-0 lg:border-r-[10px] border-[#C07652]">
-          <nav className="text-[13px] md:text-sm uppercase tracking-[0.3em] text-[#C07652] mb-10 flex gap-2 font-bold">
+      <div className="flex min-h-[calc(100svh-72px)] flex-col lg:min-h-[680px] lg:flex-row">
+        <div className="flex w-full flex-col justify-center border-b-[8px] border-[#C07652] bg-[#2D2926] px-5 pb-10 pt-8 text-white sm:px-8 sm:pb-12 sm:pt-10 md:px-12 md:pb-14 md:pt-12 lg:w-[45%] lg:border-b-0 lg:border-r-[10px] lg:p-20">
+          <nav className="mb-8 flex flex-wrap gap-2 text-[11px] font-bold uppercase tracking-[0.24em] text-[#C07652] sm:mb-10 sm:text-[12px] sm:tracking-[0.3em] md:text-sm">
             <Link href="/" className="hover:text-white transition-colors">{t("Accueil")}</Link> 
             <span className="opacity-30">/</span> <span className="text-white capitalize">{t(id)}</span>
           </nav>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif italic mb-8 leading-[1] tracking-tight">
-            {info.title} <br /> <span className="text-[#C07652] not-italic font-sans font-black uppercase text-5xl md:text-8xl block mt-2">{info.sub}</span>
+          <h1 className="mb-6 text-[clamp(3.25rem,14vw,7.8rem)] font-serif italic leading-[0.94] tracking-tight sm:mb-8">
+            {info.title} <br /> <span className="mt-2 block text-[clamp(2.25rem,9vw,5.8rem)] font-sans font-black uppercase not-italic text-[#C07652]">{info.sub}</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed border-l-2 border-[#C07652] pl-8 max-w-xl italic font-light">
+          <p className="mb-8 max-w-xl border-l-2 border-[#C07652] pl-5 text-base italic font-light leading-relaxed text-gray-300 sm:mb-10 sm:pl-6 sm:text-lg md:mb-12 md:pl-8 md:text-xl">
             {info.description}
           </p>
-          <div className="flex items-center gap-5 text-sm md:text-base font-bold uppercase tracking-[0.2em] border-t border-white/10 pt-10">
-            <div className="bg-[#C07652] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg font-bold text-xl">✓</div>
+          <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-[11px] font-bold uppercase tracking-[0.18em] sm:flex-row sm:items-center sm:gap-5 sm:text-[12px] sm:tracking-[0.2em] md:text-sm">
+            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#C07652] text-lg font-bold text-white shadow-lg sm:h-8 sm:w-8 sm:text-xl">✓</div>
             {info.duration} {t("— À PARTIR DE")} {info.price}
           </div>
         </div>
-        <div className="w-full lg:w-[55%] relative group min-h-[400px] overflow-hidden">
+        <div className="relative min-h-[320px] w-full overflow-hidden sm:min-h-[380px] lg:min-h-0 lg:w-[55%]">
           <Image src={mainImage} alt={info.title} fill className="object-cover scale-105 transition-transform duration-1000" priority />
         </div>
       </div>
 
       
       <nav className="sticky bg-white/90 backdrop-blur-md border-b border-gray-100 z-40 shadow-sm" style={{ top: navbarHeight ? `${navbarHeight}px` : 0 }}>
-        <div className="max-w-[1440px] mx-auto flex gap-12 px-8 py-5 overflow-x-auto no-scrollbar">
+        <div className="mx-auto flex max-w-[1440px] gap-6 overflow-x-auto px-5 py-4 no-scrollbar sm:gap-8 sm:px-6 md:gap-10 md:px-8 md:py-5">
           {[{ label: t('Aperçu'), id: 'apercu' }, { label: t('Itinéraire'), id: 'itineraire' }, { label: t('Quand Partir'), id: 'quand-partir' }, { label: t('Tarifs'), id: 'tarifs' }].map((tab) => (
-            <button key={tab.id} onClick={() => scrollToSection(tab.id)} className="text-[#2D2926] text-[13px] md:text-sm font-bold uppercase tracking-[0.2em] hover:text-[#C07652] transition-colors whitespace-nowrap">{tab.label}</button>
+            <button key={tab.id} onClick={() => scrollToSection(tab.id)} className="whitespace-nowrap text-[11px] font-bold uppercase tracking-[0.18em] text-[#2D2926] transition-colors hover:text-[#C07652] sm:text-[12px] md:text-sm">{tab.label}</button>
           ))}
         </div>
       </nav>
 
       
-      <section className="max-w-[1440px] mx-auto py-32 px-8">
-        <div className="flex flex-col lg:flex-row gap-24">
-          <div className="w-full lg:w-2/3 space-y-32">
+      <section className="mx-auto max-w-[1440px] px-5 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24 lg:py-28">
+        <div className="flex flex-col gap-14 md:gap-16 lg:flex-row lg:gap-20">
+          <div className="w-full space-y-20 sm:space-y-24 lg:w-2/3 lg:space-y-28">
             
             <div id="apercu" className="scroll-mt-32">
-               <div className="flex items-center gap-6 mb-16">
-                  <h2 className="text-[#2D2926] text-5xl md:text-6xl font-serif italic">{t("Temps forts au Maroc")}</h2>
+               <div className="mb-10 flex items-center gap-4 sm:mb-12 sm:gap-6 md:mb-16">
+                  <h2 className="text-3xl font-serif italic text-[#2D2926] sm:text-4xl md:text-5xl lg:text-6xl">{t("Temps forts au Maroc")}</h2>
                   <div className="h-[1px] bg-gray-200 flex-1"></div>
                </div>
-               <div className="grid gap-12">
+               <div className="grid gap-8 sm:gap-10 md:gap-12">
                   {info.highlights.map((text: string, i: number) => (
-                    <div key={i} className="flex gap-8 group">
-                       <div className="flex-none text-3xl font-serif italic text-[#C07652] opacity-50 group-hover:opacity-100 transition-opacity">{(i + 1).toString().padStart(2, '0')}</div>
-                       <p className="text-2xl leading-relaxed italic text-gray-600 font-light">{text}</p>
+                    <div key={i} className="group flex gap-4 sm:gap-6 md:gap-8">
+                       <div className="flex-none text-2xl font-serif italic text-[#C07652] opacity-50 transition-opacity group-hover:opacity-100 sm:text-3xl">{(i + 1).toString().padStart(2, '0')}</div>
+                       <p className="text-lg italic font-light leading-relaxed text-gray-600 sm:text-xl md:text-2xl">{text}</p>
                     </div>
                   ))}
                </div>
@@ -183,26 +183,26 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
 
             {/* ITINERAIRE */}
             <div id="itineraire" className="scroll-mt-32">
-              <h2 className="text-[#2D2926] text-5xl md:text-6xl font-serif italic mb-16 uppercase tracking-tighter">{t("Itinéraire Détaillé")}</h2>
-              <div className="space-y-6">
+              <h2 className="mb-10 text-3xl font-serif italic uppercase tracking-tighter text-[#2D2926] sm:mb-12 sm:text-4xl md:mb-16 md:text-5xl lg:text-6xl">{t("Itinéraire Détaillé")}</h2>
+              <div className="space-y-4 sm:space-y-6">
                 {info.itinerary.map((item: any, i: number) => (
                   <div key={i} className="group transition-all duration-500">
-                    <div className={`flex flex-col border border-gray-100 transition-all duration-500 ${openDay === i ? 'bg-white shadow-2xl scale-[1.01]' : 'bg-transparent'}`}>
-                      <div className="px-6 py-3 bg-[#2D2926]/5 flex justify-between uppercase text-[12px] md:text-sm font-bold tracking-widest text-[#2D2926]/50">
+                    <div className={`flex flex-col border border-gray-100 transition-all duration-500 ${openDay === i ? 'scale-[1.01] bg-white shadow-2xl' : 'bg-transparent'}`}>
+                      <div className="flex justify-between bg-[#2D2926]/5 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#2D2926]/50 sm:px-6 sm:text-[12px] md:text-sm">
                         <span>{t("JOUR")} {item.day}</span><span>{item.location}</span>
                       </div>
-                      <button onClick={() => setOpenDay(openDay === i ? -1 : i)} className="w-full text-left px-8 py-8 flex justify-between items-center">
-                        <h3 className={`text-2xl md:text-3xl font-bold uppercase tracking-tight transition-colors ${openDay === i ? 'text-[#C07652]' : 'text-[#2D2926]'}`}>{item.title}</h3>
+                      <button onClick={() => setOpenDay(openDay === i ? -1 : i)} className="flex w-full items-center justify-between px-5 py-6 text-left sm:px-8 sm:py-7">
+                        <h3 className={`text-xl font-bold uppercase tracking-tight transition-colors sm:text-2xl md:text-3xl ${openDay === i ? 'text-[#C07652]' : 'text-[#2D2926]'}`}>{item.title}</h3>
                         <span className={`text-[#C07652] transform transition-transform duration-500 ${openDay === i ? 'rotate-180' : ''}`}>▼</span>
                       </button>
                       {openDay === i && (
-                        <div className="px-8 pb-10 animate-in fade-in slide-in-from-top-2 duration-500">
-                          <p className="text-gray-500 italic leading-[1.8] font-light mb-10 text-xl md:text-2xl">{item.desc}</p>
-                          <div className="bg-[#F9F7F2] p-8 border-l-2 border-[#C07652] mb-10">
-                            <p className="text-[12px] md:text-sm uppercase font-bold text-[#C07652] tracking-[0.3em] mb-3">{t("Hébergement Sélectionné")}</p>
-                            <p className="font-serif italic text-3xl md:text-4xl text-[#2D2926]">{item.stay}</p>
+                        <div className="animate-in fade-in slide-in-from-top-2 px-5 pb-8 duration-500 sm:px-8 sm:pb-10">
+                          <p className="mb-8 text-lg italic font-light leading-[1.8] text-gray-500 sm:text-xl md:text-2xl">{item.desc}</p>
+                          <div className="mb-8 border-l-2 border-[#C07652] bg-[#F9F7F2] p-5 sm:mb-10 sm:p-8">
+                            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[#C07652] sm:text-[12px] sm:tracking-[0.3em] md:text-sm">{t("Hébergement Sélectionné")}</p>
+                            <p className="font-serif text-2xl italic text-[#2D2926] sm:text-3xl md:text-4xl">{item.stay}</p>
                           </div>
-                          <div className="grid grid-cols-2 gap-4">
+                          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             {item.hotelImgs?.map((img: string, idx: number) => (
                               <div key={idx} className="relative aspect-[4/3] overflow-hidden rounded-sm group/img">
                                 <Image src={img} fill className="object-cover group-hover/img:scale-110 transition-transform duration-700" alt={t("hotel")} />
@@ -218,22 +218,22 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
             </div>
 
           
-            <div id="quand-partir" className="scroll-mt-32 pt-20 border-t border-gray-100">
-              <div className="flex items-center gap-6 mb-12">
-                <h2 className="text-[#2D2926] text-4xl md:text-5xl font-serif italic uppercase tracking-tighter">{t("Quand Partir")}</h2>
+            <div id="quand-partir" className="scroll-mt-32 border-t border-gray-100 pt-12 sm:pt-14 md:pt-20">
+              <div className="mb-10 flex items-center gap-4 sm:mb-12 sm:gap-6">
+                <h2 className="text-3xl font-serif italic uppercase tracking-tighter text-[#2D2926] sm:text-4xl md:text-5xl">{t("Quand Partir")}</h2>
                 <div className="h-[1px] bg-[#C07652]/20 flex-1"></div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white border border-gray-100 p-10 shadow-sm">
-                  <p className="text-[#C07652] text-[13px] md:text-sm font-bold uppercase tracking-[0.3em] mb-6">{t("Périodes conseillées")}</p>
+              <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
+                <div className="border border-gray-100 bg-white p-6 shadow-sm sm:p-8 md:p-10">
+                  <p className="mb-5 text-[12px] font-bold uppercase tracking-[0.24em] text-[#C07652] sm:mb-6 sm:text-sm sm:tracking-[0.3em]">{t("Périodes conseillées")}</p>
                   <div className="flex flex-wrap gap-3">
                     {info.prices.map((p: any, i: number) => (
-                      <span key={i} className="px-5 py-2 bg-[#F9F7F2] text-[#2D2926] text-base md:text-lg font-serif italic border border-[#C07652]/10 uppercase">{p.month}</span>
+                      <span key={i} className="border border-[#C07652]/10 bg-[#F9F7F2] px-4 py-2 text-[15px] font-serif uppercase italic text-[#2D2926] sm:px-5 sm:text-base md:text-lg">{p.month}</span>
                     ))}
                   </div>
                 </div>
-                <div className="bg-[#2D2926] p-10 text-white flex flex-col justify-center relative overflow-hidden">
-                  <p className="text-lg md:text-xl italic font-light opacity-80 leading-relaxed z-10">
+                <div className="relative flex flex-col justify-center overflow-hidden bg-[#2D2926] p-6 text-white sm:p-8 md:p-10">
+                  <p className="z-10 text-base italic font-light leading-relaxed opacity-80 sm:text-lg md:text-xl">
                     {t("Le Maroc est magnifique toute l'année, mais ces mois offrent la lumière la plus pure et des températures idéales.")}
                   </p>
                   <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#C07652]/10 rounded-full"></div>
@@ -242,33 +242,33 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
             </div>
 
             
-            <div id="tarifs" className="scroll-mt-32 pt-20 border-t border-gray-100">
-              <div className="flex items-center gap-6 mb-12">
-                <h2 className="text-[#2D2926] text-4xl md:text-5xl font-serif italic uppercase tracking-tighter">{t("Tarifs & Disponibilités")}</h2>
+            <div id="tarifs" className="scroll-mt-32 border-t border-gray-100 pt-12 sm:pt-14 md:pt-20">
+              <div className="mb-10 flex items-center gap-4 sm:mb-12 sm:gap-6">
+                <h2 className="text-3xl font-serif italic uppercase tracking-tighter text-[#2D2926] sm:text-4xl md:text-5xl">{t("Tarifs & Disponibilités")}</h2>
                 <div className="h-[1px] bg-[#C07652]/20 flex-1"></div>
               </div>
-              <div className="overflow-x-auto border border-gray-100 bg-white shadow-xl pb-4">
-                <table className="w-full min-w-[700px] text-left border-collapse">
+              <div className="overflow-x-auto border border-gray-100 bg-white pb-2 shadow-xl sm:pb-4">
+                <table className="w-full min-w-[640px] border-collapse text-left">
                   <thead>
                     <tr className="border-b border-gray-100">
-                      <th className="p-8 text-[12px] md:text-sm font-bold uppercase tracking-[0.2em] text-[#2D2926]/40">{t("Période")}</th>
-                      <th className="p-8 text-[12px] md:text-sm font-bold uppercase tracking-[0.2em] text-[#2D2926]/40">{t("Prix / Personne")}</th>
-                      <th className="p-8 text-[12px] md:text-sm font-bold uppercase tracking-[0.2em] text-[#2D2926]/40 text-right">{t("Statut")}</th>
+                      <th className="p-5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#2D2926]/40 sm:p-6 sm:text-[12px] md:p-8 md:text-sm">{t("Période")}</th>
+                      <th className="p-5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#2D2926]/40 sm:p-6 sm:text-[12px] md:p-8 md:text-sm">{t("Prix / Personne")}</th>
+                      <th className="p-5 text-right text-[11px] font-bold uppercase tracking-[0.18em] text-[#2D2926]/40 sm:p-6 sm:text-[12px] md:p-8 md:text-sm">{t("Statut")}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-50">
                     {info.prices.map((p: any, i: number) => (
                       <tr key={i} className="group hover:bg-[#F9F7F2]/50 transition-colors">
-                        <td className="p-8">
-                          <p className="text-2xl font-serif italic text-[#2D2926]">{p.month}</p>
-                          <p className="text-[12px] md:text-sm uppercase font-bold text-gray-400 mt-1 tracking-widest">{t("Saison 2026")}</p>
+                        <td className="p-5 sm:p-6 md:p-8">
+                          <p className="text-xl font-serif italic text-[#2D2926] sm:text-2xl">{p.month}</p>
+                          <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-gray-400 sm:text-[12px] md:text-sm md:tracking-widest">{t("Saison 2026")}</p>
                         </td>
-                        <td className="p-8">
-                          <p className="text-3xl font-bold text-[#C07652] tracking-tighter">{p.price.toLocaleString()} MAD</p>
-                          <p className="text-[12px] md:text-sm uppercase font-bold text-gray-400 tracking-widest">{t("Taxes incluses")}</p>
+                        <td className="p-5 sm:p-6 md:p-8">
+                          <p className="text-2xl font-bold tracking-tighter text-[#C07652] sm:text-3xl">{p.price.toLocaleString()} MAD</p>
+                          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-400 sm:text-[12px] md:text-sm md:tracking-widest">{t("Taxes incluses")}</p>
                         </td>
-                        <td className="p-8 text-right">
-                          <button onClick={() => router.push('/personnaliser-experience')} className="bg-[#2D2926] text-white px-10 py-4 text-[13px] md:text-sm font-bold uppercase tracking-widest hover:bg-[#C07652] transition-all duration-500 shadow-xl">{t("Réserver")}</button>
+                        <td className="p-5 text-right sm:p-6 md:p-8">
+                          <button onClick={() => router.push('/personnaliser-experience')} className="bg-[#2D2926] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white shadow-xl transition-all duration-500 hover:bg-[#C07652] sm:px-8 sm:py-4 sm:text-[12px] md:text-sm md:tracking-widest">{t("Réserver")}</button>
                         </td>
                       </tr>
                     ))}
@@ -279,19 +279,19 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
           </div>
 
           
-          <div className="w-full lg:w-1/3 relative">
-            <div className="sticky top-32 space-y-10">
-              <div className="bg-[#2D2926] p-12 text-white relative overflow-hidden shadow-2xl rounded-sm">
+          <div className="relative w-full lg:w-1/3">
+            <div className="sticky top-32 space-y-6 sm:space-y-8 md:space-y-10">
+              <div className="relative overflow-hidden rounded-[24px] bg-[#2D2926] p-8 text-white shadow-2xl sm:p-10 md:p-12">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#C07652]/10 rounded-full -mr-12 -mt-12"></div>
-                  <h3 className="text-2xl font-serif italic mb-1 tracking-tight text-[#C07652]">{t("WELIVE")}</h3>
-                  <h3 className="text-4xl font-bold uppercase tracking-widest mb-6">{t("MOROCCO")}</h3>
-                  <p className="text-white/50 text-base md:text-lg italic mb-10 leading-relaxed font-light">{t("Agence locale experte basée à Rabat & Témara.")}</p>
-                  <a href="https://wa.me/212636784401" className="block bg-[#C07652] text-white text-center py-5 font-bold uppercase tracking-[0.2em] hover:bg-[#A65F3D] transition-all text-sm md:text-base mb-8 shadow-xl">{t("Réserver par WhatsApp")}</a>
-                  <div className="pt-8 border-t border-white/5 text-center">
-                    <p className="text-xl md:text-2xl font-bold italic tracking-tighter text-white/80">{t("+212 6 36 78 44 01")}</p>
+                  <h3 className="mb-1 text-xl font-serif italic tracking-tight text-[#C07652] sm:text-2xl">{t("WELIVE")}</h3>
+                  <h3 className="mb-5 text-3xl font-bold uppercase tracking-[0.24em] sm:text-4xl sm:tracking-widest">{t("MOROCCO")}</h3>
+                  <p className="mb-8 text-base italic font-light leading-relaxed text-white/50 md:text-lg">{t("Agence locale experte basée à Rabat & Témara.")}</p>
+                  <a href="https://wa.me/212636784401" className="mb-7 block bg-[#C07652] py-4 text-center text-[12px] font-bold uppercase tracking-[0.18em] text-white shadow-xl transition-all hover:bg-[#A65F3D] sm:py-5 sm:text-sm md:text-base">{t("Réserver par WhatsApp")}</a>
+                  <div className="border-t border-white/5 pt-7 text-center sm:pt-8">
+                    <p className="text-lg font-bold italic tracking-tighter text-white/80 sm:text-xl md:text-2xl">{t("+212 6 36 78 44 01")}</p>
                   </div>
               </div>
-              <div className="h-[400px] border border-gray-100 p-2 bg-white shadow-lg overflow-hidden grayscale-[50%] hover:grayscale-0 transition-all duration-1000 rounded-sm">
+              <div className="h-[320px] overflow-hidden rounded-[24px] border border-gray-100 bg-white p-2 shadow-lg transition-all duration-1000 hover:grayscale-0 grayscale-[50%] sm:h-[400px]">
                 <iframe src={info.mapUrl} width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"></iframe>
               </div>
             </div>

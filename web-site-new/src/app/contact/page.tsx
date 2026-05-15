@@ -61,51 +61,51 @@ export default function ContactPage() {
 
   return (
     <main
-      className="min-h-screen overflow-x-hidden px-4 py-6 text-[#111216] md:px-6 md:py-10"
+      className="min-h-screen overflow-x-hidden px-3 py-4 text-[#111216] sm:px-4 sm:py-6 md:px-6 md:py-10"
       style={{
         background:
           'radial-gradient(circle at 78% 20%, rgba(216, 74, 27, 0.08), transparent 28rem), radial-gradient(circle at 10% 85%, rgba(17, 18, 22, 0.05), transparent 24rem), #fbf7ef',
       }}
     >
       <div className="mx-auto max-w-[1160px]">
-        <section className="relative overflow-hidden rounded-[32px] border border-[rgba(216,74,27,0.22)] bg-[linear-gradient(135deg,rgba(255,255,255,0.72),rgba(246,239,227,0.72))] shadow-[0_28px_70px_rgba(71,36,18,0.12)]">
+        <section className="relative overflow-hidden rounded-[28px] border border-[rgba(216,74,27,0.22)] bg-[linear-gradient(135deg,rgba(255,255,255,0.72),rgba(246,239,227,0.72))] shadow-[0_28px_70px_rgba(71,36,18,0.12)] md:rounded-[32px]">
           <div className="pointer-events-none absolute right-[-150px] top-[-180px] h-[460px] w-[460px] rounded-full bg-[rgba(216,74,27,0.1)]" />
 
-          <div className="relative z-10 grid items-center gap-12 px-6 py-10 md:px-10 md:py-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14 lg:px-14 lg:py-16">
+          <div className="relative z-10 grid items-center gap-10 px-5 py-8 sm:px-6 sm:py-10 md:px-10 md:py-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14 lg:px-14 lg:py-16">
             <div>
-              <p className="mb-5 text-[12px] font-extrabold uppercase tracking-[0.32em] text-[#d84a1b] md:text-[14px]">
+              <p className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#d84a1b] sm:text-[12px] md:mb-5 md:text-[14px] md:tracking-[0.32em]">
                 {t('WeLiveMorocco')}
               </p>
 
-              <h1 className="max-w-[760px] font-serif text-[clamp(52px,8vw,94px)] leading-[0.92] tracking-[-0.055em] text-[#111216]">
+              <h1 className="max-w-[760px] font-serif text-[clamp(3rem,13vw,5.9rem)] leading-[0.92] tracking-[-0.06em] text-[#111216]">
                 {t('Contactez-nous')}
               </h1>
 
-              <p className="mt-6 max-w-[650px] font-serif text-[20px] leading-[1.55] text-[#7b6c63] md:text-[21px]">
+              <p className="mt-5 max-w-[650px] font-serif text-[17px] leading-[1.55] text-[#7b6c63] sm:text-[18px] md:mt-6 md:text-[21px]">
                 {t("Notre équipe d'experts à Témara est à votre disposition pour organiser votre prochain voyage sur mesure.")}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
                 <a
                   href="#contact-form"
-                  className="inline-flex min-h-[54px] items-center justify-center rounded-full border border-[#d84a1b] bg-[#d84a1b] px-7 font-serif text-[17px] text-white shadow-[0_16px_34px_rgba(216,74,27,0.22)] transition hover:-translate-y-0.5 hover:bg-[#b63b13] hover:border-[#b63b13]"
+                  className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border border-[#d84a1b] bg-[#d84a1b] px-6 font-serif text-[15px] text-white shadow-[0_16px_34px_rgba(216,74,27,0.22)] transition hover:-translate-y-0.5 hover:border-[#b63b13] hover:bg-[#b63b13] sm:min-h-[54px] sm:w-auto sm:px-7 sm:text-[17px]"
                 >
                   {t('Envoyez-nous un message')}
                 </a>
                 <a
                   href={plannerMailtoHref}
-                  className="inline-flex min-h-[54px] items-center justify-center rounded-full border border-[rgba(17,18,22,0.24)] px-7 font-serif text-[17px] text-[#111216] transition hover:-translate-y-0.5 hover:bg-[#111216] hover:text-white"
+                  className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border border-[rgba(17,18,22,0.24)] px-6 font-serif text-[15px] text-[#111216] transition hover:-translate-y-0.5 hover:bg-[#111216] hover:text-white sm:min-h-[54px] sm:w-auto sm:px-7 sm:text-[17px]"
                 >
                   {t('Email')}
                 </a>
               </div>
             </div>
 
-            <div className="relative min-h-[260px] md:min-h-[320px]">
-              <div className="absolute right-6 top-0 h-[170px] w-[170px] rounded-full bg-[linear-gradient(135deg,#d84a1b,#e85a21)] shadow-[0_22px_54px_rgba(216,74,27,0.22)] md:right-10 md:top-4 md:h-[220px] md:w-[220px]" />
+            <div className="relative min-h-[220px] sm:min-h-[260px] md:min-h-[320px]">
+              <div className="absolute right-2 top-0 h-[140px] w-[140px] rounded-full bg-[linear-gradient(135deg,#d84a1b,#e85a21)] shadow-[0_22px_54px_rgba(216,74,27,0.22)] sm:right-6 sm:h-[170px] sm:w-[170px] md:right-10 md:top-4 md:h-[220px] md:w-[220px]" />
 
               <svg
-                className="absolute bottom-6 right-[-40px] h-auto w-[420px] text-[#d84a1b] drop-shadow-[0_18px_22px_rgba(216,74,27,0.14)] md:bottom-12 md:right-[-16px] md:w-[520px]"
+                className="absolute bottom-4 right-[-56px] h-auto w-[320px] text-[#d84a1b] drop-shadow-[0_18px_22px_rgba(216,74,27,0.14)] sm:bottom-6 sm:right-[-40px] sm:w-[420px] md:bottom-12 md:right-[-16px] md:w-[520px]"
                 viewBox="0 0 620 220"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,11 +117,11 @@ export default function ContactPage() {
                 />
               </svg>
 
-              <div className="absolute bottom-0 left-0 w-full max-w-[320px] rounded-[22px] border border-[rgba(216,74,27,0.18)] bg-[rgba(255,255,255,0.72)] p-6 shadow-[0_22px_48px_rgba(38,25,16,0.1)] backdrop-blur-[14px]">
-                <strong className="mb-2 block text-[12px] uppercase tracking-[0.16em] text-[#d84a1b]">
+              <div className="absolute bottom-0 left-0 w-full max-w-[300px] rounded-[22px] border border-[rgba(216,74,27,0.18)] bg-[rgba(255,255,255,0.72)] p-5 shadow-[0_22px_48px_rgba(38,25,16,0.1)] backdrop-blur-[14px] sm:max-w-[320px] sm:p-6">
+                <strong className="mb-2 block text-[11px] uppercase tracking-[0.16em] text-[#d84a1b] sm:text-[12px]">
                   {t('Informations')}
                 </strong>
-                <p className="font-serif text-[16px] leading-[1.45] text-[#2a2725]">
+                <p className="font-serif text-[15px] leading-[1.45] text-[#2a2725] sm:text-[16px]">
                   {t('Centre Ville, Témara, Maroc')}
                   <br />
                   {contactEmail}
@@ -131,21 +131,21 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="grid gap-11 border-t border-[rgba(216,74,27,0.22)] px-1 pt-14 lg:grid-cols-[0.82fr_1fr] lg:gap-16">
+        <section className="grid gap-9 border-t border-[rgba(216,74,27,0.22)] px-1 pt-10 sm:pt-12 lg:grid-cols-[0.82fr_1fr] lg:gap-16 lg:pt-14">
           <div className="space-y-8">
-            <h2 className="font-serif text-[clamp(46px,8vw,86px)] uppercase leading-[0.9] tracking-[0.08em] text-[#111216]">
+            <h2 className="font-serif text-[clamp(2.9rem,11vw,5.4rem)] uppercase leading-[0.9] tracking-[0.06em] text-[#111216] md:tracking-[0.08em]">
               {t('Contactez-nous')}
             </h2>
 
             <div>
-              <h3 className="mb-6 max-w-[315px] font-serif text-[23px] uppercase leading-[1.14] tracking-[0.14em] text-[#111216]">
+              <h3 className="mb-5 max-w-[315px] font-serif text-[20px] uppercase leading-[1.14] tracking-[0.12em] text-[#111216] md:mb-6 md:text-[23px] md:tracking-[0.14em]">
                 {t('Informations')}
               </h3>
 
               <div className="grid gap-4">
                 <a
                   href={`mailto:${contactEmail}`}
-                  className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[19px] leading-[1.25] text-[#7b6c63] transition hover:translate-x-1 hover:text-[#d84a1b]"
+                  className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[17px] leading-[1.25] text-[#7b6c63] transition hover:translate-x-1 hover:text-[#d84a1b] md:text-[19px]"
                 >
                   <span className="grid h-[38px] w-[38px] place-items-center rounded-full bg-[#d84a1b] text-white shadow-[0_12px_28px_rgba(216,74,27,0.2)]">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5 stroke-[1.9]">
@@ -158,7 +158,7 @@ export default function ContactPage() {
 
                 <a
                   href={phoneHref}
-                  className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[19px] leading-[1.25] text-[#7b6c63] transition hover:translate-x-1 hover:text-[#d84a1b]"
+                  className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[17px] leading-[1.25] text-[#7b6c63] transition hover:translate-x-1 hover:text-[#d84a1b] md:text-[19px]"
                 >
                   <span className="grid h-[38px] w-[38px] place-items-center rounded-full bg-[#d84a1b] text-white shadow-[0_12px_28px_rgba(216,74,27,0.2)]">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5 stroke-[1.9]">
@@ -168,7 +168,7 @@ export default function ContactPage() {
                   <span>{phoneDisplay}</span>
                 </a>
 
-                <div className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[19px] leading-[1.25] text-[#7b6c63]">
+                <div className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[17px] leading-[1.25] text-[#7b6c63] md:text-[19px]">
                   <span className="grid h-[38px] w-[38px] place-items-center rounded-full bg-[#d84a1b] text-white shadow-[0_12px_28px_rgba(216,74,27,0.2)]">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5 stroke-[1.9]">
                       <path d="M12 21s-6-4.35-6-10a6 6 0 0 1 12 0c0 5.65-6 10-6 10Z" />
@@ -182,31 +182,31 @@ export default function ContactPage() {
           </div>
 
           <div className="max-w-[660px]">
-            <h3 className="font-serif text-[23px] uppercase leading-[1.14] tracking-[0.14em] text-[#111216]">
+            <h3 className="font-serif text-[20px] uppercase leading-[1.14] tracking-[0.12em] text-[#111216] md:text-[23px] md:tracking-[0.14em]">
               WeLiveMorocco
             </h3>
 
-            <p className="mt-4 font-serif text-[20px] leading-[1.55] text-[#7b6c63]">
+            <p className="mt-4 font-serif text-[18px] leading-[1.55] text-[#7b6c63] md:text-[20px]">
               {t("Notre équipe d'experts à Témara est à votre disposition pour organiser votre prochain voyage sur mesure.")}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
               <a
                 href="#contact-form"
-                className="inline-flex items-center gap-3 rounded-full border border-[#d84a1b] bg-[#d84a1b] px-7 py-4 font-serif text-[17px] text-white shadow-[0_16px_34px_rgba(216,74,27,0.22)] transition hover:-translate-y-0.5 hover:bg-[#b63b13] hover:border-[#b63b13]"
+                className="inline-flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full border border-[#d84a1b] bg-[#d84a1b] px-6 py-4 font-serif text-[15px] text-white shadow-[0_16px_34px_rgba(216,74,27,0.22)] transition hover:-translate-y-0.5 hover:border-[#b63b13] hover:bg-[#b63b13] sm:w-auto sm:px-7 sm:text-[17px]"
               >
                 {t('Envoyez-nous un message')}
               </a>
 
               <a
                 href={phoneHref}
-                className="inline-flex items-center gap-3 rounded-full border border-[rgba(17,18,22,0.22)] px-6 py-4 font-serif text-[17px] text-[#111216] transition hover:-translate-y-0.5 hover:bg-[#111216] hover:text-white"
+                className="inline-flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full border border-[rgba(17,18,22,0.22)] px-6 py-4 font-serif text-[15px] text-[#111216] transition hover:-translate-y-0.5 hover:bg-[#111216] hover:text-white sm:w-auto sm:text-[17px]"
               >
                 {t('WhatsApp & Tel')}
               </a>
             </div>
 
-            <div className="mt-10 border-t border-[rgba(216,74,27,0.22)] pt-6 font-serif text-[16px] leading-[1.55] text-[#7b6c63]">
+            <div className="mt-8 border-t border-[rgba(216,74,27,0.22)] pt-5 font-serif text-[15px] leading-[1.55] text-[#7b6c63] sm:mt-10 sm:pt-6 sm:text-[16px]">
               {t("Lundi - Vendredi")} 09:00 - 18:00
               <br />
               {t("Samedi")} 09:00 - 13:00
@@ -214,21 +214,21 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section id="contact-form" className="mt-16 grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
-          <div className="rounded-[28px] bg-[#1a2222] p-8 text-white shadow-[0_28px_70px_rgba(24,25,28,0.2)] md:p-10">
-            <span className="block text-[12px] font-extrabold uppercase tracking-[0.32em] text-[#d84a1b] md:text-[14px]">
+        <section id="contact-form" className="mt-12 grid gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
+          <div className="rounded-[28px] bg-[#1a2222] p-6 text-white shadow-[0_28px_70px_rgba(24,25,28,0.2)] sm:p-8 md:p-10">
+            <span className="block text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#d84a1b] sm:text-[12px] md:text-[14px] md:tracking-[0.32em]">
               {t("Heures d'ouverture")}
             </span>
 
-            <h3 className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
+            <h3 className="mt-5 font-serif text-3xl leading-tight sm:mt-6 sm:text-4xl md:text-5xl">
               {t('Envoyez-nous un message')}
             </h3>
 
-            <p className="mt-5 font-serif text-[18px] leading-[1.6] text-white/70">
+            <p className="mt-4 font-serif text-[17px] leading-[1.6] text-white/70 sm:mt-5 md:text-[18px]">
               {t("Notre équipe d'experts à Témara est à votre disposition pour organiser votre prochain voyage sur mesure.")}
             </p>
 
-            <div className="mt-10 space-y-4 border-t border-white/10 pt-6 font-serif text-[18px] text-white/80">
+            <div className="mt-8 space-y-4 border-t border-white/10 pt-5 font-serif text-[16px] text-white/80 sm:mt-10 sm:pt-6 md:text-[18px]">
               <div className="flex items-center justify-between gap-4 border-b border-white/5 py-3">
                 <span>{t('Lundi - Vendredi')}</span>
                 <span className="font-semibold text-white">09:00 - 18:00</span>
@@ -240,9 +240,9 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-[28px] border border-[rgba(216,74,27,0.15)] bg-[rgba(255,255,255,0.76)] p-6 shadow-[0_28px_70px_rgba(71,36,18,0.12)] backdrop-blur-sm md:p-10">
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="grid gap-5 md:grid-cols-2">
+          <div className="rounded-[28px] border border-[rgba(216,74,27,0.15)] bg-[rgba(255,255,255,0.76)] p-5 shadow-[0_28px_70px_rgba(71,36,18,0.12)] backdrop-blur-sm sm:p-6 md:p-10">
+            <form className="space-y-5 sm:space-y-6" onSubmit={handleSubmit}>
+              <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
                 <div>
                   <label className="mb-2 block text-[12px] font-bold uppercase tracking-[0.24em] text-[#7b6c63]">
                     {t('Nom Complet')}
@@ -287,7 +287,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div className="grid gap-5 md:grid-cols-2">
+              <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
                 <div>
                   <label className="mb-2 block text-[12px] font-bold uppercase tracking-[0.24em] text-[#7b6c63]">
                     {t('Nationalité')}
@@ -358,7 +358,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="mt-16 rounded-[28px] border border-[rgba(216,74,27,0.14)] bg-[rgba(255,255,255,0.7)] p-3 shadow-[0_28px_70px_rgba(71,36,18,0.12)]">
+        <section className="mt-12 rounded-[28px] border border-[rgba(216,74,27,0.14)] bg-[rgba(255,255,255,0.7)] p-2 shadow-[0_28px_70px_rgba(71,36,18,0.12)] sm:mt-16 sm:p-3">
           <div className="relative h-[320px] overflow-hidden rounded-[22px] md:h-[420px] lg:h-[500px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13238.411651871216!2d-6.9272!3d33.9189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7134371707963%3A0x6e9f9024f9958e98!2sT%C3%A9mara!5e0!3m2!1sfr!2sma!4v1713880000000!5m2!1sfr!2sma"

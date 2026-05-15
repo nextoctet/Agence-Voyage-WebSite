@@ -17,7 +17,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#BD856A] text-white pt-24 pb-12 px-8 font-sans relative overflow-hidden">
+    <footer className="bg-[#BD856A] text-white pt-20 pb-10 px-8 font-sans relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* CTA */}
-        <div className="text-center mb-32 space-y-12 py-10">
+        <div className="text-center mb-20 space-y-8 py-6">
           <FadeIn>
             <p className="uppercase tracking-[0.5em] text-[10px] md:text-xs font-montserrat font-bold opacity-90">
               {t("LET'S BEGIN")}
@@ -46,7 +46,7 @@ export default function Footer() {
             </p>
           </FadeIn>
           
-          <FadeIn delay={0.6} className="flex flex-col md:flex-row justify-center items-center gap-6 pt-6">
+          <FadeIn delay={0.6} className="flex flex-col md:flex-row justify-center items-center gap-4 pt-3">
             <Link
               href="/personnaliser-experience"
               className="bg-[#1A1412] text-white px-12 py-6 uppercase font-montserrat font-bold text-[11px] tracking-[0.2em] hover:bg-black transition-all min-w-[320px] text-center"
@@ -61,7 +61,7 @@ export default function Footer() {
             </Link>
           </FadeIn>
           
-          <FadeIn delay={0.8} className="pt-20 flex flex-wrap justify-center gap-x-8 gap-y-4 text-[10px] md:text-[11px] font-montserrat tracking-[0.2em] opacity-80 uppercase">
+          <FadeIn delay={0.8} className="pt-10 flex flex-wrap justify-center gap-x-6 gap-y-3 text-[10px] md:text-[11px] font-montserrat tracking-[0.2em] opacity-80 uppercase">
             <span>contact@welivemorocco.com</span>
             <span className="hidden md:inline">•</span>
             <span>+212 6 36 78 44 01</span>
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         {/* NEWSLETTER */}
-        <FadeIn className="border-y border-white/20 py-24 mb-24">
+        <FadeIn className="border-y border-white/20 py-16 mb-16">
           {!subscribed ? (
             <div className="max-w-3xl mx-auto flex flex-col items-start text-left">
               <h3 className="text-4xl md:text-5xl font-serif mb-4">
@@ -118,7 +118,7 @@ export default function Footer() {
         </FadeIn>
 
         {/* LINKS GRID */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-left">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14 text-left">
 
           {/* Brand */}
           <FadeInStagger>
@@ -197,7 +197,7 @@ export default function Footer() {
 
         </StaggerContainer>
 
-        <FadeIn className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[12px] font-bold uppercase tracking-[0.5em]">
+        <FadeIn className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[12px] font-bold uppercase tracking-[0.5em]">
           <p className="opacity-80">Marrakech, Morocco</p>
           <a href={`mailto:${email}`} className="hover:underline opacity-90 lowercase tracking-normal font-sans">
             {email}
