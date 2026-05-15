@@ -12,17 +12,9 @@ const montserrat = Montserrat({
   weight: ["400", "600", "700", "900"],
 });
 
-const DESTINATIONS = [
-  { href: "/destinations/casablanca", label: "de casablanca" },
-  { href: "/destinations/marrakech", label: "de marrakech" },
-  { href: "/destinations/tanger", label: "de tanger" },
-  { href: "/destinations/fes", label: "de fes" },
-];
-
 const DRAWER_LINKS = [
   { href: "/", label: "Accueil" },
   { href: "/a-propos", label: "À Propos" },
-  { href: "/guide-voyage", label: "Guide de voyage" },
   { href: "/contact", label: "CONTACTEZ-NOUS" },
   { href: "/cookies-policy", label: "Privacy Policy" },
 ];
@@ -45,7 +37,6 @@ function UnderlineLink({ href, label }: { href: string; label: string }) {
 }
 
 export default function Navbar() {
-  const [isDestOpen, setIsDestOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const { t } = useTranslation();
 
@@ -81,47 +72,6 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center justify-center flex-1 gap-x-3 xl:gap-x-8 font-bold text-[#2D2926] uppercase text-[10px] xl:text-[12px] tracking-[0.1em] xl:tracking-[0.2em] whitespace-nowrap px-2">
           <UnderlineLink href="/" label="Accueil" />
           <UnderlineLink href="/a-propos" label="À Propos" />
-
-          {/* Destinations dropdown */}
-          <div
-            className="relative group cursor-pointer h-full py-5"
-            onMouseEnter={() => setIsDestOpen(true)}
-            onMouseLeave={() => setIsDestOpen(false)}
-          >
-            <div className="flex items-center gap-1 hover:text-[#C07652] transition-colors">
-              {t("destinations")}
-              <motion.span 
-                className="text-[10px] text-[#C07652] ml-1"
-                animate={{ rotate: isDestOpen ? 180 : 0 }}
-              >
-                ▼
-              </motion.span>
-            </div>
-
-            <AnimatePresence>
-              {isDestOpen && (
-                <motion.div 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute top-[100%] left-0 w-64 bg-white shadow-2xl border-t-2 border-[#C07652] py-6 rounded-b-sm z-50"
-                >
-                  {DESTINATIONS.map(({ href, label }) => (
-                    <Link
-                      key={href}
-                      href={href}
-                      className="block px-8 py-3 text-[11px] text-[#2D2926] hover:bg-[#F9F7F2] hover:text-[#C07652] transition-all font-bold uppercase tracking-[0.15em] hover:pl-10"
-                    >
-                      {t(label)}
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          <UnderlineLink href="/guide-voyage" label="Guide de voyage" />
           <UnderlineLink href="/contact" label="CONTACTEZ-NOUS" />
         </div>
 
@@ -193,30 +143,6 @@ export default function Navbar() {
                     </Link>
                   </motion.div>
                 ))}
-
-                {/* Destinations */}
-                <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + DRAWER_LINKS.length * 0.05 }}
-                  className="flex flex-col gap-3"
-                >
-                  <span className="text-[13px] text-[#C07652] font-black tracking-[0.2em]">
-                    {t("Destinations")}
-                  </span>
-                  <div className="flex flex-col gap-3 pl-4 border-l border-[#C07652]/30">
-                    {DESTINATIONS.map(({ href, label }) => (
-                      <Link
-                        key={href}
-                        href={href}
-                        onClick={closeDrawer}
-                        className="text-[14px]"
-                      >
-                        {t(label)}
-                      </Link>
-                    ))}
-                  </div>
-                </motion.div>
 
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
