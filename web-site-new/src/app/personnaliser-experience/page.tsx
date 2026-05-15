@@ -40,8 +40,8 @@ export default function DesignExperience() {
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const contactEmail = 'contact@welivemorocco.com';
-  const phoneDisplay = '+212 6 XX XX XX XX';
-  const whatsappNumber = '2126XXXXXXXX';
+  const phoneDisplay = '+212 6 36 78 44 01';
+  const whatsappNumber = '212636784401';
 
   useEffect(() => {
     return () => {
@@ -323,7 +323,7 @@ export default function DesignExperience() {
                     id="phone"
                     value={form.phone}
                     onChange={handleChange('phone')}
-                    placeholder={t('+212 6 00 00 00 00')}
+                    placeholder={t('+212 6 36 78 44 01')}
                     autoComplete="tel"
                     aria-invalid={Boolean(errors.phone)}
                     className={`w-full rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${

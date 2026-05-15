@@ -151,7 +151,7 @@ export default function DestinationsCataloguePage() {
         <h2 className="text-4xl md:text-5xl font-black text-[#003366] uppercase italic mb-6">{t("Un voyage sur mesure ?")}</h2>
         <p className="text-gray-500 mb-10 italic text-lg">{t("Nos experts basés au Maroc créent votre itinéraire idéal.")}</p>
         <a 
-          href="https://wa.me/212682838530" 
+          href="https://wa.me/212636784401" 
           className="bg-orange-500 text-white px-12 py-5 rounded-2xl font-black uppercase text-sm md:text-base tracking-[0.2em] shadow-xl hover:bg-[#003366] transition-all inline-block"
         >
           {t("Contactez-nous sur WhatsApp")}

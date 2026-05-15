@@ -286,9 +286,9 @@ export default function DetailPage({ params }: { params: Promise<{ id: string }>
                   <h3 className="text-2xl font-serif italic mb-1 tracking-tight text-[#C07652]">{t("WELIVE")}</h3>
                   <h3 className="text-4xl font-bold uppercase tracking-widest mb-6">{t("MOROCCO")}</h3>
                   <p className="text-white/50 text-base md:text-lg italic mb-10 leading-relaxed font-light">{t("Agence locale experte basée à Rabat & Témara.")}</p>
-                  <a href="https://wa.me/2126XXXXXXXX" className="block bg-[#C07652] text-white text-center py-5 font-bold uppercase tracking-[0.2em] hover:bg-[#A65F3D] transition-all text-sm md:text-base mb-8 shadow-xl">{t("Réserver par WhatsApp")}</a>
+                  <a href="https://wa.me/212636784401" className="block bg-[#C07652] text-white text-center py-5 font-bold uppercase tracking-[0.2em] hover:bg-[#A65F3D] transition-all text-sm md:text-base mb-8 shadow-xl">{t("Réserver par WhatsApp")}</a>
                   <div className="pt-8 border-t border-white/5 text-center">
-                    <p className="text-xl md:text-2xl font-bold italic tracking-tighter text-white/80">{t("+212 X XX XX XX XX")}</p>
+                    <p className="text-xl md:text-2xl font-bold italic tracking-tighter text-white/80">{t("+212 6 36 78 44 01")}</p>
                   </div>
               </div>
               <div className="h-[400px] border border-gray-100 p-2 bg-white shadow-lg overflow-hidden grayscale-[50%] hover:grayscale-0 transition-all duration-1000 rounded-sm">

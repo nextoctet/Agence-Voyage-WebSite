@@ -16,8 +16,8 @@ export default function ContactPage() {
   const [status, setStatus] = useState<null | { ok: boolean; message?: string }>(null);
 
   const contactEmail = 'contact@welivemorocco.com';
-  const phoneDisplay = '+212 6 XX XX XX XX';
-  const phoneHref = 'https://wa.me/2126XXXXXXXX';
+  const phoneDisplay = '+212 6 36 78 44 01';
+  const phoneHref = 'https://wa.me/212636784401';
   const plannerMailtoHref =
     `mailto:${contactEmail}` +
     `?subject=${encodeURIComponent('Private Morocco Journey Request')}` +
@@ -309,7 +309,7 @@ export default function ContactPage() {
                     onChange={(e) => setPhone(e.target.value)}
                     type="tel"
                     className="w-full rounded-[18px] border border-[rgba(216,74,27,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#d84a1b] focus:ring-2 focus:ring-[#d84a1b]/15"
-                    placeholder={t('06XXXXXXXX')}
+                    placeholder={t('+212 6 36 78 44 01')}
                   />
                 </div>
               </div>

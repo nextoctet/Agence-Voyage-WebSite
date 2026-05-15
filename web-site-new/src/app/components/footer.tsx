@@ -8,7 +8,7 @@ export default function Footer() {
   const { t } = useTranslation();
   const [subscribed, setSubscribed] = useState(false);
 
-  const phoneNumber = "2126XXXXXXXX";
+  const phoneNumber = "212636784401";
   const email = "contact@welivemorocco.com";
 
   const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
@@ -64,7 +64,7 @@ export default function Footer() {
           <FadeIn delay={0.8} className="pt-20 flex flex-wrap justify-center gap-x-8 gap-y-4 text-[10px] md:text-[11px] font-montserrat tracking-[0.2em] opacity-80 uppercase">
             <span>contact@welivemorocco.com</span>
             <span className="hidden md:inline">•</span>
-            <span>+212 617587695</span>
+            <span>+212 6 36 78 44 01</span>
             <span className="hidden md:inline">•</span>
             <span>Marrakech, Morocco</span>
           </FadeIn>
