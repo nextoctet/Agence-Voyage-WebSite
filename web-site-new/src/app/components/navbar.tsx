@@ -109,10 +109,10 @@ export default function Navbar() {
           className="flex h-12 shrink-0 items-center transition hover:scale-105 active:scale-95 md:h-16 lg:h-20"
         >
           <Image
-            src="/pictures/logo-welivee.png"
+            src="/pictures/logo-welivee.svg"
             alt="WeLiveMorocco"
-            width={240}
-            height={110}
+            width={1354}
+            height={738}
             className="h-10 w-auto object-contain mix-blend-multiply md:h-14 lg:h-18"
           />
         </Link>
