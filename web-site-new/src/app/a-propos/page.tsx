@@ -1,58 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 
 export default function AboutPage() {
   const { t } = useTranslation();
-
-  const [years, setYears] = useState(0);
-  const [destinations, setDestinations] = useState(0);
-  const [rate, setRate] = useState(0);
-  const [travelers, setTravelers] = useState(0);
-
-  useEffect(() => {
-    const yearsTimer = setInterval(() => {
-      setYears((prev) => {
-        if (prev < 10) return prev + 1;
-        clearInterval(yearsTimer);
-        return 10;
-      });
-    }, 100);
-   
-    const destTimer = setInterval(() => {
-      setDestinations((prev) => {
-        if (prev < 40) return prev + 1;
-        clearInterval(destTimer);
-        return 40;
-      });
-    }, 40);
-
-    const rateTimer = setInterval(() => {
-      setRate((prev) => {
-        if (prev < 98) return prev + 1;
-        clearInterval(rateTimer);
-        return 98;
-      });
-    }, 25);
-
-    const travelersTimer = setInterval(() => {
-      setTravelers((prev) => {
-        if (prev < 3200) return prev + 80;
-        clearInterval(travelersTimer);
-        return 3200;
-      });
-    }, 30);
-
-    return () => {
-      clearInterval(yearsTimer);
-      clearInterval(destTimer);
-      clearInterval(rateTimer);
-      clearInterval(travelersTimer);
-    };
-  }, []);
 
   return (
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden text-left">
@@ -144,55 +97,6 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      
-      <section className="py-24 bg-[#1A2222] text-white px-8">
-        <div className="max-w-7xl mx-auto text-center mb-20">
-          <span className="text-[#C07652] text-sm font-bold uppercase tracking-[0.5em] mb-6 block">
-            {t("BY THE NUMBERS")}
-          </span>
-          <h2 className="text-3xl md:text-5xl font-serif italic text-white/90 leading-tight max-w-4xl mx-auto">
-            {t("stats_subtitle")}
-          </h2>
-        </div>
-        
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Card 1 */}
-          <div className="bg-white/5 border border-white/10 border-t-4 border-t-[#C07652] p-12 flex flex-col items-center justify-center text-center group hover:bg-white/10 transition-all duration-500 min-h-[350px]">
-            <p className="text-7xl md:text-8xl font-serif italic text-[#C07652] mb-8">{years}+</p>
-            <p className="text-sm uppercase font-bold tracking-[0.2em] text-white/60 leading-relaxed max-w-[150px]">
-              {t("Years of professional experience")}
-            </p>
-          </div>
-          
-          {/* Card 2 */}
-          <div className="bg-white/5 border border-white/10 border-t-4 border-t-[#C07652] p-12 flex flex-col items-center justify-center text-center group hover:bg-white/10 transition-all duration-500 min-h-[350px]">
-            <div className="flex flex-col items-center mb-8">
-              <p className="text-7xl md:text-8xl font-serif italic text-[#C07652] leading-none">{travelers.toLocaleString()}</p>
-              <p className="text-5xl md:text-6xl font-serif italic text-[#C07652] mt-2">+</p>
-            </div>
-            <p className="text-sm uppercase font-bold tracking-[0.2em] text-white/60 leading-relaxed max-w-[150px]">
-              {t("Travelers hosted")}
-            </p>
-          </div>
-          
-          {/* Card 3 */}
-          <div className="bg-white/5 border border-white/10 border-t-4 border-t-[#C07652] p-12 flex flex-col items-center justify-center text-center group hover:bg-white/10 transition-all duration-500 min-h-[350px]">
-            <p className="text-7xl md:text-8xl font-serif italic text-[#C07652] mb-8">{destinations}+</p>
-            <p className="text-sm uppercase font-bold tracking-[0.2em] text-white/60 leading-relaxed max-w-[150px]">
-              {t("Destinations we cover")}
-            </p>
-          </div>
-          
-          {/* Card 4 */}
-          <div className="bg-white/5 border border-white/10 border-t-4 border-t-[#C07652] p-12 flex flex-col items-center justify-center text-center group hover:bg-white/10 transition-all duration-500 min-h-[350px]">
-            <p className="text-7xl md:text-8xl font-serif italic text-[#C07652] mb-8">{rate}%</p>
-            <p className="text-sm uppercase font-bold tracking-[0.2em] text-white/60 leading-relaxed max-w-[150px]">
-              {t("Client satisfaction rate")}
-            </p>
           </div>
         </div>
       </section>
