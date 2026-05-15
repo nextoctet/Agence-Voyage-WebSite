@@ -31,6 +31,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "welive morocco",
   description: "Agence de voyage premium",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
+  },
 };
 
 export default function RootLayout({

@@ -1,224 +1,481 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+
+type FormState = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  source: string;
+  journey: string;
+  message: string;
+};
+
+type FieldName = keyof FormState;
+
+type ToastState = {
+  type: 'success' | 'error';
+  message: string;
+};
+
+const INITIAL_FORM: FormState = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  source: '',
+  journey: '',
+  message: '',
+};
 
 export default function DesignExperience() {
   const { t } = useTranslation();
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [nationality, setNationality] = useState('');
-  const [phone, setPhone] = useState('');
-  const [travellerType, setTravellerType] = useState('Couple');
-  const [budget, setBudget] = useState('3 000 DHs – 6 000 DHs par personne');
+  const [form, setForm] = useState<FormState>(INITIAL_FORM);
+  const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({});
+  const [toast, setToast] = useState<ToastState | null>(null);
+  const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const buildMailtoLink = () => {
-    const subject = 'New Experience Customization';
-    const bodyLines = [
-      `Nom complet: ${fullName || '-'}`,
-      `Email: ${email || '-'}`,
-      `Nationalité: ${nationality || '-'}`,
-      `Téléphone: ${phone || '-'}`,
-      `Voyage en tant que: ${travellerType || '-'}`,
-      `Fourchette budgétaire: ${budget || '-'}`,
-      `Destinations souhaitées: -`,
-      `Nombre de voyageurs: -`,
-      `Préférences de voyage: -`,
-      '',
-      `Merci de me contacter pour finaliser mon projet.`,
-    ];
+  const contactEmail = 'contact@welivemorocco.com';
+  const phoneDisplay = '+212 6 36 78 44 01';
+  const whatsappNumber = '212636784401';
 
-    const body = encodeURIComponent(bodyLines.join('\n'));
-    return `https://mail.google.com/mail/?view=cm&fs=1&to=contact@welivemorocco.com&su=${encodeURIComponent(subject)}&body=${body}`;
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current) {
+        clearTimeout(toastTimerRef.current);
+      }
+    };
+  }, []);
+
+  const showToast = (nextToast: ToastState) => {
+    setToast(nextToast);
+
+    if (toastTimerRef.current) {
+      clearTimeout(toastTimerRef.current);
+    }
+
+    toastTimerRef.current = setTimeout(() => {
+      setToast(null);
+    }, 3600);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleChange =
+    (field: FieldName) =>
+    (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+      const value = event.target.value;
+      setForm((current) => ({ ...current, [field]: value }));
+      setErrors((current) => ({ ...current, [field]: undefined }));
+    };
+
+  const validate = () => {
+    const nextErrors: Partial<Record<FieldName, string>> = {};
+
+    if (!form.firstName.trim()) {
+      nextErrors.firstName = t('Please enter your first name.');
+    }
+
+    if (!form.lastName.trim()) {
+      nextErrors.lastName = t('Please enter your last name.');
+    }
+
+    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      nextErrors.email = t('Please enter a valid email address.');
+    }
+
+    if (!form.phone.trim()) {
+      nextErrors.phone = t('Please enter your phone or WhatsApp number.');
+    }
+
+    if (!form.message.trim()) {
+      nextErrors.message = t('Please write a short message.');
+    }
+
+    setErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
+  };
+
+  const buildMessage = () =>
+    [
+      'New WeLiveMorocco travel request',
+      '',
+      `First name: ${form.firstName.trim()}`,
+      `Last name: ${form.lastName.trim()}`,
+      `Email: ${form.email.trim()}`,
+      `Telephone / WhatsApp: ${form.phone.trim()}`,
+      `Heard about us: ${form.source.trim() || 'Not specified'}`,
+      `Journey type: ${form.journey.trim() || 'Not specified'}`,
+      '',
+      'Message:',
+      form.message.trim(),
+    ].join('\n');
+
+  const buildGmailLink = () => {
+    const subject = 'New Travel Request | WeLiveMorocco';
+    return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildMessage())}`;
+  };
+
+  const buildWhatsAppLink = () =>
+    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(buildMessage())}`;
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const gmailLink = buildMailtoLink();
-    window.open(gmailLink, '_blank');
+
+    if (!validate()) {
+      showToast({
+        type: 'error',
+        message: t('Please complete the required fields.'),
+      });
+      return;
+    }
+
+    if (typeof window !== 'undefined') {
+      window.open(buildGmailLink(), '_blank', 'noopener,noreferrer');
+    }
+
+    showToast({
+      type: 'success',
+      message: t('Your email window should open with the request ready.'),
+    });
+  };
+
+  const handleWhatsApp = () => {
+    if (!validate()) {
+      showToast({
+        type: 'error',
+        message: t('Please complete the required fields.'),
+      });
+      return;
+    }
+
+    if (typeof window !== 'undefined') {
+      window.open(buildWhatsAppLink(), '_blank', 'noopener,noreferrer');
+    }
+
+    showToast({
+      type: 'success',
+      message: t('WhatsApp should open with the request ready.'),
+    });
   };
 
   return (
-    <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden text-left">
-      
-      <section className="relative h-[85vh] flex items-center justify-start px-8 md:px-24 mx-4 mt-4 rounded-3xl overflow-hidden shadow-2xl bg-[#2D2926]">
-        <Image 
-          src="/pictures/tangerr.jpg" 
-          fill 
-          className="object-cover scale-105 animate-slow-zoom opacity-60" 
-          alt={t("Concevez votre voyage")} 
-          priority 
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent"></div>
-        <div className="relative z-10 text-white max-w-4xl">
-          <p className="uppercase tracking-[0.8em] text-[13px] md:text-sm font-bold mb-8 text-[#C07652]">
-            {t("PAS UN FORFAIT.")}
-          </p>
-          <h1 className="text-6xl md:text-[8rem] font-serif italic leading-[0.9] mb-12 tracking-tighter uppercase">
-            {t("Un voyage")} <br /> 
-            <span className="text-[#C07652] not-italic font-sans font-black uppercase text-5xl md:text-8xl block mt-2">{t("conçu")}</span>
-            {t("pour vous.")}
-          </h1>
-          <p className="text-2xl md:text-3xl font-light italic mb-12 opacity-90 border-l-2 border-[#C07652] pl-8 max-w-2xl leading-relaxed">
-            {t("Chaque détail de votre voyage au Maroc est conçu à partir de zéro - selon vos dates, vos intérêts, votre budget et votre style de voyage. Pas de groupes partagés. Pas de programmes fixes.")}
-          </p>
-        </div>
-      </section>
+    <main className="min-h-screen bg-[#f7f2ec] text-[#211712]">
+      <section className="relative overflow-hidden border-b border-[#f0642b]/10 bg-[radial-gradient(circle_at_20%_18%,rgba(217,84,31,0.12),transparent_18rem),radial-gradient(circle_at_82%_24%,rgba(240,100,43,0.10),transparent_22rem),linear-gradient(180deg,#fbf7f1_0%,#f7f2ec_100%)] px-4 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-8">
+        <div className="pointer-events-none absolute left-[-5rem] top-[18%] h-40 w-40 rounded-full bg-[#d9541f]/8 blur-3xl sm:h-56 sm:w-56" />
+        <div className="pointer-events-none absolute right-[-4rem] top-[12%] h-44 w-44 rounded-full border-[20px] border-[#d9541f]/10 sm:h-64 sm:w-64 sm:border-[28px]" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 h-24 w-[120%] -translate-x-1/2 rounded-t-[100%] border-t border-[#f0642b]/10" />
 
-      <section className="py-32 px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
-          {[
-            { icon: "✦", title: t("100% Privé"), desc: t("Votre voyage, votre groupe, votre rythme. Jamais partagé avec des inconnus.") },
-            { icon: "◎", title: t("Sur mesure"), desc: t("Nous partons d'une page blanche et construisons selon vos souhaits.") },
-            { icon: "▲", title: t("Experts locaux"), desc: t("Des guides natifs qui vivent et respirent chaque destination.") },
-            { icon: "◈", title: t("Flexibilité"), desc: t("Changez d'avis en cours de route. Nous nous adaptons en temps réel.") }
-          ].map((item, i) => (
-            <div key={i} className="space-y-6 group">
-              <span className="text-5xl text-[#C07652] block transition-transform group-hover:scale-125 duration-300">{item.icon}</span>
-              <h3 className="text-base font-bold uppercase tracking-widest text-[#2D2926]">{item.title}</h3>
-              <p className="text-sm text-gray-500 italic leading-relaxed">{item.desc}</p>
+        <div className="relative mx-auto flex min-h-[calc(100svh-88px)] w-full max-w-[1320px] flex-col justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto max-w-[980px] text-center"
+          >
+            <p className="mb-5 text-[12px] font-extrabold uppercase tracking-[0.34em] text-[#d9541f] sm:text-[13px]">
+              {t('Private Travel Design')}
+            </p>
+
+            <h1 className="mx-auto max-w-[860px] text-[clamp(56px,10vw,122px)] font-black leading-[0.86] tracking-[-0.065em] text-[#d9541f]">
+              {t('Start Your Morocco Journey')}
+            </h1>
+
+            <p className="mx-auto mt-7 max-w-[760px] font-serif text-[20px] leading-[1.55] text-[#5b4a40] sm:text-[24px]">
+              {t(
+                'Share a few details about the way you like to travel. WeLiveMorocco will shape a private journey around your rhythm, interests, dates, and expectations.'
+              )}
+            </p>
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href="#journey-form"
+                className="inline-flex min-h-[58px] items-center justify-center rounded-full border border-[#d9541f] bg-[#d9541f] px-8 text-[12px] font-extrabold uppercase tracking-[0.18em] text-white transition hover:-translate-y-0.5 hover:bg-[#be4718] hover:shadow-[0_18px_36px_rgba(217,84,31,0.18)]"
+              >
+                {t('Begin the Enquiry')}
+              </a>
+
+              <div className="inline-flex min-h-[58px] items-center rounded-full border border-[#f0642b]/20 bg-white/70 px-6 text-[12px] font-bold uppercase tracking-[0.18em] text-[#6b564a] backdrop-blur-sm">
+                {t('Reply within 24 hours')}
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </motion.div>
 
-      <section className="py-32 bg-[#2D2926] text-white px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-24">
-            <h2 className="text-6xl md:text-8xl font-serif italic tracking-tighter mb-4 opacity-90 uppercase">{t("Le Processus")}</h2>
-            <p className="text-[#C07652] font-bold uppercase tracking-[0.5em] text-[12px] italic border-l-2 border-[#C07652] pl-4">{t("De votre premier message à votre dernier souvenir")}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
-            {[
-              { id: "01", t: t("Dites-nous votre rêve"), d: t("Remplissez notre formulaire. Dites-nous qui vous êtes et ce qui vous passionne.") },
-              { id: "02", t: t("Rencontre Designer"), d: t("Un designer de voyage dédié au Maroc vous appelle sous 24h pour approfondir votre vision.") },
-              { id: "03", t: t("Votre proposition"), d: t("En 3 à 5 jours, recevez un itinéraire complet : hôtels, logistique et prix.") },
-              { id: "04", t: t("Affinage final"), d: t("Nous ajustons jusqu'à ce que ce soit parfait. Vous n'avez plus qu'à arriver.") }
-            ].map((step) => (
-              <div key={step.id} className="group bg-white/5 p-12 relative border border-white/10 hover:border-[#C07652]/50 transition-all duration-500">
-                <span className="text-8xl font-serif italic text-white/[0.03] absolute top-2 right-4 pointer-events-none group-hover:text-[#C07652]/10 transition-colors">{step.id}</span>
-                <h3 className="text-xl font-bold uppercase mb-6 relative z-10 leading-tight tracking-widest">{step.t}</h3>
-                <p className="text-sm font-light italic opacity-60 leading-[1.8]">{step.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24">
-        <div className="lg:col-span-5 space-y-12">
-          <h2 className="text-6xl md:text-8xl font-serif italic tracking-tighter leading-[1] text-[#2D2926] uppercase">
-            {t("Concevez votre")} <br/><span className="text-[#C07652] not-italic font-sans font-black uppercase text-4xl md:text-6xl block mt-4">{t("voyage au Maroc.")}</span>
-          </h2>
-          <p className="text-2xl font-light italic text-gray-400 leading-relaxed">{t("Un seul formulaire. Votre designer personnel vous appelle sous 24 heures.")}</p>
-          
-          <div className="bg-white p-10 border-l-2 border-[#C07652] shadow-sm mt-12">
-            <h4 className="text-base font-bold uppercase tracking-widest mb-8 text-[#2D2926]">{t("Prochaines étapes")}</h4>
-            <ul className="space-y-6 text-sm italic text-gray-500 font-medium">
-              <li className="flex gap-4"><span className="text-[#C07652]">01</span> {t("Appel de conception gratuit sous 24h.")}</li>
-              <li className="flex gap-4"><span className="text-[#C07652]">02</span> {t("Proposition personnalisée sous 3 à 5 jours.")}</li>
-              <li className="flex gap-4"><span className="text-[#C07652]">03</span> {t("Affinement ensemble jusqu'à satisfaction.")}</li>
-              <li className="flex gap-4"><span className="text-[#C07652]">04</span> {t("Confirmation et voyage. Nous gérons tout.")}</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="lg:col-span-7">
-          <div className="bg-white p-10 md:p-16 shadow-2xl rounded-sm border border-gray-100">
-            <form onSubmit={handleSubmit} className="space-y-12">
-              <div className="space-y-4">
-                <label className="text-[12px] md:text-sm font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("NOM COMPLET *")}</label>
-                <input
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  type="text"
-                  placeholder={t("Entrer votre nome")}
-                  className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all text-2xl bg-transparent placeholder:text-gray-200"
-                />
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="space-y-4">
-                  <label className="text-[12px] md:text-sm font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("ADRESSE E-MAIL *")}</label>
-                  <input
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    type="email"
-                    placeholder={t("sofia@example.com")}
-                    className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200 text-xl"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <label className="text-[12px] md:text-sm font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("NATIONALITÉ")}</label>
-                  <input
-                    value={nationality}
-                    onChange={(e) => setNationality(e.target.value)}
-                    type="text"
-                    placeholder={t("ex. Marocaine")}
-                    className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200 text-xl"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="space-y-4">
-                  <label className="text-[12px] md:text-sm font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("TÉLÉPHONE (WhatsApp)")}</label>
-                  <input
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    type="tel"
-                    placeholder={t("06XXXXXXXX")}
-                    className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent placeholder:text-gray-200 text-xl"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <label className="text-[12px] md:text-sm font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("VOYAGE EN TANT QUE")}</label>
-                  <div className="flex flex-wrap gap-4 pt-4">
-                    {["Couple", "Famille", "Solo", "Groupe"].map(type => (
-                      <label key={type} className="flex items-center gap-2 text-[12px] md:text-sm font-bold uppercase cursor-pointer hover:text-[#C07652] transition-colors">
-                        <input
-                          type="radio"
-                          name="travellerType"
-                          value={type}
-                          checked={travellerType === type}
-                          onChange={() => setTravellerType(type)}
-                          className="accent-[#C07652]"
-                        />
-                        {t(type)}
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <label className="text-[12px] md:text-sm font-bold uppercase tracking-[0.3em] text-[#C07652]">{t("FOURCHETTE BUDGÉTAIRE *")}</label>
-                <select
-                  value={budget}
-                  onChange={(e) => setBudget(e.target.value)}
-                  className="w-full border-b border-gray-200 py-4 focus:border-[#C07652] outline-none font-serif italic transition-all bg-transparent text-xl"
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto mt-14 w-full max-w-[1080px] border-y border-[#f0642b]/14"
+          >
+            <div className="grid gap-0 md:grid-cols-3">
+              {[
+                {
+                  title: t('Private only'),
+                  body: t('Every itinerary is shaped for your group only, never added to a shared departure.'),
+                },
+                {
+                  title: t('Planned in Morocco'),
+                  body: t('Your trip is designed locally, with real on-the-ground knowledge and response time.'),
+                },
+                {
+                  title: t('Refined around you'),
+                  body: t('Atmosphere, pace, comfort, and routing are adjusted to your travel style.'),
+                },
+              ].map((item, index) => (
+                <div
+                  key={item.title}
+                  className={`px-5 py-6 text-center md:px-8 md:py-8 ${
+                    index < 2 ? 'md:border-r md:border-[#f0642b]/14' : ''
+                  }`}
                 >
-                  <option className="bg-[#F9F7F2]">{t("3 000 DHs – 6 000 DHs par personne")}</option>
-                  <option className="bg-[#F9F7F2]">{t("6 000 DHs – 10 000 DHs par personne")}</option>
-                  <option className="bg-[#F9F7F2]">{t("Plus de 10 000 DHs par personne")}</option>
-                </select>
+                  <p className="text-[12px] font-extrabold uppercase tracking-[0.24em] text-[#d9541f]">
+                    {item.title}
+                  </p>
+                  <p className="mx-auto mt-3 max-w-[260px] text-[14px] leading-[1.6] text-[#6f5c51]">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section id="journey-form" className="scroll-mt-28 px-[14px] py-[34px] sm:px-[21px] sm:py-[42px]">
+        <div className="mx-auto w-full max-w-[1180px]">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(280px,0.78fr)] lg:gap-[72px]">
+          <div>
+            <div className="mb-8 border-b border-[#f0642b]/12 pb-6">
+              <p className="text-[12px] font-extrabold uppercase tracking-[0.28em] text-[#d9541f]">
+                {t('Your enquiry')}
+              </p>
+              <h2 className="mt-4 font-serif text-[clamp(34px,5vw,58px)] leading-[0.95] tracking-[-0.04em] text-[#211712]">
+                {t('Tell us how you want to experience Morocco.')}
+              </h2>
+              <p className="mt-4 max-w-[660px] text-[15px] leading-[1.7] text-[#6f5c51]">
+                {t('The more context you share, the more precise and personal your first itinerary proposal will be.')}
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} noValidate>
+              <div className="grid grid-cols-1 gap-[18px] md:grid-cols-2">
+                <div className="flex flex-col gap-[7px]">
+                  <label htmlFor="firstName" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
+                    {t('First name')}
+                  </label>
+                  <input
+                    id="firstName"
+                    value={form.firstName}
+                    onChange={handleChange('firstName')}
+                    placeholder={t('First')}
+                    autoComplete="given-name"
+                    aria-invalid={Boolean(errors.firstName)}
+                    className={`w-full rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${
+                      errors.firstName ? 'border-[#a72e11] bg-[#fff7f4]' : 'border-[#f0642b]'
+                    }`}
+                  />
+                  {errors.firstName && <span className="text-[12px] text-[#a72e11]">{errors.firstName}</span>}
+                </div>
+
+                <div className="flex flex-col gap-[7px]">
+                  <label htmlFor="lastName" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
+                    {t('Last name')}
+                  </label>
+                  <input
+                    id="lastName"
+                    value={form.lastName}
+                    onChange={handleChange('lastName')}
+                    placeholder={t('Last')}
+                    autoComplete="family-name"
+                    aria-invalid={Boolean(errors.lastName)}
+                    className={`w-full rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${
+                      errors.lastName ? 'border-[#a72e11] bg-[#fff7f4]' : 'border-[#f0642b]'
+                    }`}
+                  />
+                  {errors.lastName && <span className="text-[12px] text-[#a72e11]">{errors.lastName}</span>}
+                </div>
+
+                <div className="flex flex-col gap-[7px]">
+                  <label htmlFor="email" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
+                    {t('Email address')}
+                  </label>
+                  <input
+                    id="email"
+                    value={form.email}
+                    onChange={handleChange('email')}
+                    placeholder={t('example@company.com')}
+                    autoComplete="email"
+                    aria-invalid={Boolean(errors.email)}
+                    className={`w-full rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${
+                      errors.email ? 'border-[#a72e11] bg-[#fff7f4]' : 'border-[#f0642b]'
+                    }`}
+                  />
+                  {errors.email && <span className="text-[12px] text-[#a72e11]">{errors.email}</span>}
+                </div>
+
+                <div className="flex flex-col gap-[7px]">
+                  <label htmlFor="phone" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
+                    {t('Telephone / WhatsApp')}
+                  </label>
+                  <input
+                    id="phone"
+                    value={form.phone}
+                    onChange={handleChange('phone')}
+                    placeholder={t('+212 6 36 78 44 01')}
+                    autoComplete="tel"
+                    aria-invalid={Boolean(errors.phone)}
+                    className={`w-full rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${
+                      errors.phone ? 'border-[#a72e11] bg-[#fff7f4]' : 'border-[#f0642b]'
+                    }`}
+                  />
+                  {errors.phone && <span className="text-[12px] text-[#a72e11]">{errors.phone}</span>}
+                </div>
+
+                <div className="flex flex-col gap-[7px] md:col-span-2">
+                  <label htmlFor="source" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
+                    {t('How did you hear about us?')}
+                  </label>
+                  <select
+                    id="source"
+                    value={form.source}
+                    onChange={handleChange('source')}
+                    className="w-full rounded-[12px] border border-[#f0642b] bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)]"
+                  >
+                    <option value="">{t('Select one...')}</option>
+                    <option>{t('Google')}</option>
+                    <option>{t('Instagram')}</option>
+                    <option>{t('Recommendation')}</option>
+                    <option>{t('Travel Agency')}</option>
+                    <option>{t('TripAdvisor / Viator')}</option>
+                    <option>{t('Previous Client')}</option>
+                    <option>{t('Other')}</option>
+                  </select>
+                </div>
+
+                <div className="flex flex-col gap-[7px] md:col-span-2">
+                  <label htmlFor="journey" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
+                    {t('What kind of journey are you looking for?')}
+                  </label>
+                  <select
+                    id="journey"
+                    value={form.journey}
+                    onChange={handleChange('journey')}
+                    className="w-full rounded-[12px] border border-[#f0642b] bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)]"
+                  >
+                    <option value="">{t('Select one...')}</option>
+                    <option>{t('Bespoke private journey')}</option>
+                    <option>{t('Luxury honeymoon')}</option>
+                    <option>{t('Family journey')}</option>
+                    <option>{t('Imperial cities & culture')}</option>
+                    <option>{t('Sahara desert experience')}</option>
+                    <option>{t('Gastronomy & wine')}</option>
+                    <option>{t('Corporate / incentive travel')}</option>
+                    <option>{t('Not sure yet')}</option>
+                  </select>
+                </div>
+
+                <div className="flex flex-col gap-[7px] md:col-span-2">
+                  <label htmlFor="message" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
+                    {t('Your message')}
+                  </label>
+                  <textarea
+                    id="message"
+                    value={form.message}
+                    onChange={handleChange('message')}
+                    placeholder={t(
+                      'Tell us about your dates, destinations, travel style, number of travelers, preferred atmosphere, or anything we should know.'
+                    )}
+                    aria-invalid={Boolean(errors.message)}
+                    className={`min-h-[112px] w-full resize-y rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] leading-[1.55] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${
+                      errors.message ? 'border-[#a72e11] bg-[#fff7f4]' : 'border-[#f0642b]'
+                    }`}
+                  />
+                  {errors.message && <span className="text-[12px] text-[#a72e11]">{errors.message}</span>}
+                </div>
               </div>
 
-              <div className="pt-8 text-center">
-                <button className="w-full bg-[#C07652] text-white py-8 font-bold uppercase tracking-[0.4em] text-sm md:text-base hover:bg-[#2D2926] transition-all shadow-xl">
-                  {t("DEMANDER MON APPEL DE CONCEPTION")}
+              <div className="mt-6 grid gap-4 md:grid-cols-[1fr_0.84fr] md:items-center">
+                <button
+                  type="submit"
+                  className="min-h-[74px] rounded-[14px] border border-[#f0642b] bg-transparent px-5 text-[12px] font-bold uppercase tracking-[0.14em] text-[#3b2518] transition hover:-translate-y-0.5 hover:bg-[#d9541f] hover:text-white hover:shadow-[0_15px_30px_rgba(217,84,31,0.18)]"
+                >
+                  {t('Send Request')}
                 </button>
-                <p className="mt-8 text-[12px] md:text-sm text-gray-400 font-bold uppercase tracking-widest italic opacity-60">
-                  {t("Sans engagement · Réponse sous 24h")}
-                </p>
+
+                <button
+                  type="button"
+                  onClick={handleWhatsApp}
+                  className="min-h-[74px] rounded-[14px] border border-[rgba(217,84,31,0.38)] bg-white px-5 text-[12px] font-extrabold uppercase tracking-[0.10em] text-[#d9541f] transition hover:-translate-y-0.5 hover:bg-[#fff3ed]"
+                >
+                  {t('WhatsApp Us')}
+                </button>
               </div>
             </form>
           </div>
+
+          <aside className="pt-[10px] lg:pt-[92px]">
+            <div className="mb-7 grid grid-cols-[42px_1fr] items-start gap-[15px]">
+              <div className="grid h-[34px] w-[34px] place-items-center rounded-full border border-[rgba(217,84,31,0.15)] bg-white text-[#d9541f] shadow-[0_8px_24px_rgba(217,84,31,0.10)]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-[18px] w-[18px]">
+                  <path d="M4 5h16v14H4z" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="mb-[5px] text-[14px] font-bold">{t('Email us')}</h3>
+                <a href={`mailto:${contactEmail}`} className="mb-2 inline-block text-[13px] font-bold text-[#d9541f] no-underline">
+                  {contactEmail}
+                </a>
+                <p className="m-0 text-[13px] leading-[1.5] text-[#6f5c51]">
+                  {t('For private journeys, partnerships, and tailored travel requests.')}
+                </p>
+              </div>
+            </div>
+
+            <div className="mb-7 grid grid-cols-[42px_1fr] items-start gap-[15px]">
+              <div className="grid h-[34px] w-[34px] place-items-center rounded-full border border-[rgba(217,84,31,0.15)] bg-white text-[#d9541f] shadow-[0_8px_24px_rgba(217,84,31,0.10)]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-[18px] w-[18px]">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.32 1.8.59 2.65a2 2 0 0 1-.45 2.11L9 10.73a16 16 0 0 0 4.27 4.27l1.24-1.24a2 2 0 0 1 2.11-.45c.85.27 1.75.47 2.65.59A2 2 0 0 1 22 16.92Z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="mb-[5px] text-[14px] font-bold">{t('Call or WhatsApp us')}</h3>
+                <a
+                  href={`https://wa.me/${whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-2 inline-block text-[13px] font-bold text-[#d9541f] no-underline"
+                >
+                  {phoneDisplay}
+                </a>
+                <p className="m-0 text-[13px] leading-[1.5] text-[#6f5c51]">
+                  {t('Available for travel inquiries and personalized assistance.')}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-[34px] rounded-[20px] border border-[rgba(217,84,31,0.18)] bg-[rgba(255,255,255,0.42)] p-[22px] shadow-[0_22px_70px_rgba(69,34,16,0.08)]">
+              <strong className="mb-2 block text-[13px] uppercase tracking-[0.12em] text-[#d9541f]">
+                {t('Based in Morocco')}
+              </strong>
+              <p className="m-0 text-[14px] leading-[1.55] text-[#5b4a40]">
+                {t('Private journeys across Marrakech, Fes, the Sahara, the Atlas Mountains, the Atlantic coast, and beyond.')}
+              </p>
+            </div>
+          </aside>
+        </div>
         </div>
       </section>
 
-   
+      <div
+        className={`pointer-events-none fixed bottom-[22px] right-[22px] max-w-[380px] rounded-[16px] border border-[rgba(217,84,31,0.22)] bg-white px-5 py-[18px] text-[14px] leading-[1.45] text-[#4f3b31] shadow-[0_20px_50px_rgba(49,27,17,0.18)] transition-all duration-200 ${
+          toast ? 'translate-y-0 opacity-100' : 'translate-y-[18px] opacity-0'
+        }`}
+      >
+        {toast?.message}
+      </div>
     </main>
   );
 }
