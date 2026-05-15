@@ -16,26 +16,26 @@ export default function Home() {
       </div>
     
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center justify-start px-10 md:px-24 overflow-hidden">
+      <section className="relative flex min-h-[calc(100svh-64px)] items-end justify-start overflow-hidden px-6 pb-14 pt-24 sm:min-h-[calc(100svh-72px)] sm:px-8 sm:pb-16 sm:pt-28 md:min-h-[calc(100svh-88px)] md:items-center md:px-16 md:pb-20 md:pt-24 lg:px-24">
         <Image
           src="/pictures/rabat.jpg"
           fill
-          className="object-cover scale-110 animate-[zoom_20s_infinite_alternate]"
+          className="object-cover object-[62%_center] scale-110 animate-[zoom_20s_infinite_alternate] md:object-center"
           alt={t("hero_alt")}
           priority
         />
 
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/15 md:from-black/60 md:via-black/28 md:to-transparent" />
 
-        <div className="relative z-10 text-white max-w-4xl flex flex-col items-start space-y-6">
-          <div className="space-y-4 text-left">
+        <div className="relative z-10 flex max-w-[42rem] flex-col items-start space-y-5 text-white md:space-y-6">
+          <div className="space-y-3 text-left md:space-y-4">
             <FadeIn direction="none" duration={1.2}>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-playfair leading-tight opacity-95">
+              <h1 className="text-[clamp(2.9rem,11vw,5.6rem)] font-playfair leading-[0.92] tracking-[-0.04em] opacity-95">
                 {t("hero_title")}
               </h1>
             </FadeIn>
             <FadeIn direction="up" delay={0.4}>
-              <p className="text-lg md:text-xl font-playfair lowercase leading-relaxed opacity-80 max-w-xl">
+              <p className="max-w-[34rem] text-base font-playfair lowercase leading-[1.65] opacity-85 sm:text-lg md:text-xl lg:text-[1.35rem]">
                 {t("hero_subtitle")}
               </p>
             </FadeIn>
@@ -46,15 +46,15 @@ export default function Home() {
               <div className="w-[3px] bg-[#C07652] mr-0" />
               <Link
                 href="/contact"
-                className="bg-[#C07652] text-white px-8 py-4 uppercase font-montserrat font-bold text-sm tracking-[0.2em] shadow-xl hover:bg-[#A35F3F] transition-all transform hover:translate-x-1 active:scale-95">
+                className="rounded-r-full bg-[#C07652] px-6 py-3 text-[11px] font-montserrat font-bold uppercase tracking-[0.18em] text-white shadow-xl transition-all hover:translate-x-1 hover:bg-[#A35F3F] active:scale-95 sm:px-8 sm:py-4 sm:text-sm">
                 {t("hero_button")}
               </Link>
             </div>
           </FadeIn>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-          <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 via-white to-white/0 animate-bounce" />
+        <div className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex">
+          <div className="h-14 w-[1px] animate-bounce bg-gradient-to-b from-white/0 via-white to-white/0" />
         </div>
       </section>
    

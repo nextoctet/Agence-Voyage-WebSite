@@ -11,20 +11,20 @@ export default function AboutPage() {
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden text-left">
       
      
-      <section className="relative h-[95vh] flex flex-col px-6 md:px-20 lg:px-32 overflow-hidden bg-[#1A2222]">
+      <section className="relative flex min-h-[calc(100svh-64px)] flex-col overflow-hidden bg-[#1A2222] px-6 pb-8 pt-6 sm:min-h-[calc(100svh-72px)] sm:px-8 md:min-h-[calc(100svh-88px)] md:px-20 lg:px-32">
         <Image 
           src="/pictures/about-ushero.png" 
           alt="About Us Hero" 
           fill 
-          className="object-cover" 
+          className="object-cover object-[56%_center]" 
           priority
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/48 to-black/72 md:bg-gradient-to-r md:from-black/60 md:via-black/38 md:to-black/28"></div>
         
-        <div className="w-full max-w-[1600px] mx-auto relative z-10 flex flex-col h-full py-12 md:py-16">
+        <div className="w-full max-w-[1600px] mx-auto relative z-10 flex flex-col h-full py-8 md:py-16">
           
           <div className="flex justify-start">
-            <span className="text-[#C07652] text-[11px] md:text-sm font-bold uppercase tracking-[0.5em] md:tracking-[0.8em]">
+            <span className="text-[#C07652] text-[10px] md:text-sm font-bold uppercase tracking-[0.34em] md:tracking-[0.8em]">
               {t("ABOUT US")}
             </span>
           </div>
@@ -33,15 +33,15 @@ export default function AboutPage() {
             {/* The Orange Diamond */}
             <div className="absolute -left-8 md:-left-16 top-1/2 -translate-y-[200%] w-4 h-4 md:w-6 md:h-6 bg-[#C07652] rotate-45 hidden md:block"></div>
             
-            <div className="max-w-5xl">
-              <h1 className="text-4xl sm:text-5xl md:text-[6rem] lg:text-[7.5rem] font-serif leading-[0.95] text-[#F9F7F2] tracking-tighter mb-6">
+            <div className="max-w-4xl">
+              <h1 className="text-[clamp(2.85rem,10vw,7.5rem)] font-serif leading-[0.92] text-[#F9F7F2] tracking-[-0.05em] mb-6">
                 {t("We don't just plan")} <br />
                 {t("trips to Morocco.")}
               </h1>
             </div>
           </div>
 
-          <div className="w-full border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:justify-between md:items-center text-[9px] md:text-[11px] uppercase tracking-[0.2em] md:tracking-[0.4em] text-white/40 font-bold font-sans">
+          <div className="w-full border-t border-white/10 pt-5 flex flex-col gap-2 md:flex-row md:justify-between md:items-center text-[9px] md:text-[11px] uppercase tracking-[0.18em] md:tracking-[0.4em] text-white/40 font-bold font-sans">
             <span className="opacity-80">welivemorocco.com</span>
             <span className="opacity-80">Marrakech, Morocco</span>
           </div>

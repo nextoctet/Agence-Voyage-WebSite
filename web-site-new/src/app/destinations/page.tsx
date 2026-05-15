@@ -67,25 +67,25 @@ const TOUTES_DESTINATIONS = [
 export default function DestinationsCataloguePage() {
   const { t } = useTranslation();
   return (
-    <main className="bg-white min-h-screen font-sans text-[#003366]">
+    <main className="min-h-screen bg-[#fcfbf8] font-sans text-[#003366]">
       
       {/*  HEADER SECTION */}
-      <section className="bg-[#003366] pt-32 pb-20 px-6 text-center relative overflow-hidden">
+      <section className="relative overflow-hidden bg-[#003366] px-5 pb-14 pt-24 text-center sm:px-6 sm:pb-16 sm:pt-28 md:pt-32 md:pb-20">
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
         
         <div className="relative z-10">
           <FadeIn>
-            <span className="text-orange-500 font-black uppercase tracking-[0.4em] text-sm italic mb-4 block">
+            <span className="mb-4 block text-[12px] font-black uppercase tracking-[0.32em] italic text-orange-500 sm:text-sm sm:tracking-[0.4em]">
               {t("WELIVE MOROCCO")}
             </span>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <h1 className="text-6xl md:text-8xl font-black text-white uppercase italic tracking-tighter mb-6 leading-none">
+            <h1 className="mb-5 text-[clamp(3.3rem,13vw,6.9rem)] font-black uppercase italic leading-none tracking-tighter text-white sm:mb-6">
               {t("Nos Destinations")}
             </h1>
           </FadeIn>
           <FadeIn delay={0.4}>
-            <p className="text-blue-100/60 max-w-2xl mx-auto italic text-xl">
+            <p className="mx-auto max-w-[38rem] text-base italic leading-relaxed text-blue-100/60 sm:text-lg md:text-xl">
               {t("Découvrez le Maroc comme vous ne l&apos;avez jamais vu. Des circuits authentiques pour une immersion totale.")}
             </p>
           </FadeIn>
@@ -93,13 +93,13 @@ export default function DestinationsCataloguePage() {
       </section>
 
       
-      <section className="max-w-7xl mx-auto py-24 px-6">
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <section className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 md:py-20 lg:py-24">
+        <StaggerContainer className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-3 lg:gap-10">
           
           {TOUTES_DESTINATIONS.map((dest) => (
-            <FadeInStagger key={dest.id} className="group bg-white rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
+            <FadeInStagger key={dest.id} className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-sm transition-all duration-500 hover:shadow-2xl md:rounded-[2.5rem]">
               
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-64 overflow-hidden sm:h-72 md:h-80">
                 <Image 
                   src={dest.img} 
                   alt={dest.title} 
@@ -107,32 +107,32 @@ export default function DestinationsCataloguePage() {
                   className="object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="absolute top-6 left-6">
-                  <span className="bg-white/90 backdrop-blur-sm text-[#003366] px-4 py-1.5 rounded-full text-[12px] md:text-sm font-black uppercase tracking-widest shadow-lg">
+                  <span className="rounded-full bg-white/90 px-3.5 py-1.5 text-[11px] font-black uppercase tracking-[0.2em] text-[#003366] shadow-lg backdrop-blur-sm sm:px-4 sm:text-sm sm:tracking-widest">
                     {dest.tag}
                   </span>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <div className="p-10 flex flex-col flex-grow">
-                <div className="mb-6">
-                  <p className="text-orange-500 font-black text-[12px] md:text-sm uppercase tracking-widest mb-2 italic">
+              <div className="flex flex-grow flex-col p-6 sm:p-8 md:p-10">
+                <div className="mb-5 sm:mb-6">
+                  <p className="mb-2 text-[11px] font-black uppercase italic tracking-[0.2em] text-orange-500 sm:text-sm sm:tracking-widest">
                     {t("Maroc")} — {dest.duration}
                   </p>
-                  <h3 className="text-4xl font-black text-[#003366] uppercase italic tracking-tighter leading-none mb-4 group-hover:text-orange-500 transition-colors">
+                  <h3 className="mb-3 text-[2.2rem] font-black uppercase italic leading-none tracking-tighter text-[#003366] transition-colors group-hover:text-orange-500 sm:mb-4 sm:text-[2.6rem] md:text-4xl">
                     {dest.title}
                   </h3>
-                  <p className="text-gray-400 text-base italic">{dest.subtitle}</p>
+                  <p className="text-[15px] italic text-gray-400 sm:text-base">{dest.subtitle}</p>
                 </div>
 
-                <div className="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
+                <div className="mt-auto flex items-center justify-between border-t border-gray-50 pt-6 sm:pt-8">
                   <div>
-                    <p className="text-gray-400 text-[12px] md:text-sm font-bold uppercase tracking-widest mb-1">{t("À partir de")}</p>
-                    <p className="text-[#003366] font-black text-3xl tracking-tight">{dest.price}</p>
+                    <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400 sm:text-sm sm:tracking-widest">{t("À partir de")}</p>
+                    <p className="text-2xl font-black tracking-tight text-[#003366] sm:text-3xl">{dest.price}</p>
                   </div>
                   
                   <Link 
                     href={`/destinations/${dest.id}`}
-                    className="bg-[#003366] text-white w-14 h-14 rounded-2xl flex items-center justify-center hover:bg-orange-500 transition-all shadow-lg active:scale-90"
+                    className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#003366] text-white shadow-lg transition-all hover:bg-orange-500 active:scale-90 sm:h-14 sm:w-14 sm:rounded-2xl"
                   >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -147,12 +147,12 @@ export default function DestinationsCataloguePage() {
         </StaggerContainer>
       </section>
 
-      <FadeIn className="bg-gray-50 py-20 px-6 mx-6 mb-12 rounded-[3rem] text-center border border-gray-100">
-        <h2 className="text-4xl md:text-5xl font-black text-[#003366] uppercase italic mb-6">{t("Un voyage sur mesure ?")}</h2>
-        <p className="text-gray-500 mb-10 italic text-lg">{t("Nos experts basés au Maroc créent votre itinéraire idéal.")}</p>
+      <FadeIn className="mx-4 mb-10 rounded-[2rem] border border-gray-100 bg-gray-50 px-5 py-14 text-center sm:mx-6 sm:mb-12 sm:px-6 sm:py-16 md:rounded-[3rem] md:py-20">
+        <h2 className="mb-5 text-3xl font-black uppercase italic text-[#003366] sm:text-4xl md:mb-6 md:text-5xl">{t("Un voyage sur mesure ?")}</h2>
+        <p className="mb-8 text-base italic text-gray-500 sm:text-lg md:mb-10">{t("Nos experts basés au Maroc créent votre itinéraire idéal.")}</p>
         <a 
           href="https://wa.me/212636784401" 
-          className="bg-orange-500 text-white px-12 py-5 rounded-2xl font-black uppercase text-sm md:text-base tracking-[0.2em] shadow-xl hover:bg-[#003366] transition-all inline-block"
+          className="inline-block rounded-2xl bg-orange-500 px-8 py-4 text-[11px] font-black uppercase tracking-[0.18em] text-white shadow-xl transition-all hover:bg-[#003366] sm:px-12 sm:py-5 sm:text-sm md:text-base md:tracking-[0.2em]"
         >
           {t("Contactez-nous sur WhatsApp")}
         </a>
