@@ -1419,4 +1419,3 @@
   "design_email_subject": "New Travel Request | WeLiveMorocco",
   "design_email_body_template": "New Travel Request | WeLiveMorocco\n\nFirst Name: {{first}}\nLast Name: {{last}}\nEmail: {{email}}\nPhone / WhatsApp: {{phone}}\nHow they found us: {{source}}\nJourney Type: {{journey}}\n\nMessage:\n{{message}}"
 }
-}
