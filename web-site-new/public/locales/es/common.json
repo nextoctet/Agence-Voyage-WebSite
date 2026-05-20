@@ -1,41 +1,42 @@
 {
-  "hero_title": "Marruecos, más allá de lo esperado.",
-  "hero_subtitle": "viajes formados a través del ambiente, la cultura, la gastronomía y encuentros significativos.",
+  "hero_title": "Tu Marruecos, diseñado a tu medida.",
+  "hero_subtitle": "Viajes diseñados con intimidad, ritmo y sensibilidad cultural.",
   "hero_button": "COMIENZA TU VIAJE",
   "why_bespoke": {
-    "label": "Nuestro Compromiso",
-    "title": "Por qué Marruecos",
-    "body": "Cenas en azoteas, catas en mercados, experiencias culinarias en Fez y Marrakech, vinos marroquíes y los sabores que definen cada región y su gente.",
-    "accent": "Viajes diseñados con intimidad, ritmo y visión cultural.",
-    "dark_title": "Cada itinerario comienza con una conversación.",
-    "dark_body_1": "Cómo le gusta viajar. Qué le inspira. Qué tipo de atmósfera permanece con usted mucho tiempo después de regresar a casa.",
-    "dark_body_2": "A partir de ahí, cada viaje se diseña cuidadosamente con experiencia local, logística elegante y una atención al detalle profundamente personal. Un viaje que es inconfundiblemente, enteramente suyo.",
-    "stat_1_num": "10+",
-    "stat_1_label": "Años de experiencia local",
-    "stat_2_num": "100%",
-    "stat_2_label": "Itinerarios a medida",
-    "stat_3_num": "6",
-    "stat_3_label": "Regiones cubiertas"
+    "label": "POR QUÉ A MEDIDA",
+    "title": "Un viaje organizado te muestra Marruecos. Un viaje a medida te permite vivirlo.",
+    "body": "La diferencia está en el punto de partida: si el viaje nace de un catálogo o de ti. En WeLiveMorocco, siempre empieza contigo.",
+    "accent": "Nuestro equipo, nacido en Marruecos, lleva más de una década construyendo un conocimiento real del país: no desde un informe, sino desde vivirlo, guiarlo y cuidar cada experiencia.",
+    "dark_title": "Usamos ese conocimiento para diseñar viajes realmente personales. Tu ritmo, intereses, presupuesto y grupo: todo se piensa con cuidado. El resultado se siente hecho para ti. Porque lo está.",
+    "stat_1_num": "Equipo",
+    "stat_1_label": "Marroquí",
+    "stat_2_num": "10+",
+    "stat_2_label": "Años de experiencia",
+    "stat_3_num": "100%",
+    "stat_3_label": "Escrito desde cero"
   },
   "travel_styles": {
-    "label": "Nuestro Compromiso",
-    "title": "Por qué Marruecos",
+    "label": "ESTILOS DE VIAJE",
+    "title": "Encuentra tu Marruecos.",
     "part_1": "Parte 1 de 2",
     "part_2": "Parte 2 de 2",
     "style_1": {
-      "title": "Cultural Encounters",
-      "body": "Private medina walks, artisan workshops, local family visits, architectural wonders, and stories carried through generations. For travelers who want to understand Morocconot just photograph it.",
-      "footer": "Marrakech • Fez • Meknes • Chefchaouen • Rabat"
+      "title": "Inmersión cultural",
+      "subtitle": "Medinas, personas e historia viva",
+      "body": "Paseos privados por la medina, talleres artesanos, cenas en casas familiares, acceso a curtidurías y visitas guiadas a espacios que muchos viajeros solo ven desde fuera. Para comprender Marruecos, no solo fotografiarlo.",
+      "footer": "Marrakech · Fez · Meknes · Chefchaouen · Rabat"
     },
     "style_2": {
-      "title": "Desert & Atlas Escapes",
-      "body": "Luxury camps, mountain kasbahs, dramatic landscapes, stargazing, and the stillness of Morocco's vast open spaces. The real desertnot the brochure version.",
-      "footer": "Merzouga • Zagora • Draa Valley • Ouarzazate"
+      "title": "Desierto y paisajes",
+      "subtitle": "El Sahara, el silencio y su inmensidad",
+      "body": "Dunas de Merzouga, atardeceres en Zagora, noches en campamentos, paseos en camello al amanecer, rutas 4×4 por el valle del Draa y cielos estrellados. El desierto real, no la versión de folleto.",
+      "footer": "Merzouga · Zagora · Valle del Draa · Ouarzazate"
     },
     "style_3": {
-      "title": "Adventure & Exploration",
-      "body": "Surfing the Atlantic coast, High Atlas treks, gorge hikes, quad biking, off-road journeys, and active experiences designed for curious travelers who want to be moving.",
-      "footer": "High Atlas • Todra Gorge • Essaouira • Ouzoud Falls"
+      "title": "Aventura y naturaleza",
+      "subtitle": "Montañas, senderos y carretera abierta",
+      "body": "Trekking en el Alto Atlas, ascenso al Toubkal, caminatas por gargantas, bicicleta entre pueblos bereberes y rutas de varios días. Para viajeros que quieren moverse y estar al aire libre.",
+      "footer": "Alto Atlas · Toubkal · Gargantas del Todra · Cascadas de Ouzoud"
     },
     "style_4": {
       "title": "Private Luxury Retreats",
@@ -60,19 +61,55 @@
     "body_2": "Esto es lo que permanece con los viajeros mucho tiempo después de regresar a casa.",
     "footer": "98% satisfacción del viajero • 3,200+ viajes"
   },
+  "how_it_works": {
+    "label": "CÓMO FUNCIONA",
+    "title": "Cuatro pasos para diseñar tu viaje ideal.",
+    "step_1_title": "Cuéntanos sobre ti",
+    "step_1_body": "Completa un breve formulario o escríbenos. Quién viaja, qué os gusta, cuándo venís y qué buscáis. Nada formal.",
+    "step_2_title": "Diseñamos tu itinerario",
+    "step_2_body": "Nuestro equipo local crea una propuesta completa: ruta, alojamientos, experiencias y estructura día a día, adaptada a lo que nos contaste.",
+    "step_3_title": "Lo afinamos juntos",
+    "step_3_body": "Revisa la propuesta y dinos qué ajustar. Seguimos hasta que encaje contigo: sin presión, sin prisa y sin coste extra por cambios.",
+    "step_4_title": "Llegas; nosotros nos ocupamos",
+    "step_4_body": "Gestionamos la logística y seguimos en Marruecos durante tu viaje. Tú solo tienes que llegar y disfrutar."
+  },
+  "personalize": {
+    "label": "QUÉ PERSONALIZAMOS",
+    "title": "Todo puede adaptarse a ti.",
+    "item_1_title": "Ruta e itinerario",
+    "item_1_body": "Qué ciudades, en qué orden y cuánto tiempo: lo decidimos contigo. Te diremos con honestidad qué trayectos merecen la pena.",
+    "item_2_title": "Estilo de alojamiento",
+    "item_2_body": "Riads en medina, campamentos del desierto, lodges de montaña u hoteles de diseño, elegidos según tu forma de viajar.",
+    "item_3_title": "Ritmo y flexibilidad",
+    "item_3_body": "Rápido o pausado: construimos el viaje a tu ritmo, con tiempo libre para caminar sin plan.",
+    "item_4_title": "Necesidades del grupo",
+    "item_4_body": "Niños, adolescentes, padres mayores o grupos mixtos: ajustamos cada detalle para que el viaje funcione para todos.",
+    "item_5_title": "Idioma y guías",
+    "item_5_body": "Inglés, francés, español, árabe o tamazight: elegimos guías según idioma, estilo y perfil del grupo.",
+    "item_6_title": "Presupuesto y valor",
+    "item_6_body": "De confortable a lujo total: tú marcas el techo y nosotros maximizamos el valor con presupuestos claros e itemizados."
+  },
   "commitment": {
-    "label": "Nuestro Compromiso",
-    "subtitle": "No aspiraciones. El estándar mínimo que mantenemos en cada viaje, independientemente del presupuesto o del tamaño del grupo.",
-    "item_1_title": "Una respuesta en 24 horas",
-    "item_1_body": "Cada consulta recibe una respuesta personal, no una plantilla. Leemos lo que ha escrito y respondemos con algo que realmente lo refleje.",
-    "item_2_title": "Una propuesta escrita desde cero",
-    "item_2_body": "Su itinerario se construye específicamente para su grupo. No reciclamos viajes: cada propuesta es nueva, escrita en torno a lo que nos contó.",
-    "item_3_title": "Transparencia total de precios",
-    "item_3_body": "Presupuestos claros y detallados. Sin cargos ocultos, sin suplementos vagos, sin sorpresas a la llegada. Lo que presupuestamos es exactamente lo que paga.",
+    "label": "Nuestro compromiso",
+    "title": "No son aspiraciones. Es el estándar mínimo que mantenemos en cada viaje, sin importar presupuesto o tamaño del grupo.",
+    "satisfaction": "98% satisfacción · 3.200+ viajeros",
+    "item_1_title": "Respuesta en 24 horas",
+    "item_1_body": "Cada consulta recibe una respuesta personal, no una plantilla. Leemos lo que escribes y respondemos de forma útil.",
+    "item_2_title": "Propuesta escrita desde cero",
+    "item_2_body": "Tu itinerario se crea para tu grupo. No reciclamos viajes: cada propuesta nace de lo que nos cuentes.",
+    "item_3_title": "Precio claro y transparente",
+    "item_3_body": "Presupuestos claros y detallados. Sin costes ocultos, suplementos vagos ni sorpresas al llegar. Lo presupuestado es lo que pagas.",
     "item_4_title": "Soporte sobre el terreno",
-    "item_4_body": "Nuestro equipo está en Marruecos y localizable las 24 horas durante su viaje. Si algo cambia, lo solucionamos de inmediato.",
-    "item_5_title": "Recomendaciones honestas, siempre",
-    "item_5_body": "Sugerimos riads, guías y experiencias porque son genuinamente excepcionales, nunca por acuerdos de comisión."
+    "item_4_body": "Nuestro equipo está en Marruecos y disponible por WhatsApp durante todo el viaje. Si algo cambia, lo resolvemos.",
+    "item_5_title": "Recomendaciones honestas",
+    "item_5_body": "Sugerimos restaurantes, guías y alojamientos porque son realmente buenos, no por comisiones."
+  },
+  "cta": {
+    "label": "EMPECEMOS",
+    "title": "Lo único que falta es que nos cuentes sobre ti.",
+    "body": "Nos ocupamos de todo: planificación, logística, conocimiento local y esos detalles que quizá no sabías que importaban. Tú solo tienes que llegar.",
+    "button_1": "Empezar mi viaje a medida",
+    "button_2": "Hablar con el equipo"
   },
   "Accueil": "Inicio",
   "À Propos": "Nosotros",
