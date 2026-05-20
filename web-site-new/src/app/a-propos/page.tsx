@@ -43,7 +43,7 @@ export default function AboutPage() {
 
           <div className="w-full border-t border-white/10 pt-5 flex flex-col gap-2 md:flex-row md:justify-between md:items-center text-[9px] md:text-[11px] uppercase tracking-[0.18em] md:tracking-[0.4em] text-white/40 font-bold font-sans">
             <span className="opacity-80">welivemorocco.com</span>
-            <span className="opacity-80">Marrakech, Morocco</span>
+            <span className="opacity-80">{t("Marrakech, Morocco")}</span>
           </div>
         </div>
       </section>

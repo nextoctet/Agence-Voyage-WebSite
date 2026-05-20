@@ -75,46 +75,43 @@ export default function DesignExperience() {
     const nextErrors: Partial<Record<FieldName, string>> = {};
 
     if (!form.firstName.trim()) {
-      nextErrors.firstName = t('Please enter your first name.');
+      nextErrors.firstName = t('design_error_first_name');
     }
 
     if (!form.lastName.trim()) {
-      nextErrors.lastName = t('Please enter your last name.');
+      nextErrors.lastName = t('design_error_last_name');
     }
 
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
-      nextErrors.email = t('Please enter a valid email address.');
+      nextErrors.email = t('design_error_email');
     }
 
     if (!form.phone.trim()) {
-      nextErrors.phone = t('Please enter your phone or WhatsApp number.');
+      nextErrors.phone = t('design_error_phone');
     }
 
     if (!form.message.trim()) {
-      nextErrors.message = t('Please write a short message.');
+      nextErrors.message = t('design_error_message');
     }
 
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
   };
 
-  const buildMessage = () =>
-    [
-      'New WeLiveMorocco travel request',
-      '',
-      `First name: ${form.firstName.trim()}`,
-      `Last name: ${form.lastName.trim()}`,
-      `Email: ${form.email.trim()}`,
-      `Telephone / WhatsApp: ${form.phone.trim()}`,
-      `Heard about us: ${form.source.trim() || 'Not specified'}`,
-      `Journey type: ${form.journey.trim() || 'Not specified'}`,
-      '',
-      'Message:',
-      form.message.trim(),
-    ].join('\n');
+  const buildMessage = () => {
+    const template = t('design_email_body_template');
+    return template
+      .replace('{{first}}', form.firstName.trim())
+      .replace('{{last}}', form.lastName.trim())
+      .replace('{{email}}', form.email.trim())
+      .replace('{{phone}}', form.phone.trim())
+      .replace('{{source}}', form.source.trim() || t('Not specified'))
+      .replace('{{journey}}', form.journey.trim() || t('Not specified'))
+      .replace('{{message}}', form.message.trim());
+  };
 
   const buildGmailLink = () => {
-    const subject = 'New Travel Request | WeLiveMorocco';
+    const subject = t('design_email_subject');
     return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildMessage())}`;
   };
 
@@ -127,7 +124,7 @@ export default function DesignExperience() {
     if (!validate()) {
       showToast({
         type: 'error',
-        message: t('Please complete the required fields.'),
+        message: t('design_toast_required'),
       });
       return;
     }
@@ -138,7 +135,7 @@ export default function DesignExperience() {
 
     showToast({
       type: 'success',
-      message: t('Your email window should open with the request ready.'),
+      message: t('design_toast_email_success'),
     });
   };
 
@@ -146,7 +143,7 @@ export default function DesignExperience() {
     if (!validate()) {
       showToast({
         type: 'error',
-        message: t('Please complete the required fields.'),
+        message: t('design_toast_required'),
       });
       return;
     }
@@ -157,7 +154,7 @@ export default function DesignExperience() {
 
     showToast({
       type: 'success',
-      message: t('WhatsApp should open with the request ready.'),
+      message: t('design_toast_whatsapp_success'),
     });
   };
 
@@ -180,13 +177,11 @@ export default function DesignExperience() {
             </p>
 
             <h1 className="mx-auto max-w-[860px] text-[clamp(2.95rem,14vw,7.4rem)] font-black leading-[0.88] tracking-[-0.065em] text-[#d9541f]">
-              {t('Start Your Morocco Journey')}
+              {t('design_title')}
             </h1>
 
             <p className="mx-auto mt-6 max-w-[760px] font-serif text-[17px] leading-[1.55] text-[#5b4a40] sm:mt-7 sm:text-[20px] md:text-[24px]">
-              {t(
-                'Share a few details about the way you like to travel. WeLiveMorocco will shape a private journey around your rhythm, interests, dates, and expectations.'
-              )}
+              {t('design_subtitle')}
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
@@ -194,11 +189,11 @@ export default function DesignExperience() {
                 href="#journey-form"
                 className="inline-flex min-h-[54px] w-full max-w-[340px] items-center justify-center rounded-full border border-[#d9541f] bg-[#d9541f] px-7 text-[11px] font-extrabold uppercase tracking-[0.16em] text-white transition hover:-translate-y-0.5 hover:bg-[#be4718] hover:shadow-[0_18px_36px_rgba(217,84,31,0.18)] sm:min-h-[58px] sm:w-auto sm:max-w-none sm:px-8 sm:text-[12px] sm:tracking-[0.18em]"
               >
-                {t('Begin the Enquiry')}
+                {t('Commencer mon voyage sur mesure') || t('Begin the Enquiry')}
               </a>
 
               <div className="inline-flex min-h-[54px] w-full max-w-[340px] items-center justify-center rounded-full border border-[#f0642b]/20 bg-white/70 px-6 text-[11px] font-bold uppercase tracking-[0.16em] text-[#6b564a] backdrop-blur-sm sm:min-h-[58px] sm:w-auto sm:max-w-none sm:text-[12px] sm:tracking-[0.18em]">
-                {t('Reply within 24 hours')}
+                {t('Réponse sous 24h') || t('Reply within 24 hours')}
               </div>
             </div>
           </motion.div>
@@ -212,16 +207,16 @@ export default function DesignExperience() {
             <div className="grid gap-0 md:grid-cols-3">
               {[
                 {
-                  title: t('Private only'),
-                  body: t('Every itinerary is shaped for your group only, never added to a shared departure.'),
+                  title: t('100% Privé') || t('Private only'),
+                  body: t('Votre voyage, votre groupe, votre rythme. Jamais partagé avec des inconnus.') || t('Every itinerary is shaped for your group only, never added to a shared departure.'),
                 },
                 {
-                  title: t('Planned in Morocco'),
-                  body: t('Your trip is designed locally, with real on-the-ground knowledge and response time.'),
+                  title: t('Experts sur place') || t('Planned in Morocco'),
+                  body: t('Des guides locaux qui vivent et respirent chaque destination.') || t('Your trip is designed locally, with real on-the-ground knowledge and response time.'),
                 },
                 {
-                  title: t('Refined around you'),
-                  body: t('Atmosphere, pace, comfort, and routing are adjusted to your travel style.'),
+                  title: t('Flexibilité totale') || t('Refined around you'),
+                  body: t('Changez d’avis en cours de route. Nous nous adaptons en temps réel.') || t('Atmosphere, pace, comfort, and routing are adjusted to your travel style.'),
                 },
               ].map((item, index) => (
                 <div
@@ -251,13 +246,13 @@ export default function DesignExperience() {
           <div>
             <div className="mb-7 border-b border-[#f0642b]/12 pb-5 sm:mb-8 sm:pb-6">
               <p className="text-[12px] font-extrabold uppercase tracking-[0.28em] text-[#d9541f]">
-                {t('Your enquiry')}
+                {t('PERSONALISER VOTRE EXPERIENCE') || t('Your enquiry')}
               </p>
               <h2 className="mt-4 font-serif text-[clamp(2.3rem,8vw,3.8rem)] leading-[0.95] tracking-[-0.04em] text-[#211712]">
-                {t('Tell us how you want to experience Morocco.')}
+                {t('design_title')}
               </h2>
               <p className="mt-4 max-w-[660px] text-[14px] leading-[1.7] text-[#6f5c51] sm:text-[15px]">
-                {t('The more context you share, the more precise and personal your first itinerary proposal will be.')}
+                {t('design_subtitle')}
               </p>
             </div>
 
@@ -265,13 +260,13 @@ export default function DesignExperience() {
               <div className="grid grid-cols-1 gap-[18px] md:grid-cols-2">
                 <div className="flex flex-col gap-[7px]">
                   <label htmlFor="firstName" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
-                    {t('First name')}
+                    {t('design_label_first_name')}
                   </label>
                   <input
                     id="firstName"
                     value={form.firstName}
                     onChange={handleChange('firstName')}
-                    placeholder={t('First')}
+                    placeholder={t('design_label_first_name')}
                     autoComplete="given-name"
                     aria-invalid={Boolean(errors.firstName)}
                     className={`w-full rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${
@@ -283,13 +278,13 @@ export default function DesignExperience() {
 
                 <div className="flex flex-col gap-[7px]">
                   <label htmlFor="lastName" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
-                    {t('Last name')}
+                    {t('design_label_last_name')}
                   </label>
                   <input
                     id="lastName"
                     value={form.lastName}
                     onChange={handleChange('lastName')}
-                    placeholder={t('Last')}
+                    placeholder={t('design_label_last_name')}
                     autoComplete="family-name"
                     aria-invalid={Boolean(errors.lastName)}
                     className={`w-full rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${
@@ -301,13 +296,13 @@ export default function DesignExperience() {
 
                 <div className="flex flex-col gap-[7px]">
                   <label htmlFor="email" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
-                    {t('Email address')}
+                    {t('design_label_email')}
                   </label>
                   <input
                     id="email"
                     value={form.email}
                     onChange={handleChange('email')}
-                    placeholder={t('example@company.com')}
+                    placeholder="ejemplo@empresa.com"
                     autoComplete="email"
                     aria-invalid={Boolean(errors.email)}
                     className={`w-full rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${
@@ -319,13 +314,13 @@ export default function DesignExperience() {
 
                 <div className="flex flex-col gap-[7px]">
                   <label htmlFor="phone" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
-                    {t('Telephone / WhatsApp')}
+                    {t('design_label_phone')}
                   </label>
                   <input
                     id="phone"
                     value={form.phone}
                     onChange={handleChange('phone')}
-                    placeholder={t('+212 6 36 78 44 01')}
+                    placeholder="+212 6 00 00 00 00"
                     autoComplete="tel"
                     aria-invalid={Boolean(errors.phone)}
                     className={`w-full rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${
@@ -337,7 +332,7 @@ export default function DesignExperience() {
 
                 <div className="flex flex-col gap-[7px] md:col-span-2">
                   <label htmlFor="source" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
-                    {t('How did you hear about us?')}
+                    {t('design_label_source')}
                   </label>
                   <select
                     id="source"
@@ -345,20 +340,20 @@ export default function DesignExperience() {
                     onChange={handleChange('source')}
                     className="w-full rounded-[12px] border border-[#f0642b] bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)]"
                   >
-                    <option value="">{t('Select one...')}</option>
-                    <option>{t('Google')}</option>
-                    <option>{t('Instagram')}</option>
-                    <option>{t('Recommendation')}</option>
-                    <option>{t('Travel Agency')}</option>
-                    <option>{t('TripAdvisor / Viator')}</option>
-                    <option>{t('Previous Client')}</option>
-                    <option>{t('Other')}</option>
+                    <option value="">{t('Selecciona una opción...') || 'Selecciona una opción...'}</option>
+                    <option>Google</option>
+                    <option>Instagram</option>
+                    <option>{t('Recomendación') || 'Recomendación'}</option>
+                    <option>{t('Agencia de viajes') || 'Agencia de viajes'}</option>
+                    <option>TripAdvisor / Viator</option>
+                    <option>{t('Cliente anterior') || 'Cliente anterior'}</option>
+                    <option>{t('Otro') || 'Otro'}</option>
                   </select>
                 </div>
 
                 <div className="flex flex-col gap-[7px] md:col-span-2">
                   <label htmlFor="journey" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
-                    {t('What kind of journey are you looking for?')}
+                    {t('design_label_journey')}
                   </label>
                   <select
                     id="journey"
@@ -366,29 +361,27 @@ export default function DesignExperience() {
                     onChange={handleChange('journey')}
                     className="w-full rounded-[12px] border border-[#f0642b] bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] text-[#211712] outline-none transition focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)]"
                   >
-                    <option value="">{t('Select one...')}</option>
-                    <option>{t('Bespoke private journey')}</option>
-                    <option>{t('Luxury honeymoon')}</option>
-                    <option>{t('Family journey')}</option>
-                    <option>{t('Imperial cities & culture')}</option>
-                    <option>{t('Sahara desert experience')}</option>
-                    <option>{t('Gastronomy & wine')}</option>
-                    <option>{t('Corporate / incentive travel')}</option>
-                    <option>{t('Not sure yet')}</option>
+                    <option value="">{t('Selecciona una opción...') || 'Selecciona una opción...'}</option>
+                    <option>{t('Viaje privado a medida') || 'Viaje privado a medida'}</option>
+                    <option>{t('Luna de miel de lujo') || 'Luna de miel de lujo'}</option>
+                    <option>{t('Viaje en familia') || 'Viaje en familia'}</option>
+                    <option>{t('Ciudades imperiales y cultura') || 'Ciudades imperiales y cultura'}</option>
+                    <option>{t('Experiencia en el desierto del Sahara') || 'Experiencia en el desierto del Sahara'}</option>
+                    <option>{t('Gastronomía y vino') || 'Gastronomía y vino'}</option>
+                    <option>{t('Viaje corporativo / incentivo') || 'Viaje corporativo / incentivo'}</option>
+                    <option>{t('Aún no lo tengo claro') || 'Aún no lo tengo claro'}</option>
                   </select>
                 </div>
 
                 <div className="flex flex-col gap-[7px] md:col-span-2">
                   <label htmlFor="message" className="text-[12px] font-semibold tracking-[0.04em] text-[#251811]">
-                    {t('Your message')}
+                    {t('design_label_message')}
                   </label>
                   <textarea
                     id="message"
                     value={form.message}
                     onChange={handleChange('message')}
-                    placeholder={t(
-                      'Tell us about your dates, destinations, travel style, number of travelers, preferred atmosphere, or anything we should know.'
-                    )}
+                    placeholder={t('design_placeholder_message')}
                     aria-invalid={Boolean(errors.message)}
                     className={`min-h-[112px] w-full resize-y rounded-[12px] border bg-[rgba(255,255,255,0.34)] px-4 py-[15px] text-[14px] leading-[1.55] text-[#211712] outline-none transition placeholder:text-[#b5aaa3] focus:-translate-y-px focus:bg-white focus:shadow-[0_0_0_5px_rgba(240,100,43,0.10)] ${
                       errors.message ? 'border-[#a72e11] bg-[#fff7f4]' : 'border-[#f0642b]'
@@ -403,7 +396,7 @@ export default function DesignExperience() {
                   type="submit"
                   className="min-h-[66px] rounded-[14px] border border-[#f0642b] bg-transparent px-5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#3b2518] transition hover:-translate-y-0.5 hover:bg-[#d9541f] hover:text-white hover:shadow-[0_15px_30px_rgba(217,84,31,0.18)] sm:min-h-[74px] sm:text-[12px]"
                 >
-                  {t('Send Request')}
+                  {t('design_btn_submit')}
                 </button>
 
                 <button
@@ -411,7 +404,7 @@ export default function DesignExperience() {
                   onClick={handleWhatsApp}
                   className="min-h-[66px] rounded-[14px] border border-[rgba(217,84,31,0.38)] bg-white px-5 text-[11px] font-extrabold uppercase tracking-[0.10em] text-[#d9541f] transition hover:-translate-y-0.5 hover:bg-[#fff3ed] sm:min-h-[74px] sm:text-[12px]"
                 >
-                  {t('WhatsApp Us')}
+                  {t('design_btn_whatsapp')}
                 </button>
               </div>
             </form>
@@ -426,12 +419,12 @@ export default function DesignExperience() {
                 </svg>
               </div>
               <div>
-                <h3 className="mb-[5px] text-[14px] font-bold">{t('Email us')}</h3>
+                <h3 className="mb-[5px] text-[14px] font-bold">{t('design_sidebar_email_title')}</h3>
                 <a href={`mailto:${contactEmail}`} className="mb-2 inline-block text-[13px] font-bold text-[#d9541f] no-underline">
                   {contactEmail}
                 </a>
                 <p className="m-0 text-[13px] leading-[1.5] text-[#6f5c51]">
-                  {t('For private journeys, partnerships, and tailored travel requests.')}
+                  {t('design_sidebar_email_body')}
                 </p>
               </div>
             </div>
@@ -443,7 +436,7 @@ export default function DesignExperience() {
                 </svg>
               </div>
               <div>
-                <h3 className="mb-[5px] text-[14px] font-bold">{t('Call or WhatsApp us')}</h3>
+                <h3 className="mb-[5px] text-[14px] font-bold">{t('design_sidebar_phone_title')}</h3>
                 <a
                   href={`https://wa.me/${whatsappNumber}`}
                   target="_blank"
@@ -453,17 +446,17 @@ export default function DesignExperience() {
                   {phoneDisplay}
                 </a>
                 <p className="m-0 text-[13px] leading-[1.5] text-[#6f5c51]">
-                  {t('Available for travel inquiries and personalized assistance.')}
+                  {t('design_sidebar_phone_body')}
                 </p>
               </div>
             </div>
 
             <div className="mt-[26px] rounded-[20px] border border-[rgba(217,84,31,0.18)] bg-[rgba(255,255,255,0.42)] p-[20px] shadow-[0_22px_70px_rgba(69,34,16,0.08)] sm:mt-[34px] sm:p-[22px]">
               <strong className="mb-2 block text-[13px] uppercase tracking-[0.12em] text-[#d9541f]">
-                {t('Based in Morocco')}
+                {t('design_sidebar_note_title')}
               </strong>
               <p className="m-0 text-[14px] leading-[1.55] text-[#5b4a40]">
-                {t('Private journeys across Marrakech, Fes, the Sahara, the Atlas Mountains, the Atlantic coast, and beyond.')}
+                {t('design_sidebar_note_body')}
               </p>
             </div>
           </aside>

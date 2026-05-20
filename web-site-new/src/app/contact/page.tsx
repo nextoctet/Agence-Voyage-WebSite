@@ -20,9 +20,12 @@ export default function ContactPage() {
   const phoneHref = 'https://wa.me/212636784401';
   const plannerMailtoHref =
     `mailto:${contactEmail}` +
-    `?subject=${encodeURIComponent('Private Morocco Journey Request')}` +
+    `?subject=${encodeURIComponent(t('Solicitud de viaje privado a Marruecos') || 'Private Morocco Journey Request')}` +
     `&body=${encodeURIComponent(
-      "Hello WeLiveMorocco,\n\nI'd like to start planning a private Morocco journey.\n\nPreferred dates:\nNumber of travelers:\nTravel style:\nPlaces of interest:\n\nThank you."
+      t(
+        'Hola WeLiveMorocco,\n\nMe gustaría empezar a planificar un viaje privado a Marruecos.\n\nMis fechas preferidas:\nNúmero de viajeros:\nTipo de viaje:\nLugares que me interesan:\n\nGracias.'
+      ) ||
+        "Hello WeLiveMorocco,\n\nI'd like to start planning a private Morocco journey.\n\nPreferred dates:\nNumber of travelers:\nTravel style:\nPlaces of interest:\n\nThank you."
     )}`;
 
   const buildMailtoLink = () => {
@@ -78,25 +81,25 @@ export default function ContactPage() {
               </p>
 
               <h1 className="max-w-[760px] font-serif text-[clamp(3rem,13vw,5.9rem)] leading-[0.92] tracking-[-0.06em] text-[#111216]">
-                {t('Contactez-nous')}
+                {t('contact_hero_title')}
               </h1>
 
               <p className="mt-5 max-w-[650px] font-serif text-[17px] leading-[1.55] text-[#7b6c63] sm:text-[18px] md:mt-6 md:text-[21px]">
-                {t("Notre équipe d'experts à Témara est à votre disposition pour organiser votre prochain voyage sur mesure.")}
+                {t('contact_hero_subtitle')}
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
                 <a
-                  href="#contact-form"
+                  href={plannerMailtoHref}
                   className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border border-[#d84a1b] bg-[#d84a1b] px-6 font-serif text-[15px] text-white shadow-[0_16px_34px_rgba(216,74,27,0.22)] transition hover:-translate-y-0.5 hover:border-[#b63b13] hover:bg-[#b63b13] sm:min-h-[54px] sm:w-auto sm:px-7 sm:text-[17px]"
                 >
-                  {t('Envoyez-nous un message')}
+                  {t('contact_hero_btn_primary')}
                 </a>
                 <a
-                  href={plannerMailtoHref}
+                  href="#contact-info"
                   className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border border-[rgba(17,18,22,0.24)] px-6 font-serif text-[15px] text-[#111216] transition hover:-translate-y-0.5 hover:bg-[#111216] hover:text-white sm:min-h-[54px] sm:w-auto sm:px-7 sm:text-[17px]"
                 >
-                  {t('Email')}
+                  {t('contact_hero_btn_secondary')}
                 </a>
               </div>
             </div>
@@ -119,27 +122,25 @@ export default function ContactPage() {
 
               <div className="absolute bottom-0 left-0 w-full max-w-[300px] rounded-[22px] border border-[rgba(216,74,27,0.18)] bg-[rgba(255,255,255,0.72)] p-5 shadow-[0_22px_48px_rgba(38,25,16,0.1)] backdrop-blur-[14px] sm:max-w-[320px] sm:p-6">
                 <strong className="mb-2 block text-[11px] uppercase tracking-[0.16em] text-[#d84a1b] sm:text-[12px]">
-                  {t('Informations')}
+                  {t('contact_visual_label')}
                 </strong>
                 <p className="font-serif text-[15px] leading-[1.45] text-[#2a2725] sm:text-[16px]">
-                  {t('Centre Ville, Témara, Maroc')}
-                  <br />
-                  {contactEmail}
+                  {t('contact_visual_content')}
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="grid gap-9 border-t border-[rgba(216,74,27,0.22)] px-1 pt-10 sm:pt-12 lg:grid-cols-[0.82fr_1fr] lg:gap-16 lg:pt-14">
+        <section id="contact-info" className="grid gap-9 border-t border-[rgba(216,74,27,0.22)] px-1 pt-10 sm:pt-12 lg:grid-cols-[0.82fr_1fr] lg:gap-16 lg:pt-14">
           <div className="space-y-8">
             <h2 className="font-serif text-[clamp(2.9rem,11vw,5.4rem)] uppercase leading-[0.9] tracking-[0.06em] text-[#111216] md:tracking-[0.08em]">
-              {t('Contactez-nous')}
+              {t('Contacto')}
             </h2>
 
             <div>
               <h3 className="mb-5 max-w-[315px] font-serif text-[20px] uppercase leading-[1.14] tracking-[0.12em] text-[#111216] md:mb-6 md:text-[23px] md:tracking-[0.14em]">
-                {t('Informations')}
+                {t('contact_left_subtitle')}
               </h3>
 
               <div className="grid gap-4">
@@ -187,29 +188,27 @@ export default function ContactPage() {
             </h3>
 
             <p className="mt-4 font-serif text-[18px] leading-[1.55] text-[#7b6c63] md:text-[20px]">
-              {t("Notre équipe d'experts à Témara est à votre disposition pour organiser votre prochain voyage sur mesure.")}
+              {t('contact_right_description')}
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
               <a
-                href="#contact-form"
+                href={plannerMailtoHref}
                 className="inline-flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full border border-[#d84a1b] bg-[#d84a1b] px-6 py-4 font-serif text-[15px] text-white shadow-[0_16px_34px_rgba(216,74,27,0.22)] transition hover:-translate-y-0.5 hover:border-[#b63b13] hover:bg-[#b63b13] sm:w-auto sm:px-7 sm:text-[17px]"
               >
-                {t('Envoyez-nous un message')}
+                {t('contact_right_cta')}
               </a>
 
               <a
                 href={phoneHref}
                 className="inline-flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full border border-[rgba(17,18,22,0.22)] px-6 py-4 font-serif text-[15px] text-[#111216] transition hover:-translate-y-0.5 hover:bg-[#111216] hover:text-white sm:w-auto sm:text-[17px]"
               >
-                {t('WhatsApp & Tel')}
+                {t('contact_right_secondary')}
               </a>
             </div>
 
             <div className="mt-8 border-t border-[rgba(216,74,27,0.22)] pt-5 font-serif text-[15px] leading-[1.55] text-[#7b6c63] sm:mt-10 sm:pt-6 sm:text-[16px]">
-              {t("Lundi - Vendredi")} 09:00 - 18:00
-              <br />
-              {t("Samedi")} 09:00 - 13:00
+              {t('contact_footer_note')}
             </div>
           </div>
         </section>
