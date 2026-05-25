@@ -11,43 +11,63 @@ export default function AboutPage() {
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden text-left">
       
      
-      <section className="relative flex min-h-[calc(100svh-64px)] flex-col overflow-hidden bg-[#1A2222] px-6 pb-8 pt-6 sm:min-h-[calc(100svh-72px)] sm:px-8 md:min-h-[calc(100svh-88px)] md:px-20 lg:px-32">
+      <section className="relative flex min-h-[80vh] md:min-h-screen flex-col overflow-hidden bg-[#1A2222] px-6 pb-8 pt-0 sm:px-8 md:px-20 lg:px-32">
         <Image 
           src="/pictures/about-hero-new.jpg" 
           alt="About Us Hero" 
           fill 
-          className="object-cover" 
+          className="object-cover object-top" 
           priority
         />
         <div className="absolute inset-0 bg-black/30 md:bg-black/20"></div>
         
-        <div className="w-full max-w-[1600px] mx-auto relative z-10 flex flex-col h-full py-8 md:py-16">
-          
-          <div className="flex flex-col items-start gap-4">
+        <div className="w-full max-w-[1600px] mx-auto relative z-10 flex flex-col h-full pb-8 md:pb-16 pt-0">
+          {/* Logo at the top */}
+          <div className="mb-12 -ml-6 md:-ml-12">
             <Image 
               src="/pictures/full-logo.png" 
               alt="WeLive Morocco Logo" 
-              width={240} 
-              height={80} 
-              className="h-12 w-auto object-contain brightness-0 invert"
+              width={2000} 
+              height={600} 
+              className="h-64 md:h-[600px] w-auto object-contain object-left brightness-0 invert"
             />
-            <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-[0.34em] md:tracking-[0.6em] ml-1">
-              {t("ABOUT US")}
-            </span>
           </div>
 
-          <div className="flex-grow flex flex-col justify-center relative">
-            <div className="max-w-4xl">
-              <h1 className="text-[clamp(2.5rem,8vw,6.5rem)] font-serif leading-[1] text-white tracking-[-0.03em] mb-6">
-                {t("We don't just plan")} <br />
-                {t("trips to Morocco.")}
-              </h1>
+          {/* Text Content (Centered Vertically) */}
+          <div className="flex-grow flex flex-col justify-center">
+            <div className="flex flex-col items-start">
+              <span className="text-[#A57C52] text-[10px] md:text-xs font-bold uppercase tracking-[0.5em] mb-8 md:mb-12 ml-1">
+                {t("ABOUT US")}
+              </span>
+              
+              <div className="flex items-start gap-4 md:gap-8">
+                {/* Diamond Icon */}
+                <div className="mt-3 md:mt-6">
+                  <div className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-[#A57C52] rotate-45"></div>
+                </div>
+                
+                <h1 className="text-[clamp(2rem,6vw,5.5rem)] font-serif leading-[1.1] text-white tracking-[-0.02em]">
+                  {t("We don't just plan")} <br />
+                  {t("trips to Morocco.")} <br />
+                  {t("We craft journeys")} <br />
+                  {t("that stay with you.")}
+                </h1>
+              </div>
             </div>
           </div>
 
-          <div className="w-full border-t border-white/20 pt-6 flex flex-col gap-2 md:flex-row md:justify-between md:items-center text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.4em] text-white/60 font-bold">
-            <span className="opacity-80">welivemorocco.com</span>
-            <span className="opacity-80">{t("Marrakech, Morocco")}</span>
+          {/* Bottom Info Section */}
+          <div className="w-full border-t border-white/20 pt-8 flex flex-col gap-4 md:flex-row md:justify-between md:items-center text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.4em] text-white/60 font-bold">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-8">
+              <span>welivemorocco.com</span>
+              <span>{t("Marrakech, Morocco")}</span>
+            </div>
+            <div className="flex flex-col md:flex-row gap-2 md:gap-8">
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                {t("AVAILABLE 24/7 FOR OUR TRAVELERS")}
+              </span>
+            </div>
           </div>
         </div>
       </section>
