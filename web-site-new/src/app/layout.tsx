@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display, Montserrat } from "next/font/google";
+import { Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
 
@@ -8,32 +8,19 @@ import ClientLayout from "../components/ClientLayout";
 import ClientRoot from "../components/ClientRoot";
 import CookieConsentBanner from "../components/CookieConsentBanner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const libreBaskerville = Libre_Baskerville({
+  variable: "--font-libre-baskerville",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
   title: "welive morocco",
   description: "Agence de voyage premium",
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: ["/icon.svg"],
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    shortcut: ["/icon.png"],
   },
 };
 
@@ -45,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${montserrat.variable} antialiased`}
+        className={`${libreBaskerville.variable} font-serif antialiased`}
       >
         <ClientLayout>
           <ClientRoot>

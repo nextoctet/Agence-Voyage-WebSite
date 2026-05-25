@@ -2,11 +2,11 @@
 
 import React from "react";
 import i18n from "../../utils/i18n";
-import { Montserrat } from 'next/font/google';
+import { Libre_Baskerville } from 'next/font/google';
 
-const montserrat = Montserrat({
+const libreBaskerville = Libre_Baskerville({
   subsets: ['latin'],
-  weight: ['600'], 
+  weight: ['700'], 
 });
 
 const LANGS = [
@@ -26,7 +26,7 @@ export default function LanguageMenu() {
   };
 
   return (
-    <div className={`${montserrat.className} flex items-center gap-3`}>
+    <div className={`${libreBaskerville.className} flex items-center gap-3`}>
       {LANGS.map((l, index) => (
         <React.Fragment key={l.code}>
           <button 
@@ -35,8 +35,8 @@ export default function LanguageMenu() {
               relative w-12 h-12 rounded-2xl flex items-center justify-center
               transition-all duration-500 border
               ${currentLang === l.code 
-                ? 'bg-[#C07652] border-[#C07652] text-white' 
-                : 'bg-transparent border-[#2D2926]/20 text-[#2D2926]/40 hover:border-[#C07652] hover:text-[#C07652]'}
+                ? 'bg-[#4B5563] border-[#4B5563] text-white' 
+                : 'bg-transparent border-[#2D2926]/20 text-[#2D2926]/40 hover:border-[#4B5563] hover:text-[#4B5563]'}
             `}
           >
             <span className="text-[13px] tracking-[0.1em] font-bold">

@@ -2,6 +2,7 @@
 import { useState, FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import Link from 'next/link';
+import Image from 'next/image';
 import { FadeIn, StaggerContainer, FadeInStagger } from '@/components/motion';
 
 export default function Footer() {
@@ -17,7 +18,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#BD856A] text-white pt-20 pb-10 px-8 font-sans relative overflow-hidden">
+    <footer className="bg-[#1F2937] text-white pt-20 pb-10 px-8 font-sans relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
@@ -55,7 +56,7 @@ export default function Footer() {
             </Link>
             <Link
               href="/contact"
-              className="border border-white text-white px-12 py-6 uppercase font-montserrat font-bold text-[11px] tracking-[0.2em] hover:bg-white hover:text-[#BD856A] transition-all min-w-[320px] text-center"
+              className="border border-white text-white px-12 py-6 uppercase font-montserrat font-bold text-[11px] tracking-[0.2em] hover:bg-white hover:text-[#1F2937] transition-all min-w-[320px] text-center"
             >
               {t("Speak With a Travel Designer")}
             </Link>
@@ -82,20 +83,20 @@ export default function Footer() {
               </p>
 
               <form onSubmit={handleSubscribe} className="w-full flex flex-col sm:flex-row shadow-2xl overflow-hidden">
-                <div className="flex-1 bg-white flex items-center px-6 py-5 text-[#C07652]">
+                <div className="flex-1 bg-white flex items-center px-6 py-5 text-[#4B5563]">
                   <svg className="w-5 h-5 opacity-50 mr-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <input
                     type="email"
                     placeholder={t("Email Address")}
-                    className="w-full bg-transparent text-sm focus:outline-none placeholder:text-[#C07652]/40"
+                    className="w-full bg-transparent text-sm focus:outline-none placeholder:text-[#4B5563]/40"
                     required
                   />
                 </div>
                 <button
                   type="submit"
-                  className="bg-[#C07652] text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#a86343] transition-all whitespace-nowrap border-l border-white/10"
+                  className="bg-[#4B5563] text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#111827] transition-all whitespace-nowrap border-l border-white/10"
                 >
                   {t("SIGN UP")}
                 </button>
@@ -122,10 +123,15 @@ export default function Footer() {
 
           {/* Brand */}
           <FadeInStagger>
-            <h2 className="text-3xl font-serif italic tracking-tighter leading-tight">
-              WELIVE <br />
-              <span className="not-italic font-bold tracking-widest text-2xl">MOROCCO</span>
-            </h2>
+            <Link href="/" className="inline-block mb-8">
+              <Image
+                src="/pictures/full-logo.png"
+                alt="WeLiveMorocco"
+                width={300}
+                height={100}
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
+            </Link>
           </FadeInStagger>
 
           {/* L'Agence */}

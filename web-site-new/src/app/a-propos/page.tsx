@@ -13,35 +13,39 @@ export default function AboutPage() {
      
       <section className="relative flex min-h-[calc(100svh-64px)] flex-col overflow-hidden bg-[#1A2222] px-6 pb-8 pt-6 sm:min-h-[calc(100svh-72px)] sm:px-8 md:min-h-[calc(100svh-88px)] md:px-20 lg:px-32">
         <Image 
-          src="/pictures/about-ushero.png" 
+          src="/pictures/about-hero-new.jpg" 
           alt="About Us Hero" 
           fill 
-          className="object-cover object-[56%_center]" 
+          className="object-cover" 
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/48 to-black/72 md:bg-gradient-to-r md:from-black/60 md:via-black/38 md:to-black/28"></div>
+        <div className="absolute inset-0 bg-black/30 md:bg-black/20"></div>
         
         <div className="w-full max-w-[1600px] mx-auto relative z-10 flex flex-col h-full py-8 md:py-16">
           
-          <div className="flex justify-start">
-            <span className="text-[#C07652] text-[10px] md:text-sm font-bold uppercase tracking-[0.34em] md:tracking-[0.8em]">
+          <div className="flex flex-col items-start gap-4">
+            <Image 
+              src="/pictures/full-logo.png" 
+              alt="WeLive Morocco Logo" 
+              width={240} 
+              height={80} 
+              className="h-12 w-auto object-contain brightness-0 invert"
+            />
+            <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-[0.34em] md:tracking-[0.6em] ml-1">
               {t("ABOUT US")}
             </span>
           </div>
 
           <div className="flex-grow flex flex-col justify-center relative">
-            {/* The Orange Diamond */}
-            <div className="absolute -left-8 md:-left-16 top-1/2 -translate-y-[200%] w-4 h-4 md:w-6 md:h-6 bg-[#C07652] rotate-45 hidden md:block"></div>
-            
             <div className="max-w-4xl">
-              <h1 className="text-[clamp(2.85rem,10vw,7.5rem)] font-serif leading-[0.92] text-[#F9F7F2] tracking-[-0.05em] mb-6">
+              <h1 className="text-[clamp(2.5rem,8vw,6.5rem)] font-serif leading-[1] text-white tracking-[-0.03em] mb-6">
                 {t("We don't just plan")} <br />
                 {t("trips to Morocco.")}
               </h1>
             </div>
           </div>
 
-          <div className="w-full border-t border-white/10 pt-5 flex flex-col gap-2 md:flex-row md:justify-between md:items-center text-[9px] md:text-[11px] uppercase tracking-[0.18em] md:tracking-[0.4em] text-white/40 font-bold font-sans">
+          <div className="w-full border-t border-white/20 pt-6 flex flex-col gap-2 md:flex-row md:justify-between md:items-center text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.4em] text-white/60 font-bold">
             <span className="opacity-80">welivemorocco.com</span>
             <span className="opacity-80">{t("Marrakech, Morocco")}</span>
           </div>
@@ -52,14 +56,14 @@ export default function AboutPage() {
       <section className="relative bg-white overflow-hidden">
         {/* Background Split for Desktop */}
         <div className="absolute inset-0 flex flex-col md:flex-row pointer-events-none">
-          <div className="md:w-5/12 bg-[#EAE0D5]"></div>
+          <div className="md:w-5/12 bg-[#E5E7EB]"></div>
           <div className="md:w-7/12 bg-white"></div>
         </div>
 
         <div className="relative max-w-[1600px] mx-auto flex flex-col md:flex-row min-h-[700px] z-10">
           {/* Left Column Content */}
           <div className="md:w-5/12 p-8 md:p-20 lg:p-24 flex flex-col justify-center">
-            <span className="text-[#C07652] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-8 md:mb-12">
+            <span className="text-[#4B5563] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-8 md:mb-12">
               {t("NOTRE HISTOIRE")}
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-[5rem] font-serif leading-[1.1] text-[#2D2926] mb-10 md:mb-16 tracking-tighter">
@@ -67,7 +71,7 @@ export default function AboutPage() {
               {t("story_moroccans")} <br />
               {t("story_for_the_world")}
             </h2>
-            <div className="border-l-4 border-[#C07652] pl-6 md:pl-10 py-2">
+            <div className="border-l-4 border-[#4B5563] pl-6 md:pl-10 py-2">
               <p className="text-[#2D2926]/70 text-base md:text-lg leading-relaxed font-light">
                 {t("story_intro_box")}
               </p>
@@ -87,8 +91,8 @@ export default function AboutPage() {
                 {t("story_right_p2")}
               </p>
               
-              <div className="bg-[#C07652]/10 border-l-4 border-[#C07652] p-6 md:p-10">
-                <p className="text-[#C07652] font-serif text-lg md:text-xl italic leading-relaxed">
+              <div className="bg-[#4B5563]/10 border-l-4 border-[#4B5563] p-6 md:p-10">
+                <p className="text-[#4B5563] font-serif text-lg md:text-xl italic leading-relaxed">
                   {t("story_bottom_highlight")}
                 </p>
               </div>
@@ -102,7 +106,7 @@ export default function AboutPage() {
         <div className="max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-12 md:gap-16 items-center">
           {/* Left Content */}
           <div className="lg:w-3/5 text-left">
-            <span className="text-[#C07652] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-6 md:mb-8 block">
+            <span className="text-[#4B5563] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-6 md:mb-8 block">
               {t("QUI SOMMES-NOUS")}
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif text-[#2D2926] mb-8 md:mb-12 leading-[1.1]">
@@ -121,7 +125,7 @@ export default function AboutPage() {
 
           {/* Right Sidebar (Languages) */}
           <div className="lg:w-2/5 w-full">
-            <div className="bg-[#EAE0D5] p-6 md:p-16 rounded-sm">
+            <div className="bg-[#E5E7EB] p-6 md:p-16 rounded-sm">
               <h3 className="text-2xl md:text-3xl font-serif italic mb-8 md:mb-10 text-[#2D2926]">
                 {t("We speak your language")}
               </h3>
@@ -135,7 +139,7 @@ export default function AboutPage() {
                 ].map((lang) => (
                   <div
                     key={lang.key}
-                    className="bg-white p-5 md:p-6 border-l-4 border-[#C07652] flex items-center justify-between group cursor-default transition-all hover:translate-x-2"
+                    className="bg-white p-5 md:p-6 border-l-4 border-[#4B5563] flex items-center justify-between group cursor-default transition-all hover:translate-x-2"
                   >
                     <span className="text-lg md:text-xl font-medium text-[#2D2926]">{lang.name}</span>
                   </div>
@@ -150,7 +154,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-[#F9F7F2] px-6 md:px-20 lg:px-32">
         <div className="max-w-[1600px] mx-auto">
           <div className="mb-12 md:mb-20">
-            <span className="text-[#C07652] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-6 md:mb-8 block">
+            <span className="text-[#4B5563] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-6 md:mb-8 block">
               {t("how_we_work_label")}
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif text-[#2D2926] leading-[1.1]">
@@ -169,9 +173,9 @@ export default function AboutPage() {
             ].map((item) => (
               <div
                 key={item.id}
-                className="bg-[#F2EDE4] p-8 md:p-12 border-t-8 border-[#C07652] flex flex-col h-full transition-transform hover:-translate-y-1 duration-300"
+                className="bg-[#E5E7EB] p-8 md:p-12 border-t-8 border-[#4B5563] flex flex-col h-full transition-transform hover:-translate-y-1 duration-300"
               >
-                <span className="text-5xl md:text-6xl font-serif text-[#C07652] mb-6 md:mb-10">
+                <span className="text-5xl md:text-6xl font-serif text-[#4B5563] mb-6 md:mb-10">
                   {item.id}
                 </span>
                 <h3 className="text-xl md:text-3xl font-serif text-[#2D2926] mb-5 md:mb-8 leading-tight">
@@ -190,7 +194,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-[#1A2222] px-6 md:px-20 lg:px-32">
         <div className="max-w-[1600px] mx-auto">
           <div className="mb-12 md:mb-20">
-            <span className="text-[#C07652] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-6 md:mb-8 block">
+            <span className="text-[#4B5563] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-6 md:mb-8 block">
               {t("Where we take you")}
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-white leading-[1.1]">
@@ -209,7 +213,7 @@ export default function AboutPage() {
             ].map((dest, index) => (
               <div
                 key={index}
-                className="bg-white/5 p-6 md:p-10 border-l-4 border-[#C07652] hover:bg-white/10 transition-all duration-300"
+                className="bg-white/5 p-6 md:p-10 border-l-4 border-[#4B5563] hover:bg-white/10 transition-all duration-300"
               >
                 <h3 className="text-2xl md:text-3xl font-serif text-white mb-4 md:mb-6">
                   {dest.name}
@@ -226,7 +230,7 @@ export default function AboutPage() {
       {/* New Section: Why people choose us */}
       <section className="flex flex-col md:flex-row min-h-[80vh]">
         {/* Left Column */}
-        <div className="md:w-5/12 bg-[#C07652] p-8 md:p-20 lg:p-24 flex flex-col justify-center text-white">
+        <div className="md:w-5/12 bg-[#4B5563] p-8 md:p-20 lg:p-24 flex flex-col justify-center text-white">
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 md:mb-12 leading-[1.1]">
             {t("why_choose_us_title")}
           </h2>
@@ -260,7 +264,7 @@ export default function AboutPage() {
               { id: "05", tKey: "why_choose_us_05_t", dKey: "why_choose_us_05_d" },
             ].map((item, index) => (
               <div key={item.id} className={`${index !== 0 ? 'border-t border-[#2D2926]/10 pt-8 md:pt-12' : ''} flex gap-5 md:gap-12`}>
-                <span className="text-xl md:text-2xl font-serif italic text-[#C07652]">
+                <span className="text-xl md:text-2xl font-serif italic text-[#4B5563]">
                   {item.id}
                 </span>
                 <div className="flex-1">
@@ -281,7 +285,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-[#F9F7F2] px-6 md:px-20 lg:px-32 border-t border-[#2D2926]/5">
         <div className="max-w-[1600px] mx-auto">
           <div className="max-w-4xl mb-12 md:mb-20">
-            <span className="text-[#C07652] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-6 md:mb-8 block">
+            <span className="text-[#4B5563] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-6 md:mb-8 block">
               {t("b2b_label")}
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif text-[#2D2926] mb-8 md:mb-12 leading-[1.1]">
@@ -298,8 +302,8 @@ export default function AboutPage() {
               { tKey: "b2b_card_02_t", dKey: "b2b_card_02_d" },
               { tKey: "b2b_card_03_t", dKey: "b2b_card_03_d" },
             ].map((card, index) => (
-              <div key={index} className="bg-white p-6 md:p-12 border-t-4 border-[#C07652] shadow-sm flex flex-col h-full">
-                <div className="w-4 h-4 bg-[#C07652] rounded-full mb-6 md:mb-10"></div>
+              <div key={index} className="bg-white p-6 md:p-12 border-t-4 border-[#4B5563] shadow-sm flex flex-col h-full">
+                <div className="w-4 h-4 bg-[#4B5563] rounded-full mb-6 md:mb-10"></div>
                 <h3 className="text-xl md:text-3xl font-serif text-[#2D2926] mb-5 md:mb-8 leading-tight">
                   {t(card.tKey)}
                 </h3>
@@ -315,11 +319,11 @@ export default function AboutPage() {
       {/* New Dark CTA Section */}
       <section className="bg-[#1A2222] py-16 md:py-24 px-6 md:px-20 lg:px-32 relative overflow-hidden">
         {/* Subtle orange line on the left side, matching image if it's there */}
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#C07652] opacity-50"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#4B5563] opacity-50"></div>
 
         <div className="max-w-[1600px] mx-auto relative z-10">
           <div className="max-w-4xl">
-            <span className="text-[#C07652] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-8 md:mb-12 block">
+            <span className="text-[#4B5563] text-xs md:text-sm font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-8 md:mb-12 block">
               {t("cta_label")}
             </span>
             
@@ -334,7 +338,7 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-14 md:mb-24">
               <Link 
                 href="/personnaliser-experience"
-                className="bg-[#C07652] text-white px-8 md:px-10 py-4 md:py-5 rounded-sm font-bold text-base md:text-lg inline-flex items-center justify-center hover:bg-[#A65E3F] transition-colors group"
+                className="bg-[#4B5563] text-white px-8 md:px-10 py-4 md:py-5 rounded-sm font-bold text-base md:text-lg inline-flex items-center justify-center hover:bg-[#111827] transition-colors group"
               >
                 {t("cta_btn_primary")}
                 <svg className="w-5 h-5 ml-3 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -344,7 +348,7 @@ export default function AboutPage() {
               
               <Link 
                 href="/contact"
-                className="border border-[#C07652] text-white px-8 md:px-10 py-4 md:py-5 rounded-sm font-bold text-base md:text-lg inline-flex items-center justify-center hover:bg-white/5 transition-colors group"
+                className="border border-[#4B5563] text-white px-8 md:px-10 py-4 md:py-5 rounded-sm font-bold text-base md:text-lg inline-flex items-center justify-center hover:bg-white/5 transition-colors group"
               >
                 {t("cta_btn_secondary")}
                 <svg className="w-5 h-5 ml-3 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -13,8 +13,10 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        playfair: ["var(--font-playfair)", "serif"],
-        montserrat: ["var(--font-montserrat)", "sans-serif"],
+        sans: ["var(--font-libre-baskerville)", "serif"],
+        serif: ["var(--font-libre-baskerville)", "serif"],
+        playfair: ["var(--font-libre-baskerville)", "serif"],
+        montserrat: ["var(--font-libre-baskerville)", "serif"],
       },
     },
   },
