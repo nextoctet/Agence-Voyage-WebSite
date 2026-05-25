@@ -11,7 +11,7 @@ export default function AboutPage() {
     <main className="bg-[#F9F7F2] min-h-screen font-sans text-[#2D2926] overflow-x-hidden text-left">
       
      
-      <section className="relative flex min-h-[80vh] md:min-h-screen flex-col overflow-hidden bg-[#1A2222] px-6 pb-8 pt-0 sm:px-8 md:px-20 lg:px-32">
+      <section className="relative flex min-h-[70vh] md:min-h-[85vh] flex-col overflow-hidden bg-[#1A2222] px-6 pb-8 pt-0 sm:px-8 md:px-20 lg:px-32">
         <Image 
           src="/pictures/about-hero-new.jpg" 
           alt="About Us Hero" 
@@ -23,13 +23,13 @@ export default function AboutPage() {
         
         <div className="w-full max-w-[1600px] mx-auto relative z-10 flex flex-col h-full pb-8 md:pb-16 pt-0">
           {/* Logo at the top */}
-          <div className="mb-12 -ml-6 md:-ml-12">
+          <div className="mb-8 md:mb-12 -ml-3 md:-ml-6">
             <Image 
               src="/pictures/full-logo.png" 
               alt="WeLive Morocco Logo" 
-              width={2000} 
-              height={600} 
-              className="h-64 md:h-[600px] w-auto object-contain object-left brightness-0 invert"
+              width={1200} 
+              height={360} 
+              className="h-32 md:h-[350px] w-auto object-contain object-left brightness-0 invert"
             />
           </div>
 
