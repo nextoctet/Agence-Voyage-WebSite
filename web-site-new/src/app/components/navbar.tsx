@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Montserrat } from "next/font/google";
+import { Libre_Baskerville } from "next/font/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import LanguageMenu from "../../components/NavBarAndSideBar/LanguageMenu";
 
-const montserrat = Montserrat({
+const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
+  weight: ["400", "700"],
 });
 
 const NAV_LINKS = [
@@ -48,13 +48,13 @@ function DesktopNavLink({
     <Link
       href={href}
       className={`relative inline-flex items-center justify-center overflow-hidden rounded-full px-3 py-3 transition-colors duration-300 ${
-        isActive ? "text-[#C07652]" : "hover:text-[#C07652]"
+        isActive ? "text-[#4B5563]" : "hover:text-[#4B5563]"
       }`}
     >
       {isActive && (
         <motion.span
           layoutId="desktop-nav-active-pill"
-          className="absolute inset-0 rounded-full bg-[#C07652]/10 ring-1 ring-[#C07652]/20"
+          className="absolute inset-0 rounded-full bg-[#4B5563]/10 ring-1 ring-[#4B5563]/20"
           transition={{ type: "spring", stiffness: 380, damping: 32 }}
         />
       )}
@@ -64,12 +64,12 @@ function DesktopNavLink({
       {isActive ? (
         <motion.span
           layoutId="desktop-nav-active-line"
-          className="absolute bottom-[8px] left-3 right-3 h-[2px] rounded-full bg-[#C07652]"
+          className="absolute bottom-[8px] left-3 right-3 h-[2px] rounded-full bg-[#4B5563]"
           transition={{ type: "spring", stiffness: 380, damping: 32 }}
         />
       ) : (
         <motion.span
-          className="absolute bottom-[8px] left-3 h-[2px] rounded-full bg-[#C07652]"
+          className="absolute bottom-[8px] left-3 h-[2px] rounded-full bg-[#4B5563]"
           initial={{ width: 0 }}
           whileHover={{ width: "calc(100% - 1.5rem)" }}
           transition={{ duration: 0.25 }}
@@ -102,18 +102,18 @@ export default function Navbar() {
     <>
       <nav
         id="site-navbar"
-        className={`${montserrat.className} sticky top-0 z-50 flex w-full flex-nowrap items-center justify-between border-b border-[#C07652]/10 bg-[#F9F7F2] px-4 py-3 md:px-8 md:py-4 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:px-10`}
+        className={`${libreBaskerville.className} sticky top-0 z-50 flex w-full flex-nowrap items-center justify-between border-b border-[#4B5563]/10 bg-[#F9F7F2] px-4 py-3 md:px-8 md:py-4 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:px-10`}
       >
         <Link
           href="/"
           className="flex h-12 shrink-0 items-center transition hover:scale-105 active:scale-95 md:h-16 lg:h-20"
         >
           <Image
-            src="/pictures/logo-welivee.svg"
+            src="/pictures/full-logo.png"
             alt="WeLiveMorocco"
-            width={1354}
-            height={738}
-            className="h-10 w-auto object-contain mix-blend-multiply md:h-14 lg:h-18"
+            width={500}
+            height={200}
+            className="h-10 w-auto object-contain md:h-14 lg:h-18"
           />
         </Link>
 
@@ -131,8 +131,8 @@ export default function Navbar() {
             href="/personnaliser-experience"
             className={`ml-2 inline-flex rounded-2xl border-2 px-4 py-3 text-[10px] font-black tracking-[0.12em] shadow-sm transition-all duration-500 active:scale-95 xl:ml-3 xl:px-5 xl:text-[11px] xl:tracking-[0.14em] ${
               isExperienceActive
-                ? "border-[#C07652] bg-[#C07652] text-white shadow-[0_10px_24px_rgba(192,118,82,0.28)]"
-                : "border-[#C07652] text-[#C07652] hover:bg-[#C07652] hover:text-white"
+                ? "border-[#4B5563] bg-[#4B5563] text-white shadow-[0_10px_24px_rgba(75,85,99,0.28)]"
+                : "border-[#4B5563] text-[#4B5563] hover:bg-[#4B5563] hover:text-white"
             }`}
           >
             {t("PERSONALISER VOTRE EXPERIENCE")}
@@ -144,7 +144,7 @@ export default function Navbar() {
 
           <button
             aria-label="Open menu"
-            className="p-2 text-[#C07652] transition-transform active:scale-90 lg:hidden"
+            className="p-2 text-[#4B5563] transition-transform active:scale-90 lg:hidden"
             onClick={() => setIsDrawerOpen(true)}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
@@ -156,7 +156,7 @@ export default function Navbar() {
 
       <AnimatePresence>
         {isDrawerOpen && (
-          <div className={`fixed inset-0 z-[100] flex justify-end ${montserrat.className}`}>
+          <div className={`fixed inset-0 z-[100] flex justify-end ${libreBaskerville.className}`}>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -174,7 +174,7 @@ export default function Navbar() {
             >
               <button
                 aria-label="Close menu"
-                className="absolute right-5 top-5 p-2 text-[#C07652]"
+                className="absolute right-5 top-5 p-2 text-[#4B5563]"
                 onClick={closeDrawer}
               >
                 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
@@ -198,14 +198,14 @@ export default function Navbar() {
                         onClick={closeDrawer}
                         className={`relative block overflow-hidden rounded-xl border-b px-4 pb-3 pt-3 text-[16px] transition-colors ${
                           isActive
-                            ? "border-[#C07652]/20 text-[#C07652]"
-                            : "border-[#C07652]/10 hover:text-[#C07652]"
+                            ? "border-[#4B5563]/20 text-[#4B5563]"
+                            : "border-[#4B5563]/10 hover:text-[#4B5563]"
                         }`}
                       >
                         {isActive && (
                           <motion.span
                             layoutId="drawer-nav-active"
-                            className="absolute inset-0 rounded-xl bg-[#C07652]/10 ring-1 ring-[#C07652]/15"
+                            className="absolute inset-0 rounded-xl bg-[#4B5563]/10 ring-1 ring-[#4B5563]/15"
                             transition={{ type: "spring", stiffness: 320, damping: 30 }}
                           />
                         )}
@@ -224,7 +224,7 @@ export default function Navbar() {
                     href="/personnaliser-experience"
                     onClick={closeDrawer}
                     className={`mt-6 inline-block w-full rounded-sm px-4 py-4 text-center text-[14px] font-black tracking-[0.1em] shadow-lg transition-all active:scale-95 ${
-                      isExperienceActive ? "bg-[#2D2926] text-white" : "bg-[#C07652] text-white"
+                      isExperienceActive ? "bg-[#2D2926] text-white" : "bg-[#4B5563] text-white"
                     }`}
                   >
                     {t("PERSONALISER VOTRE EXPERIENCE")}

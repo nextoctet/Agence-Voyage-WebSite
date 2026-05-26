@@ -67,16 +67,16 @@ export default function ContactPage() {
       className="min-h-screen overflow-x-hidden px-3 py-4 text-[#111216] sm:px-4 sm:py-6 md:px-6 md:py-10"
       style={{
         background:
-          'radial-gradient(circle at 78% 20%, rgba(216, 74, 27, 0.08), transparent 28rem), radial-gradient(circle at 10% 85%, rgba(17, 18, 22, 0.05), transparent 24rem), #fbf7ef',
+          'radial-gradient(circle at 78% 20%, rgba(75, 85, 99, 0.08), transparent 28rem), radial-gradient(circle at 10% 85%, rgba(17, 18, 22, 0.05), transparent 24rem), #fbf7ef',
       }}
     >
       <div className="mx-auto max-w-[1160px]">
-        <section className="relative overflow-hidden rounded-[28px] border border-[rgba(216,74,27,0.22)] bg-[linear-gradient(135deg,rgba(255,255,255,0.72),rgba(246,239,227,0.72))] shadow-[0_28px_70px_rgba(71,36,18,0.12)] md:rounded-[32px]">
-          <div className="pointer-events-none absolute right-[-150px] top-[-180px] h-[460px] w-[460px] rounded-full bg-[rgba(216,74,27,0.1)]" />
+        <section className="relative overflow-hidden rounded-[28px] border border-[rgba(75,85,99,0.22)] bg-[linear-gradient(135deg,rgba(255,255,255,0.72),rgba(246,239,227,0.72))] shadow-[0_28px_70px_rgba(71,36,18,0.12)] md:rounded-[32px]">
+          <div className="pointer-events-none absolute right-[-150px] top-[-180px] h-[460px] w-[460px] rounded-full bg-[rgba(75,85,99,0.1)]" />
 
           <div className="relative z-10 grid items-center gap-10 px-5 py-8 sm:px-6 sm:py-10 md:px-10 md:py-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14 lg:px-14 lg:py-16">
             <div>
-              <p className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#d84a1b] sm:text-[12px] md:mb-5 md:text-[14px] md:tracking-[0.32em]">
+              <p className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#4B5563] sm:text-[12px] md:mb-5 md:text-[14px] md:tracking-[0.32em]">
                 {t('WeLiveMorocco')}
               </p>
 
@@ -91,7 +91,7 @@ export default function ContactPage() {
               <div className="mt-7 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
                 <a
                   href={plannerMailtoHref}
-                  className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border border-[#d84a1b] bg-[#d84a1b] px-6 font-serif text-[15px] text-white shadow-[0_16px_34px_rgba(216,74,27,0.22)] transition hover:-translate-y-0.5 hover:border-[#b63b13] hover:bg-[#b63b13] sm:min-h-[54px] sm:w-auto sm:px-7 sm:text-[17px]"
+                  className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border border-[#4B5563] bg-[#4B5563] px-6 font-serif text-[15px] text-white shadow-[0_16px_34px_rgba(75,85,99,0.22)] transition hover:-translate-y-0.5 hover:border-[#111827] hover:bg-[#111827] sm:min-h-[54px] sm:w-auto sm:px-7 sm:text-[17px]"
                 >
                   {t('contact_hero_btn_primary')}
                 </a>
@@ -105,10 +105,10 @@ export default function ContactPage() {
             </div>
 
             <div className="relative min-h-[220px] sm:min-h-[260px] md:min-h-[320px]">
-              <div className="absolute right-2 top-0 h-[140px] w-[140px] rounded-full bg-[linear-gradient(135deg,#d84a1b,#e85a21)] shadow-[0_22px_54px_rgba(216,74,27,0.22)] sm:right-6 sm:h-[170px] sm:w-[170px] md:right-10 md:top-4 md:h-[220px] md:w-[220px]" />
+              <div className="absolute right-2 top-0 h-[140px] w-[140px] rounded-full bg-[linear-gradient(135deg,#4B5563,#111827)] shadow-[0_22px_54px_rgba(75,85,99,0.22)] sm:right-6 sm:h-[170px] sm:w-[170px] md:right-10 md:top-4 md:h-[220px] md:w-[220px]" />
 
               <svg
-                className="absolute bottom-4 right-[-56px] h-auto w-[320px] text-[#d84a1b] drop-shadow-[0_18px_22px_rgba(216,74,27,0.14)] sm:bottom-6 sm:right-[-40px] sm:w-[420px] md:bottom-12 md:right-[-16px] md:w-[520px]"
+                className="absolute bottom-4 right-[-56px] h-auto w-[320px] text-[#4B5563] drop-shadow-[0_18px_22px_rgba(75,85,99,0.14)] sm:bottom-6 sm:right-[-40px] sm:w-[420px] md:bottom-12 md:right-[-16px] md:w-[520px]"
                 viewBox="0 0 620 220"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -120,8 +120,8 @@ export default function ContactPage() {
                 />
               </svg>
 
-              <div className="absolute bottom-0 left-0 w-full max-w-[300px] rounded-[22px] border border-[rgba(216,74,27,0.18)] bg-[rgba(255,255,255,0.72)] p-5 shadow-[0_22px_48px_rgba(38,25,16,0.1)] backdrop-blur-[14px] sm:max-w-[320px] sm:p-6">
-                <strong className="mb-2 block text-[11px] uppercase tracking-[0.16em] text-[#d84a1b] sm:text-[12px]">
+              <div className="absolute bottom-0 left-0 w-full max-w-[300px] rounded-[22px] border border-[rgba(75,85,99,0.18)] bg-[rgba(255,255,255,0.72)] p-5 shadow-[0_22px_48px_rgba(38,25,16,0.1)] backdrop-blur-[14px] sm:max-w-[320px] sm:p-6">
+                <strong className="mb-2 block text-[11px] uppercase tracking-[0.16em] text-[#4B5563] sm:text-[12px]">
                   {t('contact_visual_label')}
                 </strong>
                 <p className="font-serif text-[15px] leading-[1.45] text-[#2a2725] sm:text-[16px]">
@@ -132,7 +132,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section id="contact-info" className="grid gap-9 border-t border-[rgba(216,74,27,0.22)] px-1 pt-10 sm:pt-12 lg:grid-cols-[0.82fr_1fr] lg:gap-16 lg:pt-14">
+        <section id="contact-info" className="grid gap-9 border-t border-[rgba(75,85,99,0.22)] px-1 pt-10 sm:pt-12 lg:grid-cols-[0.82fr_1fr] lg:gap-16 lg:pt-14">
           <div className="space-y-8">
             <h2 className="font-serif text-[clamp(2.9rem,11vw,5.4rem)] uppercase leading-[0.9] tracking-[0.06em] text-[#111216] md:tracking-[0.08em]">
               {t('Contacto')}
@@ -146,9 +146,9 @@ export default function ContactPage() {
               <div className="grid gap-4">
                 <a
                   href={`mailto:${contactEmail}`}
-                  className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[17px] leading-[1.25] text-[#7b6c63] transition hover:translate-x-1 hover:text-[#d84a1b] md:text-[19px]"
+                  className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[17px] leading-[1.25] text-[#7b6c63] transition hover:translate-x-1 hover:text-[#4B5563] md:text-[19px]"
                 >
-                  <span className="grid h-[38px] w-[38px] place-items-center rounded-full bg-[#d84a1b] text-white shadow-[0_12px_28px_rgba(216,74,27,0.2)]">
+                  <span className="grid h-[38px] w-[38px] place-items-center rounded-full bg-[#4B5563] text-white shadow-[0_12px_28px_rgba(75,85,99,0.2)]">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5 stroke-[1.9]">
                       <path d="M4 5h16v14H4z" />
                       <path d="m4 7 8 6 8-6" />
@@ -159,9 +159,9 @@ export default function ContactPage() {
 
                 <a
                   href={phoneHref}
-                  className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[17px] leading-[1.25] text-[#7b6c63] transition hover:translate-x-1 hover:text-[#d84a1b] md:text-[19px]"
+                  className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[17px] leading-[1.25] text-[#7b6c63] transition hover:translate-x-1 hover:text-[#4B5563] md:text-[19px]"
                 >
-                  <span className="grid h-[38px] w-[38px] place-items-center rounded-full bg-[#d84a1b] text-white shadow-[0_12px_28px_rgba(216,74,27,0.2)]">
+                  <span className="grid h-[38px] w-[38px] place-items-center rounded-full bg-[#4B5563] text-white shadow-[0_12px_28px_rgba(75,85,99,0.2)]">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5 stroke-[1.9]">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.32 1.8.59 2.65a2 2 0 0 1-.45 2.11L9 10.73a16 16 0 0 0 4.27 4.27l1.24-1.24a2 2 0 0 1 2.11-.45c.85.27 1.75.47 2.65.59A2 2 0 0 1 22 16.92Z" />
                     </svg>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                 </a>
 
                 <div className="grid w-fit grid-cols-[42px_1fr] items-center gap-4 font-serif text-[17px] leading-[1.25] text-[#7b6c63] md:text-[19px]">
-                  <span className="grid h-[38px] w-[38px] place-items-center rounded-full bg-[#d84a1b] text-white shadow-[0_12px_28px_rgba(216,74,27,0.2)]">
+                  <span className="grid h-[38px] w-[38px] place-items-center rounded-full bg-[#4B5563] text-white shadow-[0_12px_28px_rgba(75,85,99,0.2)]">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5 stroke-[1.9]">
                       <path d="M12 21s-6-4.35-6-10a6 6 0 0 1 12 0c0 5.65-6 10-6 10Z" />
                       <circle cx="12" cy="11" r="2.5" />
@@ -194,7 +194,7 @@ export default function ContactPage() {
             <div className="mt-7 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
               <a
                 href={plannerMailtoHref}
-                className="inline-flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full border border-[#d84a1b] bg-[#d84a1b] px-6 py-4 font-serif text-[15px] text-white shadow-[0_16px_34px_rgba(216,74,27,0.22)] transition hover:-translate-y-0.5 hover:border-[#b63b13] hover:bg-[#b63b13] sm:w-auto sm:px-7 sm:text-[17px]"
+                className="inline-flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full border border-[#4B5563] bg-[#4B5563] px-6 py-4 font-serif text-[15px] text-white shadow-[0_16px_34px_rgba(75,85,99,0.22)] transition hover:-translate-y-0.5 hover:border-[#111827] hover:bg-[#111827] sm:w-auto sm:px-7 sm:text-[17px]"
               >
                 {t('contact_right_cta')}
               </a>
@@ -207,7 +207,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="mt-8 border-t border-[rgba(216,74,27,0.22)] pt-5 font-serif text-[15px] leading-[1.55] text-[#7b6c63] sm:mt-10 sm:pt-6 sm:text-[16px]">
+            <div className="mt-8 border-t border-[rgba(75,85,99,0.22)] pt-5 font-serif text-[15px] leading-[1.55] text-[#7b6c63] sm:mt-10 sm:pt-6 sm:text-[16px]">
               {t('contact_footer_note')}
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function ContactPage() {
 
         <section id="contact-form" className="mt-12 grid gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
           <div className="rounded-[28px] bg-[#1a2222] p-6 text-white shadow-[0_28px_70px_rgba(24,25,28,0.2)] sm:p-8 md:p-10">
-            <span className="block text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#d84a1b] sm:text-[12px] md:text-[14px] md:tracking-[0.32em]">
+            <span className="block text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#4B5563] sm:text-[12px] md:text-[14px] md:tracking-[0.32em]">
               {t("Heures d'ouverture")}
             </span>
 
@@ -239,7 +239,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-[28px] border border-[rgba(216,74,27,0.15)] bg-[rgba(255,255,255,0.76)] p-5 shadow-[0_28px_70px_rgba(71,36,18,0.12)] backdrop-blur-sm sm:p-6 md:p-10">
+          <div className="rounded-[28px] border border-[rgba(75,85,99,0.15)] bg-[rgba(255,255,255,0.76)] p-5 shadow-[0_28px_70px_rgba(71,36,18,0.12)] backdrop-blur-sm sm:p-6 md:p-10">
             <form className="space-y-5 sm:space-y-6" onSubmit={handleSubmit}>
               <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
                 <div>
@@ -250,7 +250,7 @@ export default function ContactPage() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     type="text"
-                    className="w-full rounded-[18px] border border-[rgba(216,74,27,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#d84a1b] focus:ring-2 focus:ring-[#d84a1b]/15"
+                    className="w-full rounded-[18px] border border-[rgba(75,85,99,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#4B5563] focus:ring-2 focus:ring-[#4B5563]/15"
                     placeholder="Sarah Mansouri"
                     required
                   />
@@ -263,7 +263,7 @@ export default function ContactPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
-                    className="w-full rounded-[18px] border border-[rgba(216,74,27,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#d84a1b] focus:ring-2 focus:ring-[#d84a1b]/15"
+                    className="w-full rounded-[18px] border border-[rgba(75,85,99,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#4B5563] focus:ring-2 focus:ring-[#4B5563]/15"
                     placeholder="sarah@email.com"
                     required
                   />
@@ -279,7 +279,7 @@ export default function ContactPage() {
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
                   type="text"
-                  className="w-full rounded-[18px] border border-[rgba(216,74,27,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#d84a1b] focus:ring-2 focus:ring-[#d84a1b]/15"
+                  className="w-full rounded-[18px] border border-[rgba(75,85,99,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#4B5563] focus:ring-2 focus:ring-[#4B5563]/15"
                   placeholder={t('Planification de voyage, Questions...')}
                   required
                   aria-required="true"
@@ -295,7 +295,7 @@ export default function ContactPage() {
                     value={nationality}
                     onChange={(e) => setNationality(e.target.value)}
                     type="text"
-                    className="w-full rounded-[18px] border border-[rgba(216,74,27,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#d84a1b] focus:ring-2 focus:ring-[#d84a1b]/15"
+                    className="w-full rounded-[18px] border border-[rgba(75,85,99,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#4B5563] focus:ring-2 focus:ring-[#4B5563]/15"
                     placeholder={t('ex. Marocaine')}
                   />
                 </div>
@@ -307,7 +307,7 @@ export default function ContactPage() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     type="tel"
-                    className="w-full rounded-[18px] border border-[rgba(216,74,27,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#d84a1b] focus:ring-2 focus:ring-[#d84a1b]/15"
+                    className="w-full rounded-[18px] border border-[rgba(75,85,99,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#4B5563] focus:ring-2 focus:ring-[#4B5563]/15"
                     placeholder={t('+212 6 36 78 44 01')}
                   />
                 </div>
@@ -321,7 +321,7 @@ export default function ContactPage() {
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
                   type="text"
-                  className="w-full rounded-[18px] border border-[rgba(216,74,27,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#d84a1b] focus:ring-2 focus:ring-[#d84a1b]/15"
+                  className="w-full rounded-[18px] border border-[rgba(75,85,99,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#4B5563] focus:ring-2 focus:ring-[#4B5563]/15"
                   placeholder={t('Ex. 6000 DH - 12000 DH')}
                 />
               </div>
@@ -334,7 +334,7 @@ export default function ContactPage() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows={6}
-                  className="w-full resize-none rounded-[22px] border border-[rgba(216,74,27,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#d84a1b] focus:ring-2 focus:ring-[#d84a1b]/15"
+                  className="w-full resize-none rounded-[22px] border border-[rgba(75,85,99,0.14)] bg-[#fbf7ef] px-5 py-4 text-base text-[#111216] outline-none transition focus:border-[#4B5563] focus:ring-2 focus:ring-[#4B5563]/15"
                   placeholder={t('Dites-nous en plus sur vos envies...')}
                   required
                 />
@@ -343,7 +343,7 @@ export default function ContactPage() {
               <button
                 disabled={loading}
                 type="submit"
-                className="inline-flex min-h-[56px] w-full items-center justify-center rounded-full border border-[#d84a1b] bg-[#d84a1b] px-7 font-serif text-[17px] text-white shadow-[0_16px_34px_rgba(216,74,27,0.22)] transition hover:-translate-y-0.5 hover:bg-[#b63b13] hover:border-[#b63b13] disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex min-h-[56px] w-full items-center justify-center rounded-full border border-[#4B5563] bg-[#4B5563] px-7 font-serif text-[17px] text-white shadow-[0_16px_34px_rgba(75,85,99,0.22)] transition hover:-translate-y-0.5 hover:bg-[#111827] hover:border-[#111827] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading ? 'Envoi...' : t('Envoyer le message')}
               </button>
@@ -357,7 +357,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-[28px] border border-[rgba(216,74,27,0.14)] bg-[rgba(255,255,255,0.7)] p-2 shadow-[0_28px_70px_rgba(71,36,18,0.12)] sm:mt-16 sm:p-3">
+        <section className="mt-12 rounded-[28px] border border-[rgba(75,85,99,0.14)] bg-[rgba(255,255,255,0.7)] p-2 shadow-[0_28px_70px_rgba(71,36,18,0.12)] sm:mt-16 sm:p-3">
           <div className="relative h-[320px] overflow-hidden rounded-[22px] md:h-[420px] lg:h-[500px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13238.411651871216!2d-6.9272!3d33.9189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7134371707963%3A0x6e9f9024f9958e98!2sT%C3%A9mara!5e0!3m2!1sfr!2sma!4v1713880000000!5m2!1sfr!2sma"

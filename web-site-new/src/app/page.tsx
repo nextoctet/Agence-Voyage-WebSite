@@ -12,7 +12,7 @@ export default function Home() {
       
       {/* Decorative background elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-30 z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#C07652]/20 blur-[120px] rounded-full animate-pulse"></div>
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#4B5563]/20 blur-[120px] rounded-full animate-pulse"></div>
         <div className="absolute bottom-[-10%] right-[-20%] w-[40%] h-[40%] bg-[#2D2926]/10 blur-[100px] rounded-full"></div>
       </div>
     
@@ -42,7 +42,7 @@ export default function Home() {
           <FadeIn direction="up" delay={0.8}>
             <Link
               href="/personnaliser-experience"
-              className="inline-block bg-[#C07652] px-8 py-4 text-sm font-montserrat font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#A35F3F] active:scale-95">
+              className="inline-block bg-[#4B5563] px-8 py-4 text-sm font-montserrat font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#111827] active:scale-95">
               {t("hero_button")}
             </Link>
           </FadeIn>
@@ -50,14 +50,14 @@ export default function Home() {
       </section>
    
       {/* Why Bespoke Section */}
-      <section className="relative z-10 border-t border-[#C07652]/10 bg-white">
+      <section className="relative z-10 border-t border-[#4B5563]/10 bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
           {/* Left Column: Light */}
           <div className="p-10 md:p-20 lg:p-32 flex flex-col justify-center space-y-10">
             <FadeIn direction="right">
               <div className="flex items-center space-x-6">
-                <div className="w-[2px] h-6 bg-[#C07652]" />
-                <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#C07652] uppercase">
+                <div className="w-[2px] h-6 bg-[#4B5563]" />
+                <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#4B5563] uppercase">
                   {t("why_bespoke.label")}
                 </span>
               </div>
@@ -76,7 +76,7 @@ export default function Home() {
                   </p>
                 </FadeIn>
                 <FadeIn direction="right" delay={0.6}>
-                  <p className="text-xl font-playfair italic text-[#C07652] leading-relaxed border-l-2 border-[#C07652]/20 pl-6">
+                  <p className="text-xl font-playfair italic text-[#4B5563] leading-relaxed border-l-2 border-[#4B5563]/20 pl-6">
                     {t("why_bespoke.accent")}
                   </p>
                 </FadeIn>
@@ -90,20 +90,20 @@ export default function Home() {
               <h3 className="text-2xl md:text-3xl font-playfair leading-relaxed opacity-90">
                 {t("why_bespoke.dark_title")}
               </h3>
-              <div className="w-full h-[1px] bg-[#C07652]/30" />
+              <div className="w-full h-[1px] bg-[#4B5563]/30" />
             </FadeIn>
 
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
               <FadeInStagger className="space-y-1">
-                <span className="text-3xl font-playfair text-[#C07652] block">{t("why_bespoke.stat_1_num")}</span>
+                <span className="text-3xl font-playfair text-[#4B5563] block">{t("why_bespoke.stat_1_num")}</span>
                 <span className="text-[11px] uppercase tracking-widest opacity-50 font-montserrat leading-tight block">{t("why_bespoke.stat_1_label")}</span>
               </FadeInStagger>
               <FadeInStagger className="space-y-1">
-                <span className="text-3xl font-playfair text-[#C07652] block">{t("why_bespoke.stat_2_num")}</span>
+                <span className="text-3xl font-playfair text-[#4B5563] block">{t("why_bespoke.stat_2_num")}</span>
                 <span className="text-[11px] uppercase tracking-widest opacity-50 font-montserrat leading-tight block">{t("why_bespoke.stat_2_label")}</span>
               </FadeInStagger>
               <FadeInStagger className="space-y-1">
-                <span className="text-3xl font-playfair text-[#C07652] block">{t("why_bespoke.stat_3_num")}</span>
+                <span className="text-3xl font-playfair text-[#4B5563] block">{t("why_bespoke.stat_3_num")}</span>
                 <span className="text-[11px] uppercase tracking-widest opacity-50 font-montserrat leading-tight block">{t("why_bespoke.stat_3_label")}</span>
               </FadeInStagger>
             </StaggerContainer>
@@ -115,7 +115,7 @@ export default function Home() {
       <section className="relative z-10 py-24 md:py-32 px-6 md:px-20 lg:px-32 bg-[#F9F7F2]">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="text-center mb-20 space-y-4">
-            <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#C07652] uppercase block">
+            <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#4B5563] uppercase block">
               {t("how_it_works.label")}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair text-[#1A1814]">
@@ -126,7 +126,7 @@ export default function Home() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {[1, 2, 3, 4].map((step) => (
               <FadeInStagger key={step} className="relative group">
-                <div className="mb-8 text-5xl font-playfair text-[#C07652]/10 group-hover:text-[#C07652]/30 transition-colors duration-500">0{step}</div>
+                <div className="mb-8 text-5xl font-playfair text-[#4B5563]/10 group-hover:text-[#4B5563]/30 transition-colors duration-500">0{step}</div>
                 <h3 className="text-xl font-playfair mb-4 text-[#1A1814]">{t(`how_it_works.step_${step}_title`)}</h3>
                 <p className="text-[#1A1814]/60 font-playfair leading-relaxed">{t(`how_it_works.step_${step}_body`)}</p>
               </FadeInStagger>
@@ -141,7 +141,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
             <FadeIn className="lg:col-span-1 space-y-8">
               <div className="space-y-4">
-                <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#C07652] uppercase block">
+                <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#4B5563] uppercase block">
                   {t("personalize.label")}
                 </span>
                 <h2 className="text-4xl md:text-5xl font-playfair text-[#1A1814] leading-tight">
@@ -150,7 +150,7 @@ export default function Home() {
               </div>
               <Link 
                 href="/personnaliser-experience"
-                className="inline-block text-xs font-montserrat font-bold tracking-[0.2em] uppercase border-b border-[#C07652] pb-2 text-[#C07652] hover:text-[#1A1814] hover:border-[#1A1814] transition-all"
+                className="inline-block text-xs font-montserrat font-bold tracking-[0.2em] uppercase border-b border-[#4B5563] pb-2 text-[#4B5563] hover:text-[#1A1814] hover:border-[#1A1814] transition-all"
               >
                 {t("hero_button")}
               </Link>
@@ -172,7 +172,7 @@ export default function Home() {
       <section className="relative z-10 bg-[#1A1814] py-24 md:py-32 px-6 md:px-12 lg:px-24 text-white">
         <div className="max-w-7xl mx-auto space-y-16">
           <FadeIn className="space-y-4">
-            <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#C07652] uppercase block">
+            <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#4B5563] uppercase block">
               {t("travel_styles.label")}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair">
@@ -192,7 +192,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A1814] via-transparent to-transparent opacity-80" />
                   <div className="absolute bottom-8 left-8 right-8">
-                    <span className="text-[10px] tracking-[0.3em] uppercase text-[#C07652] mb-3 block">{t(`travel_styles.style_${style}.subtitle`)}</span>
+                    <span className="text-[10px] tracking-[0.3em] uppercase text-[#4B5563] mb-3 block">{t(`travel_styles.style_${style}.subtitle`)}</span>
                     <h3 className="text-3xl font-playfair">{t(`travel_styles.style_${style}.title`)}</h3>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export default function Home() {
                     {t(`travel_styles.style_${style}.body`)}
                   </p>
                   <div className="pt-6 border-t border-white/10">
-                    <p className="text-[11px] font-montserrat font-bold tracking-[0.2em] text-[#C07652] uppercase">
+                    <p className="text-[11px] font-montserrat font-bold tracking-[0.2em] text-[#4B5563] uppercase">
                       {t(`travel_styles.style_${style}.footer`)}
                     </p>
                   </div>
@@ -218,7 +218,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
             <FadeIn className="lg:col-span-1 space-y-8">
               <div className="space-y-4">
-                <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#C07652] uppercase block">
+                <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#4B5563] uppercase block">
                   {t("commitment.label")}
                 </span>
                 <p className="text-2xl md:text-3xl font-playfair text-[#1A1814] leading-relaxed">
@@ -259,7 +259,7 @@ export default function Home() {
         
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-10">
           <FadeIn className="space-y-6">
-            <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#C07652] uppercase block">
+            <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#4B5563] uppercase block">
               {t("cta.label")}
             </span>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-playfair text-[#1A1814] leading-tight">
@@ -273,7 +273,7 @@ export default function Home() {
           <FadeIn delay={0.4} className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
               href="/personnaliser-experience"
-              className="w-full sm:w-auto bg-[#C07652] px-10 py-5 text-sm font-montserrat font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#A35F3F] active:scale-95 shadow-xl">
+              className="w-full sm:w-auto bg-[#4B5563] px-10 py-5 text-sm font-montserrat font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#111827] active:scale-95 shadow-xl">
               {t("cta.button_1")}
             </Link>
             <Link
