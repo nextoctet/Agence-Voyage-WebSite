@@ -112,7 +112,7 @@ export default function AboutPage() {
               </p>
               
               <div className="bg-[#4B5563]/10 border-l-4 border-[#4B5563] p-6 md:p-10">
-                <p className="text-[#4B5563] font-serif text-lg md:text-xl italic leading-relaxed">
+                <p className="text-[#4B5563] font-serif text-lg md:text-xl leading-relaxed">
                   {t("story_bottom_highlight")}
                 </p>
               </div>

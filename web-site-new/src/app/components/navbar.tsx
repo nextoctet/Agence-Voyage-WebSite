@@ -106,14 +106,14 @@ export default function Navbar() {
       >
         <Link
           href="/"
-          className="flex h-12 shrink-0 items-center transition hover:scale-105 active:scale-95 md:h-16 lg:h-20"
+          className="flex h-16 shrink-0 items-center transition hover:scale-105 active:scale-95 md:h-20 lg:h-24"
         >
           <Image
             src="/pictures/full-logo.png"
             alt="WeLiveMorocco"
             width={500}
             height={200}
-            className="h-10 w-auto object-contain md:h-14 lg:h-18"
+            className="h-14 w-auto object-contain md:h-18 lg:h-22"
           />
         </Link>
 
