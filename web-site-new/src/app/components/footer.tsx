@@ -129,7 +129,7 @@ export default function Footer() {
                 alt="WeLiveMorocco"
                 width={300}
                 height={100}
-                className="h-12 w-auto object-contain brightness-0 invert"
+                className="h-16 w-auto object-contain brightness-0 invert"
               />
             </Link>
           </FadeInStagger>
