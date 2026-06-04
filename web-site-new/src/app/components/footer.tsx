@@ -119,7 +119,7 @@ export default function Footer() {
         </FadeIn>
 
         {/* LINKS GRID */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14 text-left">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-14 text-left">
 
           {/* Brand */}
           <FadeInStagger>
@@ -144,24 +144,6 @@ export default function Footer() {
                 { label: "Notre Vision", href: "/a-propos" },
                 { label: "L'Équipe", href: "/a-propos" },
                 { label: "Contact", href: "/contact" },
-              ].map(({ label, href }) => (
-                <li key={label} className="hover:translate-x-2 transition-all opacity-90">
-                  <Link href={href} className="block w-full">{t(label)}</Link>
-                </li>
-              ))}
-            </ul>
-          </FadeInStagger>
-
-          {/* Destinations */}
-          <FadeInStagger>
-            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] mb-8 opacity-80">
-              {t("Destinations")}
-            </h3>
-            <ul className="flex flex-col gap-4 text-xs font-medium italic">
-              {[
-                { label: "Casablanca", href: "/destinations/casablanca" },
-                { label: "Marrakech", href: "/destinations/marrakech" },
-                { label: "Tanger", href: "/destinations/tanger" },
               ].map(({ label, href }) => (
                 <li key={label} className="hover:translate-x-2 transition-all opacity-90">
                   <Link href={href} className="block w-full">{t(label)}</Link>

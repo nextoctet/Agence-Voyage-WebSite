@@ -28,21 +28,6 @@ export default function ContactPage() {
         "Hello WeLiveMorocco,\n\nI'd like to start planning a private Morocco journey.\n\nPreferred dates:\nNumber of travelers:\nTravel style:\nPlaces of interest:\n\nThank you."
     )}`;
 
-  const buildMailtoLink = () => {
-    const body = [
-      `Nom complet: ${fullName}`,
-      `Email: ${email}`,
-      `Nationalite: ${nationality || '-'}`,
-      `Telephone: ${phone || '-'}`,
-      `Budget: ${budget || '-'}`,
-      `Sujet: ${subject}`,
-      '',
-      message,
-    ].join('\n');
-    const subjectText = subject || 'Contact via site web';
-    return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(body)}`;
-  };
-
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
@@ -54,12 +39,46 @@ export default function ContactPage() {
       return;
     }
 
-    if (typeof window !== 'undefined') {
-      const gmailLink = buildMailtoLink();
-      window.open(gmailLink, '_blank');
-    }
+    fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fullName,
+        email,
+        subject,
+        nationality,
+        phone,
+        budget,
+        message,
+      }),
+    })
+      .then(async (res) => {
+        const data = await res.json().catch(() => ({}));
 
-    setLoading(false);
+        if (!res.ok) {
+          throw new Error(data?.error || 'Impossible d’envoyer le message.');
+        }
+
+        setStatus({ ok: true, message: 'Votre message a été envoyé avec succès.' });
+        setFullName('');
+        setEmail('');
+        setSubject('');
+        setNationality('');
+        setPhone('');
+        setBudget('');
+        setMessage('');
+      })
+      .catch((err: unknown) => {
+        setStatus({
+          ok: false,
+          message: err instanceof Error ? err.message : 'Erreur inattendue lors de l’envoi.',
+        });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }
 
   return (
