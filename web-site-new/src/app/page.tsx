@@ -172,7 +172,7 @@ export default function Home() {
       <section className="relative z-10 bg-[#1A1814] py-24 md:py-32 px-6 md:px-12 lg:px-24 text-white">
         <div className="max-w-7xl mx-auto space-y-16">
           <FadeIn className="space-y-4">
-            <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-[#4B5563] uppercase block">
+            <span className="font-montserrat font-bold text-[13px] tracking-[0.4em] text-white/60 uppercase block">
               {t("travel_styles.label")}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair">
@@ -192,7 +192,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A1814] via-transparent to-transparent opacity-80" />
                   <div className="absolute bottom-8 left-8 right-8">
-                    <span className="text-[10px] tracking-[0.3em] uppercase text-[#4B5563] mb-3 block">{t(`travel_styles.style_${style}.subtitle`)}</span>
+                    <span className="text-[10px] tracking-[0.3em] uppercase text-white/80 mb-3 block">{t(`travel_styles.style_${style}.subtitle`)}</span>
                     <h3 className="text-3xl font-playfair">{t(`travel_styles.style_${style}.title`)}</h3>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export default function Home() {
                     {t(`travel_styles.style_${style}.body`)}
                   </p>
                   <div className="pt-6 border-t border-white/10">
-                    <p className="text-[11px] font-montserrat font-bold tracking-[0.2em] text-[#4B5563] uppercase">
+                    <p className="text-[11px] font-montserrat font-bold tracking-[0.2em] text-white/60 uppercase">
                       {t(`travel_styles.style_${style}.footer`)}
                     </p>
                   </div>

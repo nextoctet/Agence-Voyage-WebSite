@@ -56,7 +56,7 @@ export async function POST(req: Request) {
     });
 
     const to = process.env.EMAIL_TO || 'contact@welivemorocco.com';
-    const from = `${fullName} <${user}>`;
+    const from = process.env.EMAIL_FROM || user;
     const replyTo = email;
     const subjectLine = subject ? `Website: ${subject}` : 'Nouveau message depuis le site Web';
 
@@ -81,9 +81,8 @@ export async function POST(req: Request) {
       html,
     });
     return NextResponse.json({ ok: true });
-    } catch (err) {
-    
+  } catch (err) {
     const message = (err as any)?.message || String(err);
     return NextResponse.json({ error: message }, { status: 500 });
-    }
+  }
 }
