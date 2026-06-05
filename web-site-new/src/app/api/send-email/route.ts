@@ -39,8 +39,17 @@ export async function POST(req: Request) {
     const pass = process.env.SMTP_PASS;
     const secure = process.env.SMTP_SECURE === 'true';
 
-    if (!host || !user || !pass) {
-      return NextResponse.json({ error: 'SMTP configuration not set on server' }, { status: 500 });
+    const missing = [
+      !host && 'SMTP_HOST',
+      !user && 'SMTP_USER',
+      !pass && 'SMTP_PASS',
+    ].filter(Boolean);
+
+    if (missing.length > 0) {
+      return NextResponse.json(
+        { error: `SMTP configuration missing on server: ${missing.join(', ')}` },
+        { status: 500 }
+      );
     }
     const nodemailerModule: any = await import('nodemailer');
     const createTransport = nodemailerModule.createTransport ?? nodemailerModule.default?.createTransport;
